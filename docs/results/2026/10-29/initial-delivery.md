@@ -58,3 +58,16 @@ The workbench implements a useful first create/analyze/improve workflow, while
 shared PostgreSQL/Supabase persistence, chosen analytics/AI integrations and
 actual indexing/search/representative AI outcomes remain open. This delivery
 does not complete the full product or portfolio goal.
+
+## Publication closure
+
+Delivery evidence/status was published at
+[`6b3d2090a216fda7373c3572a1253d9fa6c69094`](https://github.com/alvarovillalbaa/forway/commit/6b3d2090a216fda7373c3572a1253d9fa6c69094).
+All 34 remote file identities matched and the checkout was clean. The Git
+integration then produced READY production deployment
+`dpl_27f5JKCdFHXXobzb6Wv3Bq7KV6J1`; canonical-host lookup confirmed that exact
+commit/alias. All 24 sealed non-Markdown source/test/config/asset inputs remained
+identical to the initial source. This final receipt text changes no runtime input.
+The temporary index readback copy was removed only after its regular-file
+ownership/digest and absence of open handles were checked and its matching
+source/hash evidence was published. Focused execution remains pending.

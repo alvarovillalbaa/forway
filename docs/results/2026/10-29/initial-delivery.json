@@ -184,6 +184,17 @@
     "proposalCommit": "98d6761482b464ce23f8edaaa932b14999d808ce",
     "proposalPath": "docs/proposals/focused-checks.md"
   },
+  "followupPublication": {
+    "commit": "6b3d2090a216fda7373c3572a1253d9fa6c69094",
+    "matchedRemoteFiles": 34,
+    "checkout": "clean",
+    "unchangedNonMarkdownSourceInputs": 24,
+    "canonicalDeploymentId": "dpl_27f5JKCdFHXXobzb6Wv3Bq7KV6J1",
+    "canonicalDeploymentSource": "6b3d2090a216fda7373c3572a1253d9fa6c69094",
+    "canonicalDeploymentState": "READY",
+    "canonicalDeploymentTarget": "production",
+    "temporaryStaticReadbackCopy": "Removed after regular-file/owner/digest checks, no open handles and published matching receipt. No user source or media removed."
+  },
   "limits": [
     "No passing runtime/backend/browser outcome claimed.",
     "No local dependency installation, database, Auth policy change, CI, model/provider call, new account or paid plan.",
