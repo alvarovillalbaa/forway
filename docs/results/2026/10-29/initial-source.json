@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "project": "Forway",
+  "status": "initial-source-prepared-checks-unexecuted",
+  "intent": {
+    "brief": "https://app.notion.com/p/408a1ee8bd068047ae66c199a930b339",
+    "snapshotAsOf": "2026-10-29T07:42:24.129Z",
+    "verification": "unverified snapshot; complete returned child brief read"
+  },
+  "nodeScope": {
+    "expectedCases": 77,
+    "files": [
+      {
+        "path": "tests/unit/fetch-page.test.mjs",
+        "expectedCases": 24,
+        "caseNames": [
+          "URL validation keeps default-port public URLs and removes only the fragment",
+          "unsafe URL syntax credentials ports and local hostnames fail before adapters run",
+          "IPv4 policy denies nonglobal special and metadata ranges including unusual URL spellings",
+          "IPv6 accepts conservative global unicast and rejects transition documentation and local ranges",
+          "the actual pinned lookup returns one approved address in both native callback forms",
+          "the pinned lookup cannot be constructed with a private address or wrong family",
+          "a successful import preserves inert HTML and returns only the selected bounded headers",
+          "a public literal address skips DNS but still uses its validated pin",
+          "any private address in an otherwise public DNS answer blocks the complete request",
+          "empty malformed wrong-family and oversized DNS inventories cannot dispatch",
+          "DNS exceptions expose a finite error without the resolver address or exception text",
+          "every redirect receives fresh DNS validation and all owned responses are closed",
+          "redirects to private addresses credentials or nondefault ports stop before another dispatch",
+          "four redirects can complete but a fifth redirect cannot issue a sixth request",
+          "a redirect loop fails immediately instead of repeatedly importing the same page",
+          "failed upstream statuses and non-HTML responses never become page imports",
+          "compression and incompatible declared charsets are rejected rather than silently reinterpreted",
+          "invalid UTF-8 and non-ASCII bytes under an ASCII declaration fail without replacement characters",
+          "body limits apply to declared bytes streamed bytes and the exact accepted boundary",
+          "header count bytes selected-field bounds duplicates and control characters fail closed",
+          "a mismatched declared length or an opaque upstream error cannot return a partial successful page",
+          "the owned deadline settles stalled DNS and request adapters and closes a late response",
+          "a stalled body is cancelled with owned response cleanup and rejected iterator cleanup is contained",
+          "input shape caller cancellation and monotonic deadlines cannot dispatch or acknowledge late work"
+        ]
+      },
+      {
+        "path": "tests/unit/audit-api.test.mjs",
+        "expectedCases": 12,
+        "caseNames": [
+          "successful POST returns the exact page envelope with noncacheable safe response headers",
+          "all unsupported methods fail before importing and advertise POST only",
+          "the endpoint requires JSON rather than accepting a form or arbitrary proxy payload",
+          "unknown fields nonrecords and accessors never become importer options",
+          "four-KiB limits cover declared strings buffers objects and streamed requests",
+          "malformed JSON invalid UTF-8 and malformed lengths fail with finite request errors",
+          "an actual async request-body iterator can supply bounded JSON in separate byte chunks",
+          "importer errors are reconstructed from finite codes instead of trusting exception messages",
+          "opaque asynchronous errors including throwing prototype or code getters are safely contained",
+          "a stalled importer is aborted and its late success cannot replace the timeout response",
+          "stalled body iterators settle within the handler deadline without unhandled cleanup rejections",
+          "a browser disconnect after request completion aborts the outstanding fetch without writing success"
+        ]
+      },
+      {
+        "path": "tests/unit/content.test.mjs",
+        "expectedCases": 8,
+        "caseNames": [
+          "incomplete drafts and partial rows survive normalization as detached frozen data",
+          "draft records reject unknown missing inherited accessor and sparse fields without evaluating getters",
+          "draft field and row budgets are strict while international text remains intact",
+          "draft URLs admit only bounded absolute HTTP(S) addresses or explicit unfinished blanks",
+          "both artifact exports require complete identity and rows rather than silently dropping draft intent",
+          "metadata escapes owner text and URL attributes without raw markup or extra scripts",
+          "FAQ JSON-LD round-trips the exact visible authored questions and prevents script breakout",
+          "standalone HTML retains paragraph and source content and invents no answers or facts"
+        ]
+      },
+      {
+        "path": "tests/unit/observations.test.mjs",
+        "expectedCases": 10,
+        "caseNames": [
+          "observation normalization keeps supplied evidence and canonicalizes only the hostname",
+          "raw shapes timestamps names domains and evidence budgets reject malformed records",
+          "brand and competitor detection uses literal Unicode-aware name boundaries",
+          "mentions and actual supplied URL citations are separate evidence",
+          "citations retain supplied destinations deduplicate URLs and reject hostname spoofing",
+          "summary rates use supplied answer count and count an owned-citing answer only once",
+          "empty summaries disclose zero denominator and unknown rates without invented competitors",
+          "campaign identity folds name case and Unicode and ignores competitor order without mixing cohorts",
+          "summary validation rejects forged mention or citation annotations and oversized report lists",
+          "analysis is detached and immutable and exposes no sentiment or unsupplied visibility score"
+        ]
+      },
+      {
+        "path": "tests/unit/audit-facts.test.mjs",
+        "expectedCases": 8,
+        "caseNames": [
+          "observed source facts produce finite SEO/GEO checks and internally consistent status counts",
+          "missing source metadata remains explicit without fabricating content or a visibility score",
+          "duplicate metadata and multiple or absent primary headings ask for review rather than inventing rules",
+          "robots observations distinguish explicit noindex directives from unmeasured crawl access",
+          "image and link checks report observed attributes without pretending to inspect decoration or destinations",
+          "JSON-LD checks concern observed syntax and do not certify schema truth or rich-result eligibility",
+          "answer and outbound-reference heuristics remain separate from actual engine citations",
+          "fact shapes and relationships are strict detached and frozen with no fallback HTML parser"
+        ]
+      },
+      {
+        "path": "tests/unit/workspace.test.mjs",
+        "expectedCases": 15,
+        "caseNames": [
+          "an empty explicit workspace has no invented source draft or evidence",
+          "export and import preserve the actual source draft and original answer evidence",
+          "incomplete unsent content remains exportable without an invented destination",
+          "partially written question and source rows survive a recovery round trip",
+          "source markup remains data in a portable JSON snapshot rather than an executed preview",
+          "nullable and omitted source header values retain their own meaning",
+          "computed reports credentials and unknown persisted fields cannot enter the workspace",
+          "unsupported versions missing fields and malformed JSON fail with a recoverable finite error",
+          "source URLs reject executable schemes credentials controls and relative locations",
+          "source and header text reject malformed scalars and oversized Unicode input",
+          "evidence collections reject more than five hundred records and sparse or accessor arrays",
+          "invalid raw evidence is refused rather than trusted as a previously computed report",
+          "multiple raw cohorts survive recovery without storing or blending their computed summaries",
+          "record accessors and prototype-shaped extras are rejected without reading them",
+          "restored state is detached deeply frozen and cannot mutate a previous workspace"
+        ]
+      }
+    ],
+    "nodeVersion": "v24.21.0",
+    "runnerArguments": [
+      "--test",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "--test-timeout=10000",
+      "tests/unit/fetch-page.test.mjs",
+      "tests/unit/audit-api.test.mjs",
+      "tests/unit/content.test.mjs",
+      "tests/unit/observations.test.mjs",
+      "tests/unit/audit-facts.test.mjs",
+      "tests/unit/workspace.test.mjs"
+    ],
+    "supervisorTimeoutMs": 120000,
+    "executionStatus": "not-run"
+  },
+  "browserScope": {
+    "scenarioIds": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08"
+    ],
+    "proposal": "docs/proposals/focused-checks.md",
+    "executionStatus": "not-run",
+    "limits": "Existing connected Chrome only; record unsupported file transfer, viewport and deterministic timing controls without bypass."
+  },
+  "staticChecks": {
+    "modulesParsed": 15,
+    "relativeImportsResolved": 15,
+    "productModulesImported": 0,
+    "testsExecuted": 0,
+    "networkAdaptersExecuted": 0
+  },
+  "sources": [
+    {
+      "path": ".gitignore",
+      "sha256": "2343553435e5f18ef2ea1308c29380ce80942a27918471603e9420929166ec11"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "9bf6fa3e3d32ee43f53ffcfac094de2e4743b6fe6026dc850c5a91e14bfe6bef"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7edafcd8ebca4ecabedfad6e3c3d4872ce0ef6b49c3658a8b6e644cfb884d32d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1dbce86333b3712540472909f168ce7cca6a6c6f8abe9c24f37dae080b5f19ea"
+    },
+    {
+      "path": "api/audit.mjs",
+      "sha256": "f1c22f4d5ca2e05e85265a4a57c6ba535928ae98f0029391deb1ffa94d831d45"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "3515eaaac0cf9b73d7f1fe7dc31a752552a965c55b5fb68d31881f387334aaf9"
+    },
+    {
+      "path": "docs/proposals/focused-checks.md",
+      "sha256": "e96050c4ef3efd538155a63218e4fbb923d4755d3622063eb494115b0a8bf37c"
+    },
+    {
+      "path": "docs/references/source-decisions.md",
+      "sha256": "ca92fd4e8c70a0222f2c93682b2c79e7872c49522297129a6d22e1761eb3e611"
+    },
+    {
+      "path": "docs/spec.md",
+      "sha256": "957c8a4b415405c03a34260c03a0f92d201ae39ebf7681e60ad57f8655d1848e"
+    },
+    {
+      "path": "package.json",
+      "sha256": "6ad3adf8535a84218774357f8e6416907edc6a27b25512549554e9643abcd6e4"
+    },
+    {
+      "path": "public/check-fixtures/authored-page.html",
+      "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a"
+    },
+    {
+      "path": "public/check-fixtures/header-noindex.html",
+      "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49"
+    },
+    {
+      "path": "public/icon.svg",
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "path": "public/src/app.mjs",
+      "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195"
+    },
+    {
+      "path": "public/src/audit.mjs",
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "path": "public/src/content.mjs",
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "path": "public/src/observations.mjs",
+      "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247"
+    },
+    {
+      "path": "public/src/ui.mjs",
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "path": "public/src/workspace.mjs",
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha256": "33761dc5b229808915392db88c20422132b09116bd83dfa76e5e32223096b49c"
+    },
+    {
+      "path": "src/fetch-page.mjs",
+      "sha256": "4bf3e32e7c068e23a5478d11f4d0c695c65da3422bf4a1fcc34096397fde735b"
+    },
+    {
+      "path": "tests/unit/audit-api.test.mjs",
+      "sha256": "2d894129af7ef5f17c368149b3069b87040918b3fa5680c219ab5e39be002cc1"
+    },
+    {
+      "path": "tests/unit/audit-facts.test.mjs",
+      "sha256": "62e3878d806cb702c0e8740e13ef4b2e7dd42f667c1a92f444d6d54c39975b86"
+    },
+    {
+      "path": "tests/unit/content.test.mjs",
+      "sha256": "340c3195d9c09c302918be2fc3dff60af8ab3ba366c7836b8ce342f0728bc6a9"
+    },
+    {
+      "path": "tests/unit/fetch-page.test.mjs",
+      "sha256": "c95e7dc41d5887472fa0064aebbc04720d61edc7ca60fc886b407a8fd44b8ec4"
+    },
+    {
+      "path": "tests/unit/observations.test.mjs",
+      "sha256": "98181eb1cafdfad311dfe7672994061b6891e3fe2cf02148969d45d17623089d"
+    },
+    {
+      "path": "tests/unit/workspace.test.mjs",
+      "sha256": "20b22d8a77c5d40f98ddcd62006984ccaadee9ae5fe364b5270cf3c2e6d8cb91"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "0fa62b4769594dcc71ab6bd1d080abde6f84234e7eb952202fa8cd5587b30065"
+    }
+  ],
+  "exclusions": [
+    "The source seal cannot hash itself. Dated narrative/result/publication receipts are outside this preparation seal."
+  ],
+  "remaining": [
+    "77 authored Node cases and eight browser scenarios still need explicit approval.",
+    "Hosting is not yet provisioned; native network behavior, UI and artifacts are unverified.",
+    "Shared PostgreSQL/Supabase persistence, accounts and chosen provider/analytics integrations remain open.",
+    "No model call, dependency installation, database, migration, CI, paid plan or new account during preparation."
+  ]
+}

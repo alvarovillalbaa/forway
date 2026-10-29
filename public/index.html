@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#254b3a">
+  <meta name="description" content="A practical workbench for page audits, useful content and supplied AI-answer evidence.">
+  <title>Forway — Make your content easier to find</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/src/app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workspace</a>
+  <aside class="sidebar">
+    <a class="brand" href="#audit" aria-label="Forway, audit workspace"><img src="/icon.svg" width="34" height="34" alt=""><span>forway<span class="brand-period">.</span></span></a>
+    <p class="sidebar-caption">The search workbench</p>
+    <nav aria-label="Workspace sections">
+      <button class="nav-item" data-view="audit" aria-current="page"><span class="nav-number" aria-hidden="true">01</span>Page audit<span class="nav-arrow" aria-hidden="true">↗</span></button>
+      <button class="nav-item" data-view="content"><span class="nav-number" aria-hidden="true">02</span>Content studio<span class="nav-arrow" aria-hidden="true">↗</span></button>
+      <button class="nav-item" data-view="evidence"><span class="nav-number" aria-hidden="true">03</span>AI evidence<span class="nav-arrow" aria-hidden="true">↗</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="small-dot" aria-hidden="true"></span><p>A clearer page.<br>A more useful answer.</p><small>Inspect what exists. Make a draft.<br>Keep the evidence separate.</small></div>
+    <button class="quiet sidebar-reset" id="new-workspace" type="button">New workspace <span aria-hidden="true">+</span></button>
+    <p class="sidebar-foot">No account · No tracking<br>Export your work before leaving.</p>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <p><span class="small-dot" aria-hidden="true"></span> In-memory workspace <span id="workspace-state" class="topbar-detail">Nothing saved to disk</span></p>
+      <div class="topbar-actions"><button class="quiet" id="import-workspace" type="button">Import workspace</button><button class="button button-small" id="export-workspace" type="button">Export workspace <span aria-hidden="true">↓</span></button></div>
+      <input id="workspace-file" class="visually-hidden" type="file" accept=".json,application/json" aria-label="Choose a Forway workspace JSON file" tabindex="-1">
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="page-heading"><div><p class="eyebrow" id="page-eyebrow">01 / Inspect</p><h1 id="page-title">A good page starts<br>with a clear picture.</h1><p class="page-intro" id="page-intro">Check the source. Find the gaps. Give your next edit a purpose.</p></div><span class="edition">FORWAY / WORKBENCH<br>SEO + GEO</span></div>
+      <div id="app-notice" class="app-notice" hidden><p id="app-notice-text" role="status" aria-live="polite" aria-atomic="true"></p><button class="quiet" id="dismiss-notice" type="button" aria-label="Dismiss message">×</button></div>
+
+      <section id="view-audit" class="view" aria-label="Page audit">
+        <div class="audit-layout">
+          <div class="source-column">
+            <section class="paper intake-panel" aria-labelledby="source-title"><div class="section-heading"><span class="eyebrow">Bring a page</span><span class="section-mark" aria-hidden="true">↗</span></div><h2 id="source-title">Start with the source.</h2><p class="muted">Import a public page, or supply the HTML you have. Scripts stay inert.</p>
+              <form id="url-form"><label for="page-url">Public page URL</label><div class="input-action"><input id="page-url" name="url" type="url" placeholder="https://your-site.com/page" maxlength="2048" required autocomplete="url"><button class="button" type="submit">Analyze <span aria-hidden="true">→</span></button></div><p class="field-help">Imports page source only. JavaScript-rendered content may be missing.</p></form>
+              <details class="source-details"><summary>Use supplied HTML instead</summary><form id="html-form"><label for="html-url">Page URL for this HTML</label><input id="html-url" type="url" maxlength="2048" placeholder="https://your-site.com/page" required autocomplete="url"><label for="html-source">HTML source</label><textarea id="html-source" rows="7" maxlength="1048576" placeholder="Paste the page's HTML source" required spellcheck="false"></textarea><div class="form-actions"><button class="button button-secondary" type="submit">Analyze supplied HTML</button><button class="quiet" id="choose-html" type="button">Choose HTML file</button></div><p class="field-help">Up to 1 MiB of UTF-8 HTML. A file uses the page URL above.</p><input id="html-file" class="visually-hidden" type="file" accept=".html,.htm,.txt,text/html,text/plain" aria-label="Choose HTML source file" tabindex="-1"></form></details>
+              <div id="import-progress" class="import-progress" hidden><span class="progress-line" aria-hidden="true"></span><p id="import-progress-text" role="status"></p><button class="quiet" id="cancel-import" type="button">Cancel import</button></div>
+            </section>
+            <div class="scope-note"><span class="scope-mark" aria-hidden="true">i</span><p><strong>Source checks, not a ranking forecast.</strong> This audit cannot measure search position, traffic, rendering performance or live AI visibility.</p></div>
+            <div id="source-context" class="source-context" hidden></div>
+          </div>
+          <div class="findings-column"><div id="audit-empty" class="empty-state"><span class="empty-orbit" aria-hidden="true">↗</span><p class="eyebrow">A useful first step</p><h2>Look at your page<br>with fresh eyes.</h2><p>Metadata, headings, image descriptions and answer structure. Your findings will appear here after an import.</p><div class="empty-tags"><span>SEO fundamentals</span><span>Answer readiness</span></div></div><section id="audit-results" aria-label="Page findings" hidden></section></div>
+        </div>
+      </section>
+
+      <section id="view-content" class="view" aria-label="Content studio" hidden>
+        <div class="studio-bar"><p>Write something worth finding.<span>Imported drafts are bounded text extractions for review, not lossless site copies. Raw HTML stays in your workspace.</span></p><div class="button-row"><button class="quiet" id="reset-draft" type="button">Clear draft</button><button class="button" id="review-draft" type="button">Re-audit draft <span aria-hidden="true">↗</span></button></div></div>
+        <div class="studio-layout"><form id="draft-form" class="paper draft-form" novalidate><div class="form-section"><div class="section-heading"><p class="eyebrow">01 / Page essentials</p><span class="form-section-note">Used in exported metadata</span></div><label for="draft-url">Canonical page URL</label><input id="draft-url" name="url" type="url" maxlength="2048" placeholder="https://your-site.com/page" required><label for="draft-title">Page title</label><input id="draft-title" name="title" maxlength="200" placeholder="A clear, specific title" required><label for="draft-description">Search description</label><textarea id="draft-description" name="description" rows="3" maxlength="500" placeholder="What will someone learn or be able to do?"></textarea></div>
+            <div class="form-section"><div class="section-heading"><p class="eyebrow">02 / The content</p><span class="form-section-note">Plain text, safely escaped</span></div><label for="draft-heading">Main heading</label><input id="draft-heading" name="heading" maxlength="300" placeholder="One main idea for this page" required><label for="draft-summary">A direct answer / summary</label><textarea id="draft-summary" name="summary" rows="3" maxlength="2000" placeholder="Lead with the answer. Add the detail below."></textarea><label for="draft-body">Body</label><textarea id="draft-body" name="body" class="body-editor" rows="12" maxlength="50000" placeholder="Write useful, factual content. Separate paragraphs with a blank line."></textarea></div>
+            <div class="form-section"><div class="section-heading"><div><p class="eyebrow">03 / Questions &amp; answers</p><p class="muted">Only include answers you can stand behind.</p></div><button class="quiet" id="add-question" type="button">Add question +</button></div><div id="question-rows"></div><p id="questions-empty" class="field-help">No Q&amp;A added. This section is optional.</p></div>
+            <div class="form-section"><div class="section-heading"><div><p class="eyebrow">04 / Sources</p><p class="muted">Make the evidence easy to follow.</p></div><button class="quiet" id="add-source" type="button">Add source +</button></div><div id="source-rows"></div><p id="sources-empty" class="field-help">No sources added. Link original sources for factual claims.</p></div>
+          </form>
+          <aside class="studio-aside"><section class="paper export-panel"><p class="eyebrow">Ready for review</p><h2>Take the work<br>with you.</h2><p class="muted">Export a real document or head metadata. Review before adding it to your website.</p><button class="button full-width" id="download-html" type="button">Download page HTML <span aria-hidden="true">↓</span></button><button class="button button-secondary full-width" id="download-metadata" type="button">Download head snippet <span aria-hidden="true">↓</span></button><button class="quiet full-width" id="preview-artifacts" type="button">Inspect exported source</button><p class="field-help">Needs a page URL, title and main heading. Nothing is published or installed on your site.</p></section><section id="draft-comparison" class="draft-comparison" aria-label="Draft check comparison"><p class="eyebrow">A considered edit</p><h3>Compare your next version.</h3><p>Re-audit the generated HTML to compare the same source checks. An improved check is not proof of ranking gains.</p></section></aside>
+        </div>
+        <section id="artifact-review" class="paper artifact-review" hidden><div class="section-heading"><div><p class="eyebrow">Inert source preview</p><h2>What you are exporting.</h2></div><button class="quiet" id="close-artifacts" type="button">Close source</button></div><details open><summary>Page HTML</summary><pre id="html-artifact" tabindex="0"></pre></details><details><summary>Head metadata</summary><pre id="metadata-artifact" tabindex="0"></pre></details></section>
+      </section>
+
+      <section id="view-evidence" class="view" aria-label="AI answer evidence" hidden><div class="evidence-layout"><section class="paper evidence-form-panel"><p class="eyebrow">Bring the actual answer</p><h2>Evidence, not<br>an estimated score.</h2><p class="muted">Record an answer you observed. Forway finds mentions and explicit cited URLs in the text you supply.</p><form id="evidence-form"><div class="two-fields"><div><label for="evidence-brand">Brand</label><input id="evidence-brand" maxlength="100" required placeholder="Your brand"></div><div><label for="evidence-domain">Owned domain</label><input id="evidence-domain" maxlength="253" required placeholder="your-site.com" autocapitalize="none" spellcheck="false"></div></div><label for="evidence-competitors">Competitors <span class="optional">optional</span></label><textarea id="evidence-competitors" rows="2" maxlength="2020" placeholder="One brand per line, up to 20"></textarea><div class="two-fields"><div><label for="evidence-engine">Engine / source</label><input id="evidence-engine" maxlength="100" required placeholder="Where you observed it"></div><div><label for="evidence-time">Observed at (local time)</label><input id="evidence-time" type="datetime-local" required></div></div><label for="evidence-prompt">Exact prompt</label><textarea id="evidence-prompt" rows="3" maxlength="10000" required placeholder="The question or prompt that produced the answer"></textarea><label for="evidence-answer">Observed answer</label><textarea id="evidence-answer" rows="8" maxlength="100000" required placeholder="Paste the answer, including explicit citation URLs"></textarea><button class="button full-width" type="submit">Add supplied evidence <span aria-hidden="true">+</span></button><p class="field-help">No engine is queried. No hidden citation sources are fetched. The original prompt and answer remain in the exported workspace.</p></form></section><div class="evidence-results"><section id="evidence-summary" aria-label="Supplied evidence summary"></section><div id="evidence-list"></div></div></div></section>
+      <footer class="workspace-footer"><p>Useful content. Observable checks. Honest evidence.</p><a href="#about" id="open-about">About this workbench</a></footer>
+    </main>
+  </div>
+  <dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><p class="eyebrow">Keep your work in mind</p><h2 id="confirm-title">Replace this workspace?</h2><p id="confirm-description"></p><p class="field-help">Export your workspace first if you need a copy. Nothing is saved automatically.</p><div class="form-actions"><button class="button button-secondary" value="cancel">Keep current work</button><button class="button" id="confirm-action" value="confirm">Replace</button></div></form></dialog>
+  <dialog id="about-dialog" class="about-dialog"><form method="dialog"><div class="section-heading"><p class="eyebrow">Forway / A practical workbench</p><button class="quiet" value="close" aria-label="Close about">×</button></div><h2>Make the work clearer.</h2><p>Analyze supplied page source, create a useful content draft and inspect AI answers you have actually observed. Imported markup is never executed.</p><p>Page checks are heuristics. They cannot establish search rankings, traffic, indexing, rendered performance or live answer-engine visibility. Supplied evidence may not represent an engine's broader behavior.</p><p>Your workspace stays in this tab's memory. Export it to keep a copy; import that file to resume. There is no account, database, automatic monitoring or model connection.</p><button class="button" value="close">Back to the workbench</button></form></dialog>
+  <noscript><p class="noscript">Forway needs JavaScript to analyze source and edit this in-memory workspace. No data has been imported.</p></noscript>
+</body>
+</html>
