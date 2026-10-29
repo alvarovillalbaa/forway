@@ -1,6 +1,6 @@
 # Boundaries and data flow
 
-29 October 2026. Initial source, execution/deployment acceptance pending.
+29 October 2026. Initial source hosted; focused runtime acceptance pending.
 
 The [product brief](spec.md) owns intent. The browser workbench has three
 connected workflows: page audit, content creation/improvement and supplied

@@ -2,12 +2,15 @@
 
 Create, analyze and improve content for search and AI answers.
 
+[Open Forway](https://forway.vercel.app) · [Delivery evidence](docs/results/2026/10-29/initial-delivery.md)
+
 An editorial workbench for auditing a real page, editing a content draft,
 exporting reviewed HTML/metadata and analyzing supplied answer evidence.
 Built from the [Forway brief](docs/spec.md) in Alvaro's personal Notion.
 
-**Initial workbench source prepared.** Source and static verification are
-separate from passing backend/browser checks, deployment and full-product acceptance.
+**Initial workbench published and hosted.** Vercel reports READY and the served
+index matches source. The 77 Node checks and eight browser scenarios remain
+unexecuted, pending separate approval; functional acceptance is still open.
 No account, analytics integration, AI provider or shared database is configured.
 
 ## Workflow

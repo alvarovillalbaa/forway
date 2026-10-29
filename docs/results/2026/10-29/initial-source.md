@@ -78,3 +78,13 @@ shared database. Chosen analytics/AI integrations, recurring monitoring, actual
 indexing/search/AI outcomes and verified hosted operation are also unfinished.
 The first workbench and its narrow checks do not complete the original full
 product/portfolio goal.
+
+## Source publication
+
+Created personal public
+[`alvarovillalbaa/forway`](https://github.com/alvarovillalbaa/forway) at
+[`98d6761482b464ce23f8edaaa932b14999d808ce`](https://github.com/alvarovillalbaa/forway/commit/98d6761482b464ce23f8edaaa932b14999d808ce).
+The connected GitHub ref/tree readback matched all 32 paths, modes, types and
+blob SHAs without truncation. Main has no active workflow and the checkout was
+clean. The separately pending 77-case/eight-scenario request links that immutable
+proposal. This publication receipt changes no sealed source/test input.

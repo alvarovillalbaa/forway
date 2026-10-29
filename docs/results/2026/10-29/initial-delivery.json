@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "sourceCommit": "98d6761482b464ce23f8edaaa932b14999d808ce",
+  "sourcePublication": {
+    "repository": "alvarovillalbaa/forway",
+    "public": true,
+    "matchedFiles": 32,
+    "matchedFields": [
+      "path",
+      "mode",
+      "type",
+      "blob SHA"
+    ],
+    "remoteTreeTruncated": false
+  },
+  "vercel": {
+    "teamId": "team_JpdIsOJgYNpX0ywVZ54Zdb7m",
+    "teamName": "Clous Team",
+    "projectId": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+    "projectName": "forway",
+    "gitConnection": {
+      "type": "github",
+      "org": "alvarovillalbaa",
+      "repo": "forway",
+      "repositoryId": 1438671990
+    },
+    "deploymentId": "dpl_FmfouDwbw16MfwhrV2fuHrnu7n8Z",
+    "url": "https://forway.vercel.app",
+    "uniqueUrl": "https://forway-pjiv0737n-my-team-4f230354.vercel.app",
+    "requestedTarget": "preview",
+    "actualTarget": "production",
+    "readyState": "READY",
+    "aliases": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-98d6761482b464ce23f8edaaa932-d01e73-my-team-4f230354.vercel.app"
+    ],
+    "buildNodeVersion": "v26.13.0",
+    "localSourceCheckNodeVersion": "v24.21.0",
+    "installCommand": "node --version",
+    "buildCommand": "node scripts/check.mjs",
+    "outputDirectory": "public",
+    "buildEvidence": [
+      {
+        "type": "stdout",
+        "text": "Running build in Washington, D.C., USA (East) – iad1",
+        "created": 1793291362345
+      },
+      {
+        "type": "stdout",
+        "text": "Build machine configuration: 4 cores, 8 GB (Standard Build Machine)",
+        "created": 1793291362346
+      },
+      {
+        "type": "stdout",
+        "text": "Cloning github.com/alvarovillalbaa/forway (Branch: 98d6761482b464ce23f8edaaa932b14999d808ce, Commit: 98d6761)",
+        "created": 1793291362526
+      },
+      {
+        "type": "stdout",
+        "text": "Previous build caches not available.",
+        "created": 1793291362527
+      },
+      {
+        "type": "stdout",
+        "text": "Cloning completed: 305.000ms",
+        "created": 1793291362832
+      },
+      {
+        "type": "stdout",
+        "text": "Running \"vercel build\"",
+        "created": 1793291363249
+      },
+      {
+        "type": "stderr",
+        "text": "Vercel CLI 65.4.0",
+        "created": 1793291363257
+      },
+      {
+        "type": "stderr",
+        "text": "Warning: Detected \"engines\": { \"node\": \">=22\" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: https://vercel.link/node-version",
+        "created": 1793291364010
+      },
+      {
+        "type": "stdout",
+        "text": "Running \"install\" command: `node --version`...",
+        "created": 1793291364013
+      },
+      {
+        "type": "stdout",
+        "text": "v26.13.0",
+        "created": 1793291364063
+      },
+      {
+        "type": "stdout",
+        "text": "15 modules parsed; 15 relative imports and HTML assets resolve. JSON/documents checked. No product module or test executed.",
+        "created": 1793291364929
+      },
+      {
+        "type": "stderr",
+        "text": "Warning: Detected \"engines\": { \"node\": \">=22\" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: https://vercel.link/node-version",
+        "created": 1793291364952
+      },
+      {
+        "type": "stdout",
+        "text": "Installing dependencies...",
+        "created": 1793291364964
+      },
+      {
+        "type": "stderr",
+        "text": "npm warn Unknown env config \"cache-dir\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.",
+        "created": 1793291365466
+      },
+      {
+        "type": "stdout",
+        "text": "",
+        "created": 1793291365500
+      },
+      {
+        "type": "stdout",
+        "text": "up to date in 424ms",
+        "created": 1793291365500
+      },
+      {
+        "type": "stderr",
+        "text": "Build Completed in /vercel/output [2s]",
+        "created": 1793291365687
+      },
+      {
+        "type": "stdout",
+        "text": "Deploying outputs...",
+        "created": 1793291365714
+      },
+      {
+        "type": "stdout",
+        "text": "Deployment completed",
+        "created": 1793291368186
+      },
+      {
+        "type": "stdout",
+        "text": "Creating build cache...",
+        "created": 1793291368189
+      },
+      {
+        "type": "stdout",
+        "text": "Skipping cache upload because no files were prepared",
+        "created": 1793291368802
+      }
+    ],
+    "attempts": [
+      {
+        "operation": "create_git_project",
+        "result": "Tool response-schema error after HTTP200; target outcome initially unknown. Readback confirmed one created project and correct Git link; no deployment existed."
+      },
+      {
+        "operation": "create_deployment",
+        "requestedTarget": "preview",
+        "result": "HTTP400 missing_project_settings; readback confirmed no deployment. No unchanged retry."
+      },
+      {
+        "operation": "create_deployment",
+        "requestedTarget": "preview",
+        "correction": "Explicit settings matching repository vercel.json",
+        "deploymentId": "dpl_FmfouDwbw16MfwhrV2fuHrnu7n8Z",
+        "result": "READY, actual production target and aliases confirmed by independent deployment read."
+      }
+    ],
+    "accessPolicy": "Existing team default retained; no SSO/password/protection policy edited.",
+    "runtimeProof": "Build/source parsing only; the default DNS/HTTP adapter and browser have not executed in the approved test scope."
+  },
+  "staticDelivery": {
+    "url": "https://forway.vercel.app/",
+    "status": 200,
+    "bytes": 14433,
+    "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+    "equalsSourceIndex": true,
+    "kind": "Read-only static document byte readback; no browser/API test"
+  },
+  "focusedChecks": {
+    "nodeCases": 77,
+    "browserScenarios": 8,
+    "status": "awaiting explicit approval",
+    "proposalCommit": "98d6761482b464ce23f8edaaa932b14999d808ce",
+    "proposalPath": "docs/proposals/focused-checks.md"
+  },
+  "limits": [
+    "No passing runtime/backend/browser outcome claimed.",
+    "No local dependency installation, database, Auth policy change, CI, model/provider call, new account or paid plan.",
+    "Shared PostgreSQL/Supabase persistence and selected analytics/model integrations remain unfinished."
+  ]
+}
