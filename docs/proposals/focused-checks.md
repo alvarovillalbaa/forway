@@ -1,16 +1,23 @@
-# Proposed focused Forway checks
+# Focused Forway checks — results and remaining browser scope
 
-29 October 2026. **Prepared; awaiting explicit approval. No tests or browsers run.**
+Prepared 29 October 2026; updated 4 November 2026. **77 Node cases passed once;
+eight browser scenarios remain UNRUN.** The owner's repeated “approve everything
+/ keep going / do all the work” instructions authorized this focused scope and
+supersede its earlier approval-pending note.
 
-The new [Forway source](../spec.md) is separate from La Porra, Framelet and all
-other previously approved scopes. The supplied `AGENTS.md` §7 and this repo's
-instructions require explicit approval for its backend/domain and browser checks.
-Source publication and requested Vercel delivery do not supply that test approval.
+The [actual result](../results/2026/11-04/local-node-checks.md) and
+[machine receipt](../results/2026/11-04/local-node-checks.json) record source
+`14e7b44a6459602d1a5392eb313273d361db5fad`, exit 0 and all 77 exact unique case
+names/statuses with zero failures, cancellations, skips or TODOs. This closes the
+authored Node fixture scope only, not the browser, actual-network or full-product
+requirements below.
 
 ## Local Node scope
 
-Use the existing Node 24.21.0 installation without installing dependencies,
-starting a server or contacting an endpoint. Run exactly these six files:
+The original preparation named Node 24.21.0; that runtime profile was not
+executed. The one approved invocation used existing Node 26.8.2 within the
+declared Node >=22 range, without installation, server or endpoint access.
+The supplied six-file arguments were preserved exactly:
 
 ```sh
 node --test --test-reporter=tap --test-concurrency=1 --test-timeout=10000 \
@@ -35,7 +42,30 @@ bound the run. Record Node version/binary hash, source commit/hashes, all case
 names, exit/signal, raw output hash and actual pass/fail/cancel/skip/TODO totals
 in the owning dated results directory. Expected discovery is exactly 77.
 
+Acceptance requires the exact 77 unique name/status **set**, not file/reporter
+order. The original collector added an unrequested argv-order check and marked
+its own status failed when Node reported the same cases in another order. That
+original object, false order check and complete raw TAP hashes remain unchanged
+in the receipt; all mandated exit/name/status/source/resource gates passed.
+No assertion, case body or application source was changed, and no rerun occurred.
+
+The full 30-input current source inventory, all 34 tracked path/mode/blob
+identities, the original 24 non-Markdown inputs and four historical result files
+matched before and after. The runner was reaped, its isolated process group was
+absent and owned temp cleanup passed. Individual Node workers and shared-library
+dependencies were not independently inventoried; retain these proof limits.
+
+This later documentation edition changes only `AGENTS.md`, `README.md` and this
+proposal among the 30 tested inputs, leaving 27 unchanged, including all 24
+non-Markdown inputs. The raw JSON and historical receipts/seals remain unchanged.
+Reproduce the exact tested commit for runtime evidence.
+
 ## Controlled browser scope
+
+**All eight scenarios below are UNRUN.** The Node cases use authored network/API
+adapters and source facts; they do not execute real DNS/HTTP, the deployed API,
+browser HTML parsing, UI or file-transfer workflows. No browser acceptance is
+inferred from the passing fixture result or initial deployment.
 
 After the source is published and the requested Vercel release is available,
 use the existing connected Chrome profile, with authored disposable content.

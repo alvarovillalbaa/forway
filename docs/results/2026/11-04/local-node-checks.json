@@ -1,0 +1,1512 @@
+{
+  "schemaVersion": "forway.local-node-checks-receipt.v1",
+  "status": "passed",
+  "executionDateUtc": "2026-11-04",
+  "authorization": "Owner's repeated approve-everything/keep-going/do-all-the-work instructions authorize this exact focused local packet and supersede stale approval-pending notes. No live network/browser/provider/account/CI action is included.",
+  "source": {
+    "repository": "alvarovillalbaa/forway",
+    "commit": "14e7b44a6459602d1a5392eb313273d361db5fad",
+    "tree": "db2e51fc9ca15902d480e267ec6d2d925c155621",
+    "workingTreeCleanBeforeAndAfter": true,
+    "currentCompleteNonResults": {
+      "files": 30,
+      "totalBytes": 197870
+    },
+    "originalNonMarkdownInputsMatched": 24,
+    "historicalPreparation": {
+      "path": "docs/results/2026/10-29/initial-source.json",
+      "sha256": "e0b790f45bb7123bd298c85e076ae225c1f1b78fc92a017768a8dfce0e5abd36"
+    }
+  },
+  "runtime": {
+    "version": "v26.8.2",
+    "resolvedExecutable": "[Homebrew]/Cellar/node/26.8.2/bin/node",
+    "bytes": 50288,
+    "sha256": "902b6a6984d5d825829ea9064ab73b734548df37bc0683990dca31c8dc2a9253",
+    "afterSha256": "902b6a6984d5d825829ea9064ab73b734548df37bc0683990dca31c8dc2a9253",
+    "binaryUnchanged": true,
+    "profileMeaning": "New observed Node26.8.2 execution;not reproduction of historical Node24.21.0 preparation.",
+    "hostObservationAfterRun": {
+      "system": "Darwin",
+      "release": "25.5.0",
+      "machine": "arm64"
+    },
+    "binaryHashScope": "SHA256 streamed from the resolved executable before and after. Shared libraries and the complete OS/runtime dependency closure were not inventoried.",
+    "profileQualification": "This is Node26.8.2 within the declared Node>=22 range. It is not reproduction of the original Node24.21.0 preparation."
+  },
+  "acceptance": {
+    "passed": true,
+    "checks": {
+      "childExitZero": true,
+      "signalNull": true,
+      "stopNull": true,
+      "exact77UniqueNames": true,
+      "allActualStatusesOk": true,
+      "actualTotalsExact": true,
+      "actualPlan77": true,
+      "sourceGuards": true,
+      "binaryUnchanged": true,
+      "completeStreams": true,
+      "runnerReaped": true,
+      "originalProcessGroupAbsent": true,
+      "ownedCleanup": true
+    },
+    "perFile": [
+      {
+        "path": "tests/unit/fetch-page.test.mjs",
+        "expected": 24,
+        "actual": 24,
+        "passed": 24
+      },
+      {
+        "path": "tests/unit/audit-api.test.mjs",
+        "expected": 12,
+        "actual": 12,
+        "passed": 12
+      },
+      {
+        "path": "tests/unit/content.test.mjs",
+        "expected": 8,
+        "actual": 8,
+        "passed": 8
+      },
+      {
+        "path": "tests/unit/observations.test.mjs",
+        "expected": 10,
+        "actual": 10,
+        "passed": 10
+      },
+      {
+        "path": "tests/unit/audit-facts.test.mjs",
+        "expected": 8,
+        "actual": 8,
+        "passed": 8
+      },
+      {
+        "path": "tests/unit/workspace.test.mjs",
+        "expected": 15,
+        "actual": 15,
+        "passed": 15
+      }
+    ],
+    "requiredNameRule": "Exact77 unique prepared name/status SET; the proposal does not require reporter/file order.",
+    "suppliedArgvPreserved": true,
+    "retries": 0
+  },
+  "collectorQualification": {
+    "initialCollectorStatus": "failed",
+    "initialCollectorExactExpectedNameOrder": false,
+    "disposition": "Accepted ordering-independent result with original collection object retained unchanged.",
+    "explanation": "The collector added an unrequested argv-file-order assumption. Node reported the same77 unique cases in another order; no names were missing or unexpected and all statuses/totals/exit/source/resource gates passed. This is not an application failure. No test/source change or second execution occurred.",
+    "parentInstruction": "Assess the mandated exact77 unique name/status set, retain initial collector status/orderfalse and original streams/hashes."
+  },
+  "originalCollectorRecord": {
+    "schemaVersion": "forway.local-node-checks.v1",
+    "status": "failed",
+    "sourceCommit": "14e7b44a6459602d1a5392eb313273d361db5fad",
+    "startedAtUtc": "2026-11-04T12:15:09.316380+00:00",
+    "completedAtUtc": "2026-11-04T12:15:10.295750+00:00",
+    "elapsedSeconds": 0.9323072499828413,
+    "runtime": {
+      "version": "v26.8.2",
+      "resolvedExecutable": "[Homebrew]/Cellar/node/26.8.2/bin/node",
+      "bytes": 50288,
+      "sha256": "902b6a6984d5d825829ea9064ab73b734548df37bc0683990dca31c8dc2a9253",
+      "afterSha256": "902b6a6984d5d825829ea9064ab73b734548df37bc0683990dca31c8dc2a9253",
+      "binaryUnchanged": true,
+      "profileMeaning": "New observed Node26.8.2 execution;not reproduction of historical Node24.21.0 preparation."
+    },
+    "argv": [
+      "[resolved-node]",
+      "--test",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "--test-timeout=10000",
+      "tests/unit/fetch-page.test.mjs",
+      "tests/unit/audit-api.test.mjs",
+      "tests/unit/content.test.mjs",
+      "tests/unit/observations.test.mjs",
+      "tests/unit/audit-facts.test.mjs",
+      "tests/unit/workspace.test.mjs"
+    ],
+    "scope": {
+      "files": [
+        "tests/unit/fetch-page.test.mjs",
+        "tests/unit/audit-api.test.mjs",
+        "tests/unit/content.test.mjs",
+        "tests/unit/observations.test.mjs",
+        "tests/unit/audit-facts.test.mjs",
+        "tests/unit/workspace.test.mjs"
+      ],
+      "expectedCases": 77,
+      "expectedCaseNames": [
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "URL validation keeps default-port public URLs and removes only the fragment"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "unsafe URL syntax credentials ports and local hostnames fail before adapters run"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "IPv4 policy denies nonglobal special and metadata ranges including unusual URL spellings"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "IPv6 accepts conservative global unicast and rejects transition documentation and local ranges"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "the actual pinned lookup returns one approved address in both native callback forms"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "the pinned lookup cannot be constructed with a private address or wrong family"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "a successful import preserves inert HTML and returns only the selected bounded headers"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "a public literal address skips DNS but still uses its validated pin"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "any private address in an otherwise public DNS answer blocks the complete request"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "empty malformed wrong-family and oversized DNS inventories cannot dispatch"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "DNS exceptions expose a finite error without the resolver address or exception text"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "every redirect receives fresh DNS validation and all owned responses are closed"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "redirects to private addresses credentials or nondefault ports stop before another dispatch"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "four redirects can complete but a fifth redirect cannot issue a sixth request"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "a redirect loop fails immediately instead of repeatedly importing the same page"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "failed upstream statuses and non-HTML responses never become page imports"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "compression and incompatible declared charsets are rejected rather than silently reinterpreted"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "invalid UTF-8 and non-ASCII bytes under an ASCII declaration fail without replacement characters"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "body limits apply to declared bytes streamed bytes and the exact accepted boundary"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "header count bytes selected-field bounds duplicates and control characters fail closed"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "a mismatched declared length or an opaque upstream error cannot return a partial successful page"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "the owned deadline settles stalled DNS and request adapters and closes a late response"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "a stalled body is cancelled with owned response cleanup and rejected iterator cleanup is contained"
+        },
+        {
+          "source": "tests/unit/fetch-page.test.mjs",
+          "name": "input shape caller cancellation and monotonic deadlines cannot dispatch or acknowledge late work"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "successful POST returns the exact page envelope with noncacheable safe response headers"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "all unsupported methods fail before importing and advertise POST only"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "the endpoint requires JSON rather than accepting a form or arbitrary proxy payload"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "unknown fields nonrecords and accessors never become importer options"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "four-KiB limits cover declared strings buffers objects and streamed requests"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "malformed JSON invalid UTF-8 and malformed lengths fail with finite request errors"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "an actual async request-body iterator can supply bounded JSON in separate byte chunks"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "importer errors are reconstructed from finite codes instead of trusting exception messages"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "opaque asynchronous errors including throwing prototype or code getters are safely contained"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "a stalled importer is aborted and its late success cannot replace the timeout response"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "stalled body iterators settle within the handler deadline without unhandled cleanup rejections"
+        },
+        {
+          "source": "tests/unit/audit-api.test.mjs",
+          "name": "a browser disconnect after request completion aborts the outstanding fetch without writing success"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "incomplete drafts and partial rows survive normalization as detached frozen data"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "draft records reject unknown missing inherited accessor and sparse fields without evaluating getters"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "draft field and row budgets are strict while international text remains intact"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "draft URLs admit only bounded absolute HTTP(S) addresses or explicit unfinished blanks"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "both artifact exports require complete identity and rows rather than silently dropping draft intent"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "metadata escapes owner text and URL attributes without raw markup or extra scripts"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "FAQ JSON-LD round-trips the exact visible authored questions and prevents script breakout"
+        },
+        {
+          "source": "tests/unit/content.test.mjs",
+          "name": "standalone HTML retains paragraph and source content and invents no answers or facts"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "observation normalization keeps supplied evidence and canonicalizes only the hostname"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "raw shapes timestamps names domains and evidence budgets reject malformed records"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "brand and competitor detection uses literal Unicode-aware name boundaries"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "mentions and actual supplied URL citations are separate evidence"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "citations retain supplied destinations deduplicate URLs and reject hostname spoofing"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "summary rates use supplied answer count and count an owned-citing answer only once"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "empty summaries disclose zero denominator and unknown rates without invented competitors"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "campaign identity folds name case and Unicode and ignores competitor order without mixing cohorts"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "summary validation rejects forged mention or citation annotations and oversized report lists"
+        },
+        {
+          "source": "tests/unit/observations.test.mjs",
+          "name": "analysis is detached and immutable and exposes no sentiment or unsupplied visibility score"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "observed source facts produce finite SEO/GEO checks and internally consistent status counts"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "missing source metadata remains explicit without fabricating content or a visibility score"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "duplicate metadata and multiple or absent primary headings ask for review rather than inventing rules"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "robots observations distinguish explicit noindex directives from unmeasured crawl access"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "image and link checks report observed attributes without pretending to inspect decoration or destinations"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "JSON-LD checks concern observed syntax and do not certify schema truth or rich-result eligibility"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "answer and outbound-reference heuristics remain separate from actual engine citations"
+        },
+        {
+          "source": "tests/unit/audit-facts.test.mjs",
+          "name": "fact shapes and relationships are strict detached and frozen with no fallback HTML parser"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "an empty explicit workspace has no invented source draft or evidence"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "export and import preserve the actual source draft and original answer evidence"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "incomplete unsent content remains exportable without an invented destination"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "partially written question and source rows survive a recovery round trip"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "source markup remains data in a portable JSON snapshot rather than an executed preview"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "nullable and omitted source header values retain their own meaning"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "computed reports credentials and unknown persisted fields cannot enter the workspace"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "unsupported versions missing fields and malformed JSON fail with a recoverable finite error"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "source URLs reject executable schemes credentials controls and relative locations"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "source and header text reject malformed scalars and oversized Unicode input"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "evidence collections reject more than five hundred records and sparse or accessor arrays"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "invalid raw evidence is refused rather than trusted as a previously computed report"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "multiple raw cohorts survive recovery without storing or blending their computed summaries"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "record accessors and prototype-shaped extras are rejected without reading them"
+        },
+        {
+          "source": "tests/unit/workspace.test.mjs",
+          "name": "restored state is detached deeply frozen and cannot mutate a previous workspace"
+        }
+      ],
+      "historicalSeal": {
+        "path": "docs/results/2026/10-29/initial-source.json",
+        "sha256": "e0b790f45bb7123bd298c85e076ae225c1f1b78fc92a017768a8dfce0e5abd36"
+      },
+      "unchangedNonMarkdown": 24
+    },
+    "beforeSourceGuard": {
+      "head": "14e7b44a6459602d1a5392eb313273d361db5fad",
+      "indexEqualsHead": true,
+      "trackedPaths": 34,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644",
+          "gitBlob": "639fc5a961a94df75a891fbc93798d1126086c65",
+          "bytes": 88,
+          "sha256": "2343553435e5f18ef2ea1308c29380ce80942a27918471603e9420929166ec11"
+        },
+        {
+          "path": "AGENTS.md",
+          "mode": "100644",
+          "gitBlob": "dd01fe45823d74e37e510cfd5886547ff0094d75",
+          "bytes": 1768,
+          "sha256": "9bf6fa3e3d32ee43f53ffcfac094de2e4743b6fe6026dc850c5a91e14bfe6bef"
+        },
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "gitBlob": "5fb52b674e5a4d756d26a8fc3619651bb3b28798",
+          "bytes": 1072,
+          "sha256": "7edafcd8ebca4ecabedfad6e3c3d4872ce0ef6b49c3658a8b6e644cfb884d32d"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644",
+          "gitBlob": "cad0fc6185f966ac27cb2235d9a2d4771e226101",
+          "bytes": 2772,
+          "sha256": "7cec43cc11549d0b8865f6ae6668f98003129ad875ce395622849899fbfe6f6b"
+        },
+        {
+          "path": "api/audit.mjs",
+          "mode": "100644",
+          "gitBlob": "f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2",
+          "bytes": 5308,
+          "sha256": "f1c22f4d5ca2e05e85265a4a57c6ba535928ae98f0029391deb1ffa94d831d45"
+        },
+        {
+          "path": "docs/architecture.md",
+          "mode": "100644",
+          "gitBlob": "f99f57327cfd6e82acbde01d0c5c335c93d64f0c",
+          "bytes": 4509,
+          "sha256": "533a1e2902d9544b78ecb11f07e6a89a56f8b22b0271b42aeb8909445271ea4a"
+        },
+        {
+          "path": "docs/proposals/focused-checks.md",
+          "mode": "100644",
+          "gitBlob": "81830ec757dc2812727551040feecd91c7d32949",
+          "bytes": 5480,
+          "sha256": "e96050c4ef3efd538155a63218e4fbb923d4755d3622063eb494115b0a8bf37c"
+        },
+        {
+          "path": "docs/references/source-decisions.md",
+          "mode": "100644",
+          "gitBlob": "3dbe603e44c9b6a33593ec53b698b07572d18f60",
+          "bytes": 1775,
+          "sha256": "ca92fd4e8c70a0222f2c93682b2c79e7872c49522297129a6d22e1761eb3e611"
+        },
+        {
+          "path": "docs/spec.md",
+          "mode": "100644",
+          "gitBlob": "eda69547fb3d22b1021adb9c7de3813adb61b063",
+          "bytes": 2863,
+          "sha256": "957c8a4b415405c03a34260c03a0f92d201ae39ebf7681e60ad57f8655d1848e"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644",
+          "gitBlob": "e39f1d47b83ab3f929c0243a4f82f740aad2195a",
+          "bytes": 302,
+          "sha256": "6ad3adf8535a84218774357f8e6416907edc6a27b25512549554e9643abcd6e4"
+        },
+        {
+          "path": "public/check-fixtures/authored-page.html",
+          "mode": "100644",
+          "gitBlob": "babb48482ba7a3f2efa190591d5871086bab8ad6",
+          "bytes": 985,
+          "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a"
+        },
+        {
+          "path": "public/check-fixtures/header-noindex.html",
+          "mode": "100644",
+          "gitBlob": "68526399907560cd61967640b2a3d1a8925aba2d",
+          "bytes": 650,
+          "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49"
+        },
+        {
+          "path": "public/icon.svg",
+          "mode": "100644",
+          "gitBlob": "af08676cd5a3edc34900b8608f1c59070494b50a",
+          "bytes": 227,
+          "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+        },
+        {
+          "path": "public/index.html",
+          "mode": "100644",
+          "gitBlob": "6b6ee4bed8d6c42ad42625ee1c7c8868832563fd",
+          "bytes": 14433,
+          "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+        },
+        {
+          "path": "public/src/app.mjs",
+          "mode": "100644",
+          "gitBlob": "a54de16dd42e46d567cf1fc9ac8c47c8cd6b40c9",
+          "bytes": 32992,
+          "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195"
+        },
+        {
+          "path": "public/src/audit.mjs",
+          "mode": "100644",
+          "gitBlob": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008",
+          "bytes": 14928,
+          "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+        },
+        {
+          "path": "public/src/content.mjs",
+          "mode": "100644",
+          "gitBlob": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db",
+          "bytes": 5727,
+          "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+        },
+        {
+          "path": "public/src/observations.mjs",
+          "mode": "100644",
+          "gitBlob": "7a77d69ff8ec22ba3f7e0a38241337542a6f25e1",
+          "bytes": 7243,
+          "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247"
+        },
+        {
+          "path": "public/src/ui.mjs",
+          "mode": "100644",
+          "gitBlob": "42f3cc9af3a97a677d911d07b099e50d35b876c8",
+          "bytes": 1584,
+          "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+        },
+        {
+          "path": "public/src/workspace.mjs",
+          "mode": "100644",
+          "gitBlob": "0c92702583abd186d04c9179ee47ea29d09ad0cc",
+          "bytes": 3956,
+          "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+        },
+        {
+          "path": "public/styles.css",
+          "mode": "100644",
+          "gitBlob": "50b8676993ec12c0e65221e507314a3afafb6883",
+          "bytes": 21002,
+          "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501"
+        },
+        {
+          "path": "scripts/check.mjs",
+          "mode": "100644",
+          "gitBlob": "816261bb073958fed58b8606cd7a1f84fe9011bb",
+          "bytes": 1682,
+          "sha256": "33761dc5b229808915392db88c20422132b09116bd83dfa76e5e32223096b49c"
+        },
+        {
+          "path": "src/fetch-page.mjs",
+          "mode": "100644",
+          "gitBlob": "cf6523bc812275e191d8ab963584565c4a40ba8c",
+          "bytes": 14971,
+          "sha256": "4bf3e32e7c068e23a5478d11f4d0c695c65da3422bf4a1fcc34096397fde735b"
+        },
+        {
+          "path": "tests/unit/audit-api.test.mjs",
+          "mode": "100644",
+          "gitBlob": "4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea",
+          "bytes": 8207,
+          "sha256": "2d894129af7ef5f17c368149b3069b87040918b3fa5680c219ab5e39be002cc1"
+        },
+        {
+          "path": "tests/unit/audit-facts.test.mjs",
+          "mode": "100644",
+          "gitBlob": "846b2abb36eac1e4f54d8f7eee760a2a61f0f370",
+          "bytes": 5131,
+          "sha256": "62e3878d806cb702c0e8740e13ef4b2e7dd42f667c1a92f444d6d54c39975b86"
+        },
+        {
+          "path": "tests/unit/content.test.mjs",
+          "mode": "100644",
+          "gitBlob": "9725e39eefaf692d82dba0f2a56f6faa27f59939",
+          "bytes": 6915,
+          "sha256": "340c3195d9c09c302918be2fc3dff60af8ab3ba366c7836b8ce342f0728bc6a9"
+        },
+        {
+          "path": "tests/unit/fetch-page.test.mjs",
+          "mode": "100644",
+          "gitBlob": "8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4",
+          "bytes": 14790,
+          "sha256": "c95e7dc41d5887472fa0064aebbc04720d61edc7ca60fc886b407a8fd44b8ec4"
+        },
+        {
+          "path": "tests/unit/observations.test.mjs",
+          "mode": "100644",
+          "gitBlob": "a44e87c77b63e2360d1a0801c7bf5371c669174b",
+          "bytes": 7505,
+          "sha256": "98181eb1cafdfad311dfe7672994061b6891e3fe2cf02148969d45d17623089d"
+        },
+        {
+          "path": "tests/unit/workspace.test.mjs",
+          "mode": "100644",
+          "gitBlob": "4184581cf98118e690a0ae89a414819438f1de2e",
+          "bytes": 8211,
+          "sha256": "20b22d8a77c5d40f98ddcd62006984ccaadee9ae5fe364b5270cf3c2e6d8cb91"
+        },
+        {
+          "path": "vercel.json",
+          "mode": "100644",
+          "gitBlob": "187bedfe15176ce386d63a814fb6674015f8076d",
+          "bytes": 794,
+          "sha256": "0fa62b4769594dcc71ab6bd1d080abde6f84234e7eb952202fa8cd5587b30065"
+        }
+      ],
+      "fileCount": 30,
+      "totalBytes": 197870,
+      "historicalResults": [
+        {
+          "path": "docs/results/2026/10-29/initial-delivery.json",
+          "mode": "100644",
+          "gitBlob": "cd7753c325449aa620f0d5dad6dd75c5899589db",
+          "bytes": 7086,
+          "sha256": "3e3ef3213408a9c8342fe609dc2e70782151665288c4c21a7c7f605a0ff91f7e"
+        },
+        {
+          "path": "docs/results/2026/10-29/initial-delivery.md",
+          "mode": "100644",
+          "gitBlob": "a61acb55df47e466a44d6453ef191792b41b3030",
+          "bytes": 4221,
+          "sha256": "abfc648bc3c913432fa2eb758fa0f647008ab4999c8c2a26bf92d879484951ce"
+        },
+        {
+          "path": "docs/results/2026/10-29/initial-source.json",
+          "mode": "100644",
+          "gitBlob": "0834c5697449351ef85220aa49e0c9b1253bfd97",
+          "bytes": 14456,
+          "sha256": "e0b790f45bb7123bd298c85e076ae225c1f1b78fc92a017768a8dfce0e5abd36"
+        },
+        {
+          "path": "docs/results/2026/10-29/initial-source.md",
+          "mode": "100644",
+          "gitBlob": "fa8002fdf9a8a8ccd5171254c59802546b94984a",
+          "bytes": 5454,
+          "sha256": "4c128ce46bae835bd6517e83f8634c3f5ef3b74b7ef35ef70497ee11dc258a34"
+        }
+      ]
+    },
+    "afterSourceGuard": {
+      "passed": true,
+      "snapshot": {
+        "head": "14e7b44a6459602d1a5392eb313273d361db5fad",
+        "indexEqualsHead": true,
+        "trackedPaths": 34,
+        "files": [
+          {
+            "path": ".gitignore",
+            "mode": "100644",
+            "gitBlob": "639fc5a961a94df75a891fbc93798d1126086c65",
+            "bytes": 88,
+            "sha256": "2343553435e5f18ef2ea1308c29380ce80942a27918471603e9420929166ec11"
+          },
+          {
+            "path": "AGENTS.md",
+            "mode": "100644",
+            "gitBlob": "dd01fe45823d74e37e510cfd5886547ff0094d75",
+            "bytes": 1768,
+            "sha256": "9bf6fa3e3d32ee43f53ffcfac094de2e4743b6fe6026dc850c5a91e14bfe6bef"
+          },
+          {
+            "path": "LICENSE",
+            "mode": "100644",
+            "gitBlob": "5fb52b674e5a4d756d26a8fc3619651bb3b28798",
+            "bytes": 1072,
+            "sha256": "7edafcd8ebca4ecabedfad6e3c3d4872ce0ef6b49c3658a8b6e644cfb884d32d"
+          },
+          {
+            "path": "README.md",
+            "mode": "100644",
+            "gitBlob": "cad0fc6185f966ac27cb2235d9a2d4771e226101",
+            "bytes": 2772,
+            "sha256": "7cec43cc11549d0b8865f6ae6668f98003129ad875ce395622849899fbfe6f6b"
+          },
+          {
+            "path": "api/audit.mjs",
+            "mode": "100644",
+            "gitBlob": "f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2",
+            "bytes": 5308,
+            "sha256": "f1c22f4d5ca2e05e85265a4a57c6ba535928ae98f0029391deb1ffa94d831d45"
+          },
+          {
+            "path": "docs/architecture.md",
+            "mode": "100644",
+            "gitBlob": "f99f57327cfd6e82acbde01d0c5c335c93d64f0c",
+            "bytes": 4509,
+            "sha256": "533a1e2902d9544b78ecb11f07e6a89a56f8b22b0271b42aeb8909445271ea4a"
+          },
+          {
+            "path": "docs/proposals/focused-checks.md",
+            "mode": "100644",
+            "gitBlob": "81830ec757dc2812727551040feecd91c7d32949",
+            "bytes": 5480,
+            "sha256": "e96050c4ef3efd538155a63218e4fbb923d4755d3622063eb494115b0a8bf37c"
+          },
+          {
+            "path": "docs/references/source-decisions.md",
+            "mode": "100644",
+            "gitBlob": "3dbe603e44c9b6a33593ec53b698b07572d18f60",
+            "bytes": 1775,
+            "sha256": "ca92fd4e8c70a0222f2c93682b2c79e7872c49522297129a6d22e1761eb3e611"
+          },
+          {
+            "path": "docs/spec.md",
+            "mode": "100644",
+            "gitBlob": "eda69547fb3d22b1021adb9c7de3813adb61b063",
+            "bytes": 2863,
+            "sha256": "957c8a4b415405c03a34260c03a0f92d201ae39ebf7681e60ad57f8655d1848e"
+          },
+          {
+            "path": "package.json",
+            "mode": "100644",
+            "gitBlob": "e39f1d47b83ab3f929c0243a4f82f740aad2195a",
+            "bytes": 302,
+            "sha256": "6ad3adf8535a84218774357f8e6416907edc6a27b25512549554e9643abcd6e4"
+          },
+          {
+            "path": "public/check-fixtures/authored-page.html",
+            "mode": "100644",
+            "gitBlob": "babb48482ba7a3f2efa190591d5871086bab8ad6",
+            "bytes": 985,
+            "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a"
+          },
+          {
+            "path": "public/check-fixtures/header-noindex.html",
+            "mode": "100644",
+            "gitBlob": "68526399907560cd61967640b2a3d1a8925aba2d",
+            "bytes": 650,
+            "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49"
+          },
+          {
+            "path": "public/icon.svg",
+            "mode": "100644",
+            "gitBlob": "af08676cd5a3edc34900b8608f1c59070494b50a",
+            "bytes": 227,
+            "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+          },
+          {
+            "path": "public/index.html",
+            "mode": "100644",
+            "gitBlob": "6b6ee4bed8d6c42ad42625ee1c7c8868832563fd",
+            "bytes": 14433,
+            "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+          },
+          {
+            "path": "public/src/app.mjs",
+            "mode": "100644",
+            "gitBlob": "a54de16dd42e46d567cf1fc9ac8c47c8cd6b40c9",
+            "bytes": 32992,
+            "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195"
+          },
+          {
+            "path": "public/src/audit.mjs",
+            "mode": "100644",
+            "gitBlob": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008",
+            "bytes": 14928,
+            "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+          },
+          {
+            "path": "public/src/content.mjs",
+            "mode": "100644",
+            "gitBlob": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db",
+            "bytes": 5727,
+            "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+          },
+          {
+            "path": "public/src/observations.mjs",
+            "mode": "100644",
+            "gitBlob": "7a77d69ff8ec22ba3f7e0a38241337542a6f25e1",
+            "bytes": 7243,
+            "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247"
+          },
+          {
+            "path": "public/src/ui.mjs",
+            "mode": "100644",
+            "gitBlob": "42f3cc9af3a97a677d911d07b099e50d35b876c8",
+            "bytes": 1584,
+            "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+          },
+          {
+            "path": "public/src/workspace.mjs",
+            "mode": "100644",
+            "gitBlob": "0c92702583abd186d04c9179ee47ea29d09ad0cc",
+            "bytes": 3956,
+            "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+          },
+          {
+            "path": "public/styles.css",
+            "mode": "100644",
+            "gitBlob": "50b8676993ec12c0e65221e507314a3afafb6883",
+            "bytes": 21002,
+            "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501"
+          },
+          {
+            "path": "scripts/check.mjs",
+            "mode": "100644",
+            "gitBlob": "816261bb073958fed58b8606cd7a1f84fe9011bb",
+            "bytes": 1682,
+            "sha256": "33761dc5b229808915392db88c20422132b09116bd83dfa76e5e32223096b49c"
+          },
+          {
+            "path": "src/fetch-page.mjs",
+            "mode": "100644",
+            "gitBlob": "cf6523bc812275e191d8ab963584565c4a40ba8c",
+            "bytes": 14971,
+            "sha256": "4bf3e32e7c068e23a5478d11f4d0c695c65da3422bf4a1fcc34096397fde735b"
+          },
+          {
+            "path": "tests/unit/audit-api.test.mjs",
+            "mode": "100644",
+            "gitBlob": "4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea",
+            "bytes": 8207,
+            "sha256": "2d894129af7ef5f17c368149b3069b87040918b3fa5680c219ab5e39be002cc1"
+          },
+          {
+            "path": "tests/unit/audit-facts.test.mjs",
+            "mode": "100644",
+            "gitBlob": "846b2abb36eac1e4f54d8f7eee760a2a61f0f370",
+            "bytes": 5131,
+            "sha256": "62e3878d806cb702c0e8740e13ef4b2e7dd42f667c1a92f444d6d54c39975b86"
+          },
+          {
+            "path": "tests/unit/content.test.mjs",
+            "mode": "100644",
+            "gitBlob": "9725e39eefaf692d82dba0f2a56f6faa27f59939",
+            "bytes": 6915,
+            "sha256": "340c3195d9c09c302918be2fc3dff60af8ab3ba366c7836b8ce342f0728bc6a9"
+          },
+          {
+            "path": "tests/unit/fetch-page.test.mjs",
+            "mode": "100644",
+            "gitBlob": "8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4",
+            "bytes": 14790,
+            "sha256": "c95e7dc41d5887472fa0064aebbc04720d61edc7ca60fc886b407a8fd44b8ec4"
+          },
+          {
+            "path": "tests/unit/observations.test.mjs",
+            "mode": "100644",
+            "gitBlob": "a44e87c77b63e2360d1a0801c7bf5371c669174b",
+            "bytes": 7505,
+            "sha256": "98181eb1cafdfad311dfe7672994061b6891e3fe2cf02148969d45d17623089d"
+          },
+          {
+            "path": "tests/unit/workspace.test.mjs",
+            "mode": "100644",
+            "gitBlob": "4184581cf98118e690a0ae89a414819438f1de2e",
+            "bytes": 8211,
+            "sha256": "20b22d8a77c5d40f98ddcd62006984ccaadee9ae5fe364b5270cf3c2e6d8cb91"
+          },
+          {
+            "path": "vercel.json",
+            "mode": "100644",
+            "gitBlob": "187bedfe15176ce386d63a814fb6674015f8076d",
+            "bytes": 794,
+            "sha256": "0fa62b4769594dcc71ab6bd1d080abde6f84234e7eb952202fa8cd5587b30065"
+          }
+        ],
+        "fileCount": 30,
+        "totalBytes": 197870,
+        "historicalResults": [
+          {
+            "path": "docs/results/2026/10-29/initial-delivery.json",
+            "mode": "100644",
+            "gitBlob": "cd7753c325449aa620f0d5dad6dd75c5899589db",
+            "bytes": 7086,
+            "sha256": "3e3ef3213408a9c8342fe609dc2e70782151665288c4c21a7c7f605a0ff91f7e"
+          },
+          {
+            "path": "docs/results/2026/10-29/initial-delivery.md",
+            "mode": "100644",
+            "gitBlob": "a61acb55df47e466a44d6453ef191792b41b3030",
+            "bytes": 4221,
+            "sha256": "abfc648bc3c913432fa2eb758fa0f647008ab4999c8c2a26bf92d879484951ce"
+          },
+          {
+            "path": "docs/results/2026/10-29/initial-source.json",
+            "mode": "100644",
+            "gitBlob": "0834c5697449351ef85220aa49e0c9b1253bfd97",
+            "bytes": 14456,
+            "sha256": "e0b790f45bb7123bd298c85e076ae225c1f1b78fc92a017768a8dfce0e5abd36"
+          },
+          {
+            "path": "docs/results/2026/10-29/initial-source.md",
+            "mode": "100644",
+            "gitBlob": "fa8002fdf9a8a8ccd5171254c59802546b94984a",
+            "bytes": 5454,
+            "sha256": "4c128ce46bae835bd6517e83f8634c3f5ef3b74b7ef35ef70497ee11dc258a34"
+          }
+        ]
+      },
+      "error": null
+    },
+    "process": {
+      "exitCode": 0,
+      "signal": null,
+      "stop": null,
+      "wallLimitSeconds": 120,
+      "perCaseMilliseconds": 10000,
+      "perStreamByteLimit": 131072,
+      "termToKillSeconds": 3,
+      "postKillDrainSeconds": 3,
+      "termSent": false,
+      "killSent": false,
+      "directRunnerReaped": true,
+      "originalProcessGroupAbsent": true,
+      "pipesReachedEof": [
+        true,
+        true
+      ],
+      "drainComplete": true
+    },
+    "streams": {
+      "stdout": {
+        "observedBytes": 18661,
+        "capturedBytes": 18661,
+        "observedSha256": "5c5bc2361867d312b22940d8fa126024abc366506cc800e0d7d3341404d5240f",
+        "capturedSha256": "5c5bc2361867d312b22940d8fa126024abc366506cc800e0d7d3341404d5240f",
+        "complete": true,
+        "text": "TAP version 13\n# Subtest: successful POST returns the exact page envelope with noncacheable safe response headers\nok 1 - successful POST returns the exact page envelope with noncacheable safe response headers\n  ---\n  duration_ms: 2.457958\n  type: 'test'\n  ...\n# Subtest: all unsupported methods fail before importing and advertise POST only\nok 2 - all unsupported methods fail before importing and advertise POST only\n  ---\n  duration_ms: 0.395042\n  type: 'test'\n  ...\n# Subtest: the endpoint requires JSON rather than accepting a form or arbitrary proxy payload\nok 3 - the endpoint requires JSON rather than accepting a form or arbitrary proxy payload\n  ---\n  duration_ms: 0.387208\n  type: 'test'\n  ...\n# Subtest: unknown fields nonrecords and accessors never become importer options\nok 4 - unknown fields nonrecords and accessors never become importer options\n  ---\n  duration_ms: 1.001333\n  type: 'test'\n  ...\n# Subtest: four-KiB limits cover declared strings buffers objects and streamed requests\nok 5 - four-KiB limits cover declared strings buffers objects and streamed requests\n  ---\n  duration_ms: 0.802625\n  type: 'test'\n  ...\n# Subtest: malformed JSON invalid UTF-8 and malformed lengths fail with finite request errors\nok 6 - malformed JSON invalid UTF-8 and malformed lengths fail with finite request errors\n  ---\n  duration_ms: 0.308583\n  type: 'test'\n  ...\n# Subtest: an actual async request-body iterator can supply bounded JSON in separate byte chunks\nok 7 - an actual async request-body iterator can supply bounded JSON in separate byte chunks\n  ---\n  duration_ms: 0.353458\n  type: 'test'\n  ...\n# Subtest: importer errors are reconstructed from finite codes instead of trusting exception messages\nok 8 - importer errors are reconstructed from finite codes instead of trusting exception messages\n  ---\n  duration_ms: 0.254792\n  type: 'test'\n  ...\n# Subtest: opaque asynchronous errors including throwing prototype or code getters are safely contained\nok 9 - opaque asynchronous errors including throwing prototype or code getters are safely contained\n  ---\n  duration_ms: 0.30475\n  type: 'test'\n  ...\n# Subtest: a stalled importer is aborted and its late success cannot replace the timeout response\nok 10 - a stalled importer is aborted and its late success cannot replace the timeout response\n  ---\n  duration_ms: 18.910708\n  type: 'test'\n  ...\n# Subtest: stalled body iterators settle within the handler deadline without unhandled cleanup rejections\nok 11 - stalled body iterators settle within the handler deadline without unhandled cleanup rejections\n  ---\n  duration_ms: 16.904209\n  type: 'test'\n  ...\n# Subtest: a browser disconnect after request completion aborts the outstanding fetch without writing success\nok 12 - a browser disconnect after request completion aborts the outstanding fetch without writing success\n  ---\n  duration_ms: 0.489917\n  type: 'test'\n  ...\n# Subtest: observed source facts produce finite SEO/GEO checks and internally consistent status counts\nok 13 - observed source facts produce finite SEO/GEO checks and internally consistent status counts\n  ---\n  duration_ms: 2.378084\n  type: 'test'\n  ...\n# Subtest: missing source metadata remains explicit without fabricating content or a visibility score\nok 14 - missing source metadata remains explicit without fabricating content or a visibility score\n  ---\n  duration_ms: 0.279833\n  type: 'test'\n  ...\n# Subtest: duplicate metadata and multiple or absent primary headings ask for review rather than inventing rules\nok 15 - duplicate metadata and multiple or absent primary headings ask for review rather than inventing rules\n  ---\n  duration_ms: 0.25725\n  type: 'test'\n  ...\n# Subtest: robots observations distinguish explicit noindex directives from unmeasured crawl access\nok 16 - robots observations distinguish explicit noindex directives from unmeasured crawl access\n  ---\n  duration_ms: 1.263792\n  type: 'test'\n  ...\n# Subtest: image and link checks report observed attributes without pretending to inspect decoration or destinations\nok 17 - image and link checks report observed attributes without pretending to inspect decoration or destinations\n  ---\n  duration_ms: 0.268209\n  type: 'test'\n  ...\n# Subtest: JSON-LD checks concern observed syntax and do not certify schema truth or rich-result eligibility\nok 18 - JSON-LD checks concern observed syntax and do not certify schema truth or rich-result eligibility\n  ---\n  duration_ms: 0.170625\n  type: 'test'\n  ...\n# Subtest: answer and outbound-reference heuristics remain separate from actual engine citations\nok 19 - answer and outbound-reference heuristics remain separate from actual engine citations\n  ---\n  duration_ms: 0.166167\n  type: 'test'\n  ...\n# Subtest: fact shapes and relationships are strict detached and frozen with no fallback HTML parser\nok 20 - fact shapes and relationships are strict detached and frozen with no fallback HTML parser\n  ---\n  duration_ms: 1.67775\n  type: 'test'\n  ...\n# Subtest: incomplete drafts and partial rows survive normalization as detached frozen data\nok 21 - incomplete drafts and partial rows survive normalization as detached frozen data\n  ---\n  duration_ms: 1.508208\n  type: 'test'\n  ...\n# Subtest: draft records reject unknown missing inherited accessor and sparse fields without evaluating getters\nok 22 - draft records reject unknown missing inherited accessor and sparse fields without evaluating getters\n  ---\n  duration_ms: 0.625041\n  type: 'test'\n  ...\n# Subtest: draft field and row budgets are strict while international text remains intact\nok 23 - draft field and row budgets are strict while international text remains intact\n  ---\n  duration_ms: 2.231625\n  type: 'test'\n  ...\n# Subtest: draft URLs admit only bounded absolute HTTP(S) addresses or explicit unfinished blanks\nok 24 - draft URLs admit only bounded absolute HTTP(S) addresses or explicit unfinished blanks\n  ---\n  duration_ms: 0.622167\n  type: 'test'\n  ...\n# Subtest: both artifact exports require complete identity and rows rather than silently dropping draft intent\nok 25 - both artifact exports require complete identity and rows rather than silently dropping draft intent\n  ---\n  duration_ms: 0.435375\n  type: 'test'\n  ...\n# Subtest: metadata escapes owner text and URL attributes without raw markup or extra scripts\nok 26 - metadata escapes owner text and URL attributes without raw markup or extra scripts\n  ---\n  duration_ms: 0.375292\n  type: 'test'\n  ...\n# Subtest: FAQ JSON-LD round-trips the exact visible authored questions and prevents script breakout\nok 27 - FAQ JSON-LD round-trips the exact visible authored questions and prevents script breakout\n  ---\n  duration_ms: 1.291416\n  type: 'test'\n  ...\n# Subtest: standalone HTML retains paragraph and source content and invents no answers or facts\nok 28 - standalone HTML retains paragraph and source content and invents no answers or facts\n  ---\n  duration_ms: 0.669792\n  type: 'test'\n  ...\n# Subtest: URL validation keeps default-port public URLs and removes only the fragment\nok 29 - URL validation keeps default-port public URLs and removes only the fragment\n  ---\n  duration_ms: 6.215166\n  type: 'test'\n  ...\n# Subtest: unsafe URL syntax credentials ports and local hostnames fail before adapters run\nok 30 - unsafe URL syntax credentials ports and local hostnames fail before adapters run\n  ---\n  duration_ms: 3.062541\n  type: 'test'\n  ...\n# Subtest: IPv4 policy denies nonglobal special and metadata ranges including unusual URL spellings\nok 31 - IPv4 policy denies nonglobal special and metadata ranges including unusual URL spellings\n  ---\n  duration_ms: 1.058917\n  type: 'test'\n  ...\n# Subtest: IPv6 accepts conservative global unicast and rejects transition documentation and local ranges\nok 32 - IPv6 accepts conservative global unicast and rejects transition documentation and local ranges\n  ---\n  duration_ms: 1.023292\n  type: 'test'\n  ...\n# Subtest: the actual pinned lookup returns one approved address in both native callback forms\nok 33 - the actual pinned lookup returns one approved address in both native callback forms\n  ---\n  duration_ms: 0.751667\n  type: 'test'\n  ...\n# Subtest: the pinned lookup cannot be constructed with a private address or wrong family\nok 34 - the pinned lookup cannot be constructed with a private address or wrong family\n  ---\n  duration_ms: 0.225791\n  type: 'test'\n  ...\n# Subtest: a successful import preserves inert HTML and returns only the selected bounded headers\nok 35 - a successful import preserves inert HTML and returns only the selected bounded headers\n  ---\n  duration_ms: 5.0355\n  type: 'test'\n  ...\n# Subtest: a public literal address skips DNS but still uses its validated pin\nok 36 - a public literal address skips DNS but still uses its validated pin\n  ---\n  duration_ms: 0.35525\n  type: 'test'\n  ...\n# Subtest: any private address in an otherwise public DNS answer blocks the complete request\nok 37 - any private address in an otherwise public DNS answer blocks the complete request\n  ---\n  duration_ms: 0.366667\n  type: 'test'\n  ...\n# Subtest: empty malformed wrong-family and oversized DNS inventories cannot dispatch\nok 38 - empty malformed wrong-family and oversized DNS inventories cannot dispatch\n  ---\n  duration_ms: 0.602667\n  type: 'test'\n  ...\n# Subtest: DNS exceptions expose a finite error without the resolver address or exception text\nok 39 - DNS exceptions expose a finite error without the resolver address or exception text\n  ---\n  duration_ms: 0.263041\n  type: 'test'\n  ...\n# Subtest: every redirect receives fresh DNS validation and all owned responses are closed\nok 40 - every redirect receives fresh DNS validation and all owned responses are closed\n  ---\n  duration_ms: 0.405\n  type: 'test'\n  ...\n# Subtest: redirects to private addresses credentials or nondefault ports stop before another dispatch\nok 41 - redirects to private addresses credentials or nondefault ports stop before another dispatch\n  ---\n  duration_ms: 0.563417\n  type: 'test'\n  ...\n# Subtest: four redirects can complete but a fifth redirect cannot issue a sixth request\nok 42 - four redirects can complete but a fifth redirect cannot issue a sixth request\n  ---\n  duration_ms: 1.161375\n  type: 'test'\n  ...\n# Subtest: a redirect loop fails immediately instead of repeatedly importing the same page\nok 43 - a redirect loop fails immediately instead of repeatedly importing the same page\n  ---\n  duration_ms: 0.207708\n  type: 'test'\n  ...\n# Subtest: failed upstream statuses and non-HTML responses never become page imports\nok 44 - failed upstream statuses and non-HTML responses never become page imports\n  ---\n  duration_ms: 1.107208\n  type: 'test'\n  ...\n# Subtest: compression and incompatible declared charsets are rejected rather than silently reinterpreted\nok 45 - compression and incompatible declared charsets are rejected rather than silently reinterpreted\n  ---\n  duration_ms: 0.393417\n  type: 'test'\n  ...\n# Subtest: invalid UTF-8 and non-ASCII bytes under an ASCII declaration fail without replacement characters\nok 46 - invalid UTF-8 and non-ASCII bytes under an ASCII declaration fail without replacement characters\n  ---\n  duration_ms: 0.340666\n  type: 'test'\n  ...\n# Subtest: body limits apply to declared bytes streamed bytes and the exact accepted boundary\nok 47 - body limits apply to declared bytes streamed bytes and the exact accepted boundary\n  ---\n  duration_ms: 1.12525\n  type: 'test'\n  ...\n# Subtest: header count bytes selected-field bounds duplicates and control characters fail closed\nok 48 - header count bytes selected-field bounds duplicates and control characters fail closed\n  ---\n  duration_ms: 0.601375\n  type: 'test'\n  ...\n# Subtest: a mismatched declared length or an opaque upstream error cannot return a partial successful page\nok 49 - a mismatched declared length or an opaque upstream error cannot return a partial successful page\n  ---\n  duration_ms: 0.330084\n  type: 'test'\n  ...\n# Subtest: the owned deadline settles stalled DNS and request adapters and closes a late response\nok 50 - the owned deadline settles stalled DNS and request adapters and closes a late response\n  ---\n  duration_ms: 33.960084\n  type: 'test'\n  ...\n# Subtest: a stalled body is cancelled with owned response cleanup and rejected iterator cleanup is contained\nok 51 - a stalled body is cancelled with owned response cleanup and rejected iterator cleanup is contained\n  ---\n  duration_ms: 16.67625\n  type: 'test'\n  ...\n# Subtest: input shape caller cancellation and monotonic deadlines cannot dispatch or acknowledge late work\nok 52 - input shape caller cancellation and monotonic deadlines cannot dispatch or acknowledge late work\n  ---\n  duration_ms: 60.619333\n  type: 'test'\n  ...\n# Subtest: observation normalization keeps supplied evidence and canonicalizes only the hostname\nok 53 - observation normalization keeps supplied evidence and canonicalizes only the hostname\n  ---\n  duration_ms: 11.368709\n  type: 'test'\n  ...\n# Subtest: raw shapes timestamps names domains and evidence budgets reject malformed records\nok 54 - raw shapes timestamps names domains and evidence budgets reject malformed records\n  ---\n  duration_ms: 0.82075\n  type: 'test'\n  ...\n# Subtest: brand and competitor detection uses literal Unicode-aware name boundaries\nok 55 - brand and competitor detection uses literal Unicode-aware name boundaries\n  ---\n  duration_ms: 4.223417\n  type: 'test'\n  ...\n# Subtest: mentions and actual supplied URL citations are separate evidence\nok 56 - mentions and actual supplied URL citations are separate evidence\n  ---\n  duration_ms: 0.339541\n  type: 'test'\n  ...\n# Subtest: citations retain supplied destinations deduplicate URLs and reject hostname spoofing\nok 57 - citations retain supplied destinations deduplicate URLs and reject hostname spoofing\n  ---\n  duration_ms: 0.3865\n  type: 'test'\n  ...\n# Subtest: summary rates use supplied answer count and count an owned-citing answer only once\nok 58 - summary rates use supplied answer count and count an owned-citing answer only once\n  ---\n  duration_ms: 0.799459\n  type: 'test'\n  ...\n# Subtest: empty summaries disclose zero denominator and unknown rates without invented competitors\nok 59 - empty summaries disclose zero denominator and unknown rates without invented competitors\n  ---\n  duration_ms: 0.1275\n  type: 'test'\n  ...\n# Subtest: campaign identity folds name case and Unicode and ignores competitor order without mixing cohorts\nok 60 - campaign identity folds name case and Unicode and ignores competitor order without mixing cohorts\n  ---\n  duration_ms: 1.249125\n  type: 'test'\n  ...\n# Subtest: summary validation rejects forged mention or citation annotations and oversized report lists\nok 61 - summary validation rejects forged mention or citation annotations and oversized report lists\n  ---\n  duration_ms: 7.726667\n  type: 'test'\n  ...\n# Subtest: analysis is detached and immutable and exposes no sentiment or unsupplied visibility score\nok 62 - analysis is detached and immutable and exposes no sentiment or unsupplied visibility score\n  ---\n  duration_ms: 0.65975\n  type: 'test'\n  ...\n# Subtest: an empty explicit workspace has no invented source draft or evidence\nok 63 - an empty explicit workspace has no invented source draft or evidence\n  ---\n  duration_ms: 1.744208\n  type: 'test'\n  ...\n# Subtest: export and import preserve the actual source draft and original answer evidence\nok 64 - export and import preserve the actual source draft and original answer evidence\n  ---\n  duration_ms: 2.295584\n  type: 'test'\n  ...\n# Subtest: incomplete unsent content remains exportable without an invented destination\nok 65 - incomplete unsent content remains exportable without an invented destination\n  ---\n  duration_ms: 1.033875\n  type: 'test'\n  ...\n# Subtest: partially written question and source rows survive a recovery round trip\nok 66 - partially written question and source rows survive a recovery round trip\n  ---\n  duration_ms: 0.41125\n  type: 'test'\n  ...\n# Subtest: source markup remains data in a portable JSON snapshot rather than an executed preview\nok 67 - source markup remains data in a portable JSON snapshot rather than an executed preview\n  ---\n  duration_ms: 0.369041\n  type: 'test'\n  ...\n# Subtest: nullable and omitted source header values retain their own meaning\nok 68 - nullable and omitted source header values retain their own meaning\n  ---\n  duration_ms: 0.920541\n  type: 'test'\n  ...\n# Subtest: computed reports credentials and unknown persisted fields cannot enter the workspace\nok 69 - computed reports credentials and unknown persisted fields cannot enter the workspace\n  ---\n  duration_ms: 0.617667\n  type: 'test'\n  ...\n# Subtest: unsupported versions missing fields and malformed JSON fail with a recoverable finite error\nok 70 - unsupported versions missing fields and malformed JSON fail with a recoverable finite error\n  ---\n  duration_ms: 0.249125\n  type: 'test'\n  ...\n# Subtest: source URLs reject executable schemes credentials controls and relative locations\nok 71 - source URLs reject executable schemes credentials controls and relative locations\n  ---\n  duration_ms: 0.390625\n  type: 'test'\n  ...\n# Subtest: source and header text reject malformed scalars and oversized Unicode input\nok 72 - source and header text reject malformed scalars and oversized Unicode input\n  ---\n  duration_ms: 3.430208\n  type: 'test'\n  ...\n# Subtest: evidence collections reject more than five hundred records and sparse or accessor arrays\nok 73 - evidence collections reject more than five hundred records and sparse or accessor arrays\n  ---\n  duration_ms: 0.396708\n  type: 'test'\n  ...\n# Subtest: invalid raw evidence is refused rather than trusted as a previously computed report\nok 74 - invalid raw evidence is refused rather than trusted as a previously computed report\n  ---\n  duration_ms: 0.333875\n  type: 'test'\n  ...\n# Subtest: multiple raw cohorts survive recovery without storing or blending their computed summaries\nok 75 - multiple raw cohorts survive recovery without storing or blending their computed summaries\n  ---\n  duration_ms: 0.298292\n  type: 'test'\n  ...\n# Subtest: record accessors and prototype-shaped extras are rejected without reading them\nok 76 - record accessors and prototype-shaped extras are rejected without reading them\n  ---\n  duration_ms: 0.137125\n  type: 'test'\n  ...\n# Subtest: restored state is detached deeply frozen and cannot mutate a previous workspace\nok 77 - restored state is detached deeply frozen and cannot mutate a previous workspace\n  ---\n  duration_ms: 0.395583\n  type: 'test'\n  ...\n1..77\n# tests 77\n# suites 0\n# pass 77\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 767.987667\n",
+        "textMeaning": "Complete captured UTF8 output with only repository/owned-temp/resolved-node absolute prefixes replaced;original hashes precede this projection."
+      },
+      "stderr": {
+        "observedBytes": 0,
+        "capturedBytes": 0,
+        "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "capturedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "complete": true,
+        "text": "",
+        "textMeaning": "Complete captured UTF8 output with only repository/owned-temp/resolved-node absolute prefixes replaced;original hashes precede this projection."
+      }
+    },
+    "tap": {
+      "plan": [
+        "77"
+      ],
+      "totals": {
+        "tests": 77,
+        "suites": 0,
+        "pass": 77,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "cases": [
+        {
+          "number": 1,
+          "name": "successful POST returns the exact page envelope with noncacheable safe response headers",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 2,
+          "name": "all unsupported methods fail before importing and advertise POST only",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 3,
+          "name": "the endpoint requires JSON rather than accepting a form or arbitrary proxy payload",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 4,
+          "name": "unknown fields nonrecords and accessors never become importer options",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 5,
+          "name": "four-KiB limits cover declared strings buffers objects and streamed requests",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 6,
+          "name": "malformed JSON invalid UTF-8 and malformed lengths fail with finite request errors",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 7,
+          "name": "an actual async request-body iterator can supply bounded JSON in separate byte chunks",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 8,
+          "name": "importer errors are reconstructed from finite codes instead of trusting exception messages",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 9,
+          "name": "opaque asynchronous errors including throwing prototype or code getters are safely contained",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 10,
+          "name": "a stalled importer is aborted and its late success cannot replace the timeout response",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 11,
+          "name": "stalled body iterators settle within the handler deadline without unhandled cleanup rejections",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 12,
+          "name": "a browser disconnect after request completion aborts the outstanding fetch without writing success",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 13,
+          "name": "observed source facts produce finite SEO/GEO checks and internally consistent status counts",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 14,
+          "name": "missing source metadata remains explicit without fabricating content or a visibility score",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 15,
+          "name": "duplicate metadata and multiple or absent primary headings ask for review rather than inventing rules",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 16,
+          "name": "robots observations distinguish explicit noindex directives from unmeasured crawl access",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 17,
+          "name": "image and link checks report observed attributes without pretending to inspect decoration or destinations",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 18,
+          "name": "JSON-LD checks concern observed syntax and do not certify schema truth or rich-result eligibility",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 19,
+          "name": "answer and outbound-reference heuristics remain separate from actual engine citations",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 20,
+          "name": "fact shapes and relationships are strict detached and frozen with no fallback HTML parser",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 21,
+          "name": "incomplete drafts and partial rows survive normalization as detached frozen data",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 22,
+          "name": "draft records reject unknown missing inherited accessor and sparse fields without evaluating getters",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 23,
+          "name": "draft field and row budgets are strict while international text remains intact",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 24,
+          "name": "draft URLs admit only bounded absolute HTTP(S) addresses or explicit unfinished blanks",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 25,
+          "name": "both artifact exports require complete identity and rows rather than silently dropping draft intent",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 26,
+          "name": "metadata escapes owner text and URL attributes without raw markup or extra scripts",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 27,
+          "name": "FAQ JSON-LD round-trips the exact visible authored questions and prevents script breakout",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 28,
+          "name": "standalone HTML retains paragraph and source content and invents no answers or facts",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 29,
+          "name": "URL validation keeps default-port public URLs and removes only the fragment",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 30,
+          "name": "unsafe URL syntax credentials ports and local hostnames fail before adapters run",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 31,
+          "name": "IPv4 policy denies nonglobal special and metadata ranges including unusual URL spellings",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 32,
+          "name": "IPv6 accepts conservative global unicast and rejects transition documentation and local ranges",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 33,
+          "name": "the actual pinned lookup returns one approved address in both native callback forms",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 34,
+          "name": "the pinned lookup cannot be constructed with a private address or wrong family",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 35,
+          "name": "a successful import preserves inert HTML and returns only the selected bounded headers",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 36,
+          "name": "a public literal address skips DNS but still uses its validated pin",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 37,
+          "name": "any private address in an otherwise public DNS answer blocks the complete request",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 38,
+          "name": "empty malformed wrong-family and oversized DNS inventories cannot dispatch",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 39,
+          "name": "DNS exceptions expose a finite error without the resolver address or exception text",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 40,
+          "name": "every redirect receives fresh DNS validation and all owned responses are closed",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 41,
+          "name": "redirects to private addresses credentials or nondefault ports stop before another dispatch",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 42,
+          "name": "four redirects can complete but a fifth redirect cannot issue a sixth request",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 43,
+          "name": "a redirect loop fails immediately instead of repeatedly importing the same page",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 44,
+          "name": "failed upstream statuses and non-HTML responses never become page imports",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 45,
+          "name": "compression and incompatible declared charsets are rejected rather than silently reinterpreted",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 46,
+          "name": "invalid UTF-8 and non-ASCII bytes under an ASCII declaration fail without replacement characters",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 47,
+          "name": "body limits apply to declared bytes streamed bytes and the exact accepted boundary",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 48,
+          "name": "header count bytes selected-field bounds duplicates and control characters fail closed",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 49,
+          "name": "a mismatched declared length or an opaque upstream error cannot return a partial successful page",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 50,
+          "name": "the owned deadline settles stalled DNS and request adapters and closes a late response",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 51,
+          "name": "a stalled body is cancelled with owned response cleanup and rejected iterator cleanup is contained",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 52,
+          "name": "input shape caller cancellation and monotonic deadlines cannot dispatch or acknowledge late work",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 53,
+          "name": "observation normalization keeps supplied evidence and canonicalizes only the hostname",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 54,
+          "name": "raw shapes timestamps names domains and evidence budgets reject malformed records",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 55,
+          "name": "brand and competitor detection uses literal Unicode-aware name boundaries",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 56,
+          "name": "mentions and actual supplied URL citations are separate evidence",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 57,
+          "name": "citations retain supplied destinations deduplicate URLs and reject hostname spoofing",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 58,
+          "name": "summary rates use supplied answer count and count an owned-citing answer only once",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 59,
+          "name": "empty summaries disclose zero denominator and unknown rates without invented competitors",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 60,
+          "name": "campaign identity folds name case and Unicode and ignores competitor order without mixing cohorts",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 61,
+          "name": "summary validation rejects forged mention or citation annotations and oversized report lists",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 62,
+          "name": "analysis is detached and immutable and exposes no sentiment or unsupplied visibility score",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 63,
+          "name": "an empty explicit workspace has no invented source draft or evidence",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 64,
+          "name": "export and import preserve the actual source draft and original answer evidence",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 65,
+          "name": "incomplete unsent content remains exportable without an invented destination",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 66,
+          "name": "partially written question and source rows survive a recovery round trip",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 67,
+          "name": "source markup remains data in a portable JSON snapshot rather than an executed preview",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 68,
+          "name": "nullable and omitted source header values retain their own meaning",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 69,
+          "name": "computed reports credentials and unknown persisted fields cannot enter the workspace",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 70,
+          "name": "unsupported versions missing fields and malformed JSON fail with a recoverable finite error",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 71,
+          "name": "source URLs reject executable schemes credentials controls and relative locations",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 72,
+          "name": "source and header text reject malformed scalars and oversized Unicode input",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 73,
+          "name": "evidence collections reject more than five hundred records and sparse or accessor arrays",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 74,
+          "name": "invalid raw evidence is refused rather than trusted as a previously computed report",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 75,
+          "name": "multiple raw cohorts survive recovery without storing or blending their computed summaries",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 76,
+          "name": "record accessors and prototype-shaped extras are rejected without reading them",
+          "status": "ok",
+          "directive": null
+        },
+        {
+          "number": 77,
+          "name": "restored state is detached deeply frozen and cannot mutate a previous workspace",
+          "status": "ok",
+          "directive": null
+        }
+      ],
+      "exactExpectedNameOrder": false,
+      "uniqueNames": 77
+    },
+    "environment": {
+      "allowlistedNames": [
+        "GH_CONFIG_DIR",
+        "HOME",
+        "LANG",
+        "PATH",
+        "TEMP",
+        "TMP",
+        "TMPDIR",
+        "TZ",
+        "XDG_CONFIG_HOME"
+      ],
+      "allHomeConfigTempPathsOwned": true,
+      "pathContainsOnlyOwnedEmptyDirectory": true,
+      "inheritedNodeOptionsOrCredentials": false
+    },
+    "cleanup": {
+      "status": "passed",
+      "error": null,
+      "markerDeviceInodeChecked": true,
+      "onlyExpectedEmptyOwnedDirectoriesRemoved": true,
+      "rootRemoved": true,
+      "workerOwnershipLimit": "Supervisor directly reaped the Node runner and probed its original isolated process group. Node test workers belong to that runner;their individual PIDs/wait statuses were not independently enumerated. No separately-sessioned descendant inventory."
+    }
+  },
+  "proofLimits": [
+    "One actual local fixture invocation only. Seventy-seven cases passed; eight browser scenarios remain unrun, and default DNS/HTTP transport, real API requests, UI/DOM parsing and live artifact workflows remain unverified.",
+    "Network/API fixtures use authored injected adapters, requests and responses. No independent packet/socket trace was collected; passing fixture checks do not establish real DNS/TLS, deployment behavior, indexing, search rankings or representative AI visibility.",
+    "No server, browser, real account, AI/model/provider, CI, database, installation or paid action was invoked by this packet.",
+    "Supervisor directly reaped its Node runner and observed the original isolated process group absent. Node-managed test workers were not independently enumerated/waited; separately-sessioned descendants were not inventoried.",
+    "Full captured TAP text and original stream hashes are retained. The original collector's extra ordering failure remains visible and was not treated as a product failure.",
+    "Current full30-input non-results inventory and all34 tracked path/mode/blob identities passed before/after; original24 non-Markdown inputs and all4 historical result files stayed unchanged. Only these two new result files were authored after supervision."
+  ]
+}

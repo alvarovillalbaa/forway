@@ -9,8 +9,11 @@ exporting reviewed HTML/metadata and analyzing supplied answer evidence.
 Built from the [Forway brief](docs/spec.md) in Alvaro's personal Notion.
 
 **Initial workbench published and hosted.** Vercel reports READY and the served
-index matches source. The 77 Node checks and eight browser scenarios remain
-unexecuted, pending separate approval; functional acceptance is still open.
+index matches the initial source. The [77 Node fixture checks](docs/results/2026/11-04/local-node-checks.md)
+passed once on 4 November at `14e7b44a6459602d1a5392eb313273d361db5fad`, using
+existing Node 26.8.2. This is a new runtime profile; the historical Node 24.21.0
+preparation was not executed. The eight browser scenarios remain **UNRUN**;
+actual API/DNS/HTTP, browser HTML parsing and UI acceptance remain open.
 No account, analytics integration, AI provider or shared database is configured.
 
 ## Workflow
@@ -34,8 +37,11 @@ No account, analytics integration, AI provider or shared database is configured.
 - `public/`: dependency-free browser application and pure content/evidence logic.
 - `api/audit.mjs`: public-page import request boundary for a Node Vercel function.
 - `src/fetch-page.mjs`: validated, pinned, bounded public HTTP(S) page retrieval.
-- `tests/unit/`: 77 authored focused cases; execution requires separate approval
-  under the [six-file and browser scope](docs/proposals/focused-checks.md).
+- `tests/unit/`: 77 passing authored fixture cases under the
+  [six-file and browser scope](docs/proposals/focused-checks.md). The
+  [JSON receipt](docs/results/2026/11-04/local-node-checks.json) preserves raw TAP,
+  source guards, cleanup and the collector's extra ordering-check qualification;
+  all exact names/statuses matched, and no rerun occurred.
 - [Architecture](docs/architecture.md) and [source decisions](docs/references/source-decisions.md).
 
 Node 22+; no dependency installation or frontend build is required.
@@ -50,5 +56,11 @@ It never imports product functions or runs tests, a server or browser. Live
 URL import additionally needs the deployed same-origin API; a static file
 server alone does not provide it. Shared PostgreSQL/Supabase persistence and
 chosen provider integrations remain part of the open full-product direction.
+
+This later status edition changes only `AGENTS.md`, this README and the focused
+proposal among the 30 tested inputs. The other 27 inputs, including all 24
+non-Markdown code/test/config/asset files, remain unchanged. Historical seals and
+raw result evidence stay pinned to their original sources; reproduce the tested
+commit rather than treating this documentation edition as a new execution.
 
 MIT licensed. No model/provider call, paid plan or new account was used.
