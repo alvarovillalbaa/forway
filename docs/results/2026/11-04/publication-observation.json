@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "forway.publication-observation.v1",
+  "observedAtUtc": "2026-11-04T12:31:03Z",
+  "github": {
+    "repository": "alvarovillalbaa/forway",
+    "commit": "70f6a3c86bddc786c282e1ba222670d3303199d9",
+    "tree": "152da466562fcddc162327a2376d0957bb4e2793",
+    "leafCount": 36,
+    "mainReadBack": true,
+    "fullNativeLeafSetMatched": true,
+    "nativeCheckoutClean": true
+  },
+  "deployment": {
+    "id": "dpl_914wwV1QDZmv7H6puNHidt45kbb6",
+    "readyState": "READY",
+    "target": "production",
+    "sha": "70f6a3c86bddc786c282e1ba222670d3303199d9",
+    "aliases": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-main-my-team-4f230354.vercel.app"
+    ],
+    "url": "forway-m7tdxiiqk-my-team-4f230354.vercel.app",
+    "projectId": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+    "teamId": "team_JpdIsOJgYNpX0ywVZ54Zdb7m",
+    "canonicalAlias": "forway.vercel.app"
+  },
+  "checkedSource": {
+    "commit": "14e7b44a6459602d1a5392eb313273d361db5fad",
+    "nodeVersion": "26.8.2",
+    "cases": 77,
+    "receipt": "local-node-checks.json",
+    "laterStatusDocumentsChanged": 3,
+    "unchangedInputs": 27,
+    "all24NonMarkdownInputsUnchanged": true,
+    "originalCollectorOrderingFailureRetained": true
+  },
+  "qualification": "This is the exact metadata snapshot observed before adding this result file. It is not a test of the later artifact-only commit.",
+  "proofLimits": [
+    "Deployment metadata READY is not hosted HTTP, API/DNS/HTTPS, browser DOM/UI, file-transfer or persistence acceptance.",
+    "The eight browser scenarios remain unrun. No AI provider/model call, application-account test, database provisioning, plan change or paid enrollment occurred."
+  ]
+}
