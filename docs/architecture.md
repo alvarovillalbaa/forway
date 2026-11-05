@@ -1,6 +1,8 @@
 # Boundaries and data flow
 
-29 October 2026. Initial source hosted; focused runtime acceptance pending.
+29 October 2026 architecture; status updated 5 November. The separate
+[eight hosted browser workflows](results/2026/11-05/hosted-browser-checks.md)
+passed on recorded source `faba7249`; the product boundaries below remain open.
 
 The [product brief](spec.md) owns intent. The browser workbench has three
 connected workflows: page audit, content creation/improvement and supplied

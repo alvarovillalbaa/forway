@@ -1,0 +1,3886 @@
+{
+  "schemaVersion": "forway.hosted-browser-result.v1",
+  "attempt": 1,
+  "recordedAtUtc": "2026-11-05T04:41:30Z",
+  "sourceTree": "26e9accaf556eb18b8cbaa5cee1b7860fab1d508",
+  "activationCommit": "3d6a862b22d7e85082e79113b7a68ad26248e137",
+  "deploymentMetadataBefore": {
+    "id": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+    "name": "forway",
+    "url": "forway-lzel5sgke-my-team-4f230354.vercel.app",
+    "type": "LAMBDAS",
+    "state": "READY",
+    "createdAt": 1793853495060,
+    "creator": {
+      "uid": "zsxQcbiAfBXuwfpA5YtTh7Nm",
+      "username": "alvipedev"
+    },
+    "project": {
+      "id": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+      "name": "forway",
+      "framework": null
+    },
+    "meta": {
+      "githubCommitRef": "main",
+      "githubCommitSha": "faba72499adb675bbbef50a01e5c11ecda6f50c2",
+      "githubCommitMessage": "Prepare executable hosted acceptance for the eight Forway workflows",
+      "githubRepo": "forway",
+      "githubOrg": "alvarovillalbaa"
+    },
+    "alias": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-main-my-team-4f230354.vercel.app"
+    ],
+    "target": "production",
+    "regions": [
+      "iad1"
+    ],
+    "buildingAt": 1793853496202,
+    "ready": 1793853501757,
+    "readyState": "READY",
+    "source": "git",
+    "aliasError": null
+  },
+  "deploymentMetadataAfter": {
+    "id": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+    "name": "forway",
+    "url": "forway-lzel5sgke-my-team-4f230354.vercel.app",
+    "type": "LAMBDAS",
+    "state": "READY",
+    "createdAt": 1793853495060,
+    "creator": {
+      "uid": "zsxQcbiAfBXuwfpA5YtTh7Nm",
+      "username": "alvipedev"
+    },
+    "project": {
+      "id": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+      "name": "forway",
+      "framework": null
+    },
+    "meta": {
+      "githubCommitRef": "main",
+      "githubCommitSha": "faba72499adb675bbbef50a01e5c11ecda6f50c2",
+      "githubCommitMessage": "Prepare executable hosted acceptance for the eight Forway workflows",
+      "githubRepo": "forway",
+      "githubOrg": "alvarovillalbaa"
+    },
+    "alias": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-main-my-team-4f230354.vercel.app"
+    ],
+    "target": "production",
+    "regions": [
+      "iad1"
+    ],
+    "buildingAt": 1793853496202,
+    "ready": 1793853501757,
+    "readyState": "READY",
+    "source": "git",
+    "aliasError": null
+  },
+  "rootObservationBefore": {
+    "bytes": 14433,
+    "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+    "matchesCheckedSource": true
+  },
+  "run": {
+    "id": 41969137328,
+    "url": "https://github.com/alvarovillalbaa/forway/actions/runs/41969137328",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "3d6a862b22d7e85082e79113b7a68ad26248e137",
+    "event": "push",
+    "runAttempt": 1,
+    "createdAt": "2026-11-05T04:39:17Z",
+    "updatedAt": "2026-11-05T04:40:18Z"
+  },
+  "job": {
+    "id": 127053025155,
+    "run_id": 41969137328,
+    "workflow_name": "Temporary Forway hosted browser acceptance",
+    "head_branch": "qa/forway-hosted-20261105",
+    "run_url": "https://api.github.com/repos/alvarovillalbaa/forway/actions/runs/41969137328",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOVcBkds8AAAAdlPNPgw",
+    "head_sha": "3d6a862b22d7e85082e79113b7a68ad26248e137",
+    "url": "https://api.github.com/repos/alvarovillalbaa/forway/actions/jobs/127053025155",
+    "html_url": "https://github.com/alvarovillalbaa/forway/actions/runs/41969137328/job/127053025155",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-05T04:39:18Z",
+    "started_at": "2026-11-05T04:39:20Z",
+    "completed_at": "2026-11-05T04:40:17Z",
+    "name": "browser",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-11-05T04:39:21Z",
+        "completed_at": "2026-11-05T04:39:22Z"
+      },
+      {
+        "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-11-05T04:39:22Z",
+        "completed_at": "2026-11-05T04:39:23Z"
+      },
+      {
+        "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-11-05T04:39:23Z",
+        "completed_at": "2026-11-05T04:39:28Z"
+      },
+      {
+        "name": "Run only the pinned hosted Forway packet",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-11-05T04:39:28Z",
+        "completed_at": "2026-11-05T04:40:15Z"
+      },
+      {
+        "name": "Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-11-05T04:40:15Z",
+        "completed_at": "2026-11-05T04:40:15Z"
+      },
+      {
+        "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-11-05T04:40:15Z",
+        "completed_at": "2026-11-05T04:40:15Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-11-05T04:40:15Z",
+        "completed_at": "2026-11-05T04:40:15Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/alvarovillalbaa/forway/check-runs/127053025155",
+    "labels": [
+      "ubuntu-24.04"
+    ],
+    "runner_id": 1000005381,
+    "runner_name": "GitHub Actions 1000005381",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  },
+  "observation": {
+    "acceptedCases": 8,
+    "failedCases": 0,
+    "frameworkStats": {
+      "startTime": "2026-11-05T04:40:02.334Z",
+      "duration": 11997.965,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "globalErrors": [],
+    "success": "B01–B07 desktop and B08 plain narrow all passed once, retry zero. Actual same-origin API retrieval of both owned public fixtures returned source-exact HTML and robots null/noindex respectively, with zero redirects. Browser extraction/12findings, inert hostile source, escaped artifact downloads/re-audit, separate evidence cohorts, full recovery from a UI-cleared empty workspace, rejection/cancel preservation, supported cancellation/newer-edit races and narrow keyboard/overflow workflows passed.",
+    "servedSource": "Nine independently fetched real static assets match checked source. All nine normal browser startup asset responses also match source in every case (72 per-case comparisons); no app or API response was mocked except B07's separately classified controlled timing.",
+    "controlledTiming": "B07 settled three controlled requests, including two cancellations and one successful retry. These are not additional live API/DNS checks; internal resolver/socket events and backend binary identity were not independently traced.",
+    "limits": "The previous 77 Node checks were not rerun. Browser-tool Node24.21 differs from production's configured Node26.x. Physical devices/touch/assistive technology, arbitrary-site import safety, indexing/rankings/representative AI visibility, analytics, providers, accounts/shared persistence and full-product acceptance remain open."
+  },
+  "report": {
+    "schemaVersion": "forway.hosted-browser.v1",
+    "sourceCommit": "faba72499adb675bbbef50a01e5c11ecda6f50c2",
+    "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+    "origin": "https://forway.vercel.app",
+    "status": "passed",
+    "startedAtUtc": "2026-11-05T04:39:28.182Z",
+    "runtime": {
+      "node": "v24.21.0",
+      "platform": "linux",
+      "architecture": "x64",
+      "nodeSha256": "7fde7b8afa198da66257f42ee2001d874c7355631e6d1579a5fb5ef1f246df4c",
+      "npmCliSha256": "8e5f6f3429f8cdbe693cdc29904e9d5a7b127a494bd15c804bd54c7403bfcbe7",
+      "npm": "11.19.0",
+      "toolPackages": [
+        {
+          "name": "@playwright/test",
+          "version": "1.61.1",
+          "packageJsonSha256": "9d8556509e073169efec663b7f71c13f17d7002b307d00d48bf88ee91c387f3e"
+        },
+        {
+          "name": "playwright",
+          "version": "1.61.1",
+          "packageJsonSha256": "6b840268612656f0639fb7d68782e8353bdf11518589d30ddf66f283c2670ed5"
+        },
+        {
+          "name": "playwright-core",
+          "version": "1.61.1",
+          "packageJsonSha256": "759e376f995bf39edd4810d699b99469bab1d7428b6fbc78d41912f367df7ba9"
+        }
+      ],
+      "playwright": "1.61.1",
+      "playwrightCliSha256": "79e23e6a249176295b8490567daa7717448a75866d6ea6f6b296ff3d23305c69"
+    },
+    "scope": {
+      "scenarios": [
+        "B01 desktop entry, keyboard navigation and dialogs expose an empty honest workspace",
+        "B02 real public fixture import crosses the actual API and browser parser with twelve findings",
+        "B03 supplied hostile and structured HTML stays inert while literal facts become an editable draft",
+        "B04 real noindex header context survives edits and actual escaped HTML and metadata downloads",
+        "B05 supplied evidence retains original answers and isolated competitor-cohort denominators",
+        "B06 real workspace download and chooser restore partial rows and cohorts while rejection keeps current work",
+        "B07 controlled own-API delay preserves cancellation retry and a newer draft edit",
+        "B08 narrow viewport keeps audit content evidence and keyboard dialogs reachable without overflow"
+      ],
+      "profiles": [
+        "desktop-chromium",
+        "narrow-chromium"
+      ],
+      "cases": 8,
+      "workers": 1,
+      "retries": 0,
+      "appBuild": false,
+      "appDependencies": false,
+      "accounts": false,
+      "serverWrites": false,
+      "liveOwnFixtureApi": true,
+      "controlledApiTiming": true,
+      "providers": false,
+      "models": false,
+      "screenshots": false,
+      "traces": false,
+      "videos": false
+    },
+    "limits": {
+      "workSeconds": 720,
+      "cleanupSeconds": 90,
+      "browserGlobalSeconds": 480,
+      "jobMinutes": 15,
+      "finalStdoutSeconds": 2,
+      "streamBytes": 524288,
+      "streamGzipBytes": 131072,
+      "allStreamsGzipBytes": 524288,
+      "browserJsonBytes": 2097152,
+      "browserJsonGzipBytes": 262144,
+      "reportBytes": 1048576,
+      "termToKillSeconds": 3,
+      "drainSeconds": 3,
+      "assetFetchSeconds": 8,
+      "assetResponseBytes": 2097152
+    },
+    "commands": [
+      {
+        "label": "before_head",
+        "args": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 29,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 41,
+            "observedSha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 41,
+              "sha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+              "compressedBytes": 60,
+              "data": "H4sIAAAAAAAAAwXByQ0AMAgDsH+nAVSKGCfh2H+E2gsi7Gai+cJJzrpAdLxUpxpvXcrOB8I4U84pAAAA"
+            },
+            "head": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n",
+            "tail": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_tree",
+        "args": [
+          "git",
+          "ls-tree",
+          "-r",
+          "-z",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3334,
+            "observedSha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3334,
+              "sha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+              "compressedBytes": 1463,
+              "data": "H4sIAAAAAAAAA5WV326jxw3Fe+u3yAvYHnI4nOFl0C6KAm0umr4A/66VaCVDn7xJ3r5QjE1ty5ukd4KA+R3yfIcktMZE39j+aN9wl/KhwqBCUXPoEihz6VNWACC3xc7j5u7j7rz7eDie8i/w4v0g6r0YQToACvfgpIChikGaQoxCIHTz7d8/fPef7+8+xevnZQONJ+VQijk4kHWVdwbhAWbdcE1ZN//8x18/fPf9h1ePnS146vC2opULY9FMl0zkcjWOBNMYN//+8O3f/vXhrXZhy+msg4PAu6y+KikhioVm9mGSho43+ri716fYne8+/bC9RojUmB2nV3AuVLfIBtF8eO/DpQdTNb+Jo2/3evKH3Tn9/HTKt8VgVblJH60WjkDvyjU8RvNpqMnTcS0bz6TH0/HxuOl+u6+jP20Zt/6Q/uP2lrpsjLFamZUJVRO0gqljCDMydZdCTL6iPhy3c8atnY4/bXn6CjyjhdXMYu2ua64pwrPNIs0Gaw3vNSbD78Pvtsf0i7F3+bN+ety/jlfNtWyRNCFrq2EnJECgmDTM1Bc1GcL+Bxo/HU8/1v74090vn/bv6vSw5NaTyMVYex/S00c3lmVtjokBq7g965yy8pQHz+1+Oz6dPG8jfbftjocrkzzmHN07DiJRZWzVYoQGR8zhY4mMJWFfwNvT/rzdY0O+h3aLcr877M473d9G7nef8/TL3Q/b8fBKQhnUbYy4pJ+YlSiYRs8CgSloBNZbb39e4k0PbXXywTKJpA/IWgOxqZJkczHA0a1C5h8KPJt13UHpag0rSnTpco8BE3CQD1kNB7EJySL9swJv6ofgVBPODs1GW7lWgbYJyMuZOnanxE7v4eG20f3+6Lq/PRwjv4zCdQvTYVRddo9TMRJrdlTOptEQW3bALI7/Q+PtLGN2nzU1BFFBHWO6m4BAZ0uaJsgQX+/i8cn2O9fz7ni4PdqWp8+//r7uJUNZBs2yHogGDUHDxGdkX9A1jMEa92el5/l9sxq6FARNW12tl6B4Q+pKtbAmNdVAkKE3j+o/6sd3ImFqRosWmk7thVkK0oZAjDWhLTa1pcE3z13d/+rZbe1+vizX7V6fzg/HU8bt44X+cP60f0XnNZC7iLQ5uHlcrs1kaobaA3QJDjXF+Ar9ITXydHs47g6RP1/jtdriyR5De4Z3ktZscVsFPqTNRkI2mn7B7/x4uNs+f3xdo3EmWcYKdkINQsaRCT59LV6r4+Bev9X4tVoGRQJHECZxDJ5eUC7qy2n68mCj5vIFs538Xh8fr04dyMhmEF7JPkNwZuCcHM0WNHaSimxtveK8ezSXu9FM1mnZYMwa3Z3Imy4GkCL1NjHsJcmPh3MerllT5wyWqpWOaNprZtO+kKD3OQiVC0fCS9aL7G9XQMLq7qLVVabynCEA0aY1kRwt+rA12V+1+bS7wjQXnA3HJf8Bi6ORX5ZxJs1UlGii0dxfYi5HanvUy/56QxuX9EyWy00C9JY8ECFHmx1Iu5aWXQLxG+38yz63O9/eGA+MDGZtdhmrMsa6pJI9pkItqpQGYHaz+Wn3eN6eY39djYpwQV+4dOSiGt7UsI2YRWzdevpcPH7DnJ4Ot28O8lumFw/s5gsQ50gQiHVZ2X0sGjyclJrp8puLUZVnf3ie7KvPpxjmSmrWwJykde2GJoY1Fwu5DJfUm3Nu5+3+6bA7P6f0Vh93d5c/r+NKbKhmnVMdkmpQrJqZObkpKkO16rNdI0v9vL0PlYkju2SWFgvGwjBthTq4uFRx1hDp8hL6ZQber7LUalCHmCmdaklaWHUHbOmjWBl4Jr0EvvDxXaYS5Zo+p3FP7NwCtK0GPq1Gn+DMApPsJfPVcL1LJVg0FnjJAljJ0rRpLlECWiDUV0Ek5kvq/0bjXSSsaRmVMGCyZ18c3HUBlTFPajBqtclx8zlPnvvna/Nfh1aX/wYNAAA="
+            },
+            "head": "100644 blob 639fc5a961a94df75a891fbc93798d1126086c65\t.gitignore100644 blob 54433f62193112963d6e4d15aa2d4ae946294194\tAGENTS.md100644 blob 5fb52b674e5a4d756d26a8fc3619651bb3b28798\tLICENSE100644 blob c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5\tREADME.md100644 blob f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2\tapi/audit.mjs100644 blob f99f57327cfd6e82acbde01d0c5c335c93d64f0c\tdocs/architecture.md100644 blob 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5\tdocs/proposals/focused-checks.md100644 blob 8b55580fbbfb94f09",
+            "tail": "a5e84f5c0ab205d7f46b3b3ec7865\tscripts/run-hosted-browser.mjs100644 blob cf6523bc812275e191d8ab963584565c4a40ba8c\tsrc/fetch-page.mjs100644 blob 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea\ttests/unit/audit-api.test.mjs100644 blob 846b2abb36eac1e4f54d8f7eee760a2a61f0f370\ttests/unit/audit-facts.test.mjs100644 blob 9725e39eefaf692d82dba0f2a56f6faa27f59939\ttests/unit/content.test.mjs100644 blob 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4\ttests/unit/fetch-page.test.mjs100644 blob a44e87c77b63e2360d1a0801c7bf5371c669174b\ttests/unit/observations.test.mjs100644 blob 4184581cf98118e690a0ae89a414819438f1de2e\ttests/unit/workspace.test.mjs100644 blob 187bedfe15176ce386d63a814fb6674015f8076d\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_index",
+        "args": [
+          "git",
+          "ls-files",
+          "--stage",
+          "-z"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3211,
+            "observedSha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3211,
+              "sha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+              "compressedBytes": 1475,
+              "data": "H4sIAAAAAAAAA5WW326jxw3Fe7tvsS9gm+RwOMPLoF0UBdpcNH0BDv+slXglQ5+8Sd6+0BpeS862Se6ED5gfz5w5JIUAwvxempZ3U0FTjhrdpmIt1zZ0BiIJTHHp7+Hd7cfdafdxfzjmX/D5cGdurYRQGyKptJDkwG5GwZbKQsqo/B7efff3D9//54fbT/H1bK1OSwZnN47RJUhsljdBlY5rtUVz6HwP7/75j79++P6HDy8nXVbIsO4wA8pVqHikayZJuS2JxGVxlvzvD9/97V8fLqoWQQ4X6xKM3nS2WcmJUaI8svWlucjpPbyzx92dPcXudPvpx+3redXqo9HwCslJ5isSMMC7t9ZdWwgX+Ht4Fwff7uzo97tT+unpmBcyqKp8aetQk3qQN5PqHh18LLKU4TTn6i+Yx+Ph8bDZw3ZXB3/aMm78Pv2n7QI5V+99Qq1VS7lAaRUO611FSLi5FlHKN5D3h+2UcbOOh5+3PP6WnAGxamSJNbc55lCVAaPYEnDO7q36EPw98u32mH428zZ/sU+PD19jVGPONVlBecEEakyMhByD+1rmk0G7iv9ugZ8Px5/q4fDz7a+fHt4WabFSoCWz6xJrrWtL722JzgWjDwqcJfBS5JiVx9x7bnfb4enoeRPpu2132F964zFGb96oM6uZEBREDwuJGN37VO1TY71St6eH03ZHQHKHcEN6t9vvTjt7uIl82H3O46+3P26H/QvfBM1X73GOOIsYcwj3loWKQ2kxrgYN/gz/VT3Mxt5FB7O2jlmzE4EZa4LrQuptVej4A/Rnj660l00Aqii1adM9Og6kzt51AnWWpayT7Y/TX5VjSNpSyYawOsycs9BgIMl04UbNOanxt9l4A3z3cHB7uNkfIl8ifyV+OPaq81BxLiEWy0YmCRZABNmQsiT+VIGLbqVsPmpYKJGhOcVwX4qKTVbyWEqC8f/0Pz6th53baXfY3xzWlsfPX35f3SLDRDuPWi2IFgKhxVIfkW1is1iCC6S9lHnu0NfOb1oYPNZstlopqQNxM65JNRjMglD7+QUfzX+yj9cBWLYWT560bFgryjJU6IrR50CYsmxNCzkf/3KZuy8+3dTul/O83O7s6XR/OGbcPJ7R96dPDy9omZ2kqSqMLuBxXhpDGBZZC7Sp1G0Zxf9E36dFHm/2h90+8pcrthVMGeLRrWV4YwVYU2AWelcYwMqrg72yd37Y326fP35VtySTV8YMcSYLJqGeiT58TpmzUZdWF+q+oaJzJEoEU7JEl+GF5Wo+nYdPD1kMrq+M7eh39vh4ua5Qe8LC8ErxEUojg8aQgDURxFkrEmC+gbzdetN98UixsRKwj+rNndnBpiBqsTkM+jLlLjB+2J9yfwUaNkaIVs10omWtRoK1SYytjc5kUtQTr0EX6d4uaUzV3NWqmQ6TMUIRA8YC1ewQra85xN/c7ml3yQBXGkD9nPDAKQHs58maySONNEAtwP2acV4026OdR9Irqp9TMkTPewXJIaUTYXYYDdmaldU6v/0F6vTrQ263vr06jUKCa8Fo2mdl9HmOnngMw5pcqYC4zk5vftw9nrbnYF/pMFUpbJOm9Zxc3cEWQY9RLKutlj7ml38CL4zj0/7mzS69AHpJp7Z8ItHoiYoxz8O39cldurMxLJtnj87mVJ78/rllLx/LKJYb21qAy1mhWVu0dFGNKcqu3TXPXXXK7bTdPe13p+co3tjj7vb88SqTLItsrSZpjsnVOWaNzBwCRiZYUG3At3hlftp+Q9RBPZtmlpUoxaRYBkXWpaTMaFRXbXpNfEn5b/SVrercMEZq45qaK1Y1R4L0XmKCMpKvaRfevQUac87hYyxpSU0g0GAC+ljV20AXURy8roFXvfMWyTi5T/TSiThTFAwspxojT1RuszCS8hr5Gv63PJxjZVRixyGebUpIs4lcS2QwYK8J48vS/JxHz4fndfFfx7W4eYsMAAA="
+            },
+            "head": "100644 639fc5a961a94df75a891fbc93798d1126086c65 0\t.gitignore100644 54433f62193112963d6e4d15aa2d4ae946294194 0\tAGENTS.md100644 5fb52b674e5a4d756d26a8fc3619651bb3b28798 0\tLICENSE100644 c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5 0\tREADME.md100644 f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2 0\tapi/audit.mjs100644 f99f57327cfd6e82acbde01d0c5c335c93d64f0c 0\tdocs/architecture.md100644 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5 0\tdocs/proposals/focused-checks.md100644 8b55580fbbfb94f092bf17a559662643c9f22e65 0\t",
+            "tail": "mjs100644 5a996f13828a5e84f5c0ab205d7f46b3b3ec7865 0\tscripts/run-hosted-browser.mjs100644 cf6523bc812275e191d8ab963584565c4a40ba8c 0\tsrc/fetch-page.mjs100644 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea 0\ttests/unit/audit-api.test.mjs100644 846b2abb36eac1e4f54d8f7eee760a2a61f0f370 0\ttests/unit/audit-facts.test.mjs100644 9725e39eefaf692d82dba0f2a56f6faa27f59939 0\ttests/unit/content.test.mjs100644 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4 0\ttests/unit/fetch-page.test.mjs100644 a44e87c77b63e2360d1a0801c7bf5371c669174b 0\ttests/unit/observations.test.mjs100644 4184581cf98118e690a0ae89a414819438f1de2e 0\ttests/unit/workspace.test.mjs100644 187bedfe15176ce386d63a814fb6674015f8076d 0\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_status",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_diff",
+        "args": [
+          "git",
+          "-c",
+          "core.filemode=true",
+          "diff",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--quiet",
+          "--exit-code",
+          "HEAD",
+          "--"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 26,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_ignored",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--ignored=matching",
+          "--untracked-files=normal"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 26,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "npm_version",
+        "args": [
+          "[node]",
+          "/opt/hostedtoolcache/node/24.21.0/x64/lib/node_modules/npm/bin/npm-cli.js",
+          "--version"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 106,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 8,
+            "observedSha256": "005206ab803f8881d8227540b7980b37e723b69a8849edb31734a90b7e7964e2",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 8,
+              "sha256": "005206ab803f8881d8227540b7980b37e723b69a8849edb31734a90b7e7964e2",
+              "compressedBytes": 28,
+              "data": "H4sIAAAAAAAAAzM01DO01DPgAgAw1NUDCAAAAA=="
+            },
+            "head": "11.19.0\n",
+            "tail": "11.19.0\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "install_playwright",
+        "args": [
+          "[node]",
+          "/opt/hostedtoolcache/node/24.21.0/x64/lib/node_modules/npm/bin/npm-cli.js",
+          "install",
+          "--prefix",
+          "[scratch]/tools",
+          "--no-save",
+          "--package-lock=false",
+          "--ignore-scripts",
+          "--no-audit",
+          "--no-fund",
+          "--registry=https://registry.npmjs.org",
+          "@playwright/test@1.61.1"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 1998,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 24,
+            "observedSha256": "c59541a7d8bfc9987c0aa47adf2cdd2858be8b66de5abc0331d5a6484ae63ab6",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 24,
+              "sha256": "c59541a7d8bfc9987c0aa47adf2cdd2858be8b66de5abc0331d5a6484ae63ab6",
+              "compressedBytes": 44,
+              "data": "H4sIAAAAAAAAA+NKTElJTVEwVihITM5OTE8tVsjMUzAq5gIALDITMxgAAAA="
+            },
+            "head": "\nadded 3 packages in 2s\n",
+            "tail": "\nadded 3 packages in 2s\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "install_chromium_and_runner_libraries",
+        "args": [
+          "[node]",
+          "[scratch]/tools/node_modules/@playwright/test/cli.js",
+          "install",
+          "--with-deps",
+          "chromium"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 29815,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 15822,
+            "observedSha256": "400c7a47ad9fea20d5e7c2e962e080c5f34b30202b709724835b241bd3df5227",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 15822,
+              "sha256": "400c7a47ad9fea20d5e7c2e962e080c5f34b30202b709724835b241bd3df5227",
+              "compressedBytes": 2509,
+              "data": "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"
+            },
+            "head": "Installing dependencies...\nSwitching to root user to install dependencies...\nGet:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]\nGet:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]\nHit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease\nGet:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]\nGet:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]\nGet:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease",
+            "tail": " 80% of 114.2 MiB\n|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 114.2 MiB\n|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.2 MiB\nChrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to [scratch]/browsers/chromium_headless_shell-1228\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 237,
+            "observedSha256": "3b419c69ff321ee6851fa5489a2bb0c9a2ef093815a709dbd05391f89767267f",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 237,
+              "sha256": "3b419c69ff321ee6851fa5489a2bb0c9a2ef093815a709dbd05391f89767267f",
+              "compressedBytes": 151,
+              "data": "H4sIAAAAAAAAA33OMQ7CQAxE0X5PMSUUyU2goKDfsKNkBbGD7UXi9ihKRAf9+5pJlyZSZcSdJnzAydkRioFoSxfalRzsUzornPaqNzqELLsxemQLlo3cVCJXof1DzWlwulcVRzbC9hPaYp0rGKpkq/QtuJ4wNnr8wNN7WZ+5Gg5Pzu34zaGCmKpjUo8+fQDHcEoc7QAAAA=="
+            },
+            "head": "\nRunning kernel seems to be up-to-date.\n\nNo services need to be restarted.\n\nNo containers need to be restarted.\n\nNo user sessions are running outdated binaries.\n\nNo VM guests are running outdated hypervisor (qemu) binaries on this host.\n",
+            "tail": "\nRunning kernel seems to be up-to-date.\n\nNo services need to be restarted.\n\nNo containers need to be restarted.\n\nNo user sessions are running outdated binaries.\n\nNo VM guests are running outdated hypervisor (qemu) binaries on this host.\n"
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_browser_head",
+        "args": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 30,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 41,
+            "observedSha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 41,
+              "sha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+              "compressedBytes": 60,
+              "data": "H4sIAAAAAAAAAwXByQ0AMAgDsH+nAVSKGCfh2H+E2gsi7Gai+cJJzrpAdLxUpxpvXcrOB8I4U84pAAAA"
+            },
+            "head": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n",
+            "tail": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_browser_tree",
+        "args": [
+          "git",
+          "ls-tree",
+          "-r",
+          "-z",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 30,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3334,
+            "observedSha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3334,
+              "sha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+              "compressedBytes": 1463,
+              "data": "H4sIAAAAAAAAA5WV326jxw3Fe+u3yAvYHnI4nOFl0C6KAm0umr4A/66VaCVDn7xJ3r5QjE1ty5ukd4KA+R3yfIcktMZE39j+aN9wl/KhwqBCUXPoEihz6VNWACC3xc7j5u7j7rz7eDie8i/w4v0g6r0YQToACvfgpIChikGaQoxCIHTz7d8/fPef7+8+xevnZQONJ+VQijk4kHWVdwbhAWbdcE1ZN//8x18/fPf9h1ePnS146vC2opULY9FMl0zkcjWOBNMYN//+8O3f/vXhrXZhy+msg4PAu6y+KikhioVm9mGSho43+ri716fYne8+/bC9RojUmB2nV3AuVLfIBtF8eO/DpQdTNb+Jo2/3evKH3Tn9/HTKt8VgVblJH60WjkDvyjU8RvNpqMnTcS0bz6TH0/HxuOl+u6+jP20Zt/6Q/uP2lrpsjLFamZUJVRO0gqljCDMydZdCTL6iPhy3c8atnY4/bXn6CjyjhdXMYu2ua64pwrPNIs0Gaw3vNSbD78Pvtsf0i7F3+bN+ety/jlfNtWyRNCFrq2EnJECgmDTM1Bc1GcL+Bxo/HU8/1v74090vn/bv6vSw5NaTyMVYex/S00c3lmVtjokBq7g965yy8pQHz+1+Oz6dPG8jfbftjocrkzzmHN07DiJRZWzVYoQGR8zhY4mMJWFfwNvT/rzdY0O+h3aLcr877M473d9G7nef8/TL3Q/b8fBKQhnUbYy4pJ+YlSiYRs8CgSloBNZbb39e4k0PbXXywTKJpA/IWgOxqZJkczHA0a1C5h8KPJt13UHpag0rSnTpco8BE3CQD1kNB7EJySL9swJv6ofgVBPODs1GW7lWgbYJyMuZOnanxE7v4eG20f3+6Lq/PRwjv4zCdQvTYVRddo9TMRJrdlTOptEQW3bALI7/Q+PtLGN2nzU1BFFBHWO6m4BAZ0uaJsgQX+/i8cn2O9fz7ni4PdqWp8+//r7uJUNZBs2yHogGDUHDxGdkX9A1jMEa92el5/l9sxq6FARNW12tl6B4Q+pKtbAmNdVAkKE3j+o/6sd3ImFqRosWmk7thVkK0oZAjDWhLTa1pcE3z13d/+rZbe1+vizX7V6fzg/HU8bt44X+cP60f0XnNZC7iLQ5uHlcrs1kaobaA3QJDjXF+Ar9ITXydHs47g6RP1/jtdriyR5De4Z3ktZscVsFPqTNRkI2mn7B7/x4uNs+f3xdo3EmWcYKdkINQsaRCT59LV6r4+Bev9X4tVoGRQJHECZxDJ5eUC7qy2n68mCj5vIFs538Xh8fr04dyMhmEF7JPkNwZuCcHM0WNHaSimxtveK8ezSXu9FM1mnZYMwa3Z3Imy4GkCL1NjHsJcmPh3MerllT5wyWqpWOaNprZtO+kKD3OQiVC0fCS9aL7G9XQMLq7qLVVabynCEA0aY1kRwt+rA12V+1+bS7wjQXnA3HJf8Bi6ORX5ZxJs1UlGii0dxfYi5HanvUy/56QxuX9EyWy00C9JY8ECFHmx1Iu5aWXQLxG+38yz63O9/eGA+MDGZtdhmrMsa6pJI9pkItqpQGYHaz+Wn3eN6eY39djYpwQV+4dOSiGt7UsI2YRWzdevpcPH7DnJ4Ot28O8lumFw/s5gsQ50gQiHVZ2X0sGjyclJrp8puLUZVnf3ie7KvPpxjmSmrWwJykde2GJoY1Fwu5DJfUm3Nu5+3+6bA7P6f0Vh93d5c/r+NKbKhmnVMdkmpQrJqZObkpKkO16rNdI0v9vL0PlYkju2SWFgvGwjBthTq4uFRx1hDp8hL6ZQber7LUalCHmCmdaklaWHUHbOmjWBl4Jr0EvvDxXaYS5Zo+p3FP7NwCtK0GPq1Gn+DMApPsJfPVcL1LJVg0FnjJAljJ0rRpLlECWiDUV0Ek5kvq/0bjXSSsaRmVMGCyZ18c3HUBlTFPajBqtclx8zlPnvvna/Nfh1aX/wYNAAA="
+            },
+            "head": "100644 blob 639fc5a961a94df75a891fbc93798d1126086c65\t.gitignore100644 blob 54433f62193112963d6e4d15aa2d4ae946294194\tAGENTS.md100644 blob 5fb52b674e5a4d756d26a8fc3619651bb3b28798\tLICENSE100644 blob c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5\tREADME.md100644 blob f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2\tapi/audit.mjs100644 blob f99f57327cfd6e82acbde01d0c5c335c93d64f0c\tdocs/architecture.md100644 blob 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5\tdocs/proposals/focused-checks.md100644 blob 8b55580fbbfb94f09",
+            "tail": "a5e84f5c0ab205d7f46b3b3ec7865\tscripts/run-hosted-browser.mjs100644 blob cf6523bc812275e191d8ab963584565c4a40ba8c\tsrc/fetch-page.mjs100644 blob 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea\ttests/unit/audit-api.test.mjs100644 blob 846b2abb36eac1e4f54d8f7eee760a2a61f0f370\ttests/unit/audit-facts.test.mjs100644 blob 9725e39eefaf692d82dba0f2a56f6faa27f59939\ttests/unit/content.test.mjs100644 blob 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4\ttests/unit/fetch-page.test.mjs100644 blob a44e87c77b63e2360d1a0801c7bf5371c669174b\ttests/unit/observations.test.mjs100644 blob 4184581cf98118e690a0ae89a414819438f1de2e\ttests/unit/workspace.test.mjs100644 blob 187bedfe15176ce386d63a814fb6674015f8076d\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_browser_index",
+        "args": [
+          "git",
+          "ls-files",
+          "--stage",
+          "-z"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 30,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3211,
+            "observedSha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3211,
+              "sha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+              "compressedBytes": 1475,
+              "data": "H4sIAAAAAAAAA5WW326jxw3Fe7tvsS9gm+RwOMPLoF0UBdpcNH0BDv+slXglQ5+8Sd6+0BpeS862Se6ED5gfz5w5JIUAwvxempZ3U0FTjhrdpmIt1zZ0BiIJTHHp7+Hd7cfdafdxfzjmX/D5cGdurYRQGyKptJDkwG5GwZbKQsqo/B7efff3D9//54fbT/H1bK1OSwZnN47RJUhsljdBlY5rtUVz6HwP7/75j79++P6HDy8nXVbIsO4wA8pVqHikayZJuS2JxGVxlvzvD9/97V8fLqoWQQ4X6xKM3nS2WcmJUaI8svWlucjpPbyzx92dPcXudPvpx+3redXqo9HwCslJ5isSMMC7t9ZdWwgX+Ht4Fwff7uzo97tT+unpmBcyqKp8aetQk3qQN5PqHh18LLKU4TTn6i+Yx+Ph8bDZw3ZXB3/aMm78Pv2n7QI5V+99Qq1VS7lAaRUO611FSLi5FlHKN5D3h+2UcbOOh5+3PP6WnAGxamSJNbc55lCVAaPYEnDO7q36EPw98u32mH428zZ/sU+PD19jVGPONVlBecEEakyMhByD+1rmk0G7iv9ugZ8Px5/q4fDz7a+fHt4WabFSoCWz6xJrrWtL722JzgWjDwqcJfBS5JiVx9x7bnfb4enoeRPpu2132F964zFGb96oM6uZEBREDwuJGN37VO1TY71St6eH03ZHQHKHcEN6t9vvTjt7uIl82H3O46+3P26H/QvfBM1X73GOOIsYcwj3loWKQ2kxrgYN/gz/VT3Mxt5FB7O2jlmzE4EZa4LrQuptVej4A/Rnj660l00Aqii1adM9Og6kzt51AnWWpayT7Y/TX5VjSNpSyYawOsycs9BgIMl04UbNOanxt9l4A3z3cHB7uNkfIl8ifyV+OPaq81BxLiEWy0YmCRZABNmQsiT+VIGLbqVsPmpYKJGhOcVwX4qKTVbyWEqC8f/0Pz6th53baXfY3xzWlsfPX35f3SLDRDuPWi2IFgKhxVIfkW1is1iCC6S9lHnu0NfOb1oYPNZstlopqQNxM65JNRjMglD7+QUfzX+yj9cBWLYWT560bFgryjJU6IrR50CYsmxNCzkf/3KZuy8+3dTul/O83O7s6XR/OGbcPJ7R96dPDy9omZ2kqSqMLuBxXhpDGBZZC7Sp1G0Zxf9E36dFHm/2h90+8pcrthVMGeLRrWV4YwVYU2AWelcYwMqrg72yd37Y326fP35VtySTV8YMcSYLJqGeiT58TpmzUZdWF+q+oaJzJEoEU7JEl+GF5Wo+nYdPD1kMrq+M7eh39vh4ua5Qe8LC8ErxEUojg8aQgDURxFkrEmC+gbzdetN98UixsRKwj+rNndnBpiBqsTkM+jLlLjB+2J9yfwUaNkaIVs10omWtRoK1SYytjc5kUtQTr0EX6d4uaUzV3NWqmQ6TMUIRA8YC1ewQra85xN/c7ml3yQBXGkD9nPDAKQHs58maySONNEAtwP2acV4026OdR9Irqp9TMkTPewXJIaUTYXYYDdmaldU6v/0F6vTrQ263vr06jUKCa8Fo2mdl9HmOnngMw5pcqYC4zk5vftw9nrbnYF/pMFUpbJOm9Zxc3cEWQY9RLKutlj7ml38CL4zj0/7mzS69AHpJp7Z8ItHoiYoxz8O39cldurMxLJtnj87mVJ78/rllLx/LKJYb21qAy1mhWVu0dFGNKcqu3TXPXXXK7bTdPe13p+co3tjj7vb88SqTLItsrSZpjsnVOWaNzBwCRiZYUG3At3hlftp+Q9RBPZtmlpUoxaRYBkXWpaTMaFRXbXpNfEn5b/SVrercMEZq45qaK1Y1R4L0XmKCMpKvaRfevQUac87hYyxpSU0g0GAC+ljV20AXURy8roFXvfMWyTi5T/TSiThTFAwspxojT1RuszCS8hr5Gv63PJxjZVRixyGebUpIs4lcS2QwYK8J48vS/JxHz4fndfFfx7W4eYsMAAA="
+            },
+            "head": "100644 639fc5a961a94df75a891fbc93798d1126086c65 0\t.gitignore100644 54433f62193112963d6e4d15aa2d4ae946294194 0\tAGENTS.md100644 5fb52b674e5a4d756d26a8fc3619651bb3b28798 0\tLICENSE100644 c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5 0\tREADME.md100644 f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2 0\tapi/audit.mjs100644 f99f57327cfd6e82acbde01d0c5c335c93d64f0c 0\tdocs/architecture.md100644 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5 0\tdocs/proposals/focused-checks.md100644 8b55580fbbfb94f092bf17a559662643c9f22e65 0\t",
+            "tail": "mjs100644 5a996f13828a5e84f5c0ab205d7f46b3b3ec7865 0\tscripts/run-hosted-browser.mjs100644 cf6523bc812275e191d8ab963584565c4a40ba8c 0\tsrc/fetch-page.mjs100644 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea 0\ttests/unit/audit-api.test.mjs100644 846b2abb36eac1e4f54d8f7eee760a2a61f0f370 0\ttests/unit/audit-facts.test.mjs100644 9725e39eefaf692d82dba0f2a56f6faa27f59939 0\ttests/unit/content.test.mjs100644 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4 0\ttests/unit/fetch-page.test.mjs100644 a44e87c77b63e2360d1a0801c7bf5371c669174b 0\ttests/unit/observations.test.mjs100644 4184581cf98118e690a0ae89a414819438f1de2e 0\ttests/unit/workspace.test.mjs100644 187bedfe15176ce386d63a814fb6674015f8076d 0\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_browser_status",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 29,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_browser_diff",
+        "args": [
+          "git",
+          "-c",
+          "core.filemode=true",
+          "diff",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--quiet",
+          "--exit-code",
+          "HEAD",
+          "--"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 29,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "before_browser_ignored",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--ignored=matching",
+          "--untracked-files=normal"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 29,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "browser_cases",
+        "args": [
+          "[node]",
+          "[scratch]/tools/node_modules/@playwright/test/cli.js",
+          "test",
+          "--config",
+          "[scratch]/tools/playwright.config.mjs"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 12453,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 1306,
+            "observedSha256": "3b24da94fb0fd79a3ef2e6ea751ed5dfda66689cbf596d71910361fe1cc4b7b3",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 1306,
+              "sha256": "3b24da94fb0fd79a3ef2e6ea751ed5dfda66689cbf596d71910361fe1cc4b7b3",
+              "compressedBytes": 586,
+              "data": "H4sIAAAAAAAAA52Uz47TMBDG73mKOYJEl+3fLXuDE0ggIcQt2sPUnjbeOh5rZtK0N56Lx+FJUJySXlFPkaOx/fM33zfVjy6lkA6wBSM1hU6H1Rx6liNJVVVVPX+/fYHakx6N88w1wm3o2hf48+s3NKxGfrYT7pXkQTO5h/ZVnxerxfO8VHx6nMN1L1AyubyDI112jOIh4Skc0AInwOTBB4x8UKBzZiXABNRmu0DDidQKkmZ0VNWLe5DWmwlpAUIYIXe7GBzsw9k6IQhtZjFwwqqkYA0BOuswwsfvXwrh9VDIKMOnD9aA9RRPBPuQfEgHrerlPXCbDxPcErTLOQbypTxEKnerSecGTg+ff377Cmp4UQiJxKBvhqoYjAQj7NGZwo4ct6OKPhjuIoEX3FtVr+4B3K4nwNWoXuKQPJ2hIfQk4DgZnQ20k1M4kZZrtaBfVSR1mP/hD/9bMvRoCJ77FBm9VvX6Drjl42qCW9/Uo1PwlByBkGFICizhEBJGwKQ9yQgXlCMaeXDcZrJgLDPHzeAET4nbkNBYtKo395AtbrJtRtkmG0+vLhiuYR48JaTGQoPFLGCE4cSxoDDptddCr+RKco5EWcF1IpTGkFT10z2o6+WE+lS6KRwjeeA+zYYAeIp4gSykJEN/HSZHMY75FTK5jM2GRD3JaLZigmGIbAtRQhHu/xfo6ZaJLYxb4RSoLykdn42dDzZaL9mt4QPHNGX+jRUhdE3JwZBb7gz4RLKP3FcAW8ioSh7ezBcPj/q2+gs7QSDvGgUAAA=="
+            },
+            "head": "\nRunning 8 tests using 1 worker\n\n\n\n[1/8] [desktop-chromium] › hosted-browser.spec.mjs:242:1 › B01 desktop entry, keyboard navigation and dialogs expose an empty honest workspace\n[2/8] [desktop-chromium] › hosted-browser.spec.mjs:256:1 › B02 real public fixture import crosses the actual API and browser parser with twelve findings\n[3/8] [desktop-chromium] › hosted-browser.spec.mjs:269:1 › B03 supplied hostile and structured HTML stays inert while literal facts become an editable draft\n",
+            "tail": "its and actual escaped HTML and metadata downloads\n[5/8] [desktop-chromium] › hosted-browser.spec.mjs:304:1 › B05 supplied evidence retains original answers and isolated competitor-cohort denominators\n[6/8] [desktop-chromium] › hosted-browser.spec.mjs:325:1 › B06 real workspace download and chooser restore partial rows and cohorts while rejection keeps current work\n[7/8] [desktop-chromium] › hosted-browser.spec.mjs:353:1 › B07 controlled own-API delay preserves cancellation retry and a newer draft edit\n\n\n[8/8] [narrow-chromium] › hosted-browser.spec.mjs:379:1 › B08 narrow viewport keeps audit content evidence and keyboard dialogs reachable without overflow\n  8 passed (12.0s)\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 326,
+            "observedSha256": "b65ddc11193c4da4067fe26d24e96cb34758682474bba667383f3be526883b1e",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 326,
+              "sha256": "b65ddc11193c4da4067fe26d24e96cb34758682474bba667383f3be526883b1e",
+              "compressedBytes": 155,
+              "data": "H4sIAAAAAAAAA82OsQrCMABE937FbW2HBrSD2LXoJAaK4mhjc7RZEkii+X2JdfATnO/x7lXWaXbtZr+rcVPeGjt3uCxEeZb3Xp7kUIL2BRNgZus8NfSTiA4xQ0c59Idf7kFjZwRGUVTXQIzZj6aJXk1s0voQIIQYsyQsLiEt9Pz4vjuSCpg8VaSui2pNbLf/m/gGqnktnEYBAAA="
+            },
+            "head": "(node:3197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3327) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n",
+            "tail": "(node:3197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3327) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_browser_head",
+        "args": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 41,
+            "observedSha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 41,
+              "sha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+              "compressedBytes": 60,
+              "data": "H4sIAAAAAAAAAwXByQ0AMAgDsH+nAVSKGCfh2H+E2gsi7Gai+cJJzrpAdLxUpxpvXcrOB8I4U84pAAAA"
+            },
+            "head": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n",
+            "tail": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_browser_tree",
+        "args": [
+          "git",
+          "ls-tree",
+          "-r",
+          "-z",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3334,
+            "observedSha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3334,
+              "sha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+              "compressedBytes": 1463,
+              "data": "H4sIAAAAAAAAA5WV326jxw3Fe+u3yAvYHnI4nOFl0C6KAm0umr4A/66VaCVDn7xJ3r5QjE1ty5ukd4KA+R3yfIcktMZE39j+aN9wl/KhwqBCUXPoEihz6VNWACC3xc7j5u7j7rz7eDie8i/w4v0g6r0YQToACvfgpIChikGaQoxCIHTz7d8/fPef7+8+xevnZQONJ+VQijk4kHWVdwbhAWbdcE1ZN//8x18/fPf9h1ePnS146vC2opULY9FMl0zkcjWOBNMYN//+8O3f/vXhrXZhy+msg4PAu6y+KikhioVm9mGSho43+ri716fYne8+/bC9RojUmB2nV3AuVLfIBtF8eO/DpQdTNb+Jo2/3evKH3Tn9/HTKt8VgVblJH60WjkDvyjU8RvNpqMnTcS0bz6TH0/HxuOl+u6+jP20Zt/6Q/uP2lrpsjLFamZUJVRO0gqljCDMydZdCTL6iPhy3c8atnY4/bXn6CjyjhdXMYu2ua64pwrPNIs0Gaw3vNSbD78Pvtsf0i7F3+bN+ety/jlfNtWyRNCFrq2EnJECgmDTM1Bc1GcL+Bxo/HU8/1v74090vn/bv6vSw5NaTyMVYex/S00c3lmVtjokBq7g965yy8pQHz+1+Oz6dPG8jfbftjocrkzzmHN07DiJRZWzVYoQGR8zhY4mMJWFfwNvT/rzdY0O+h3aLcr877M473d9G7nef8/TL3Q/b8fBKQhnUbYy4pJ+YlSiYRs8CgSloBNZbb39e4k0PbXXywTKJpA/IWgOxqZJkczHA0a1C5h8KPJt13UHpag0rSnTpco8BE3CQD1kNB7EJySL9swJv6ofgVBPODs1GW7lWgbYJyMuZOnanxE7v4eG20f3+6Lq/PRwjv4zCdQvTYVRddo9TMRJrdlTOptEQW3bALI7/Q+PtLGN2nzU1BFFBHWO6m4BAZ0uaJsgQX+/i8cn2O9fz7ni4PdqWp8+//r7uJUNZBs2yHogGDUHDxGdkX9A1jMEa92el5/l9sxq6FARNW12tl6B4Q+pKtbAmNdVAkKE3j+o/6sd3ImFqRosWmk7thVkK0oZAjDWhLTa1pcE3z13d/+rZbe1+vizX7V6fzg/HU8bt44X+cP60f0XnNZC7iLQ5uHlcrs1kaobaA3QJDjXF+Ar9ITXydHs47g6RP1/jtdriyR5De4Z3ktZscVsFPqTNRkI2mn7B7/x4uNs+f3xdo3EmWcYKdkINQsaRCT59LV6r4+Bev9X4tVoGRQJHECZxDJ5eUC7qy2n68mCj5vIFs538Xh8fr04dyMhmEF7JPkNwZuCcHM0WNHaSimxtveK8ezSXu9FM1mnZYMwa3Z3Imy4GkCL1NjHsJcmPh3MerllT5wyWqpWOaNprZtO+kKD3OQiVC0fCS9aL7G9XQMLq7qLVVabynCEA0aY1kRwt+rA12V+1+bS7wjQXnA3HJf8Bi6ORX5ZxJs1UlGii0dxfYi5HanvUy/56QxuX9EyWy00C9JY8ECFHmx1Iu5aWXQLxG+38yz63O9/eGA+MDGZtdhmrMsa6pJI9pkItqpQGYHaz+Wn3eN6eY39djYpwQV+4dOSiGt7UsI2YRWzdevpcPH7DnJ4Ot28O8lumFw/s5gsQ50gQiHVZ2X0sGjyclJrp8puLUZVnf3ie7KvPpxjmSmrWwJykde2GJoY1Fwu5DJfUm3Nu5+3+6bA7P6f0Vh93d5c/r+NKbKhmnVMdkmpQrJqZObkpKkO16rNdI0v9vL0PlYkju2SWFgvGwjBthTq4uFRx1hDp8hL6ZQber7LUalCHmCmdaklaWHUHbOmjWBl4Jr0EvvDxXaYS5Zo+p3FP7NwCtK0GPq1Gn+DMApPsJfPVcL1LJVg0FnjJAljJ0rRpLlECWiDUV0Ek5kvq/0bjXSSsaRmVMGCyZ18c3HUBlTFPajBqtclx8zlPnvvna/Nfh1aX/wYNAAA="
+            },
+            "head": "100644 blob 639fc5a961a94df75a891fbc93798d1126086c65\t.gitignore100644 blob 54433f62193112963d6e4d15aa2d4ae946294194\tAGENTS.md100644 blob 5fb52b674e5a4d756d26a8fc3619651bb3b28798\tLICENSE100644 blob c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5\tREADME.md100644 blob f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2\tapi/audit.mjs100644 blob f99f57327cfd6e82acbde01d0c5c335c93d64f0c\tdocs/architecture.md100644 blob 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5\tdocs/proposals/focused-checks.md100644 blob 8b55580fbbfb94f09",
+            "tail": "a5e84f5c0ab205d7f46b3b3ec7865\tscripts/run-hosted-browser.mjs100644 blob cf6523bc812275e191d8ab963584565c4a40ba8c\tsrc/fetch-page.mjs100644 blob 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea\ttests/unit/audit-api.test.mjs100644 blob 846b2abb36eac1e4f54d8f7eee760a2a61f0f370\ttests/unit/audit-facts.test.mjs100644 blob 9725e39eefaf692d82dba0f2a56f6faa27f59939\ttests/unit/content.test.mjs100644 blob 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4\ttests/unit/fetch-page.test.mjs100644 blob a44e87c77b63e2360d1a0801c7bf5371c669174b\ttests/unit/observations.test.mjs100644 blob 4184581cf98118e690a0ae89a414819438f1de2e\ttests/unit/workspace.test.mjs100644 blob 187bedfe15176ce386d63a814fb6674015f8076d\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_browser_index",
+        "args": [
+          "git",
+          "ls-files",
+          "--stage",
+          "-z"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3211,
+            "observedSha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3211,
+              "sha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+              "compressedBytes": 1475,
+              "data": "H4sIAAAAAAAAA5WW326jxw3Fe7tvsS9gm+RwOMPLoF0UBdpcNH0BDv+slXglQ5+8Sd6+0BpeS862Se6ED5gfz5w5JIUAwvxempZ3U0FTjhrdpmIt1zZ0BiIJTHHp7+Hd7cfdafdxfzjmX/D5cGdurYRQGyKptJDkwG5GwZbKQsqo/B7efff3D9//54fbT/H1bK1OSwZnN47RJUhsljdBlY5rtUVz6HwP7/75j79++P6HDy8nXVbIsO4wA8pVqHikayZJuS2JxGVxlvzvD9/97V8fLqoWQQ4X6xKM3nS2WcmJUaI8svWlucjpPbyzx92dPcXudPvpx+3redXqo9HwCslJ5isSMMC7t9ZdWwgX+Ht4Fwff7uzo97tT+unpmBcyqKp8aetQk3qQN5PqHh18LLKU4TTn6i+Yx+Ph8bDZw3ZXB3/aMm78Pv2n7QI5V+99Qq1VS7lAaRUO611FSLi5FlHKN5D3h+2UcbOOh5+3PP6WnAGxamSJNbc55lCVAaPYEnDO7q36EPw98u32mH428zZ/sU+PD19jVGPONVlBecEEakyMhByD+1rmk0G7iv9ugZ8Px5/q4fDz7a+fHt4WabFSoCWz6xJrrWtL722JzgWjDwqcJfBS5JiVx9x7bnfb4enoeRPpu2132F964zFGb96oM6uZEBREDwuJGN37VO1TY71St6eH03ZHQHKHcEN6t9vvTjt7uIl82H3O46+3P26H/QvfBM1X73GOOIsYcwj3loWKQ2kxrgYN/gz/VT3Mxt5FB7O2jlmzE4EZa4LrQuptVej4A/Rnj660l00Aqii1adM9Og6kzt51AnWWpayT7Y/TX5VjSNpSyYawOsycs9BgIMl04UbNOanxt9l4A3z3cHB7uNkfIl8ifyV+OPaq81BxLiEWy0YmCRZABNmQsiT+VIGLbqVsPmpYKJGhOcVwX4qKTVbyWEqC8f/0Pz6th53baXfY3xzWlsfPX35f3SLDRDuPWi2IFgKhxVIfkW1is1iCC6S9lHnu0NfOb1oYPNZstlopqQNxM65JNRjMglD7+QUfzX+yj9cBWLYWT560bFgryjJU6IrR50CYsmxNCzkf/3KZuy8+3dTul/O83O7s6XR/OGbcPJ7R96dPDy9omZ2kqSqMLuBxXhpDGBZZC7Sp1G0Zxf9E36dFHm/2h90+8pcrthVMGeLRrWV4YwVYU2AWelcYwMqrg72yd37Y326fP35VtySTV8YMcSYLJqGeiT58TpmzUZdWF+q+oaJzJEoEU7JEl+GF5Wo+nYdPD1kMrq+M7eh39vh4ua5Qe8LC8ErxEUojg8aQgDURxFkrEmC+gbzdetN98UixsRKwj+rNndnBpiBqsTkM+jLlLjB+2J9yfwUaNkaIVs10omWtRoK1SYytjc5kUtQTr0EX6d4uaUzV3NWqmQ6TMUIRA8YC1ewQra85xN/c7ml3yQBXGkD9nPDAKQHs58maySONNEAtwP2acV4026OdR9Irqp9TMkTPewXJIaUTYXYYDdmaldU6v/0F6vTrQ263vr06jUKCa8Fo2mdl9HmOnngMw5pcqYC4zk5vftw9nrbnYF/pMFUpbJOm9Zxc3cEWQY9RLKutlj7ml38CL4zj0/7mzS69AHpJp7Z8ItHoiYoxz8O39cldurMxLJtnj87mVJ78/rllLx/LKJYb21qAy1mhWVu0dFGNKcqu3TXPXXXK7bTdPe13p+co3tjj7vb88SqTLItsrSZpjsnVOWaNzBwCRiZYUG3At3hlftp+Q9RBPZtmlpUoxaRYBkXWpaTMaFRXbXpNfEn5b/SVrercMEZq45qaK1Y1R4L0XmKCMpKvaRfevQUac87hYyxpSU0g0GAC+ljV20AXURy8roFXvfMWyTi5T/TSiThTFAwspxojT1RuszCS8hr5Gv63PJxjZVRixyGebUpIs4lcS2QwYK8J48vS/JxHz4fndfFfx7W4eYsMAAA="
+            },
+            "head": "100644 639fc5a961a94df75a891fbc93798d1126086c65 0\t.gitignore100644 54433f62193112963d6e4d15aa2d4ae946294194 0\tAGENTS.md100644 5fb52b674e5a4d756d26a8fc3619651bb3b28798 0\tLICENSE100644 c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5 0\tREADME.md100644 f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2 0\tapi/audit.mjs100644 f99f57327cfd6e82acbde01d0c5c335c93d64f0c 0\tdocs/architecture.md100644 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5 0\tdocs/proposals/focused-checks.md100644 8b55580fbbfb94f092bf17a559662643c9f22e65 0\t",
+            "tail": "mjs100644 5a996f13828a5e84f5c0ab205d7f46b3b3ec7865 0\tscripts/run-hosted-browser.mjs100644 cf6523bc812275e191d8ab963584565c4a40ba8c 0\tsrc/fetch-page.mjs100644 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea 0\ttests/unit/audit-api.test.mjs100644 846b2abb36eac1e4f54d8f7eee760a2a61f0f370 0\ttests/unit/audit-facts.test.mjs100644 9725e39eefaf692d82dba0f2a56f6faa27f59939 0\ttests/unit/content.test.mjs100644 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4 0\ttests/unit/fetch-page.test.mjs100644 a44e87c77b63e2360d1a0801c7bf5371c669174b 0\ttests/unit/observations.test.mjs100644 4184581cf98118e690a0ae89a414819438f1de2e 0\ttests/unit/workspace.test.mjs100644 187bedfe15176ce386d63a814fb6674015f8076d 0\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_browser_status",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_browser_diff",
+        "args": [
+          "git",
+          "-c",
+          "core.filemode=true",
+          "diff",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--quiet",
+          "--exit-code",
+          "HEAD",
+          "--"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 26,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_browser_ignored",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--ignored=matching",
+          "--untracked-files=normal"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 26,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_head",
+        "args": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 41,
+            "observedSha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 41,
+              "sha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+              "compressedBytes": 60,
+              "data": "H4sIAAAAAAAAAwXByQ0AMAgDsH+nAVSKGCfh2H+E2gsi7Gai+cJJzrpAdLxUpxpvXcrOB8I4U84pAAAA"
+            },
+            "head": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n",
+            "tail": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_tree",
+        "args": [
+          "git",
+          "ls-tree",
+          "-r",
+          "-z",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 28,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3334,
+            "observedSha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3334,
+              "sha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+              "compressedBytes": 1463,
+              "data": "H4sIAAAAAAAAA5WV326jxw3Fe+u3yAvYHnI4nOFl0C6KAm0umr4A/66VaCVDn7xJ3r5QjE1ty5ukd4KA+R3yfIcktMZE39j+aN9wl/KhwqBCUXPoEihz6VNWACC3xc7j5u7j7rz7eDie8i/w4v0g6r0YQToACvfgpIChikGaQoxCIHTz7d8/fPef7+8+xevnZQONJ+VQijk4kHWVdwbhAWbdcE1ZN//8x18/fPf9h1ePnS146vC2opULY9FMl0zkcjWOBNMYN//+8O3f/vXhrXZhy+msg4PAu6y+KikhioVm9mGSho43+ri716fYne8+/bC9RojUmB2nV3AuVLfIBtF8eO/DpQdTNb+Jo2/3evKH3Tn9/HTKt8VgVblJH60WjkDvyjU8RvNpqMnTcS0bz6TH0/HxuOl+u6+jP20Zt/6Q/uP2lrpsjLFamZUJVRO0gqljCDMydZdCTL6iPhy3c8atnY4/bXn6CjyjhdXMYu2ua64pwrPNIs0Gaw3vNSbD78Pvtsf0i7F3+bN+ety/jlfNtWyRNCFrq2EnJECgmDTM1Bc1GcL+Bxo/HU8/1v74090vn/bv6vSw5NaTyMVYex/S00c3lmVtjokBq7g965yy8pQHz+1+Oz6dPG8jfbftjocrkzzmHN07DiJRZWzVYoQGR8zhY4mMJWFfwNvT/rzdY0O+h3aLcr877M473d9G7nef8/TL3Q/b8fBKQhnUbYy4pJ+YlSiYRs8CgSloBNZbb39e4k0PbXXywTKJpA/IWgOxqZJkczHA0a1C5h8KPJt13UHpag0rSnTpco8BE3CQD1kNB7EJySL9swJv6ofgVBPODs1GW7lWgbYJyMuZOnanxE7v4eG20f3+6Lq/PRwjv4zCdQvTYVRddo9TMRJrdlTOptEQW3bALI7/Q+PtLGN2nzU1BFFBHWO6m4BAZ0uaJsgQX+/i8cn2O9fz7ni4PdqWp8+//r7uJUNZBs2yHogGDUHDxGdkX9A1jMEa92el5/l9sxq6FARNW12tl6B4Q+pKtbAmNdVAkKE3j+o/6sd3ImFqRosWmk7thVkK0oZAjDWhLTa1pcE3z13d/+rZbe1+vizX7V6fzg/HU8bt44X+cP60f0XnNZC7iLQ5uHlcrs1kaobaA3QJDjXF+Ar9ITXydHs47g6RP1/jtdriyR5De4Z3ktZscVsFPqTNRkI2mn7B7/x4uNs+f3xdo3EmWcYKdkINQsaRCT59LV6r4+Bev9X4tVoGRQJHECZxDJ5eUC7qy2n68mCj5vIFs538Xh8fr04dyMhmEF7JPkNwZuCcHM0WNHaSimxtveK8ezSXu9FM1mnZYMwa3Z3Imy4GkCL1NjHsJcmPh3MerllT5wyWqpWOaNprZtO+kKD3OQiVC0fCS9aL7G9XQMLq7qLVVabynCEA0aY1kRwt+rA12V+1+bS7wjQXnA3HJf8Bi6ORX5ZxJs1UlGii0dxfYi5HanvUy/56QxuX9EyWy00C9JY8ECFHmx1Iu5aWXQLxG+38yz63O9/eGA+MDGZtdhmrMsa6pJI9pkItqpQGYHaz+Wn3eN6eY39djYpwQV+4dOSiGt7UsI2YRWzdevpcPH7DnJ4Ot28O8lumFw/s5gsQ50gQiHVZ2X0sGjyclJrp8puLUZVnf3ie7KvPpxjmSmrWwJykde2GJoY1Fwu5DJfUm3Nu5+3+6bA7P6f0Vh93d5c/r+NKbKhmnVMdkmpQrJqZObkpKkO16rNdI0v9vL0PlYkju2SWFgvGwjBthTq4uFRx1hDp8hL6ZQber7LUalCHmCmdaklaWHUHbOmjWBl4Jr0EvvDxXaYS5Zo+p3FP7NwCtK0GPq1Gn+DMApPsJfPVcL1LJVg0FnjJAljJ0rRpLlECWiDUV0Ek5kvq/0bjXSSsaRmVMGCyZ18c3HUBlTFPajBqtclx8zlPnvvna/Nfh1aX/wYNAAA="
+            },
+            "head": "100644 blob 639fc5a961a94df75a891fbc93798d1126086c65\t.gitignore100644 blob 54433f62193112963d6e4d15aa2d4ae946294194\tAGENTS.md100644 blob 5fb52b674e5a4d756d26a8fc3619651bb3b28798\tLICENSE100644 blob c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5\tREADME.md100644 blob f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2\tapi/audit.mjs100644 blob f99f57327cfd6e82acbde01d0c5c335c93d64f0c\tdocs/architecture.md100644 blob 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5\tdocs/proposals/focused-checks.md100644 blob 8b55580fbbfb94f09",
+            "tail": "a5e84f5c0ab205d7f46b3b3ec7865\tscripts/run-hosted-browser.mjs100644 blob cf6523bc812275e191d8ab963584565c4a40ba8c\tsrc/fetch-page.mjs100644 blob 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea\ttests/unit/audit-api.test.mjs100644 blob 846b2abb36eac1e4f54d8f7eee760a2a61f0f370\ttests/unit/audit-facts.test.mjs100644 blob 9725e39eefaf692d82dba0f2a56f6faa27f59939\ttests/unit/content.test.mjs100644 blob 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4\ttests/unit/fetch-page.test.mjs100644 blob a44e87c77b63e2360d1a0801c7bf5371c669174b\ttests/unit/observations.test.mjs100644 blob 4184581cf98118e690a0ae89a414819438f1de2e\ttests/unit/workspace.test.mjs100644 blob 187bedfe15176ce386d63a814fb6674015f8076d\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_index",
+        "args": [
+          "git",
+          "ls-files",
+          "--stage",
+          "-z"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 28,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3211,
+            "observedSha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3211,
+              "sha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+              "compressedBytes": 1475,
+              "data": "H4sIAAAAAAAAA5WW326jxw3Fe7tvsS9gm+RwOMPLoF0UBdpcNH0BDv+slXglQ5+8Sd6+0BpeS862Se6ED5gfz5w5JIUAwvxempZ3U0FTjhrdpmIt1zZ0BiIJTHHp7+Hd7cfdafdxfzjmX/D5cGdurYRQGyKptJDkwG5GwZbKQsqo/B7efff3D9//54fbT/H1bK1OSwZnN47RJUhsljdBlY5rtUVz6HwP7/75j79++P6HDy8nXVbIsO4wA8pVqHikayZJuS2JxGVxlvzvD9/97V8fLqoWQQ4X6xKM3nS2WcmJUaI8svWlucjpPbyzx92dPcXudPvpx+3redXqo9HwCslJ5isSMMC7t9ZdWwgX+Ht4Fwff7uzo97tT+unpmBcyqKp8aetQk3qQN5PqHh18LLKU4TTn6i+Yx+Ph8bDZw3ZXB3/aMm78Pv2n7QI5V+99Qq1VS7lAaRUO611FSLi5FlHKN5D3h+2UcbOOh5+3PP6WnAGxamSJNbc55lCVAaPYEnDO7q36EPw98u32mH428zZ/sU+PD19jVGPONVlBecEEakyMhByD+1rmk0G7iv9ugZ8Px5/q4fDz7a+fHt4WabFSoCWz6xJrrWtL722JzgWjDwqcJfBS5JiVx9x7bnfb4enoeRPpu2132F964zFGb96oM6uZEBREDwuJGN37VO1TY71St6eH03ZHQHKHcEN6t9vvTjt7uIl82H3O46+3P26H/QvfBM1X73GOOIsYcwj3loWKQ2kxrgYN/gz/VT3Mxt5FB7O2jlmzE4EZa4LrQuptVej4A/Rnj660l00Aqii1adM9Og6kzt51AnWWpayT7Y/TX5VjSNpSyYawOsycs9BgIMl04UbNOanxt9l4A3z3cHB7uNkfIl8ifyV+OPaq81BxLiEWy0YmCRZABNmQsiT+VIGLbqVsPmpYKJGhOcVwX4qKTVbyWEqC8f/0Pz6th53baXfY3xzWlsfPX35f3SLDRDuPWi2IFgKhxVIfkW1is1iCC6S9lHnu0NfOb1oYPNZstlopqQNxM65JNRjMglD7+QUfzX+yj9cBWLYWT560bFgryjJU6IrR50CYsmxNCzkf/3KZuy8+3dTul/O83O7s6XR/OGbcPJ7R96dPDy9omZ2kqSqMLuBxXhpDGBZZC7Sp1G0Zxf9E36dFHm/2h90+8pcrthVMGeLRrWV4YwVYU2AWelcYwMqrg72yd37Y326fP35VtySTV8YMcSYLJqGeiT58TpmzUZdWF+q+oaJzJEoEU7JEl+GF5Wo+nYdPD1kMrq+M7eh39vh4ua5Qe8LC8ErxEUojg8aQgDURxFkrEmC+gbzdetN98UixsRKwj+rNndnBpiBqsTkM+jLlLjB+2J9yfwUaNkaIVs10omWtRoK1SYytjc5kUtQTr0EX6d4uaUzV3NWqmQ6TMUIRA8YC1ewQra85xN/c7ml3yQBXGkD9nPDAKQHs58maySONNEAtwP2acV4026OdR9Irqp9TMkTPewXJIaUTYXYYDdmaldU6v/0F6vTrQ263vr06jUKCa8Fo2mdl9HmOnngMw5pcqYC4zk5vftw9nrbnYF/pMFUpbJOm9Zxc3cEWQY9RLKutlj7ml38CL4zj0/7mzS69AHpJp7Z8ItHoiYoxz8O39cldurMxLJtnj87mVJ78/rllLx/LKJYb21qAy1mhWVu0dFGNKcqu3TXPXXXK7bTdPe13p+co3tjj7vb88SqTLItsrSZpjsnVOWaNzBwCRiZYUG3At3hlftp+Q9RBPZtmlpUoxaRYBkXWpaTMaFRXbXpNfEn5b/SVrercMEZq45qaK1Y1R4L0XmKCMpKvaRfevQUac87hYyxpSU0g0GAC+ljV20AXURy8roFXvfMWyTi5T/TSiThTFAwspxojT1RuszCS8hr5Gv63PJxjZVRixyGebUpIs4lcS2QwYK8J48vS/JxHz4fndfFfx7W4eYsMAAA="
+            },
+            "head": "100644 639fc5a961a94df75a891fbc93798d1126086c65 0\t.gitignore100644 54433f62193112963d6e4d15aa2d4ae946294194 0\tAGENTS.md100644 5fb52b674e5a4d756d26a8fc3619651bb3b28798 0\tLICENSE100644 c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5 0\tREADME.md100644 f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2 0\tapi/audit.mjs100644 f99f57327cfd6e82acbde01d0c5c335c93d64f0c 0\tdocs/architecture.md100644 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5 0\tdocs/proposals/focused-checks.md100644 8b55580fbbfb94f092bf17a559662643c9f22e65 0\t",
+            "tail": "mjs100644 5a996f13828a5e84f5c0ab205d7f46b3b3ec7865 0\tscripts/run-hosted-browser.mjs100644 cf6523bc812275e191d8ab963584565c4a40ba8c 0\tsrc/fetch-page.mjs100644 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea 0\ttests/unit/audit-api.test.mjs100644 846b2abb36eac1e4f54d8f7eee760a2a61f0f370 0\ttests/unit/audit-facts.test.mjs100644 9725e39eefaf692d82dba0f2a56f6faa27f59939 0\ttests/unit/content.test.mjs100644 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4 0\ttests/unit/fetch-page.test.mjs100644 a44e87c77b63e2360d1a0801c7bf5371c669174b 0\ttests/unit/observations.test.mjs100644 4184581cf98118e690a0ae89a414819438f1de2e 0\ttests/unit/workspace.test.mjs100644 187bedfe15176ce386d63a814fb6674015f8076d 0\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_status",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 28,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_diff",
+        "args": [
+          "git",
+          "-c",
+          "core.filemode=true",
+          "diff",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--quiet",
+          "--exit-code",
+          "HEAD",
+          "--"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 28,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_ignored",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--ignored=matching",
+          "--untracked-files=normal"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 28,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_cleanup_head",
+        "args": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 28,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 41,
+            "observedSha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 41,
+              "sha256": "f7560f0da9030b1c399b4a927fa67c0dfb9d45bd98e942914c5a54de673be4b4",
+              "compressedBytes": 60,
+              "data": "H4sIAAAAAAAAAwXByQ0AMAgDsH+nAVSKGCfh2H+E2gsi7Gai+cJJzrpAdLxUpxpvXcrOB8I4U84pAAAA"
+            },
+            "head": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n",
+            "tail": "faba72499adb675bbbef50a01e5c11ecda6f50c2\n"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_cleanup_tree",
+        "args": [
+          "git",
+          "ls-tree",
+          "-r",
+          "-z",
+          "HEAD"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3334,
+            "observedSha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3334,
+              "sha256": "66eccce6f5adc818fa1b0ba8b50a7c925c7d498ceaf09991f09616b987796b9a",
+              "compressedBytes": 1463,
+              "data": "H4sIAAAAAAAAA5WV326jxw3Fe+u3yAvYHnI4nOFl0C6KAm0umr4A/66VaCVDn7xJ3r5QjE1ty5ukd4KA+R3yfIcktMZE39j+aN9wl/KhwqBCUXPoEihz6VNWACC3xc7j5u7j7rz7eDie8i/w4v0g6r0YQToACvfgpIChikGaQoxCIHTz7d8/fPef7+8+xevnZQONJ+VQijk4kHWVdwbhAWbdcE1ZN//8x18/fPf9h1ePnS146vC2opULY9FMl0zkcjWOBNMYN//+8O3f/vXhrXZhy+msg4PAu6y+KikhioVm9mGSho43+ri716fYne8+/bC9RojUmB2nV3AuVLfIBtF8eO/DpQdTNb+Jo2/3evKH3Tn9/HTKt8VgVblJH60WjkDvyjU8RvNpqMnTcS0bz6TH0/HxuOl+u6+jP20Zt/6Q/uP2lrpsjLFamZUJVRO0gqljCDMydZdCTL6iPhy3c8atnY4/bXn6CjyjhdXMYu2ua64pwrPNIs0Gaw3vNSbD78Pvtsf0i7F3+bN+ety/jlfNtWyRNCFrq2EnJECgmDTM1Bc1GcL+Bxo/HU8/1v74090vn/bv6vSw5NaTyMVYex/S00c3lmVtjokBq7g965yy8pQHz+1+Oz6dPG8jfbftjocrkzzmHN07DiJRZWzVYoQGR8zhY4mMJWFfwNvT/rzdY0O+h3aLcr877M473d9G7nef8/TL3Q/b8fBKQhnUbYy4pJ+YlSiYRs8CgSloBNZbb39e4k0PbXXywTKJpA/IWgOxqZJkczHA0a1C5h8KPJt13UHpag0rSnTpco8BE3CQD1kNB7EJySL9swJv6ofgVBPODs1GW7lWgbYJyMuZOnanxE7v4eG20f3+6Lq/PRwjv4zCdQvTYVRddo9TMRJrdlTOptEQW3bALI7/Q+PtLGN2nzU1BFFBHWO6m4BAZ0uaJsgQX+/i8cn2O9fz7ni4PdqWp8+//r7uJUNZBs2yHogGDUHDxGdkX9A1jMEa92el5/l9sxq6FARNW12tl6B4Q+pKtbAmNdVAkKE3j+o/6sd3ImFqRosWmk7thVkK0oZAjDWhLTa1pcE3z13d/+rZbe1+vizX7V6fzg/HU8bt44X+cP60f0XnNZC7iLQ5uHlcrs1kaobaA3QJDjXF+Ar9ITXydHs47g6RP1/jtdriyR5De4Z3ktZscVsFPqTNRkI2mn7B7/x4uNs+f3xdo3EmWcYKdkINQsaRCT59LV6r4+Bev9X4tVoGRQJHECZxDJ5eUC7qy2n68mCj5vIFs538Xh8fr04dyMhmEF7JPkNwZuCcHM0WNHaSimxtveK8ezSXu9FM1mnZYMwa3Z3Imy4GkCL1NjHsJcmPh3MerllT5wyWqpWOaNprZtO+kKD3OQiVC0fCS9aL7G9XQMLq7qLVVabynCEA0aY1kRwt+rA12V+1+bS7wjQXnA3HJf8Bi6ORX5ZxJs1UlGii0dxfYi5HanvUy/56QxuX9EyWy00C9JY8ECFHmx1Iu5aWXQLxG+38yz63O9/eGA+MDGZtdhmrMsa6pJI9pkItqpQGYHaz+Wn3eN6eY39djYpwQV+4dOSiGt7UsI2YRWzdevpcPH7DnJ4Ot28O8lumFw/s5gsQ50gQiHVZ2X0sGjyclJrp8puLUZVnf3ie7KvPpxjmSmrWwJykde2GJoY1Fwu5DJfUm3Nu5+3+6bA7P6f0Vh93d5c/r+NKbKhmnVMdkmpQrJqZObkpKkO16rNdI0v9vL0PlYkju2SWFgvGwjBthTq4uFRx1hDp8hL6ZQber7LUalCHmCmdaklaWHUHbOmjWBl4Jr0EvvDxXaYS5Zo+p3FP7NwCtK0GPq1Gn+DMApPsJfPVcL1LJVg0FnjJAljJ0rRpLlECWiDUV0Ek5kvq/0bjXSSsaRmVMGCyZ18c3HUBlTFPajBqtclx8zlPnvvna/Nfh1aX/wYNAAA="
+            },
+            "head": "100644 blob 639fc5a961a94df75a891fbc93798d1126086c65\t.gitignore100644 blob 54433f62193112963d6e4d15aa2d4ae946294194\tAGENTS.md100644 blob 5fb52b674e5a4d756d26a8fc3619651bb3b28798\tLICENSE100644 blob c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5\tREADME.md100644 blob f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2\tapi/audit.mjs100644 blob f99f57327cfd6e82acbde01d0c5c335c93d64f0c\tdocs/architecture.md100644 blob 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5\tdocs/proposals/focused-checks.md100644 blob 8b55580fbbfb94f09",
+            "tail": "a5e84f5c0ab205d7f46b3b3ec7865\tscripts/run-hosted-browser.mjs100644 blob cf6523bc812275e191d8ab963584565c4a40ba8c\tsrc/fetch-page.mjs100644 blob 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea\ttests/unit/audit-api.test.mjs100644 blob 846b2abb36eac1e4f54d8f7eee760a2a61f0f370\ttests/unit/audit-facts.test.mjs100644 blob 9725e39eefaf692d82dba0f2a56f6faa27f59939\ttests/unit/content.test.mjs100644 blob 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4\ttests/unit/fetch-page.test.mjs100644 blob a44e87c77b63e2360d1a0801c7bf5371c669174b\ttests/unit/observations.test.mjs100644 blob 4184581cf98118e690a0ae89a414819438f1de2e\ttests/unit/workspace.test.mjs100644 blob 187bedfe15176ce386d63a814fb6674015f8076d\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_cleanup_index",
+        "args": [
+          "git",
+          "ls-files",
+          "--stage",
+          "-z"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 3211,
+            "observedSha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 3211,
+              "sha256": "397e1e95876afedd191d10431e2eaa6c1a3c910f9b1e1603c725c50c63872631",
+              "compressedBytes": 1475,
+              "data": "H4sIAAAAAAAAA5WW326jxw3Fe7tvsS9gm+RwOMPLoF0UBdpcNH0BDv+slXglQ5+8Sd6+0BpeS862Se6ED5gfz5w5JIUAwvxempZ3U0FTjhrdpmIt1zZ0BiIJTHHp7+Hd7cfdafdxfzjmX/D5cGdurYRQGyKptJDkwG5GwZbKQsqo/B7efff3D9//54fbT/H1bK1OSwZnN47RJUhsljdBlY5rtUVz6HwP7/75j79++P6HDy8nXVbIsO4wA8pVqHikayZJuS2JxGVxlvzvD9/97V8fLqoWQQ4X6xKM3nS2WcmJUaI8svWlucjpPbyzx92dPcXudPvpx+3redXqo9HwCslJ5isSMMC7t9ZdWwgX+Ht4Fwff7uzo97tT+unpmBcyqKp8aetQk3qQN5PqHh18LLKU4TTn6i+Yx+Ph8bDZw3ZXB3/aMm78Pv2n7QI5V+99Qq1VS7lAaRUO611FSLi5FlHKN5D3h+2UcbOOh5+3PP6WnAGxamSJNbc55lCVAaPYEnDO7q36EPw98u32mH428zZ/sU+PD19jVGPONVlBecEEakyMhByD+1rmk0G7iv9ugZ8Px5/q4fDz7a+fHt4WabFSoCWz6xJrrWtL722JzgWjDwqcJfBS5JiVx9x7bnfb4enoeRPpu2132F964zFGb96oM6uZEBREDwuJGN37VO1TY71St6eH03ZHQHKHcEN6t9vvTjt7uIl82H3O46+3P26H/QvfBM1X73GOOIsYcwj3loWKQ2kxrgYN/gz/VT3Mxt5FB7O2jlmzE4EZa4LrQuptVej4A/Rnj660l00Aqii1adM9Og6kzt51AnWWpayT7Y/TX5VjSNpSyYawOsycs9BgIMl04UbNOanxt9l4A3z3cHB7uNkfIl8ifyV+OPaq81BxLiEWy0YmCRZABNmQsiT+VIGLbqVsPmpYKJGhOcVwX4qKTVbyWEqC8f/0Pz6th53baXfY3xzWlsfPX35f3SLDRDuPWi2IFgKhxVIfkW1is1iCC6S9lHnu0NfOb1oYPNZstlopqQNxM65JNRjMglD7+QUfzX+yj9cBWLYWT560bFgryjJU6IrR50CYsmxNCzkf/3KZuy8+3dTul/O83O7s6XR/OGbcPJ7R96dPDy9omZ2kqSqMLuBxXhpDGBZZC7Sp1G0Zxf9E36dFHm/2h90+8pcrthVMGeLRrWV4YwVYU2AWelcYwMqrg72yd37Y326fP35VtySTV8YMcSYLJqGeiT58TpmzUZdWF+q+oaJzJEoEU7JEl+GF5Wo+nYdPD1kMrq+M7eh39vh4ua5Qe8LC8ErxEUojg8aQgDURxFkrEmC+gbzdetN98UixsRKwj+rNndnBpiBqsTkM+jLlLjB+2J9yfwUaNkaIVs10omWtRoK1SYytjc5kUtQTr0EX6d4uaUzV3NWqmQ6TMUIRA8YC1ewQra85xN/c7ml3yQBXGkD9nPDAKQHs58maySONNEAtwP2acV4026OdR9Irqp9TMkTPewXJIaUTYXYYDdmaldU6v/0F6vTrQ263vr06jUKCa8Fo2mdl9HmOnngMw5pcqYC4zk5vftw9nrbnYF/pMFUpbJOm9Zxc3cEWQY9RLKutlj7ml38CL4zj0/7mzS69AHpJp7Z8ItHoiYoxz8O39cldurMxLJtnj87mVJ78/rllLx/LKJYb21qAy1mhWVu0dFGNKcqu3TXPXXXK7bTdPe13p+co3tjj7vb88SqTLItsrSZpjsnVOWaNzBwCRiZYUG3At3hlftp+Q9RBPZtmlpUoxaRYBkXWpaTMaFRXbXpNfEn5b/SVrercMEZq45qaK1Y1R4L0XmKCMpKvaRfevQUac87hYyxpSU0g0GAC+ljV20AXURy8roFXvfMWyTi5T/TSiThTFAwspxojT1RuszCS8hr5Gv63PJxjZVRixyGebUpIs4lcS2QwYK8J48vS/JxHz4fndfFfx7W4eYsMAAA="
+            },
+            "head": "100644 639fc5a961a94df75a891fbc93798d1126086c65 0\t.gitignore100644 54433f62193112963d6e4d15aa2d4ae946294194 0\tAGENTS.md100644 5fb52b674e5a4d756d26a8fc3619651bb3b28798 0\tLICENSE100644 c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5 0\tREADME.md100644 f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2 0\tapi/audit.mjs100644 f99f57327cfd6e82acbde01d0c5c335c93d64f0c 0\tdocs/architecture.md100644 2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5 0\tdocs/proposals/focused-checks.md100644 8b55580fbbfb94f092bf17a559662643c9f22e65 0\t",
+            "tail": "mjs100644 5a996f13828a5e84f5c0ab205d7f46b3b3ec7865 0\tscripts/run-hosted-browser.mjs100644 cf6523bc812275e191d8ab963584565c4a40ba8c 0\tsrc/fetch-page.mjs100644 4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea 0\ttests/unit/audit-api.test.mjs100644 846b2abb36eac1e4f54d8f7eee760a2a61f0f370 0\ttests/unit/audit-facts.test.mjs100644 9725e39eefaf692d82dba0f2a56f6faa27f59939 0\ttests/unit/content.test.mjs100644 8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4 0\ttests/unit/fetch-page.test.mjs100644 a44e87c77b63e2360d1a0801c7bf5371c669174b 0\ttests/unit/observations.test.mjs100644 4184581cf98118e690a0ae89a414819438f1de2e 0\ttests/unit/workspace.test.mjs100644 187bedfe15176ce386d63a814fb6674015f8076d 0\tvercel.json"
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_cleanup_status",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_cleanup_diff",
+        "args": [
+          "git",
+          "-c",
+          "core.filemode=true",
+          "diff",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--quiet",
+          "--exit-code",
+          "HEAD",
+          "--"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 29,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      },
+      {
+        "label": "after_cleanup_ignored",
+        "args": [
+          "git",
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--ignored=matching",
+          "--untracked-files=normal"
+        ],
+        "exitCode": 0,
+        "signal": null,
+        "stopReason": null,
+        "exitObservedAndReaped": true,
+        "closeObserved": true,
+        "pipesEOF": [
+          true,
+          true
+        ],
+        "forcedDrain": false,
+        "originalProcessGroupAbsent": true,
+        "termSent": false,
+        "killSent": false,
+        "durationMs": 27,
+        "streams": [
+          {
+            "name": "stdout",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          },
+          {
+            "name": "stderr",
+            "observedBytes": 0,
+            "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "complete": true,
+            "raw": {
+              "encoding": "gzip-base64",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "compressedBytes": 20,
+              "data": "H4sIAAAAAAAAAwMAAAAAAAAAAAA="
+            },
+            "head": "",
+            "tail": ""
+          }
+        ],
+        "released": true
+      }
+    ],
+    "guards": [
+      {
+        "label": "before",
+        "passed": true,
+        "trackedFiles": 41,
+        "sourceBytes": 399431,
+        "vectorSha256": "6882a16466652935dd94dd056dda6b8bc05f089f855d05a8c84dc2f17556eac5",
+        "fullHeadIndexModesAndBytes": true,
+        "noUntrackedOrIgnoredOutput": true
+      },
+      {
+        "label": "before_browser",
+        "passed": true,
+        "trackedFiles": 41,
+        "sourceBytes": 399431,
+        "vectorSha256": "6882a16466652935dd94dd056dda6b8bc05f089f855d05a8c84dc2f17556eac5",
+        "fullHeadIndexModesAndBytes": true,
+        "noUntrackedOrIgnoredOutput": true
+      },
+      {
+        "label": "after_browser",
+        "passed": true,
+        "trackedFiles": 41,
+        "sourceBytes": 399431,
+        "vectorSha256": "6882a16466652935dd94dd056dda6b8bc05f089f855d05a8c84dc2f17556eac5",
+        "fullHeadIndexModesAndBytes": true,
+        "noUntrackedOrIgnoredOutput": true
+      },
+      {
+        "label": "after",
+        "passed": true,
+        "trackedFiles": 41,
+        "sourceBytes": 399431,
+        "vectorSha256": "6882a16466652935dd94dd056dda6b8bc05f089f855d05a8c84dc2f17556eac5",
+        "fullHeadIndexModesAndBytes": true,
+        "noUntrackedOrIgnoredOutput": true
+      },
+      {
+        "label": "after_cleanup",
+        "passed": true,
+        "trackedFiles": 41,
+        "sourceBytes": 399431,
+        "vectorSha256": "6882a16466652935dd94dd056dda6b8bc05f089f855d05a8c84dc2f17556eac5",
+        "fullHeadIndexModesAndBytes": true,
+        "noUntrackedOrIgnoredOutput": true
+      }
+    ],
+    "errors": [],
+    "sourceFiles": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "gitBlob": "639fc5a961a94df75a891fbc93798d1126086c65",
+        "bytes": 88,
+        "sha256": "2343553435e5f18ef2ea1308c29380ce80942a27918471603e9420929166ec11"
+      },
+      {
+        "path": "AGENTS.md",
+        "mode": "100644",
+        "gitBlob": "54433f62193112963d6e4d15aa2d4ae946294194",
+        "bytes": 3576,
+        "sha256": "ebbcf192ea4dbf9b9d9b26725ae8163845087bd2b1e95bbefc249007128ec93b"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "gitBlob": "5fb52b674e5a4d756d26a8fc3619651bb3b28798",
+        "bytes": 1072,
+        "sha256": "7edafcd8ebca4ecabedfad6e3c3d4872ce0ef6b49c3658a8b6e644cfb884d32d"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "gitBlob": "c6bd67a5c08d0fc962f47ec9ee26fcab6de1bad5",
+        "bytes": 3629,
+        "sha256": "c6d085f0f7c9c9b00ecd39967577b3921c131a57095ece836d93b550d81ca140"
+      },
+      {
+        "path": "api/audit.mjs",
+        "mode": "100644",
+        "gitBlob": "f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2",
+        "bytes": 5308,
+        "sha256": "f1c22f4d5ca2e05e85265a4a57c6ba535928ae98f0029391deb1ffa94d831d45"
+      },
+      {
+        "path": "docs/architecture.md",
+        "mode": "100644",
+        "gitBlob": "f99f57327cfd6e82acbde01d0c5c335c93d64f0c",
+        "bytes": 4509,
+        "sha256": "533a1e2902d9544b78ecb11f07e6a89a56f8b22b0271b42aeb8909445271ea4a"
+      },
+      {
+        "path": "docs/proposals/focused-checks.md",
+        "mode": "100644",
+        "gitBlob": "2fffcb9350f825d2c3a6f5cd50c7b2ae67c288b5",
+        "bytes": 7755,
+        "sha256": "a97f039b3ab965414c65f0ffd0a2e186cea711b8f08ff2ff0e62978ef3c51ea1"
+      },
+      {
+        "path": "docs/proposals/hosted-browser-checks.md",
+        "mode": "100644",
+        "gitBlob": "8b55580fbbfb94f092bf17a559662643c9f22e65",
+        "bytes": 9148,
+        "sha256": "0e92945e11120872ae7f4dc9a0abf657ebab23da1503f59469391b6e32f1f04a"
+      },
+      {
+        "path": "docs/proposals/hosted-browser.spec.mjs.example",
+        "mode": "100644",
+        "gitBlob": "ed0dbf7ef6a3ca8787996707f4ae01885c3f5761",
+        "bytes": 30479,
+        "sha256": "f3c258526edcf93933a971d597a921c4d7bc3e9781d870e2bd6547bdedffd151"
+      },
+      {
+        "path": "docs/proposals/hosted-browser.workflow.yml.example",
+        "mode": "100644",
+        "gitBlob": "f788b849094b080234241214d745bbac8409596c",
+        "bytes": 1534,
+        "sha256": "1c896f6b7cbd17feb672597419bd9640376daa24cd0132f90563d8859fcdcf2a"
+      },
+      {
+        "path": "docs/references/source-decisions.md",
+        "mode": "100644",
+        "gitBlob": "3dbe603e44c9b6a33593ec53b698b07572d18f60",
+        "bytes": 1775,
+        "sha256": "ca92fd4e8c70a0222f2c93682b2c79e7872c49522297129a6d22e1761eb3e611"
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-delivery.json",
+        "mode": "100644",
+        "gitBlob": "cd7753c325449aa620f0d5dad6dd75c5899589db",
+        "bytes": 7086,
+        "sha256": "3e3ef3213408a9c8342fe609dc2e70782151665288c4c21a7c7f605a0ff91f7e"
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-delivery.md",
+        "mode": "100644",
+        "gitBlob": "a61acb55df47e466a44d6453ef191792b41b3030",
+        "bytes": 4221,
+        "sha256": "abfc648bc3c913432fa2eb758fa0f647008ab4999c8c2a26bf92d879484951ce"
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-source.json",
+        "mode": "100644",
+        "gitBlob": "0834c5697449351ef85220aa49e0c9b1253bfd97",
+        "bytes": 14456,
+        "sha256": "e0b790f45bb7123bd298c85e076ae225c1f1b78fc92a017768a8dfce0e5abd36"
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-source.md",
+        "mode": "100644",
+        "gitBlob": "fa8002fdf9a8a8ccd5171254c59802546b94984a",
+        "bytes": 5454,
+        "sha256": "4c128ce46bae835bd6517e83f8634c3f5ef3b74b7ef35ef70497ee11dc258a34"
+      },
+      {
+        "path": "docs/results/2026/11-04/local-node-checks.json",
+        "mode": "100644",
+        "gitBlob": "1d6eab96e310b508e88f1a071268c64323c4e234",
+        "bytes": 78071,
+        "sha256": "f89f659cf539509ace38ba52e33bbfe5b4804fd8a2a549bf4cdc823a8d22a428"
+      },
+      {
+        "path": "docs/results/2026/11-04/local-node-checks.md",
+        "mode": "100644",
+        "gitBlob": "f7c15ff9ee2c4f6246ae32a6e0ad0220e312ef6d",
+        "bytes": 3207,
+        "sha256": "a1f578f40a2963b574887911ea053e05af52d7857b5d8d3d29983c1b76c1ff79"
+      },
+      {
+        "path": "docs/results/2026/11-04/publication-observation.json",
+        "mode": "100644",
+        "gitBlob": "82e3c7f7ad922a1ac2d7ccb919136be47b9261d4",
+        "bytes": 1722,
+        "sha256": "bdddf0a72ae76f2bb4b934087854736947574a70cbd2b0013f737025ac529aab"
+      },
+      {
+        "path": "docs/spec.md",
+        "mode": "100644",
+        "gitBlob": "eda69547fb3d22b1021adb9c7de3813adb61b063",
+        "bytes": 2863,
+        "sha256": "957c8a4b415405c03a34260c03a0f92d201ae39ebf7681e60ad57f8655d1848e"
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "gitBlob": "e39f1d47b83ab3f929c0243a4f82f740aad2195a",
+        "bytes": 302,
+        "sha256": "6ad3adf8535a84218774357f8e6416907edc6a27b25512549554e9643abcd6e4"
+      },
+      {
+        "path": "public/check-fixtures/authored-page.html",
+        "mode": "100644",
+        "gitBlob": "babb48482ba7a3f2efa190591d5871086bab8ad6",
+        "bytes": 985,
+        "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a"
+      },
+      {
+        "path": "public/check-fixtures/header-noindex.html",
+        "mode": "100644",
+        "gitBlob": "68526399907560cd61967640b2a3d1a8925aba2d",
+        "bytes": 650,
+        "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49"
+      },
+      {
+        "path": "public/icon.svg",
+        "mode": "100644",
+        "gitBlob": "af08676cd5a3edc34900b8608f1c59070494b50a",
+        "bytes": 227,
+        "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+      },
+      {
+        "path": "public/index.html",
+        "mode": "100644",
+        "gitBlob": "6b6ee4bed8d6c42ad42625ee1c7c8868832563fd",
+        "bytes": 14433,
+        "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+      },
+      {
+        "path": "public/src/app.mjs",
+        "mode": "100644",
+        "gitBlob": "a54de16dd42e46d567cf1fc9ac8c47c8cd6b40c9",
+        "bytes": 32992,
+        "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195"
+      },
+      {
+        "path": "public/src/audit.mjs",
+        "mode": "100644",
+        "gitBlob": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008",
+        "bytes": 14928,
+        "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+      },
+      {
+        "path": "public/src/content.mjs",
+        "mode": "100644",
+        "gitBlob": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db",
+        "bytes": 5727,
+        "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+      },
+      {
+        "path": "public/src/observations.mjs",
+        "mode": "100644",
+        "gitBlob": "7a77d69ff8ec22ba3f7e0a38241337542a6f25e1",
+        "bytes": 7243,
+        "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247"
+      },
+      {
+        "path": "public/src/ui.mjs",
+        "mode": "100644",
+        "gitBlob": "42f3cc9af3a97a677d911d07b099e50d35b876c8",
+        "bytes": 1584,
+        "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+      },
+      {
+        "path": "public/src/workspace.mjs",
+        "mode": "100644",
+        "gitBlob": "0c92702583abd186d04c9179ee47ea29d09ad0cc",
+        "bytes": 3956,
+        "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+      },
+      {
+        "path": "public/styles.css",
+        "mode": "100644",
+        "gitBlob": "50b8676993ec12c0e65221e507314a3afafb6883",
+        "bytes": 21002,
+        "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501"
+      },
+      {
+        "path": "scripts/check.mjs",
+        "mode": "100644",
+        "gitBlob": "816261bb073958fed58b8606cd7a1f84fe9011bb",
+        "bytes": 1682,
+        "sha256": "33761dc5b229808915392db88c20422132b09116bd83dfa76e5e32223096b49c"
+      },
+      {
+        "path": "scripts/run-hosted-browser.mjs",
+        "mode": "100644",
+        "gitBlob": "5a996f13828a5e84f5c0ab205d7f46b3b3ec7865",
+        "bytes": 41243,
+        "sha256": "7302e5a9d2b5c6a6577a6cf27f4a454cc5074932ccf97698a45e45ce8295fac0"
+      },
+      {
+        "path": "src/fetch-page.mjs",
+        "mode": "100644",
+        "gitBlob": "cf6523bc812275e191d8ab963584565c4a40ba8c",
+        "bytes": 14971,
+        "sha256": "4bf3e32e7c068e23a5478d11f4d0c695c65da3422bf4a1fcc34096397fde735b"
+      },
+      {
+        "path": "tests/unit/audit-api.test.mjs",
+        "mode": "100644",
+        "gitBlob": "4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea",
+        "bytes": 8207,
+        "sha256": "2d894129af7ef5f17c368149b3069b87040918b3fa5680c219ab5e39be002cc1"
+      },
+      {
+        "path": "tests/unit/audit-facts.test.mjs",
+        "mode": "100644",
+        "gitBlob": "846b2abb36eac1e4f54d8f7eee760a2a61f0f370",
+        "bytes": 5131,
+        "sha256": "62e3878d806cb702c0e8740e13ef4b2e7dd42f667c1a92f444d6d54c39975b86"
+      },
+      {
+        "path": "tests/unit/content.test.mjs",
+        "mode": "100644",
+        "gitBlob": "9725e39eefaf692d82dba0f2a56f6faa27f59939",
+        "bytes": 6915,
+        "sha256": "340c3195d9c09c302918be2fc3dff60af8ab3ba366c7836b8ce342f0728bc6a9"
+      },
+      {
+        "path": "tests/unit/fetch-page.test.mjs",
+        "mode": "100644",
+        "gitBlob": "8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4",
+        "bytes": 14790,
+        "sha256": "c95e7dc41d5887472fa0064aebbc04720d61edc7ca60fc886b407a8fd44b8ec4"
+      },
+      {
+        "path": "tests/unit/observations.test.mjs",
+        "mode": "100644",
+        "gitBlob": "a44e87c77b63e2360d1a0801c7bf5371c669174b",
+        "bytes": 7505,
+        "sha256": "98181eb1cafdfad311dfe7672994061b6891e3fe2cf02148969d45d17623089d"
+      },
+      {
+        "path": "tests/unit/workspace.test.mjs",
+        "mode": "100644",
+        "gitBlob": "4184581cf98118e690a0ae89a414819438f1de2e",
+        "bytes": 8211,
+        "sha256": "20b22d8a77c5d40f98ddcd62006984ccaadee9ae5fe364b5270cf3c2e6d8cb91"
+      },
+      {
+        "path": "vercel.json",
+        "mode": "100644",
+        "gitBlob": "187bedfe15176ce386d63a814fb6674015f8076d",
+        "bytes": 794,
+        "sha256": "0fa62b4769594dcc71ab6bd1d080abde6f84234e7eb952202fa8cd5587b30065"
+      }
+    ],
+    "proofLimits": [
+      "Eight authored browser cases exercise the public static workbench and actual same-origin API fetching only its own authored fixtures. B07 timing interception is separately classified; there are no accounts, persistence writes, third-party targets or model calls.",
+      "The deployment ID is an owning-workflow provider-metadata pin. Actual served asset byte hashes bind the frontend source, not the deployed backend binary; live API evidence is limited to the two own-fixture imports.",
+      "The only installed JavaScript tool is Playwright 1.61.1 in owned external runner storage. Chromium Linux system packages are installed on the disposable runner and are not independently uninstalled.",
+      "Direct child exit/close/EOF and original groups are checked. Same-UID Linux browser processes are additionally attributed by the unique owned binary/profile/cache path and kernel starttime; unreadable or uncertain attribution prevents owned-root deletion. This is not a host-wide process inventory.",
+      "Registry/browser downloads and allowed public hosted GETs are setup/acceptance network traffic, not a network sandbox. Userspace deadlines cannot interrupt blocked kernel filesystem calls."
+    ],
+    "expectedAssets": [
+      {
+        "route": "/",
+        "bytes": 14433,
+        "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+      },
+      {
+        "route": "/styles.css",
+        "bytes": 21002,
+        "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501"
+      },
+      {
+        "route": "/icon.svg",
+        "bytes": 227,
+        "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+      },
+      {
+        "route": "/src/app.mjs",
+        "bytes": 32992,
+        "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195"
+      },
+      {
+        "route": "/src/audit.mjs",
+        "bytes": 14928,
+        "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+      },
+      {
+        "route": "/src/content.mjs",
+        "bytes": 5727,
+        "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+      },
+      {
+        "route": "/src/observations.mjs",
+        "bytes": 7243,
+        "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247"
+      },
+      {
+        "route": "/src/ui.mjs",
+        "bytes": 1584,
+        "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+      },
+      {
+        "route": "/src/workspace.mjs",
+        "bytes": 3956,
+        "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+      }
+    ],
+    "expectedFixtures": [
+      {
+        "route": "/check-fixtures/authored-page.html",
+        "bytes": 985,
+        "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a",
+        "robots": null
+      },
+      {
+        "route": "/check-fixtures/header-noindex.html",
+        "bytes": 650,
+        "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49",
+        "robots": "noindex"
+      }
+    ],
+    "generated": {
+      "sourceSpec": "docs/proposals/hosted-browser.spec.mjs.example",
+      "sourceSha256": "f3c258526edcf93933a971d597a921c4d7bc3e9781d870e2bd6547bdedffd151",
+      "actualGeneratedSha256": "f3c258526edcf93933a971d597a921c4d7bc3e9781d870e2bd6547bdedffd151",
+      "copiedByteExact": true,
+      "configSha256": "9cbc8835e8dcd1f6d46959346a50f1878fe948f233f5a2f8e0902f51ecd189da"
+    },
+    "servedAssets": [
+      {
+        "route": "/",
+        "expectedBytes": 14433,
+        "expectedSha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 14433,
+        "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/styles.css",
+        "expectedBytes": 21002,
+        "expectedSha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 21002,
+        "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/icon.svg",
+        "expectedBytes": 227,
+        "expectedSha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 227,
+        "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/src/app.mjs",
+        "expectedBytes": 32992,
+        "expectedSha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 32992,
+        "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/src/audit.mjs",
+        "expectedBytes": 14928,
+        "expectedSha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 14928,
+        "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/src/content.mjs",
+        "expectedBytes": 5727,
+        "expectedSha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 5727,
+        "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/src/observations.mjs",
+        "expectedBytes": 7243,
+        "expectedSha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 7243,
+        "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/src/ui.mjs",
+        "expectedBytes": 1584,
+        "expectedSha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 1584,
+        "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      },
+      {
+        "route": "/src/workspace.mjs",
+        "expectedBytes": 3956,
+        "expectedSha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+        "status": 200,
+        "sameOrigin": true,
+        "redirect": false,
+        "complete": true,
+        "bytes": 3956,
+        "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+        "matchesExpected": true,
+        "credentials": "omit",
+        "readerReleased": true,
+        "aborted": true
+      }
+    ],
+    "browser": {
+      "raw": {
+        "encoding": "gzip-base64",
+        "bytes": 32804,
+        "sha256": "1979d0fd3a21dcb496defd36bc85be26b20fa0df56b6f619df700529a4468793",
+        "compressedBytes": 4485,
+        "data": "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"
+      },
+      "accepted": true,
+      "cases": [
+        {
+          "title": "B01 desktop entry, keyboard navigation and dialogs expose an empty honest workspace",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 886,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 0,
+            "realApiResponses": [],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1780,
+          "boundarySha256": "5cacd4da91d2923b6b1480aac133b087c6e1b478d1add0648330d7e794214430",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B02 real public fixture import crosses the actual API and browser parser with twelve findings",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 871,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 1,
+            "realApiResponses": [
+              {
+                "fixture": "/check-fixtures/authored-page.html",
+                "status": 200,
+                "pageStatus": 200,
+                "htmlBytes": 985,
+                "htmlSha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a",
+                "robots": null,
+                "redirects": 0
+              }
+            ],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1982,
+          "boundarySha256": "9238cc85a8c1cd592e98b33751637858cb2cf9941e7099b4996f7b2398d02d06",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B03 supplied hostile and structured HTML stays inert while literal facts become an editable draft",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 832,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 0,
+            "realApiResponses": [],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1780,
+          "boundarySha256": "5cacd4da91d2923b6b1480aac133b087c6e1b478d1add0648330d7e794214430",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B04 real noindex header context survives edits and actual escaped HTML and metadata downloads",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 1206,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 1,
+            "realApiResponses": [
+              {
+                "fixture": "/check-fixtures/header-noindex.html",
+                "status": 200,
+                "pageStatus": 200,
+                "htmlBytes": 650,
+                "htmlSha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49",
+                "robots": "noindex",
+                "redirects": 0
+              }
+            ],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1988,
+          "boundarySha256": "e8e73ca3433fde0e22fd9a16ece107a9c9ccc82f566a05d03d51ea8ec075158b",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B05 supplied evidence retains original answers and isolated competitor-cohort denominators",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 961,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 0,
+            "realApiResponses": [],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1780,
+          "boundarySha256": "5cacd4da91d2923b6b1480aac133b087c6e1b478d1add0648330d7e794214430",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B06 real workspace download and chooser restore partial rows and cohorts while rejection keeps current work",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 1801,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 0,
+            "realApiResponses": [],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1780,
+          "boundarySha256": "5cacd4da91d2923b6b1480aac133b087c6e1b478d1add0648330d7e794214430",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B07 controlled own-API delay preserves cancellation retry and a newer draft edit",
+          "project": "desktop-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 1204,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 0,
+            "realApiResponses": [],
+            "controlledApiRequests": 3,
+            "controlledApiSettled": 3,
+            "controlledApiCancelled": 2,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1780,
+          "boundarySha256": "a6fd292604f667c9d1f0e79b6083e8af2c4b417344491038d6c68af352bc05ff",
+          "diagnosticAttachments": []
+        },
+        {
+          "title": "B08 narrow viewport keeps audit content evidence and keyboard dialogs reachable without overflow",
+          "project": "narrow-chromium",
+          "expectedStatus": "passed",
+          "status": "expected",
+          "actualStatus": "passed",
+          "retry": 0,
+          "durationMs": 1269,
+          "errors": [],
+          "boundary": {
+            "schemaVersion": 1,
+            "kind": "forway-hosted-browser-boundary",
+            "expectedDeployment": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+            "rootNavigationCount": 1,
+            "realApiRequests": 0,
+            "realApiResponses": [],
+            "controlledApiRequests": 0,
+            "controlledApiSettled": 0,
+            "controlledApiCancelled": 0,
+            "unexpectedRequests": 0,
+            "credentialRequests": 0,
+            "webSockets": 0,
+            "pageErrorCount": 0,
+            "pageErrorFingerprints": [],
+            "pageErrorDiagnostics": [],
+            "responseErrors": 0,
+            "assets": [
+              {
+                "route": "/",
+                "status": 200,
+                "bytes": 14433,
+                "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+                "matchesExpected": true
+              },
+              {
+                "route": "/styles.css",
+                "status": 200,
+                "bytes": 21002,
+                "sha256": "2031d9fd2c190a66e645d95b6a52be78ba15c4a2d519bf584ef82ae7f59e4501",
+                "matchesExpected": true
+              },
+              {
+                "route": "/icon.svg",
+                "status": 200,
+                "bytes": 227,
+                "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/app.mjs",
+                "status": 200,
+                "bytes": 32992,
+                "sha256": "91e5cc16d7d2ad7687237277800fd1386a5aa8f84cf019b28116b7311182a195",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/audit.mjs",
+                "status": 200,
+                "bytes": 14928,
+                "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/content.mjs",
+                "status": 200,
+                "bytes": 5727,
+                "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/observations.mjs",
+                "status": 200,
+                "bytes": 7243,
+                "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/ui.mjs",
+                "status": 200,
+                "bytes": 1584,
+                "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+                "matchesExpected": true
+              },
+              {
+                "route": "/src/workspace.mjs",
+                "status": 200,
+                "bytes": 3956,
+                "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+                "matchesExpected": true
+              }
+            ]
+          },
+          "boundaryBytes": 1780,
+          "boundarySha256": "5cacd4da91d2923b6b1480aac133b087c6e1b478d1add0648330d7e794214430",
+          "diagnosticAttachments": []
+        }
+      ],
+      "globalErrors": [],
+      "stats": {
+        "startTime": "2026-11-05T04:40:02.334Z",
+        "duration": 11997.965,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "expectedCases": [
+        {
+          "project": "desktop-chromium",
+          "title": "B01 desktop entry, keyboard navigation and dialogs expose an empty honest workspace"
+        },
+        {
+          "project": "desktop-chromium",
+          "title": "B02 real public fixture import crosses the actual API and browser parser with twelve findings"
+        },
+        {
+          "project": "desktop-chromium",
+          "title": "B03 supplied hostile and structured HTML stays inert while literal facts become an editable draft"
+        },
+        {
+          "project": "desktop-chromium",
+          "title": "B04 real noindex header context survives edits and actual escaped HTML and metadata downloads"
+        },
+        {
+          "project": "desktop-chromium",
+          "title": "B05 supplied evidence retains original answers and isolated competitor-cohort denominators"
+        },
+        {
+          "project": "desktop-chromium",
+          "title": "B06 real workspace download and chooser restore partial rows and cohorts while rejection keeps current work"
+        },
+        {
+          "project": "desktop-chromium",
+          "title": "B07 controlled own-API delay preserves cancellation retry and a newer draft edit"
+        },
+        {
+          "project": "narrow-chromium",
+          "title": "B08 narrow viewport keeps audit content evidence and keyboard dialogs reachable without overflow"
+        }
+      ]
+    },
+    "processCleanup": {
+      "passed": true,
+      "started": 34
+    },
+    "networkCleanup": {
+      "passed": true,
+      "basis": "Asset fetch response streams are aborted/cancelled and reader locks released; not an inventory of shared HTTP agent sockets."
+    },
+    "browserProcessCleanup": {
+      "passed": true,
+      "basis": "Same UID, unique owned-root argv attribution and revalidated Linux kernel PID starttime; no argv/env output.",
+      "observed": [
+        {
+          "pid": 3184,
+          "ppid": 2522,
+          "pgid": 3184,
+          "session": 3184,
+          "state": "R",
+          "starttime": "15435",
+          "owned": true,
+          "executable": "node",
+          "firstSeenAtUtc": "2026-11-05T04:40:01.913Z"
+        },
+        {
+          "pid": 3197,
+          "ppid": 3184,
+          "pgid": 3184,
+          "session": 3184,
+          "state": "S",
+          "starttime": "15492",
+          "owned": true,
+          "executable": "node",
+          "firstSeenAtUtc": "2026-11-05T04:40:02.931Z"
+        },
+        {
+          "pid": 3209,
+          "ppid": 3197,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "D",
+          "starttime": "15529",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:02.931Z"
+        },
+        {
+          "pid": 3211,
+          "ppid": 3209,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15543",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:03.440Z"
+        },
+        {
+          "pid": 3212,
+          "ppid": 3209,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15544",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:03.440Z"
+        },
+        {
+          "pid": 3228,
+          "ppid": 3211,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15546",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:03.440Z"
+        },
+        {
+          "pid": 3241,
+          "ppid": 3209,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15712",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:04.959Z"
+        },
+        {
+          "pid": 3252,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15717",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:04.959Z"
+        },
+        {
+          "pid": 3266,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15805",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:05.969Z"
+        },
+        {
+          "pid": 3276,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15893",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:06.981Z"
+        },
+        {
+          "pid": 3287,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "15978",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:07.487Z"
+        },
+        {
+          "pid": 3297,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "R",
+          "starttime": "16100",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:08.999Z"
+        },
+        {
+          "pid": 3306,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "S",
+          "starttime": "16197",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:10.010Z"
+        },
+        {
+          "pid": 3316,
+          "ppid": 3212,
+          "pgid": 3209,
+          "session": 3209,
+          "state": "R",
+          "starttime": "16378",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:11.530Z"
+        },
+        {
+          "pid": 3327,
+          "ppid": 3184,
+          "pgid": 3184,
+          "session": 3184,
+          "state": "S",
+          "starttime": "16503",
+          "owned": true,
+          "executable": "node",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.047Z"
+        },
+        {
+          "pid": 3339,
+          "ppid": 3327,
+          "pgid": 3339,
+          "session": 3339,
+          "state": "D",
+          "starttime": "16540",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.047Z"
+        },
+        {
+          "pid": 3341,
+          "ppid": 3339,
+          "pgid": 3339,
+          "session": 3339,
+          "state": "S",
+          "starttime": "16541",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.047Z"
+        },
+        {
+          "pid": 3342,
+          "ppid": 3339,
+          "pgid": 3339,
+          "session": 3339,
+          "state": "S",
+          "starttime": "16541",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.047Z"
+        },
+        {
+          "pid": 3357,
+          "ppid": 3341,
+          "pgid": 3339,
+          "session": 3339,
+          "state": "S",
+          "starttime": "16544",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.047Z"
+        },
+        {
+          "pid": 3359,
+          "ppid": 3339,
+          "pgid": 3339,
+          "session": 3339,
+          "state": "S",
+          "starttime": "16544",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.047Z"
+        },
+        {
+          "pid": 3382,
+          "ppid": 3342,
+          "pgid": 3339,
+          "session": 3339,
+          "state": "S",
+          "starttime": "16564",
+          "owned": true,
+          "executable": "chrome-headless-shell",
+          "firstSeenAtUtc": "2026-11-05T04:40:13.552Z"
+        }
+      ],
+      "remaining": [],
+      "termSent": 0,
+      "killSent": 0,
+      "scanUncertain": false
+    },
+    "scratchCleanup": "passed",
+    "interrupted": false,
+    "completedAtUtc": "2026-11-05T04:40:15.054Z"
+  }
+}

@@ -1,7 +1,9 @@
 # Focused Forway checks — results and remaining browser scope
 
-Prepared 29 October 2026; updated 4 November 2026. **77 Node cases passed once;
-eight browser scenarios remain UNRUN.** The owner's repeated “approve everything
+Prepared 29 October 2026; updated 5 November 2026. **77 Node cases passed once;
+eight hosted browser workflows subsequently passed once.** See the separate
+[browser receipt](../results/2026/11-05/hosted-browser-checks.md).
+The owner's repeated “approve everything
 / keep going / do all the work” instructions authorized this focused scope and
 supersede its earlier approval-pending note.
 
@@ -65,13 +67,14 @@ Reproduce the exact tested commit for runtime evidence.
 The [5 November executable packet](hosted-browser-checks.md) retains these
 eight workflows and uses a bounded temporary public Chromium CI job under the
 owner's later standing approval. That packet supersedes the historical
-connected-Chrome-only executor limitation below. Its browser result remains
-pending until an actual terminal receipt is published.
+connected-Chrome-only executor limitation below. Its actual eight-case passing
+result is published separately from the earlier Node fixture result.
 
-**All eight scenarios below are UNRUN.** The Node cases use authored network/API
-adapters and source facts; they do not execute real DNS/HTTP, the deployed API,
-browser HTML parsing, UI or file-transfer workflows. No browser acceptance is
-inferred from the passing fixture result or initial deployment.
+**All eight scenarios below passed in the 5 November hosted packet.** The earlier
+Node cases alone use authored network/API adapters and source facts; they do
+not supply that later browser/API/file-transfer proof. The original executor
+instructions below are preserved history, superseded by the executable packet;
+no browser acceptance is inferred from Node fixtures or READY alone.
 
 After the source is published and the requested Vercel release is available,
 use the existing connected Chrome profile, with authored disposable content.

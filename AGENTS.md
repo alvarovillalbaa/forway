@@ -26,10 +26,13 @@
   Node 24.21.0 preparation. See `docs/results/2026/11-04/local-node-checks.md`
   and its JSON receipt. Preserve the original collector's false order check;
   acceptance requires the exact 77 unique name/status set, not reporter order.
-  No rerun occurred. The eight browser scenarios remain UNRUN: mocked Node
-  adapters do not establish actual DNS/HTTP/API, browser HTML parsing, UI or
-  artifact-transfer acceptance. Shared persistence/provider/full-product proof
-  remains open. Preserve historical seals and do not rerun completed checks
+  No rerun occurred. The eight hosted browser workflows subsequently passed
+  once at `faba72499adb675bbbef50a01e5c11ecda6f50c2`; see
+  `docs/results/2026/11-05/hosted-browser-checks.md`. The two actual API imports
+  of owned fixtures and browser/file workflows are separate from mocked Node adapters;
+  controlled timing, arbitrary-site safety and full-product proof remain
+  separately bounded. Shared persistence/providers remain open. Preserve
+  historical seals and do not rerun completed checks
   merely because earlier approval notes are stale.
 - Source publication to the personal GitHub account is authorized by the
   all-project goal. Do not create a paid plan or new account. Keep exact proof

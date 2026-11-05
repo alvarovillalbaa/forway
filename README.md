@@ -12,8 +12,11 @@ Built from the [Forway brief](docs/spec.md) in Alvaro's personal Notion.
 index matches the initial source. The [77 Node fixture checks](docs/results/2026/11-04/local-node-checks.md)
 passed once on 4 November at `14e7b44a6459602d1a5392eb313273d361db5fad`, using
 existing Node 26.8.2. This is a new runtime profile; the historical Node 24.21.0
-preparation was not executed. The eight browser scenarios remain **UNRUN**;
-actual API/DNS/HTTP, browser HTML parsing and UI acceptance remain open.
+preparation was not executed. The separate [eight hosted browser workflows](docs/results/2026/11-05/hosted-browser-checks.md)
+passed once on 5 November at `faba72499adb675bbbef50a01e5c11ecda6f50c2`:
+two real own-fixture API imports, browser parsing, actual downloads/recovery,
+cohort separation, controlled races and narrow keyboard/overflow checks.
+Arbitrary-site safety, physical devices and full-product acceptance remain open.
 No account, analytics integration, AI provider or shared database is configured.
 
 ## Workflow
@@ -57,10 +60,11 @@ URL import additionally needs the deployed same-origin API; a static file
 server alone does not provide it. Shared PostgreSQL/Supabase persistence and
 chosen provider integrations remain part of the open full-product direction.
 
-This later status edition changes only `AGENTS.md`, this README and the focused
-proposal among the 30 tested inputs. The other 27 inputs, including all 24
-non-Markdown code/test/config/asset files, remain unchanged. Historical seals and
-raw result evidence stay pinned to their original sources; reproduce the tested
-commit rather than treating this documentation edition as a new execution.
+The earlier Node status edition changed three documents among its 30 inputs,
+leaving 27 unchanged. The later browser packet adds isolated acceptance tooling
+and records its own source/profile; no application/API module or dependency was
+changed. Historical seals and raw evidence stay pinned to their original sources.
+Reproduce the appropriate checked commit rather than relabeling this later
+documentation publication as another execution.
 
 MIT licensed. No model/provider call, paid plan or new account was used.

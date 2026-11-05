@@ -1,6 +1,8 @@
 # Hosted Forway browser acceptance
 
-5 November 2026. **Prepared; not executed.** This packet makes the original
+5 November 2026. **Accepted: eight cases passed once.** See the
+[actual receipt](../results/2026/11-05/hosted-browser-checks.md).
+This packet makes the original
 [B01–B08 workflows](focused-checks.md#controlled-browser-scope) executable.
 The owner's later “I approve everything / Keep going / Do all the work”
 instructions authorize the required bounded browser-tool installation and
@@ -126,6 +128,11 @@ Preserve each terminal failure before repair or another changed candidate.
 Retire the temporary QA workflow after terminal evidence is retained. Do not
 rerun the closed 77 Node checks or equate publication/READY with browser proof.
 Source-only syntax/import/link/whitespace checks are preparation, not execution.
+
+Project filters match the full project/file/describe/title string under
+[Playwright's documented grep contract](https://playwright.dev/docs/api/class-testconfig#test-config-grep).
+Use the bounded case marker within that full title, not a title-start anchor.
+This filter was corrected and source-checked before the first CI run.
 
 Local Storage Guard returned 20.8 GiB free against 34 GiB required earlier this
 turn. This packet creates no local environment. Passing it does not establish
