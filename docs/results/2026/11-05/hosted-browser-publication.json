@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "forway.hosted-browser-publication.v1",
+  "observedAtUtc": "2026-11-05T04:46:22Z",
+  "checked": {
+    "commit": "faba72499adb675bbbef50a01e5c11ecda6f50c2",
+    "tree": "26e9accaf556eb18b8cbaa5cee1b7860fab1d508",
+    "deploymentId": "dpl_HcHkNkMtPaCSJsJdLN9ZoXWi5o4Z",
+    "runId": 41969137328,
+    "jobId": 127053025155,
+    "casesPassed": 8,
+    "receiptPath": "docs/results/2026/11-05/hosted-browser-checks.json",
+    "receiptBytes": 175247,
+    "receiptSha256": "bbfa8715ae1dad429efd804a56c6afae7c6cd4d323e7278d8e5fc191f76a0ebe"
+  },
+  "publication": {
+    "commit": "a3c712538c49d6b1813bf51cf34d68e36ea63217",
+    "tree": "1357fad5d85a9f21e3c4ca39f211593b25f5aad4",
+    "nativeVerification": {
+      "head": "a3c712538c49d6b1813bf51cf34d68e36ea63217",
+      "tree": "1357fad5d85a9f21e3c4ca39f211593b25f5aad4",
+      "leaves": 43,
+      "bytes": 580318,
+      "clean": true,
+      "noActiveWorkflow": true,
+      "changesSinceChecked": [
+        "M\tAGENTS.md",
+        "M\tREADME.md",
+        "M\tdocs/architecture.md",
+        "M\tdocs/proposals/focused-checks.md",
+        "M\tdocs/proposals/hosted-browser-checks.md",
+        "A\tdocs/results/2026/11-05/hosted-browser-checks.json",
+        "A\tdocs/results/2026/11-05/hosted-browser-checks.md"
+      ]
+    },
+    "remoteMain": "a3c712538c49d6b1813bf51cf34d68e36ea63217",
+    "remoteQa": "a3c712538c49d6b1813bf51cf34d68e36ea63217",
+    "qaWorkflowRetired": true,
+    "remoteTreeTruncated": false,
+    "testedInputs": 41,
+    "unchangedTestedInputs": 36,
+    "laterModifiedInputs": [
+      "AGENTS.md",
+      "README.md",
+      "docs/architecture.md",
+      "docs/proposals/focused-checks.md",
+      "docs/proposals/hosted-browser-checks.md"
+    ],
+    "productApiFixturesControllerAndDependenciesUnchanged": true
+  },
+  "deploymentMetadata": {
+    "id": "dpl_A4TuiU9aZeT1ggrtCUHfBSxC5tVN",
+    "name": "forway",
+    "url": "forway-lcgeelgq3-my-team-4f230354.vercel.app",
+    "type": "LAMBDAS",
+    "state": "READY",
+    "createdAt": 1793853910852,
+    "creator": {
+      "uid": "zsxQcbiAfBXuwfpA5YtTh7Nm",
+      "username": "alvipedev"
+    },
+    "project": {
+      "id": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+      "name": "forway",
+      "framework": null
+    },
+    "meta": {
+      "githubCommitRef": "main",
+      "githubCommitSha": "a3c712538c49d6b1813bf51cf34d68e36ea63217",
+      "githubCommitMessage": "Publish eight accepted hosted workflows and retire temporary Forway CI",
+      "githubRepo": "forway",
+      "githubOrg": "alvarovillalbaa"
+    },
+    "alias": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-main-my-team-4f230354.vercel.app"
+    ],
+    "target": "production",
+    "regions": [
+      "iad1"
+    ],
+    "buildingAt": 1793853912166,
+    "ready": 1793853918262,
+    "readyState": "READY",
+    "source": "git",
+    "aliasError": null
+  },
+  "publicObservation": {
+    "status": 200,
+    "bytes": 14433,
+    "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc",
+    "matchesCheckedSource": true,
+    "observedAtUtc": "2026-11-05T04:46:22Z",
+    "origin": "https://forway.vercel.app/"
+  },
+  "limits": [
+    "The eight browser workflows ran on the checked source/deployment, separately from this later documentation publication. Five status docs changed and two result files were added; all product/API/fixture/controller/dependency inputs remain byte-identical.",
+    "The later READY metadata and source-exact anonymous root HTML establish publication/serving, not a browser rerun or an internal backend-binary trace.",
+    "This publication receipt is a subsequent documentation-only addition. Its final commit/production observation must be verified separately; this record is not self-referential.",
+    "The previous 77 Node fixtures were not rerun. Physical devices/system pickers/assistive technology, arbitrary-site safety, indexing/rankings/representative AI visibility, analytics/providers, accounts/shared persistence and full-product acceptance remain open."
+  ]
+}
