@@ -1,0 +1,397 @@
+// INACTIVE: eight authored hosted workflows; no application modules are imported.
+import { test as base, expect } from '@playwright/test';
+import { createHash } from 'node:crypto';
+
+const ORIGIN = 'https://forway.vercel.app';
+const DEPLOYMENT = process.env.FORWAY_EXPECTED_DEPLOYMENT || '';
+if (!/^dpl_[A-Za-z0-9]{1,100}$/.test(DEPLOYMENT)) throw new Error('A reviewed deployment identity is required.');
+const ASSET_ROUTES = ['/', '/styles.css', '/icon.svg', '/src/app.mjs', '/src/audit.mjs', '/src/content.mjs', '/src/observations.mjs', '/src/ui.mjs', '/src/workspace.mjs'];
+const FIXTURE_ROUTES = ['/check-fixtures/authored-page.html', '/check-fixtures/header-noindex.html'];
+const sha256 = value => createHash('sha256').update(value).digest('hex');
+function manifest(name, routes, fixtures = false) {
+  const rows = JSON.parse(process.env[name] || 'null');
+  if (!Array.isArray(rows) || rows.length !== routes.length) throw new Error('The checked-source manifest is missing.');
+  const result = new Map();
+  for (const row of rows) {
+    if (!row || !routes.includes(row.route) || result.has(row.route) || !Number.isSafeInteger(row.bytes)
+      || row.bytes < 1 || row.bytes > 1024 * 1024 || !/^[a-f0-9]{64}$/.test(row.sha256)
+      || (fixtures && row.robots !== (row.route === FIXTURE_ROUTES[0] ? null : 'noindex'))) throw new Error('Invalid checked-source manifest.');
+    result.set(row.route, row);
+  }
+  return result;
+}
+const ASSETS = manifest('FORWAY_EXPECTED_ASSETS', ASSET_ROUTES);
+const FIXTURES = manifest('FORWAY_EXPECTED_FIXTURES', FIXTURE_ROUTES, true);
+const SOURCE = '<!doctype html><html><head><title>Authored notebook</title><meta name="description" content="An authored, portable notebook draft."></head><body><h1>Authored notebook</h1><p>Keep the original question, answer and source together.</p><p>Review the evidence before making a claim.</p></body></html>';
+const CONTROLLED_HTML = '<!doctype html><html><head><title>Controlled authored source</title></head><body><h1>Controlled authored source</h1><p>This response is an authored race fixture, not a live page import.</p></body></html>';
+const observation = (competitors, prompt, answer) => ({ brand: 'Café QA', domain: 'forway.vercel.app', competitors,
+  engine: 'Authored evidence source', time: '2026-11-05T12:00', prompt, answer });
+const EVIDENCE = [
+  observation('Alpha QA', 'Authored question A1', `Café QA and Alpha QA. Source: ${ORIGIN}${FIXTURE_ROUTES[0]}`),
+  observation('Alpha QA', 'Authored question A2', 'Alpha QA only, with no owned citation.'),
+  observation('Beta QA', 'Authored question B1', `Beta QA only. Source: ${ORIGIN}${FIXTURE_ROUTES[1]}`),
+];
+function errorText(value, maximumBytes) {
+  const redacted = value.replace(/https?:\/\/[^\s"'<>]+/gi, raw => {
+    try { const url = new URL(raw); return url.origin === ORIGIN ? url.origin + url.pathname : '[url]'; }
+    catch { return '[url]'; }
+  }).replace(/(?:data|blob):[^\s"'<>]+/gi, '[url]').replace(/[\u0000-\u001f\u007f]/g, ' ');
+  let end = 0, bytes = 0;
+  for (const character of redacted) {
+    const size = Buffer.byteLength(character);
+    if (bytes + size > maximumBytes) break;
+    end += character.length; bytes += size;
+  }
+  return redacted.slice(0, end);
+}
+
+const test = base.extend({
+  boundary: [async ({ context }, use, testInfo) => {
+    const number = testInfo.title.slice(0, 3);
+    if (!/^B0[1-8]$/.test(number) || testInfo.project.name !== (number === 'B08' ? 'narrow-chromium' : 'desktop-chromium')) throw new Error('Unexpected browser case/profile.');
+    const assets = new Map(), pending = new Set(), claims = new WeakMap(), gates = new Set();
+    const state = { schemaVersion: 1, kind: 'forway-hosted-browser-boundary', expectedDeployment: DEPLOYMENT,
+      rootNavigationCount: 0, realApiRequests: 0, realApiResponses: [], controlledApiRequests: 0,
+      controlledApiSettled: 0, controlledApiCancelled: 0, unexpectedRequests: 0, credentialRequests: 0,
+      webSockets: 0, pageErrorCount: 0, pageErrorFingerprints: [], pageErrorDiagnostics: [], responseErrors: 0 };
+    let held = null;
+    const watch = promise => {
+      const tracked = promise.catch(() => { state.responseErrors++; }).finally(() => pending.delete(tracked));
+      pending.add(tracked);
+    };
+    const onResponse = response => {
+      const request = response.request(), url = new URL(response.url());
+      if (url.origin !== ORIGIN) return;
+      if (ASSETS.has(url.pathname)) watch((async () => {
+        const bytes = await response.body(), expected = ASSETS.get(url.pathname);
+        if (bytes.length > 1024 * 1024) throw new Error('Asset response exceeded its bound.');
+        const row = { route: url.pathname, status: response.status(), bytes: bytes.length, sha256: sha256(bytes),
+          matchesExpected: bytes.length === expected.bytes && sha256(bytes) === expected.sha256 };
+        if (url.pathname === '/') state.rootNavigationCount++;
+        if (row.status !== 200 || !row.matchesExpected) state.responseErrors++;
+        assets.set(row.route, row);
+      })());
+      const claim = claims.get(request);
+      if (claim?.mode === 'real') watch((async () => {
+        const bytes = await response.body();
+        if (bytes.length > 2 * 1024 * 1024) throw new Error('API response exceeded its bound.');
+        const data = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)), page = data?.page;
+        if (!page || typeof page.html !== 'string') throw new Error('The actual API response has no page source.');
+        const html = Buffer.from(page.html), expected = FIXTURES.get(claim.fixture);
+        const robots = page.headers?.['x-robots-tag'];
+        const row = { fixture: claim.fixture, status: response.status(), pageStatus: page.status,
+          htmlBytes: html.length, htmlSha256: sha256(html), robots, redirects: page.redirects };
+        if (row.status !== 200 || page.url !== ORIGIN + claim.fixture || row.pageStatus !== 200
+          || html.length !== expected.bytes || row.htmlSha256 !== expected.sha256 || robots !== expected.robots
+          || !Number.isInteger(page.redirects) || page.redirects < 0 || page.redirects > 4
+          || !Number.isFinite(Date.parse(page.fetchedAt))) throw new Error('The real public fixture response did not match checked source.');
+        state.realApiResponses.push(row);
+      })());
+    };
+    const onError = event => {
+      state.pageErrorCount++;
+      if (state.pageErrorFingerprints.length < 8) {
+        const error = event.error(), hash = sha256(error.name + '\n' + error.message);
+        state.pageErrorFingerprints.push(hash);
+        if (state.pageErrorDiagnostics.length < 4) state.pageErrorDiagnostics.push({ name: errorText(error.name, 64), message: errorText(error.message, 384), sha256: hash });
+      }
+    };
+    const boundary = {
+      state,
+      async settle() { while (pending.size) await Promise.all([...pending]); },
+      async startup() { await expect.poll(() => assets.size).toBe(9); await this.settle(); },
+      holdNextApi() {
+        if (number !== 'B07' || held) throw new Error('Controlled responses are restricted to the race scenario.');
+        let release, entered, finished;
+        const gate = { released: new Promise(resolve => { release = resolve; }), entered: new Promise(resolve => { entered = resolve; }),
+          finished: new Promise(resolve => { finished = resolve; }), release, markEntered: entered, markFinished: finished, accepted: false };
+        held = gate; gates.add(gate);
+        return { entered: gate.entered, finished: gate.finished, release: () => gate.release() };
+      },
+    };
+    context.on('response', onResponse); context.on('weberror', onError);
+    try {
+      await context.routeWebSocket('**/*', async route => { state.webSockets++; await route.close({ code: 1008, reason: 'Outside authored acceptance scope' }); });
+      await context.route('**/*', async route => {
+        const request = route.request(), url = new URL(request.url()), headers = await request.allHeaders();
+        if (headers.cookie || headers.authorization) { state.credentialRequests++; return route.abort('blockedbyclient'); }
+        if (url.origin === ORIGIN && !url.search && ['GET', 'HEAD'].includes(request.method()) && ASSETS.has(url.pathname)) return route.continue();
+        if (url.origin === ORIGIN && url.pathname === '/api/audit' && !url.search && request.method() === 'POST') {
+          let value;
+          try {
+            const body = request.postData() || '';
+            if (Buffer.byteLength(body) > 4096 || !/^application\/json(?:;|$)/i.test(headers['content-type'] || '')) throw new Error('Invalid API request.');
+            value = JSON.parse(body);
+            if (!value || Array.isArray(value) || Object.keys(value).length !== 1 || typeof value.url !== 'string'
+              || !FIXTURE_ROUTES.some(path => value.url === ORIGIN + path)) throw new Error('Only authored fixture imports are allowed.');
+          } catch { state.unexpectedRequests++; return route.abort('blockedbyclient'); }
+          const fixture = new URL(value.url).pathname;
+          if (number === 'B07' && held && fixture === FIXTURE_ROUTES[0]) {
+            const gate = held; held = null; gate.accepted = true; state.controlledApiRequests++; gate.markEntered();
+            await gate.released;
+            try {
+              await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ page: { url: value.url,
+                html: CONTROLLED_HTML, status: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'x-robots-tag': null },
+                fetchedAt: '2026-11-05T12:00:00.000Z', redirects: 0 } }) });
+            } catch {
+              if (request.failure()?.errorText !== 'net::ERR_ABORTED') state.responseErrors++;
+            } finally {
+              if (request.failure()?.errorText === 'net::ERR_ABORTED') state.controlledApiCancelled++;
+              state.controlledApiSettled++; gates.delete(gate); gate.markFinished();
+            }
+            return;
+          }
+          if ((number === 'B02' && fixture === FIXTURE_ROUTES[0]) || (number === 'B04' && fixture === FIXTURE_ROUTES[1])) {
+            state.realApiRequests++; claims.set(request, { mode: 'real', fixture }); return route.continue();
+          }
+        }
+        state.unexpectedRequests++; await route.abort('blockedbyclient');
+      });
+      await use(boundary);
+    } finally {
+      try {
+        for (const gate of gates) gate.release();
+        await Promise.all([...gates].filter(gate => gate.accepted).map(gate => gate.finished));
+        await boundary.settle();
+        const body = Buffer.from(JSON.stringify({ ...state, assets: ASSET_ROUTES.filter(route => assets.has(route)).map(route => assets.get(route)) }));
+        if (body.length > 8192) throw new Error('Boundary evidence exceeded eight KiB.');
+        await testInfo.attach('forway-hosted-browser-boundary', { body, contentType: 'application/json' });
+        expect(assets.size).toBe(9);
+        expect(state.rootNavigationCount).toBe(1);
+        expect(state.responseErrors).toBe(0);
+        expect(state.unexpectedRequests).toBe(0); expect(state.credentialRequests).toBe(0);
+        expect(state.webSockets).toBe(0); expect(state.pageErrorCount).toBe(0);
+        expect(state.realApiRequests).toBe(['B02', 'B04'].includes(number) ? 1 : 0);
+        expect(state.realApiResponses).toHaveLength(state.realApiRequests);
+        expect(state.controlledApiRequests).toBe(number === 'B07' ? 3 : 0);
+        expect(state.controlledApiSettled).toBe(state.controlledApiRequests);
+        expect(state.controlledApiCancelled).toBe(number === 'B07' ? 2 : 0);
+      } finally { context.off('response', onResponse); context.off('weberror', onError); }
+    }
+  }, { auto: true }],
+});
+
+test.beforeEach(async ({ page, boundary }) => {
+  const response = await page.goto(ORIGIN, { waitUntil: 'domcontentloaded' });
+  expect(response?.status()).toBe(200);
+  await boundary.startup(); expect(boundary.state.responseErrors).toBe(0);
+  await expect(page.locator('#audit-empty')).toBeVisible();
+});
+const notice = page => page.locator('#app-notice-text');
+async function section(page, label) { await page.getByRole('button', { name: label, exact: true }).click(); }
+async function replacement(page, label) {
+  await expect(page.locator('#confirm-dialog')).toBeVisible();
+  await expect(page.locator('#confirm-action')).toHaveText(label);
+  await page.locator('#confirm-action').click();
+  await expect(page.locator('#confirm-dialog')).not.toBeVisible();
+}
+async function supplied(page, html = SOURCE) {
+  await page.getByText('Use supplied HTML instead', { exact: true }).click();
+  await page.getByLabel('Page URL for this HTML', { exact: true }).fill(ORIGIN + FIXTURE_ROUTES[0]);
+  await page.getByLabel('HTML source', { exact: true }).fill(html);
+  await page.getByRole('button', { name: 'Analyze supplied HTML', exact: true }).click();
+  await replacement(page, 'Replace page & draft');
+  await expect(notice(page)).toContainText('Page source analyzed.');
+  await expect(page.locator('#audit-results .finding')).toHaveCount(12);
+}
+async function realImport(page, fixture) {
+  await page.getByLabel('Public page URL', { exact: true }).fill(ORIGIN + fixture);
+  await page.locator('#url-form button[type=submit]').click();
+  await replacement(page, 'Replace page & draft');
+  await expect(notice(page)).toContainText('Page source analyzed.');
+  await expect(page.locator('#source-context')).toContainText('HTTP 200');
+}
+async function download(page, button, filename, confirmExport = false) {
+  const ready = page.waitForEvent('download');
+  await page.locator(button).click();
+  if (confirmExport) await replacement(page, 'Export current workspace');
+  const file = await ready;
+  try {
+    expect(file.suggestedFilename()).toBe(filename); expect(await file.failure()).toBeNull();
+    const stream = await file.createReadStream();
+    if (!stream) throw new Error('The authored browser download has no stream.');
+    const chunks = []; let size = 0;
+    for await (const value of stream) { const chunk = Buffer.from(value); size += chunk.length; if (size > 4 * 1024 * 1024) throw new Error('Download exceeded four MiB.'); chunks.push(chunk); }
+    return Buffer.concat(chunks);
+  } finally { await file.delete(); }
+}
+async function workspaceDownload(page, confirmExport = false) {
+  const bytes = await download(page, '#export-workspace', 'forway-workspace.json', confirmExport);
+  return { bytes, value: JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)) };
+}
+async function upload(page, button, name, bytes) {
+  const ready = page.waitForEvent('filechooser');
+  await page.locator(button).click();
+  await (await ready).setFiles({ name, mimeType: 'application/json', buffer: bytes });
+  await expect(page.locator('#workspace-file')).toHaveValue('');
+}
+async function addEvidence(page, item) {
+  await section(page, 'AI evidence');
+  for (const [id, value] of Object.entries({ brand: item.brand, domain: item.domain, competitors: item.competitors,
+    engine: item.engine, time: item.time, prompt: item.prompt, answer: item.answer })) await page.locator('#evidence-' + id).fill(value);
+  await page.getByRole('button', { name: /^Add supplied evidence/ }).click();
+  await expect(notice(page)).toContainText('Supplied answer added.');
+}
+async function cohort(page, competitor) {
+  const options = await page.locator('#evidence-cohort option').allTextContents();
+  const label = options.find(value => value.includes('Competitors: ' + competitor + ' ·'));
+  if (!label) throw new Error('The authored evidence cohort is missing.');
+  await page.getByLabel('Brand / domain / competitor cohort').selectOption({ label });
+}
+
+test('B01 desktop entry, keyboard navigation and dialogs expose an empty honest workspace', async ({ page }) => {
+  await expect(page.locator('#workspace-state')).toHaveText('Nothing saved to disk');
+  await expect(page.locator('.evidence-metric')).toHaveCount(0);
+  await section(page, 'Content studio'); await expect(page.locator('#main')).toBeFocused();
+  await page.locator('#add-question').click(); await expect(page.getByLabel('Question 1', { exact: true })).toBeFocused();
+  await page.getByRole('button', { name: 'Remove question 1', exact: true }).click(); await expect(page.locator('#add-question')).toBeFocused();
+  await section(page, 'AI evidence'); await expect(page.locator('#evidence-summary')).toContainText('No evidence added yet');
+  await page.getByRole('link', { name: 'About this workbench', exact: true }).press('Enter');
+  await expect(page.locator('#about-dialog')).toBeVisible(); await expect(page.getByRole('button', { name: 'Close about', exact: true })).toBeFocused();
+  await page.keyboard.press('Escape'); await expect(page.locator('#about-dialog')).not.toBeVisible();
+  await expect(page.getByRole('link', { name: 'About this workbench', exact: true })).toBeFocused();
+  await page.locator('#new-workspace').click(); await expect(notice(page)).toContainText('New workspace ready.');
+});
+
+test('B02 real public fixture import crosses the actual API and browser parser with twelve findings', async ({ page, boundary }) => {
+  await realImport(page, FIXTURE_ROUTES[0]); await boundary.settle();
+  await expect.poll(() => boundary.state.realApiResponses.length).toBe(1);
+  expect(boundary.state.realApiResponses[0].robots).toBeNull();
+  await expect(page.locator('#source-context h3')).toHaveText('Forway authored workflow fixture');
+  const actual = await page.locator('#audit-results .finding').evaluateAll(rows => rows.map(row => ({ label: row.querySelector('strong').textContent, status: row.querySelector('.status-pill').textContent })));
+  expect(actual).toEqual([
+    ['Page title', 'pass'], ['Description metadata', 'pass'], ['Canonical hint', 'review'], ['Primary source heading', 'pass'],
+    ['Observed indexing directives', 'pass'], ['Source link labels', 'pass'], ['Image alt attributes', 'pass'], ['JSON-LD source syntax', 'review'],
+    ['Extractable source text', 'pass'], ['Source structure', 'pass'], ['Question and answer structure', 'pass'], ['Potential source links', 'pass'],
+  ].map(([label, status]) => ({ label, status })));
+});
+
+test('B03 supplied hostile and structured HTML stays inert while literal facts become an editable draft', async ({ page }) => {
+  const hostile = '<!doctype html><title>Authored &amp; literal &lt;title&gt;</title><meta name="description" content="Decoded &amp; authored description"><meta name="robots" content="noindex"><script>document.body.append(Object.assign(document.createElement("div"),{id:"forway-should-not-execute"}))</script><script type="application/ld+json">{"@type":"Article"}</script><h1>Authored <em>guide</em></h1><p>Visible paragraph.</p><p hidden>HIDDEN AUTHORED TEXT</p><h2>What is evidence?</h2><p>A literal &lt;script&gt; answer &amp; source.</p><a href="https://forway.vercel.app/check-fixtures/authored-page.html">Authored source</a><img src="/forbidden-authored-image.png" onerror="document.body.id=\'forway-should-not-execute\'">';
+  await supplied(page, hostile);
+  await expect(page.locator('#forway-should-not-execute')).toHaveCount(0);
+  await expect(page.locator('body')).not.toHaveAttribute('id', 'forway-should-not-execute');
+  await expect(page.locator('#source-context h3')).toHaveText('Authored & literal <title>');
+  await expect(page.locator('.finding').filter({ hasText: 'JSON-LD source syntax' }).locator('.status-pill')).toHaveText('pass');
+  await expect(page.locator('.finding').filter({ hasText: 'Observed indexing directives' }).locator('.status-pill')).toHaveText('review');
+  await section(page, 'Content studio');
+  await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('Authored & literal <title>');
+  await expect(page.getByLabel('Search description', { exact: true })).toHaveValue('Decoded & authored description');
+  await expect(page.getByLabel('Question 1', { exact: true })).toHaveValue('What is evidence?');
+  await expect(page.getByLabel('Answer 1', { exact: true })).toHaveValue('A literal <script> answer & source.');
+  await expect(page.getByLabel('Body', { exact: true })).not.toHaveValue(/HIDDEN AUTHORED TEXT/);
+});
+
+test('B04 real noindex header context survives edits and actual escaped HTML and metadata downloads', async ({ page }) => {
+  await realImport(page, FIXTURE_ROUTES[1]); await section(page, 'Content studio');
+  for (const [id, value] of Object.entries({ title: 'Authored <Guide> & café', heading: 'A <literal> heading',
+    description: 'Reviewed & authored metadata.', summary: 'A direct <answer> & useful summary.', body: 'Literal <script> text stays escaped.' })) await page.locator('#draft-' + id).fill(value);
+  await page.locator('#add-question').click(); await page.getByLabel('Question 1', { exact: true }).fill('What is a <literal>?');
+  await page.getByLabel('Answer 1', { exact: true }).fill('A <script> literal & answer.');
+  await page.locator('#add-source').click(); await page.getByLabel('Source 1 label', { exact: true }).fill('Primary & authored');
+  await page.getByLabel('Source 1 URL', { exact: true }).fill(ORIGIN + FIXTURE_ROUTES[0]);
+  await page.locator('#preview-artifacts').click(); await expect(page.locator('#artifact-review')).toBeVisible();
+  const html = await download(page, '#download-html', 'forway-page.html'), head = await download(page, '#download-metadata', 'forway-head.html');
+  const decoded = new TextDecoder('utf-8', { fatal: true }).decode(html), metadata = new TextDecoder('utf-8', { fatal: true }).decode(head);
+  await expect(page.locator('#html-artifact')).toHaveText(decoded); await expect(page.locator('#metadata-artifact')).toHaveText(metadata);
+  expect(decoded).toContain('<title>Authored &lt;Guide&gt; &amp; café</title>'); expect(decoded).toContain('\\u003cscript\\u003e');
+  expect(decoded).not.toContain('<script> text'); expect(metadata).toContain('&lt;Guide&gt; &amp; café');
+  await page.locator('#review-draft').click(); await expect(page.locator('#draft-comparison .comparison-list li')).toHaveCount(12);
+  await expect(page.locator('#draft-comparison li').filter({ hasText: 'Observed indexing directives' })).toContainText('review → review');
+  await expect(page.locator('#draft-comparison')).toContainText('Content edits do not change those server directives.');
+});
+
+test('B05 supplied evidence retains original answers and isolated competitor-cohort denominators', async ({ page }) => {
+  for (const item of EVIDENCE) await addEvidence(page, item);
+  await expect(page.locator('#evidence-cohort option')).toHaveCount(2);
+  await cohort(page, 'Alpha QA'); await expect(page.locator('.evidence-denominator')).toContainText('Denominator: 2 supplied answers');
+  await expect(page.locator('.evidence-metric p')).toHaveText(['1 of 2 supplied answers', '1 of 2 supplied answers']);
+  await expect(page.getByRole('list', { name: 'Competitor mentions in supplied answers' })).toContainText('2 / 2');
+  await expect(page.locator('.evidence-prompt')).toHaveText(EVIDENCE.slice(0, 2).map(item => item.prompt));
+  for (let index = 0; index < 2; index++) await page.locator('.evidence-record details summary').nth(index).click();
+  await expect(page.locator('.evidence-record blockquote').first()).toBeVisible();
+  await expect(page.locator('.evidence-record blockquote').last()).toBeVisible();
+  await expect(page.locator('.evidence-record blockquote')).toHaveText(EVIDENCE.slice(0, 2).map(item => item.answer));
+  await cohort(page, 'Beta QA'); await expect(page.locator('.evidence-denominator')).toContainText('Denominator: 1 supplied answer');
+  await expect(page.locator('.evidence-metric p')).toHaveText(['0 of 1 supplied answers', '1 of 1 supplied answers']);
+  await expect(page.locator('.evidence-prompt')).toHaveText([EVIDENCE[2].prompt]);
+  await page.locator('.evidence-record details summary').click(); await expect(page.locator('.evidence-record blockquote')).toBeVisible();
+  await expect(page.locator('.evidence-record blockquote')).toHaveText([EVIDENCE[2].answer]);
+  const saved = (await workspaceDownload(page)).value;
+  expect(saved.observations.map(item => ({ prompt: item.prompt, answer: item.answer, competitors: item.competitors })))
+    .toEqual(EVIDENCE.map(item => ({ prompt: item.prompt, answer: item.answer, competitors: [item.competitors] })));
+});
+
+test('B06 real workspace download and chooser restore partial rows and cohorts while rejection keeps current work', async ({ page }) => {
+  await supplied(page); for (const item of [EVIDENCE[0], EVIDENCE[2]]) await addEvidence(page, item);
+  await section(page, 'Content studio'); await page.locator('#add-question').click();
+  await page.getByLabel('Question 1', { exact: true }).fill('Unfinished authored question?');
+  await page.locator('#add-source').click(); await page.getByLabel('Source 1 label', { exact: true }).fill('Unfinished authored source');
+  const saved = await workspaceDownload(page);
+  expect(Object.keys(saved.value).sort()).toEqual(['draft', 'observations', 'source', 'version']);
+  expect(saved.value.source.html).toBe(SOURCE); expect(saved.value.observations).toHaveLength(2);
+  expect(saved.value.draft.questions).toEqual([{ question: 'Unfinished authored question?', answer: '' }]);
+  expect(saved.value.draft.sources).toEqual([{ label: 'Unfinished authored source', url: '' }]);
+  await page.getByLabel('Page title', { exact: true }).fill('Changed after authored export');
+  await upload(page, '#import-workspace', 'authored-workspace.json', saved.bytes);
+  await expect(page.locator('#confirm-dialog')).toBeVisible(); await page.getByRole('button', { name: 'Keep current work', exact: true }).click();
+  await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('Changed after authored export');
+  await page.locator('#new-workspace').click(); await replacement(page, 'Start new workspace');
+  await expect(notice(page)).toContainText('New workspace ready.');
+  expect((await workspaceDownload(page)).value).toEqual({ version: 1, source: null, draft: null, observations: [] });
+  await upload(page, '#import-workspace', 'authored-workspace.json', saved.bytes);
+  await expect(notice(page)).toContainText('Workspace imported.');
+  expect((await workspaceDownload(page)).value).toEqual(saved.value);
+  await upload(page, '#import-workspace', 'authored-invalid.json', Buffer.from('{')); await replacement(page, 'Import workspace');
+  await expect(notice(page)).toContainText('This workspace could not be opened.');
+  expect((await workspaceDownload(page)).value).toEqual(saved.value);
+  await section(page, 'Content studio'); await expect(page.getByLabel('Question 1', { exact: true })).toHaveValue('Unfinished authored question?');
+  await expect(page.getByLabel('Answer 1', { exact: true })).toHaveValue('');
+  await section(page, 'AI evidence'); await expect(page.locator('#evidence-cohort option')).toHaveCount(2);
+});
+
+test('B07 controlled own-API delay preserves cancellation retry and a newer draft edit', async ({ page, boundary }) => {
+  await supplied(page);
+  async function begin() {
+    const gate = boundary.holdNextApi();
+    await page.getByLabel('Public page URL', { exact: true }).fill(ORIGIN + FIXTURE_ROUTES[0]);
+    await page.locator('#url-form button[type=submit]').click(); await replacement(page, 'Replace page & draft');
+    await gate.entered; await expect(page.locator('#import-progress')).toBeVisible(); return gate;
+  }
+  const canceled = await begin();
+  const canceledRequest = page.waitForEvent('requestfailed', { predicate: request => request.url() === ORIGIN + '/api/audit' });
+  await page.locator('#cancel-import').click(); await canceledRequest;
+  canceled.release(); await canceled.finished;
+  await expect(notice(page)).toContainText('Import canceled. Your current workspace was kept.');
+  await expect(page.locator('#source-context h3')).toHaveText('Authored notebook');
+  const retry = await begin(); retry.release(); await retry.finished;
+  await expect(page.locator('#source-context h3')).toHaveText('Controlled authored source');
+  const late = await begin();
+  await section(page, 'Content studio');
+  const editedRequest = page.waitForEvent('requestfailed', { predicate: request => request.url() === ORIGIN + '/api/audit' });
+  await page.getByLabel('Page title', { exact: true }).fill('Newer authored edit'); await editedRequest;
+  late.release(); await late.finished;
+  await expect(notice(page)).toContainText('Import canceled because the workspace changed.');
+  await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('Newer authored edit');
+  expect((await workspaceDownload(page, true)).value.draft.title).toBe('Newer authored edit');
+});
+
+test('B08 narrow viewport keeps audit content evidence and keyboard dialogs reachable without overflow', async ({ page }) => {
+  expect(page.viewportSize()).toEqual({ width: 390, height: 844 });
+  await page.keyboard.press('Tab'); await expect(page.getByRole('link', { name: 'Skip to workspace', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab'); await page.keyboard.press('Tab'); await expect(page.getByRole('button', { name: 'Page audit', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab'); await page.keyboard.press('Enter'); await expect(page.locator('#view-content')).toBeVisible();
+  await section(page, 'Page audit'); await supplied(page);
+  for (const label of ['Page audit', 'Content studio', 'AI evidence']) {
+    await section(page, label);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true);
+  }
+  await addEvidence(page, EVIDENCE[0]); await expect(page.locator('.evidence-denominator')).toContainText('Denominator: 1 supplied answer');
+  await section(page, 'Content studio'); await page.getByLabel('Page title', { exact: true }).fill('Narrow authored edit');
+  await expect(page.getByLabel('Page title', { exact: true })).toHaveValue('Narrow authored edit');
+  await page.getByRole('link', { name: 'About this workbench', exact: true }).press('Enter');
+  await expect(page.locator('#about-dialog')).toBeVisible(); await page.keyboard.press('Escape');
+  await expect(page.locator('#about-dialog')).not.toBeVisible();
+  await expect(page.getByRole('link', { name: 'About this workbench', exact: true })).toBeFocused();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true);
+});

@@ -62,6 +62,12 @@ Reproduce the exact tested commit for runtime evidence.
 
 ## Controlled browser scope
 
+The [5 November executable packet](hosted-browser-checks.md) retains these
+eight workflows and uses a bounded temporary public Chromium CI job under the
+owner's later standing approval. That packet supersedes the historical
+connected-Chrome-only executor limitation below. Its browser result remains
+pending until an actual terminal receipt is published.
+
 **All eight scenarios below are UNRUN.** The Node cases use authored network/API
 adapters and source facts; they do not execute real DNS/HTTP, the deployed API,
 browser HTML parsing, UI or file-transfer workflows. No browser acceptance is

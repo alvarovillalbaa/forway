@@ -34,3 +34,18 @@
 - Source publication to the personal GitHub account is authorized by the
   all-project goal. Do not create a paid plan or new account. Keep exact proof
   and unresolved full-app requirements in the owning docs, not invented status.
+
+## Hosted browser scope — 5 November 2026
+
+The owner's later standing approval covers the executable original B01–B08
+scope in `docs/proposals/hosted-browser-checks.md`: seven desktop cases and one
+narrow case in one temporary public Ubuntu CI job per changed candidate,
+15 minutes maximum. Pinned Playwright/Chromium installs use owned external
+runner storage only; no app dependencies or local environment are installed.
+Real API imports target only the two authored public `/check-fixtures/` pages.
+Controlled timing responses are separate evidence. Preserve request safety,
+served-asset/source/process guards and every failure; retire the QA workflow
+after terminal evidence. No account, provider/model, customer data, paid plan,
+shared database, arbitrary website or private-address probe is part of this
+scope. The previous 77 Node cases are closed and must not be rerun merely for
+this new browser packet. Shared persistence/full-product work remains open.
