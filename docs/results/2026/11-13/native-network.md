@@ -70,9 +70,30 @@ disabled; the QA ref was checked at its exact SHA, deleted and read back absent.
 The temporary fixture handler is moved outside the deployed API into
 `tests/fixtures/native-page-handler.mjs`; its sole import is adjusted to the
 neighboring authored constants. The temporary function-duration entry is removed,
-restoring original vercel.json bytes. No production test endpoint is intended
-to remain. Deployment/404 retirement readback will be recorded after this
-retirement source publishes; source removal alone is not that live proof.
+restoring original vercel.json bytes. Retirement source
+`c3551d2fe135d90c3ba208c0e45e8990c2611f4f` reached READY at
+dpl_474DophYi5tWBxciUx76bh4hLYSu. A separate lifecycle-only
+[run43430877493](https://github.com/alvarovillalbaa/forway/actions/runs/43430877493),
+attempt1/job131903749086, made one anonymous GET and observed canonical HTTP404,
+SSL verification0, no redirects and a complete79-byte response. All59 source
+identities, three source/index guards, child/root closure and uploaded-proof
+retirement passed. No application case was replayed.
+
+Its [original ZIP](fixture-retirement-attempt-1.zip), [lossless log](fixture-retirement-attempt-1-job.log.gz),
+[frozen workflow](../../../proposals/fixture-retirement.workflow.yml.example),
+[publication receipt](native-network-publication.json), [portable verifier](verify-fixture-retirement.py)
+and [independent audit](fixture-retirement-audit.json) retain that separate proof.
+The ZIP is5873bytes/SHA256415f08fb0ee2152aaa45540bcd0f6f6339dae696b6eab17e88d07fd5ce293692;
+its13229-byte JSON SHA256 is
+`c8385e35091296274cbb12b8252f5b77784ca045f3885fc562ee872943bb6123`.
+Lifecycle workflow417281955 is disabled and its exact3359400a QA ref is absent.
+
+The earlier local retirement curl failed at DNS before connection; a generic
+web reader supplied no HTTP status. Neither is relabeled as the external404.
+Two historical Vercel QA preview builds remain retained. The connector lacks
+deployment deletion, no local Vercel CLI is installed and the supported browser
+entry point reported unavailable. No credential search or recovery was attempted.
+Only the canonical route is proved retired; deployment history is not erased.
 
 The pre-existing untracked9November source review remains2350bytes at SHA256
 `997b4da561ea02be8c66a9c7c692430bced7580c4089ce7e212750739e40431f`.

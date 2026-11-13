@@ -1,0 +1,118 @@
+# One anonymous lifecycle GET only; no application suite, install or account.
+name: Temporary Forway fixture retirement read
+on:
+  create:
+permissions:
+  contents: read
+jobs:
+  retirement:
+    if: github.repository == 'alvarovillalbaa/forway' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/forway-fixture-retirement-20261113-1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      SOURCE_COMMIT: c3551d2fe135d90c3ba208c0e45e8990c2611f4f
+      DEPLOYMENT_ID: dpl_474DophYi5tWBxciUx76bh4hLYSu
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+          clean: false
+      - name: One source-bound anonymous retirement read
+        id: read
+        shell: python
+        run: |
+          import base64,gzip,hashlib,json,os,pathlib,secrets,shutil,signal,subprocess,tempfile,time,traceback
+          P=pathlib.Path
+          sha=lambda b:hashlib.sha256(b).hexdigest()
+          def need(v,m):
+              if not v: raise RuntimeError(m)
+          def capture(b):
+              return dict(bytes=len(b),sha256=sha(b),gzipBase64=base64.b64encode(gzip.compress(b,mtime=0)).decode())
+          def vector():
+              rows={}
+              need(subprocess.check_output(['git','status','--porcelain'])==b'','Clean source/index')
+              need(subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==os.environ['SOURCE_COMMIT'],'Frozen source')
+              for e in subprocess.check_output(['git','ls-tree','-rz','HEAD']).split(b'\0'):
+                  if not e: continue
+                  m,p=e.split(b'\t',1); mode,kind,blob=m.decode().split(); file=P(p.decode()); b=file.read_bytes()
+                  need(kind=='blob' and mode in ('100644','100755') and not file.is_symlink(),'Source leaf')
+                  need(bool(file.stat().st_mode&0o111)==(mode=='100755') and hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==blob,'Native source bytes/mode')
+                  rows[p.decode()]=dict(mode=mode,blob=blob,bytes=len(b),sha256=sha(b))
+              return rows
+          report=dict(kind='forway.fixture-retirement',runId=os.environ['GITHUB_RUN_ID'],sourceCommit=os.environ['SOURCE_COMMIT'],deploymentId=os.environ['DEPLOYMENT_ID'],guards=[],cleanup={},applicationCasesReexecuted=False)
+          status=1; root=None; child=None; before=None
+          try:
+              event=json.loads(P(os.environ['GITHUB_EVENT_PATH']).read_bytes())
+              need(os.environ['GITHUB_REPOSITORY']=='alvarovillalbaa/forway' and os.environ['GITHUB_REF']=='refs/heads/qa/forway-fixture-retirement-20261113-1' and event['repository']['private'] is False,'Exact public owner/ref')
+              need(shutil.disk_usage(os.environ['RUNNER_TEMP']).free>2*1024**3,'External reserve')
+              before=vector(); need(len(before)==59,'Exact retirement source'); report['sourceFiles']=before; report['guards'].append('before-owned-read')
+              root=P(tempfile.mkdtemp(prefix='forway-retirement-',dir=os.environ['RUNNER_TEMP'])); os.chmod(root,0o700); identity=root.stat(); nonce=secrets.token_hex(16); (root/'.owner').write_text(nonce)
+              url='https://forway.vercel.app/api/check-fixtures/native-page?case=ok'
+              argv=['/usr/bin/curl','-q','--silent','--show-error','--max-time','15','--max-filesize','65536','--proto','=https','--dump-header',str(root/'headers'),'--output',str(root/'body'),'--write-out','{"status":%{http_code},"remoteIP":"%{remote_ip}","sslVerify":%{ssl_verify_result},"bytes":%{size_download},"redirects":%{num_redirects}}',url]
+              env={k:os.environ[k] for k in ('PATH','HOME')}; env.update(TMPDIR=str(root),TMP=str(root),TEMP=str(root),LANG='C.UTF-8')
+              report['request']=dict(method='GET',url=url,redirectsFollowed=False,curlSha256=sha(P('/usr/bin/curl').read_bytes()))
+              child=subprocess.Popen(argv,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
+              try: out,err=child.communicate(timeout=20)
+              except subprocess.TimeoutExpired:
+                  child.kill(); out,err=child.communicate(timeout=5); report['cleanup']['signal']='owned-direct-SIGKILL'
+              report['command']=dict(pid=child.pid,exitCode=child.returncode,reaped=True,stdout=capture(out),stderr=capture(err))
+              need(child.returncode==0 and not report['cleanup'].get('signal'),'Actual curl failure')
+              result=json.loads(out); report['response']=result
+              body=(root/'body').read_bytes(); header=(root/'headers').read_bytes(); report['body']=capture(body)
+              selected={}
+              for line in header.splitlines():
+                  if b':' in line:
+                      key,value=line.split(b':',1)
+                      if key.lower() in (b'content-type',b'cache-control',b'x-vercel-error'): selected[key.decode().lower()]=value.decode().strip()
+              report['headers']=dict(bytes=len(header),sha256=sha(header),selected=selected)
+              need(result['status']==404 and result['sslVerify']==0 and result['redirects']==0 and result['bytes']==len(body)<=65536,'Anonymous complete404')
+              need(vector()==before,'Source after actual read'); report['guards'].append('after-owned-read'); status=0
+          except BaseException as error: report['failure']=dict(type=type(error).__name__,message=str(error),traceback=traceback.format_exc())
+          finally:
+              try:
+                  if child is not None:
+                      if child.poll() is None: child.kill(); child.communicate(timeout=5); status=1; report['cleanup']['signal']='owned-direct-SIGKILL'
+                      try: os.killpg(child.pid,0); gone=False
+                      except ProcessLookupError: gone=True
+                      report['cleanup']['childGroupAbsent']=gone; need(gone,'Owned group remains')
+                  if root is not None:
+                      now=root.lstat(); need(not root.is_symlink() and (now.st_uid,now.st_dev,now.st_ino)==(os.getuid(),identity.st_dev,identity.st_ino) and (root/'.owner').read_text()==nonce,'Owned root identity')
+                      files={}
+                      for p in root.iterdir():
+                          need(p.is_file() and not p.is_symlink() and p.stat().st_uid==os.getuid(),'Owned leaf'); b=p.read_bytes(); files[p.name]=dict(bytes=len(b),sha256=sha(b))
+                      need(set(files)<=set(['.owner','headers','body']) and sum(f['bytes'] for f in files.values())<131072,'Bounded owned leaves')
+                      report['cleanup']['files']=files; shutil.rmtree(root); report['cleanup']['rootAbsent']=not root.exists()
+                  if before is not None: need(vector()==before,'Source after cleanup'); report['guards'].append('after-cleanup')
+              except BaseException: report['cleanup']['failure']=traceback.format_exc(); status=1
+              report['accepted']=status==0 and report['cleanup'].get('rootAbsent') is True
+              body=json.dumps(report,separators=(',',':')).encode()+b'\n'; need(len(body)<262144,'Bounded proof')
+              proof=P(os.environ['RUNNER_TEMP'])/('forway-fixture-retirement-'+os.environ['GITHUB_RUN_ID']+'.json')
+              with proof.open('xb') as f: f.write(body)
+              info=proof.stat()
+              with P(os.environ['GITHUB_OUTPUT']).open('a') as f: f.write(f'report_sha={sha(body)}\nreport_dev={info.st_dev}\nreport_ino={info.st_ino}\n')
+              print(json.dumps(dict(kind='retirement-proof',bytes=len(body),sha256=sha(body),accepted=report['accepted'])))
+          raise SystemExit(status)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        id: proof
+        if: always()
+        with:
+          name: forway-fixture-retirement-${{ github.run_id }}
+          path: ${{ runner.temp }}/forway-fixture-retirement-${{ github.run_id }}.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Retire exact uploaded proof
+        if: always() && steps.proof.outcome == 'success' && steps.read.outputs.report_sha != ''
+        shell: python
+        env:
+          REPORT_SHA: ${{ steps.read.outputs.report_sha }}
+          REPORT_DEV: ${{ steps.read.outputs.report_dev }}
+          REPORT_INO: ${{ steps.read.outputs.report_ino }}
+        run: |
+          import hashlib,json,os,pathlib
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/('forway-fixture-retirement-'+os.environ['GITHUB_RUN_ID']+'.json')
+          s=p.lstat(); b=p.read_bytes(); h=hashlib.sha256(b).hexdigest()
+          assert p.is_file() and not p.is_symlink() and (s.st_uid,s.st_dev,s.st_ino)==(os.getuid(),int(os.environ['REPORT_DEV']),int(os.environ['REPORT_INO'])) and h==os.environ['REPORT_SHA']
+          assert json.loads(b)['runId']==os.environ['GITHUB_RUN_ID']
+          p.unlink(); assert not p.exists(); print(json.dumps(dict(kind='uploaded-proof-retired',sha256=h,bytes=len(b),absent=True)))

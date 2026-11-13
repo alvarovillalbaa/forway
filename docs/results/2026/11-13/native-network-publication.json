@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-13 13:10:47 UTC",
+  "repository": "alvarovillalbaa/forway",
+  "retirementSource": {
+    "commit": "c3551d2fe135d90c3ba208c0e45e8990c2611f4f",
+    "tree": "eea36c24e023e84bc4ae001f6585e9acb093c7cf",
+    "files": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "sha": "639fc5a961a94df75a891fbc93798d1126086c65",
+        "size": 88
+      },
+      {
+        "path": "AGENTS.md",
+        "mode": "100644",
+        "sha": "5efc07b26c2d423e3da07771110a0cd01458516b",
+        "size": 4931
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "sha": "5fb52b674e5a4d756d26a8fc3619651bb3b28798",
+        "size": 1072
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "sha": "ed9d358ca5c3848fff3f250171450113412a4f47",
+        "size": 4398
+      },
+      {
+        "path": "api/audit.mjs",
+        "mode": "100644",
+        "sha": "f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2",
+        "size": 5308
+      },
+      {
+        "path": "docs/architecture.md",
+        "mode": "100644",
+        "sha": "40adb2242f1311aee17671195309eab066caefad",
+        "size": 5193
+      },
+      {
+        "path": "docs/proposals/focused-checks.md",
+        "mode": "100644",
+        "sha": "a186c0ca7d0a07fa2a5238df48191a7bb6440fec",
+        "size": 7956
+      },
+      {
+        "path": "docs/proposals/hosted-browser-checks.md",
+        "mode": "100644",
+        "sha": "2687cf45942e2febead845c7a23abd8263d06c50",
+        "size": 9562
+      },
+      {
+        "path": "docs/proposals/hosted-browser.spec.mjs.example",
+        "mode": "100644",
+        "sha": "ed0dbf7ef6a3ca8787996707f4ae01885c3f5761",
+        "size": 30479
+      },
+      {
+        "path": "docs/proposals/hosted-browser.workflow.yml.example",
+        "mode": "100644",
+        "sha": "f788b849094b080234241214d745bbac8409596c",
+        "size": 1534
+      },
+      {
+        "path": "docs/proposals/native-network-checks.md",
+        "mode": "100644",
+        "sha": "acc39d2599a7d77b3474ea2da28a740d716c54b8",
+        "size": 4733
+      },
+      {
+        "path": "docs/proposals/native-network.workflow.yml.example",
+        "mode": "100644",
+        "sha": "ee94b6cdce7002e4852b0eb84566920d4d90901e",
+        "size": 1848
+      },
+      {
+        "path": "docs/references/source-decisions.md",
+        "mode": "100644",
+        "sha": "3dbe603e44c9b6a33593ec53b698b07572d18f60",
+        "size": 1775
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-delivery.json",
+        "mode": "100644",
+        "sha": "cd7753c325449aa620f0d5dad6dd75c5899589db",
+        "size": 7086
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-delivery.md",
+        "mode": "100644",
+        "sha": "a61acb55df47e466a44d6453ef191792b41b3030",
+        "size": 4221
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-source.json",
+        "mode": "100644",
+        "sha": "0834c5697449351ef85220aa49e0c9b1253bfd97",
+        "size": 14456
+      },
+      {
+        "path": "docs/results/2026/10-29/initial-source.md",
+        "mode": "100644",
+        "sha": "fa8002fdf9a8a8ccd5171254c59802546b94984a",
+        "size": 5454
+      },
+      {
+        "path": "docs/results/2026/11-04/local-node-checks.json",
+        "mode": "100644",
+        "sha": "1d6eab96e310b508e88f1a071268c64323c4e234",
+        "size": 78071
+      },
+      {
+        "path": "docs/results/2026/11-04/local-node-checks.md",
+        "mode": "100644",
+        "sha": "f7c15ff9ee2c4f6246ae32a6e0ad0220e312ef6d",
+        "size": 3207
+      },
+      {
+        "path": "docs/results/2026/11-04/publication-observation.json",
+        "mode": "100644",
+        "sha": "82e3c7f7ad922a1ac2d7ccb919136be47b9261d4",
+        "size": 1722
+      },
+      {
+        "path": "docs/results/2026/11-05/hosted-browser-checks.json",
+        "mode": "100644",
+        "sha": "eadee83a8b6b199d394303ce15ba9c01af0216f7",
+        "size": 175247
+      },
+      {
+        "path": "docs/results/2026/11-05/hosted-browser-checks.md",
+        "mode": "100644",
+        "sha": "1e04b716615b0aafb4ac8e832f2b9b0904ba3661",
+        "size": 4347
+      },
+      {
+        "path": "docs/results/2026/11-05/hosted-browser-publication.json",
+        "mode": "100644",
+        "sha": "6ce41c951fd9c4ebf82eec458f98c4785dd85af5",
+        "size": 4042
+      },
+      {
+        "path": "docs/results/2026/11-13/native-network-attempt-1-job.log.gz",
+        "mode": "100644",
+        "sha": "8dc4b670aafac9df6c1dbf30a646b774592bd6b9",
+        "size": 5368
+      },
+      {
+        "path": "docs/results/2026/11-13/native-network-attempt-1.zip",
+        "mode": "100644",
+        "sha": "6a719020822a0003817d36807bf1a2045db61bcf",
+        "size": 10956
+      },
+      {
+        "path": "docs/results/2026/11-13/native-network-audit.json",
+        "mode": "100644",
+        "sha": "122c86870280296c2b8f500bbb1f710068aeb9bb",
+        "size": 1667
+      },
+      {
+        "path": "docs/results/2026/11-13/native-network-controls.json",
+        "mode": "100644",
+        "sha": "ba779fcc78ff168e8fa3a4734fd10dce5854bc48",
+        "size": 1439
+      },
+      {
+        "path": "docs/results/2026/11-13/native-network-source.json",
+        "mode": "100644",
+        "sha": "fa4cbcf2f0509093c0b8a9026a3a5f7cdf1365a6",
+        "size": 8503
+      },
+      {
+        "path": "docs/results/2026/11-13/native-network.md",
+        "mode": "100644",
+        "sha": "4137e948ebd5bf34f9eefa2b8d370aa588f3b2ca",
+        "size": 5498
+      },
+      {
+        "path": "docs/results/2026/11-13/verify-native-network.py",
+        "mode": "100644",
+        "sha": "f6bfa53c77c5e2b1e53c4837fd56a34b68cad469",
+        "size": 8092
+      },
+      {
+        "path": "docs/spec.md",
+        "mode": "100644",
+        "sha": "eda69547fb3d22b1021adb9c7de3813adb61b063",
+        "size": 2863
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "sha": "e39f1d47b83ab3f929c0243a4f82f740aad2195a",
+        "size": 302
+      },
+      {
+        "path": "public/check-fixtures/authored-page.html",
+        "mode": "100644",
+        "sha": "babb48482ba7a3f2efa190591d5871086bab8ad6",
+        "size": 985
+      },
+      {
+        "path": "public/check-fixtures/header-noindex.html",
+        "mode": "100644",
+        "sha": "68526399907560cd61967640b2a3d1a8925aba2d",
+        "size": 650
+      },
+      {
+        "path": "public/icon.svg",
+        "mode": "100644",
+        "sha": "af08676cd5a3edc34900b8608f1c59070494b50a",
+        "size": 227
+      },
+      {
+        "path": "public/index.html",
+        "mode": "100644",
+        "sha": "6b6ee4bed8d6c42ad42625ee1c7c8868832563fd",
+        "size": 14433
+      },
+      {
+        "path": "public/src/app.mjs",
+        "mode": "100644",
+        "sha": "a54de16dd42e46d567cf1fc9ac8c47c8cd6b40c9",
+        "size": 32992
+      },
+      {
+        "path": "public/src/audit.mjs",
+        "mode": "100644",
+        "sha": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008",
+        "size": 14928
+      },
+      {
+        "path": "public/src/content.mjs",
+        "mode": "100644",
+        "sha": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db",
+        "size": 5727
+      },
+      {
+        "path": "public/src/observations.mjs",
+        "mode": "100644",
+        "sha": "7a77d69ff8ec22ba3f7e0a38241337542a6f25e1",
+        "size": 7243
+      },
+      {
+        "path": "public/src/ui.mjs",
+        "mode": "100644",
+        "sha": "42f3cc9af3a97a677d911d07b099e50d35b876c8",
+        "size": 1584
+      },
+      {
+        "path": "public/src/workspace.mjs",
+        "mode": "100644",
+        "sha": "0c92702583abd186d04c9179ee47ea29d09ad0cc",
+        "size": 3956
+      },
+      {
+        "path": "public/styles.css",
+        "mode": "100644",
+        "sha": "50b8676993ec12c0e65221e507314a3afafb6883",
+        "size": 21002
+      },
+      {
+        "path": "scripts/check.mjs",
+        "mode": "100644",
+        "sha": "816261bb073958fed58b8606cd7a1f84fe9011bb",
+        "size": 1682
+      },
+      {
+        "path": "scripts/run-hosted-browser.mjs",
+        "mode": "100644",
+        "sha": "5a996f13828a5e84f5c0ab205d7f46b3b3ec7865",
+        "size": 41243
+      },
+      {
+        "path": "src/fetch-page.mjs",
+        "mode": "100644",
+        "sha": "cf6523bc812275e191d8ab963584565c4a40ba8c",
+        "size": 14971
+      },
+      {
+        "path": "tests/README.md",
+        "mode": "100644",
+        "sha": "799d61180e7e02c292724338d8d14aae954cad61",
+        "size": 2293
+      },
+      {
+        "path": "tests/fixtures/native-network.mjs",
+        "mode": "100644",
+        "sha": "6b27f8b35cce03c18f04e22142b1fc0439afe761",
+        "size": 421
+      },
+      {
+        "path": "tests/fixtures/native-page-handler.mjs",
+        "mode": "100644",
+        "sha": "22af271565d43ffb9a7184c24471b0e7293a6c8a",
+        "size": 1939
+      },
+      {
+        "path": "tests/helpers/native-network-observer.mjs",
+        "mode": "100644",
+        "sha": "b12861b0c21604bab9d617ef570a8cf63861cdcc",
+        "size": 5559
+      },
+      {
+        "path": "tests/integration/native-network.mjs",
+        "mode": "100644",
+        "sha": "d2fb8b7a297151046f19eda79b97cefdf4b639f6",
+        "size": 6828
+      },
+      {
+        "path": "tests/scripts/run-native-network.py",
+        "mode": "100644",
+        "sha": "359a6fa2dce493e6453967a544de37057712ca05",
+        "size": 11599
+      },
+      {
+        "path": "tests/unit/audit-api.test.mjs",
+        "mode": "100644",
+        "sha": "4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea",
+        "size": 8207
+      },
+      {
+        "path": "tests/unit/audit-facts.test.mjs",
+        "mode": "100644",
+        "sha": "846b2abb36eac1e4f54d8f7eee760a2a61f0f370",
+        "size": 5131
+      },
+      {
+        "path": "tests/unit/content.test.mjs",
+        "mode": "100644",
+        "sha": "9725e39eefaf692d82dba0f2a56f6faa27f59939",
+        "size": 6915
+      },
+      {
+        "path": "tests/unit/fetch-page.test.mjs",
+        "mode": "100644",
+        "sha": "8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4",
+        "size": 14790
+      },
+      {
+        "path": "tests/unit/observations.test.mjs",
+        "mode": "100644",
+        "sha": "a44e87c77b63e2360d1a0801c7bf5371c669174b",
+        "size": 7505
+      },
+      {
+        "path": "tests/unit/workspace.test.mjs",
+        "mode": "100644",
+        "sha": "4184581cf98118e690a0ae89a414819438f1de2e",
+        "size": 8211
+      },
+      {
+        "path": "vercel.json",
+        "mode": "100644",
+        "sha": "187bedfe15176ce386d63a814fb6674015f8076d",
+        "size": 794
+      }
+    ]
+  },
+  "nativeAcceptance": {
+    "sourceCommit": "ce59d9b1bed94151fcd5213c11cac405432ac4b6",
+    "runId": 43428560903,
+    "jobId": 131895971898,
+    "identities": [
+      "N01",
+      "N02",
+      "N03",
+      "N04",
+      "N05",
+      "N06",
+      "N07"
+    ],
+    "attempt": 1,
+    "applicationCasesReexecuted": false
+  },
+  "retirement": {
+    "runId": 43430877493,
+    "jobId": 131903749086,
+    "qaCommit": "3359400a848802c2b456e0cb65b53dd41c45fe86",
+    "attempt": 1,
+    "anonymousGets": 1,
+    "sourceCommit": "c3551d2fe135d90c3ba208c0e45e8990c2611f4f",
+    "artifactId": 14039427626,
+    "archiveSha256": "415f08fb0ee2152aaa45540bcd0f6f6339dae696b6eab17e88d07fd5ce293692",
+    "proofSha256": "c8385e35091296274cbb12b8252f5b77784ca045f3885fc562ee872943bb6123",
+    "httpStatus": 404
+  },
+  "canonicalDeployment": {
+    "id": "dpl_474DophYi5tWBxciUx76bh4hLYSu",
+    "name": "forway",
+    "url": "forway-29jfn4y9q-my-team-4f230354.vercel.app",
+    "type": "LAMBDAS",
+    "state": "READY",
+    "createdAt": 1794574741302,
+    "creator": {
+      "uid": "zsxQcbiAfBXuwfpA5YtTh7Nm",
+      "username": "alvipedev"
+    },
+    "project": {
+      "id": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+      "name": "forway",
+      "framework": null
+    },
+    "meta": {
+      "githubCommitRef": "main",
+      "githubCommitSha": "c3551d2fe135d90c3ba208c0e45e8990c2611f4f",
+      "githubCommitMessage": "Record seven native importer passes and retire the public fixture",
+      "githubRepo": "forway",
+      "githubOrg": "alvarovillalbaa"
+    },
+    "alias": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-main-my-team-4f230354.vercel.app"
+    ],
+    "target": "production",
+    "regions": [
+      "iad1"
+    ],
+    "buildingAt": 1794574742046,
+    "ready": 1794574747034,
+    "readyState": "READY",
+    "source": "git",
+    "aliasError": null
+  },
+  "workflows": [
+    {
+      "id": 417266739,
+      "path": ".github/workflows/native-network-1.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417281955,
+      "path": ".github/workflows/fixture-retirement-1.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "qaRefs": [
+    {
+      "branch": "qa/forway-native-network-20261113-1",
+      "refs": []
+    },
+    {
+      "branch": "qa/forway-fixture-retirement-20261113-1",
+      "refs": []
+    }
+  ],
+  "retainedHistoricalPreviews": [
+    {
+      "id": "dpl_2qTGcd7aBJLNUXH9aWRaA1c87HPQ",
+      "url": "forway-igxkl2ijk-my-team-4f230354.vercel.app",
+      "target": null,
+      "state": "READY",
+      "sourceCommit": "5db7175eabf720996f93ff84b378af7dd6adf90d",
+      "branch": "qa/forway-native-network-20261113-1",
+      "isRollbackCandidate": false
+    },
+    {
+      "id": "dpl_EHAuBehZmGTtpuzxdA531ka6p29P",
+      "url": "forway-iwla18f9g-my-team-4f230354.vercel.app",
+      "target": null,
+      "state": "READY",
+      "sourceCommit": "3359400a848802c2b456e0cb65b53dd41c45fe86",
+      "branch": "qa/forway-fixture-retirement-20261113-1",
+      "isRollbackCandidate": false
+    }
+  ],
+  "previewDeletion": {
+    "performed": false,
+    "connectorCapability": false,
+    "localCliAvailable": false,
+    "browserOutcome": "browser access host unavailable; no recovery or credential lookup attempted",
+    "scope": "Canonical route retirement only; deployment history is retained"
+  },
+  "localRetirementRead": {
+    "exitCode": 6,
+    "result": "DNS failed before connection; no HTTP status or body",
+    "rawHeadersBytes": 0,
+    "webReader": "URL inaccessible; no HTTP status supplied"
+  },
+  "preservedUntrackedReview": {
+    "path": "docs/results/2026/11-09/public-url-importer-source-review.md",
+    "bytes": 2350,
+    "sha256": "997b4da561ea02be8c66a9c7c692430bced7580c4089ce7e212750739e40431f"
+  },
+  "fullProductComplete": false
+}
