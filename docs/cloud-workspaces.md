@@ -2,7 +2,8 @@
 
 This work branch adds the server foundation for private shared workspaces.
 The current production workbench remains the accepted memory/export release.
-The full product still needs browser integration and live storage/Auth setup.
+The candidate includes browser integration; it still needs focused UI proof
+and live storage/Auth setup before a working shared release can be claimed.
 
 `POST /api/workspaces` accepts only list, get, create, save, delete and operation
 lookup. Every request verifies its bearer with the fixed Supabase `/auth/v1/user`
@@ -50,8 +51,13 @@ Server configuration (never enter credentials into a workspace):
 `/api/cloud-config` exposes availability flags only. The same-origin Auth proxy
 has a fixed action vocabulary; no admin API, arbitrary upstream path, redirect,
 user metadata or query is accepted. No cookies or cross-origin browser access.
-Account tokens must remain tab-scoped, separate from workspace exports, with
-identity and local-edit fencing before the UI can use this foundation.
+Account tokens remain tab-scoped, separate from workspace exports. Callbacks
+are removed from the URL before workbench hash navigation and verified through
+the server. Sign-out fences late responses; fresh session refresh is shared
+within the tab. Opening saved content checks the local revision before applying
+it. A retained ambiguous command blocks new writes until reconciled using its
+original ID and snapshot. Another account cannot silently upload the old
+account's workspace: an explicit Save as new confirmation is required.
 
 New proof scope: [30 disposable checks](proposals/cloud-workspace-checks.md).
 Auth uses authored HTTP fixtures there; a pass cannot establish live SMTP,

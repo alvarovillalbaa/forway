@@ -27,3 +27,19 @@ the uploaded runner copy. Every failed first outcome remains evidence. Disable
 the temporary workflow and delete only the SHA-checked task ref after capture.
 Source alone is not a working shared product; browser integration and live
 configuration remain explicit requirements.
+
+The original 30-case attempt at `53b999d1` has 29 passes and one failed P13
+observer. Two earlier attempts never reached tests because the official image
+initializer required its default Unix socket. All outcomes are retained.
+P13 now owns its fixture independently and clears the transaction's cached
+statistics snapshot before observing a lock held by its own admin connection.
+The correction runs only P13; the other 29 are not replayed.
+
+The browser/client candidate adds C01–C10 session/receipt cases and U01–U04
+authored-response Chromium UI cases. U01/U03/U04 use desktop; U02 uses a 390×844
+touch-emulated viewport, not a physical device. The server serves only local
+candidate assets, and browser routing refuses foreign origins. No live Auth,
+email or database is used in the UI scenarios. This is UI state evidence,
+separate from the real PostgreSQL packet. Playwright 1.61.1 and Chromium are
+installed only in owned external runner storage. Maximum 20 minutes; no old
+scope, model call, account, paid service or production data is added.

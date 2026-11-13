@@ -22,17 +22,18 @@
     </nav>
     <div class="sidebar-note"><span class="small-dot" aria-hidden="true"></span><p>A clearer page.<br>A more useful answer.</p><small>Inspect what exists. Make a draft.<br>Keep the evidence separate.</small></div>
     <button class="quiet sidebar-reset" id="new-workspace" type="button">New workspace <span aria-hidden="true">+</span></button>
-    <p class="sidebar-foot">No account · No tracking<br>Export your work before leaving.</p>
+    <p class="sidebar-foot">No tracking<br>Save or export before leaving.</p>
   </aside>
   <div class="workspace">
     <header class="topbar">
-      <p><span class="small-dot" aria-hidden="true"></span> In-memory workspace <span id="workspace-state" class="topbar-detail">Nothing saved to disk</span></p>
-      <div class="topbar-actions"><button class="quiet" id="import-workspace" type="button">Import workspace</button><button class="button button-small" id="export-workspace" type="button">Export workspace <span aria-hidden="true">↓</span></button></div>
+      <p><span class="small-dot" aria-hidden="true"></span> Your workspace <span id="workspace-state" class="topbar-detail">Nothing saved to disk</span><span id="cloud-status" class="topbar-detail">Optional account storage</span></p>
+      <div class="topbar-actions"><button class="quiet" id="open-cloud" type="button" aria-controls="cloud-panel" aria-expanded="false">Saved workspaces</button><button class="quiet" id="import-workspace" type="button">Import workspace</button><button class="button button-small" id="export-workspace" type="button">Export workspace <span aria-hidden="true">↓</span></button></div>
       <input id="workspace-file" class="visually-hidden" type="file" accept=".json,application/json" aria-label="Choose a Forway workspace JSON file" tabindex="-1">
     </header>
     <main id="main" tabindex="-1">
       <div class="page-heading"><div><p class="eyebrow" id="page-eyebrow">01 / Inspect</p><h1 id="page-title">A good page starts<br>with a clear picture.</h1><p class="page-intro" id="page-intro">Check the source. Find the gaps. Give your next edit a purpose.</p></div><span class="edition">FORWAY / WORKBENCH<br>SEO + GEO</span></div>
       <div id="app-notice" class="app-notice" hidden><p id="app-notice-text" role="status" aria-live="polite" aria-atomic="true"></p><button class="quiet" id="dismiss-notice" type="button" aria-label="Dismiss message">×</button></div>
+      <section id="cloud-panel" class="paper cloud-panel" aria-label="Account and saved workspaces" tabindex="-1" hidden></section>
 
       <section id="view-audit" class="view" aria-label="Page audit">
         <div class="audit-layout">
@@ -66,7 +67,7 @@
     </main>
   </div>
   <dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><p class="eyebrow">Keep your work in mind</p><h2 id="confirm-title">Replace this workspace?</h2><p id="confirm-description"></p><p class="field-help">Export your workspace first if you need a copy. Nothing is saved automatically.</p><div class="form-actions"><button class="button button-secondary" value="cancel">Keep current work</button><button class="button" id="confirm-action" value="confirm">Replace</button></div></form></dialog>
-  <dialog id="about-dialog" class="about-dialog"><form method="dialog"><div class="section-heading"><p class="eyebrow">Forway / A practical workbench</p><button class="quiet" value="close" aria-label="Close about">×</button></div><h2>Make the work clearer.</h2><p>Analyze supplied page source, create a useful content draft and inspect AI answers you have actually observed. Imported markup is never executed.</p><p>Page checks are heuristics. They cannot establish search rankings, traffic, indexing, rendered performance or live answer-engine visibility. Supplied evidence may not represent an engine's broader behavior.</p><p>Your workspace stays in this tab's memory. Export it to keep a copy; import that file to resume. There is no account, database, automatic monitoring or model connection.</p><button class="button" value="close">Back to the workbench</button></form></dialog>
+  <dialog id="about-dialog" class="about-dialog"><form method="dialog"><div class="section-heading"><p class="eyebrow">Forway / A practical workbench</p><button class="quiet" value="close" aria-label="Close about">×</button></div><h2>Make the work clearer.</h2><p>Analyze supplied page source, create a useful content draft and inspect AI answers you have actually observed. Imported markup is never executed.</p><p>Page checks are heuristics. They cannot establish search rankings, traffic, indexing, rendered performance or live answer-engine visibility. Supplied evidence may not represent an engine's broader behavior.</p><p>Work stays in this tab until you explicitly save to a connected account or export a file. Open Saved workspaces for account availability. Export remains available without an account. No automatic monitoring or model connection is active.</p><button class="button" value="close">Back to the workbench</button></form></dialog>
   <noscript><p class="noscript">Forway needs JavaScript to analyze source and edit this in-memory workspace. No data has been imported.</p></noscript>
 </body>
 </html>

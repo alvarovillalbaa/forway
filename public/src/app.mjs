@@ -3,6 +3,7 @@ import { normalizeDraft, createHtml, createMetadata } from './content.mjs';
 import { normalizeObservation, analyzeObservation, summarizeObservations, observationCohortKey } from './observations.mjs';
 import { parseWorkspace, serializeWorkspace } from './workspace.mjs';
 import { el, replace, action, formatDate, downloadText } from './ui.mjs';
+import { mountCloud } from './cloud-panel.mjs';
 
 const $ = id => document.getElementById(id);
 const MAX_HTML_BYTES = 1024 * 1024;
@@ -13,6 +14,7 @@ let workspace = { version: 1, source: null, draft: null, observations: [] };
 let report = null, comparison = null, sourceReceipt = null;
 let revision = 0, exportedRevision = 0, pendingRead = null, confirmation = null, disposed = false;
 let intakeChanged = false, evidenceChanged = false, cohort = '', auditFilter = 'all';
+let cloud = null;
 const titles = {
   audit: ['01 / Inspect', ['A good page starts', 'with a clear picture.'], 'Check the source. Find the gaps. Give your next edit a purpose.'],
   content: ['02 / Create & improve', ['A useful answer.', 'In your own words.'], 'Turn findings into a page you can review, improve and take with you.'],
@@ -29,6 +31,7 @@ function showNotice(message, error = false) {
 
 function updateMemoryLabel() {
   $('workspace-state').textContent = revision === exportedRevision ? 'Export to keep your next changes' : 'Changes stay in this tab';
+  cloud?.changed();
 }
 
 function endRead(operation) {
@@ -493,6 +496,7 @@ $('workspace-file').addEventListener('change', event => {
     const value = parseWorkspace(await readFile(file, MAX_WORKSPACE_BYTES, 'invalid_workspace'));
     return { value, analyzed: value.source ? analyzeHtml(value.source) : null };
   }, commit: ({ value, analyzed }) => {
+    cloud?.detach();
     workspace = copy(value); report = analyzed; sourceReceipt = null; comparison = null; auditFilter = 'all'; cohort = '';
     $('page-url').value = value.source?.url ?? ''; $('html-url').value = value.source?.url ?? ''; $('html-source').value = value.source?.html ?? '';
     $('evidence-form').reset(); intakeChanged = false; evidenceChanged = false;
@@ -521,6 +525,7 @@ $('new-workspace').addEventListener('click', async () => {
   if (hasWork() && !await confirmReplace('Start a new workspace?', 'This clears the source, draft, all supplied evidence and unsubmitted forms in this tab.', 'Start new workspace')) return;
   if (disposed || captured !== revision) { showNotice('The workspace changed. Your work was kept.'); return; }
   cancelRead(); workspace = { version: 1, source: null, draft: null, observations: [] };
+  cloud?.detach();
   report = null; comparison = null; sourceReceipt = null; cohort = ''; auditFilter = 'all';
   $('url-form').reset(); $('html-form').reset(); $('evidence-form').reset(); intakeChanged = false; evidenceChanged = false;
   revision++; exportedRevision = revision; renderAll(); updateMemoryLabel(); navigate('audit'); $('page-url').focus();
@@ -532,12 +537,25 @@ $('dismiss-notice').addEventListener('click', () => { $('app-notice').hidden = t
 $('open-about').addEventListener('click', event => { event.preventDefault(); $('about-dialog').showModal(); });
 window.addEventListener('hashchange', () => { const view = location.hash.slice(1); if (Object.hasOwn(titles, view)) navigate(view); });
 window.addEventListener('beforeunload', event => {
-  if (revision !== exportedRevision && hasWork()) { event.preventDefault(); event.returnValue = ''; }
+  if ((revision !== exportedRevision && hasWork()) || cloud?.hasUnsaved()) { event.preventDefault(); event.returnValue = ''; }
 });
 window.addEventListener('pagehide', event => {
   cancelRead();
-  if (!event.persisted) { disposed = true; confirmation?.(false); confirmation = null; }
+  if (!event.persisted) { disposed = true; cloud?.dispose(); confirmation?.(false); confirmation = null; }
 });
 
 renderAll();
+cloud = mountCloud({
+  snapshot: () => ({ workspace, revision, hasWork: hasWork(), unsubmitted: intakeChanged || evidenceChanged }),
+  confirm: confirmReplace, notice: showNotice,
+  applyWorkspace(value) {
+    cancelRead();
+    workspace = copy(value); report = value.source ? analyzeHtml(value.source) : null;
+    sourceReceipt = null; comparison = null; auditFilter = 'all'; cohort = '';
+    $('page-url').value = value.source?.url ?? ''; $('html-url').value = value.source?.url ?? ''; $('html-source').value = value.source?.html ?? '';
+    $('evidence-form').reset(); intakeChanged = false; evidenceChanged = false;
+    revision++; renderAll(); updateMemoryLabel();
+    navigate(value.source ? 'audit' : value.observations.length ? 'evidence' : 'content');
+  },
+});
 navigate(Object.hasOwn(titles, location.hash.slice(1)) ? location.hash.slice(1) : 'audit', false);

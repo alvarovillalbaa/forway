@@ -139,21 +139,23 @@ try {
     await rejectCode(sealed(A, { ...make(), owner_id: B }), 'invalid_request'); assert.equal(opened, 0);
   });
   await test('P13 cancellation closes a real blocked database operation without a committed change', async () => {
-    const command = { action: 'save', id: first.id, expectedRevision: 2, operationId: randomUUID(), title: 'cancelled', workspace };
-    await admin.query('BEGIN'); await admin.query('SELECT id FROM forway_private.workspaces WHERE id=$1 FOR UPDATE', [first.id]);
+    const own = (await store(A, make())).receipt;
+    const command = { action: 'save', id: own.id, expectedRevision: 1, operationId: randomUUID(), title: 'cancelled', workspace };
+    await admin.query('BEGIN'); await admin.query('SELECT id FROM forway_private.workspaces WHERE id=$1 FOR UPDATE', [own.id]);
     const controller = new AbortController(); const pending = store(A, command, { signal: controller.signal });
     const outcome = rejectCode(pending, 'outcome_unknown');
     try {
       let blocked = false;
       for (let attempt = 0; attempt < 50; attempt++) {
-        blocked = (await admin.query("SELECT EXISTS (SELECT 1 FROM pg_stat_activity WHERE usename='forway_runtime' AND wait_event_type='Lock' AND query LIKE '%FOR UPDATE%') AS blocked")).rows[0].blocked;
+        await admin.query('SELECT pg_stat_clear_snapshot()');
+        blocked = (await admin.query("SELECT EXISTS (SELECT 1 FROM pg_stat_activity WHERE usename='forway_runtime' AND wait_event_type='Lock' AND pg_backend_pid()=ANY(pg_blocking_pids(pid))) AS blocked")).rows[0].blocked;
         if (blocked) break;
         await new Promise(resolve => setTimeout(resolve, 20));
       }
       assert.equal(blocked, true); controller.abort(); await outcome;
     } finally { controller.abort(); await admin.query('ROLLBACK'); await outcome; }
     assert.equal((await store(A, { action: 'operation', operationId: command.operationId })).receipt, null);
-    assert.equal((await store(A, { action: 'get', id: first.id })).receipt.revision, 2);
+    assert.equal((await store(A, { action: 'get', id: own.id })).receipt.revision, 1);
   });
   await test('P14 a privileged connection is refused before any user content query', async () => {
     await rejectCode(createWorkspaceStore({ createClient: () => new Client({ ...settings, user: 'postgres' }) })(A, { action: 'list' }), 'store_unavailable');
