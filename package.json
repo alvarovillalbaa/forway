@@ -8,7 +8,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "start": "node scripts/serve.mjs",
+    "start:local": "node --env-file=.env.local scripts/serve.mjs"
   },
   "license": "MIT",
   "dependencies": {

@@ -2,7 +2,12 @@
 
 The private account-workspace server candidate is documented in
 [cloud workspaces](docs/cloud-workspaces.md). It adds pinned PostgreSQL access
-on this work branch; browser integration and live configuration remain open.
+on this work branch and includes the browser controls; live configuration remains open.
+
+The [standalone HTTPS entry point](docs/self-hosting.md) runs the same workbench
+and API handlers with explicit private configuration. Its real local Supabase
+qualification is separate from Vercel's READY preview and the earlier fixture
+checks; hosted environment access remains pending.
 
 Create, analyze and improve content for search and AI answers.
 
@@ -21,7 +26,8 @@ passed once on 5 November at `faba72499adb675bbbef50a01e5c11ecda6f50c2`:
 two real own-fixture API imports, browser parsing, actual downloads/recovery,
 cohort separation, controlled races and narrow keyboard/overflow checks.
 Arbitrary-site safety, physical devices and full-product acceptance remain open.
-No account, analytics integration, AI provider or shared database is configured.
+The production deployment has no configured account storage, analytics
+integration or AI provider. The work branch adds optional private workspaces.
 
 The [seven native transport identities](docs/results/2026/11-13/native-network.md)
 passed once on13November at ce59d9b1: actual DNS, selected socket/TLS peer,
@@ -43,8 +49,9 @@ Internet safety and shared persistence are still open.
   use the supplied answer denominator for the selected brand/domain/competitor
   cohort; separate cohorts are never blended into a visibility metric.
 - **Keep your work** through explicit workspace export/import, including
-  incomplete drafts. Working state is in memory; no shared persistence or
-  background synchronization is implied.
+  incomplete drafts. Local working state is in memory. With private account
+  storage configured, explicitly save or reopen a workspace from the account
+  panel; background synchronization is not implied.
 
 ## Source
 
@@ -58,7 +65,8 @@ Internet safety and shared persistence are still open.
   all exact names/statuses matched, and no rerun occurred.
 - [Architecture](docs/architecture.md) and [source decisions](docs/references/source-decisions.md).
 
-Node 22+; no dependency installation or frontend build is required.
+Node 22+; the static workbench needs no frontend build. Account storage and the
+standalone server use the locked dependencies in the self-hosting guide.
 
 ```sh
 node scripts/check.mjs
