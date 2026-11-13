@@ -64,4 +64,9 @@ refusals, original outcomes, source/socket/process/scratch/proof guards and
 exact CI retirement are required. No private/foreign connection, account,
 provider, model, paid service or environment/Auth/protection change. Preserve
 the existing untracked9November source review. Old77/eight-browser scopes stay
-closed. New packet remains unrun until retained actual evidence.
+closed. All seven new native identities passed once at ce59d9b1; see
+`docs/results/2026/11-13/native-network.md`. Preserve the qualified source and
+original artifact; do not repeat this closed packet without changed inputs or
+a concrete concern. Its temporary fixture handler is retained under
+`tests/fixtures/`, outside the deployed API. Unread/cancelled bodies stay
+incomplete, and owned-host IPv4 proof is not general Internet safety.

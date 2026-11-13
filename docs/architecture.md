@@ -31,11 +31,13 @@ abuse/operational validation; no durable/global rate enforcement is claimed.
 The dedicated threat boundary and check scope must be reviewed before claiming
 safe live behavior. The source API is not automatically proof of network isolation.
 
-The [native transport packet](proposals/native-network-checks.md) prepares seven
-new owned-host DNS/HTTP/TLS integration identities. The fixture route contains
-only authored constant data, no persistence or outbound request; new checks
-remain unrun. Actual peer/lookup/TLS observation is distinct from broader
-arbitrary-site and durable/global abuse-control acceptance.
+The [seven native transport identities](results/2026/11-13/native-network.md)
+passed once at ce59d9b1 against one owned public host using actual IPv4 DNS,
+pinned sockets and authorized TLS. This separately accepts the observed
+redirect/byte/media/deadline behavior. The temporary public fixture is removed
+from API source after qualification; its authored handler remains under tests.
+Broader arbitrary-site, IPv6/platform and durable/global abuse-control proof
+remain open. Native importer/API implementation bytes are unchanged.
 
 ## Inert page analysis and authored content
 

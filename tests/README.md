@@ -3,6 +3,13 @@
 The earlier77 Node fixture identities and eight hosted browser journeys are
 closed at their recorded sources. Do not replay them for new transport checks.
 
+All seven native identities below passed their first invocation at ce59d9b1;
+see the [retained result](../docs/results/2026/11-13/native-network.md). This
+packet is closed. The public fixture was available only for that explicit
+qualification and is now removed from API source. Its reusable source is
+`fixtures/native-page-handler.mjs`; reproduce the frozen qualified source and
+explicit fixture deployment, rather than calling a retired current route.
+
 `integration/native-network.mjs` is an explicit seven-identity T2 integration
 packet, outside default collection. Data are authored constant fixtures served
 from this repository's own fixed public fixture endpoint. No database, user

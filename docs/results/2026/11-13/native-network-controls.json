@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-11-13 12:54:36 UTC",
+  "workflow": {
+    "id": 417266739,
+    "path": ".github/workflows/native-network-1.yml",
+    "state": "disabled_manually"
+  },
+  "qaRefs": [],
+  "deletedAfterExactShaCheck": "5db7175eabf720996f93ff84b378af7dd6adf90d",
+  "runId": 43428560903,
+  "jobId": 131895971898,
+  "sourceCommit": "ce59d9b1bed94151fcd5213c11cac405432ac4b6",
+  "deployment": {
+    "id": "dpl_2qc7H2KRWGA8E3Cf6ubhRazMnPAg",
+    "name": "forway",
+    "url": "forway-ippivmaoy-my-team-4f230354.vercel.app",
+    "type": "LAMBDAS",
+    "state": "READY",
+    "createdAt": 1794574101867,
+    "creator": {
+      "uid": "zsxQcbiAfBXuwfpA5YtTh7Nm",
+      "username": "alvipedev"
+    },
+    "project": {
+      "id": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+      "name": "forway",
+      "framework": null
+    },
+    "meta": {
+      "githubCommitRef": "main",
+      "githubCommitSha": "ce59d9b1bed94151fcd5213c11cac405432ac4b6",
+      "githubCommitMessage": "Prepare owned native DNS and TLS importer qualification",
+      "githubRepo": "forway",
+      "githubOrg": "alvarovillalbaa"
+    },
+    "alias": [
+      "forway.vercel.app",
+      "forway-my-team-4f230354.vercel.app",
+      "forway-git-main-my-team-4f230354.vercel.app"
+    ],
+    "target": "production",
+    "regions": [
+      "iad1"
+    ],
+    "buildingAt": 1794574103013,
+    "ready": 1794574109742,
+    "readyState": "READY",
+    "source": "git",
+    "aliasError": null
+  }
+}

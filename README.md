@@ -19,10 +19,12 @@ cohort separation, controlled races and narrow keyboard/overflow checks.
 Arbitrary-site safety, physical devices and full-product acceptance remain open.
 No account, analytics integration, AI provider or shared database is configured.
 
-The [new native transport packet](docs/proposals/native-network-checks.md) is
-prepared and unrun. It separately checks real DNS, pinned TLS and bounded
-responses against fixed authored own-host fixtures; it does not replace the
-earlier fixture/browser scopes or establish general Internet safety.
+The [seven native transport identities](docs/results/2026/11-13/native-network.md)
+passed once on13November at ce59d9b1: actual DNS, selected socket/TLS peer,
+redirects, response refusals and streaming cancellation against authored
+own-host fixtures. The temporary public fixture is removed from the API after
+qualification. Earlier fixture/browser scopes remain separate; general
+Internet safety and shared persistence are still open.
 
 ## Workflow
 

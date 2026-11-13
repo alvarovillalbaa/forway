@@ -6,6 +6,10 @@ existing-project fixture deployment and one bounded public CI invocation per
 changed candidate. It addresses the architecture's open native transport gate;
 it is not full-app completion. Old77/eight-browser bodies remain closed.
 
+Completed13November at source ce59d9b1: [seven first-run passes and originals](../results/2026/11-13/native-network.md).
+The source below describes the frozen qualified packet. Its public fixture is
+retired after proof; current API source does not retain the temporary route.
+
 ## Source and target
 
 Base a765f129 importer/API/UI/dependency bytes remain unchanged. Add a fixed

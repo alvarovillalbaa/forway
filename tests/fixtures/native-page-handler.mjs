@@ -1,5 +1,5 @@
 // Owned public fixtures for explicit native transport checks; no caller data is reflected.
-import { FIXTURE_VERSION, HTML, INELIGIBLE_REDIRECT } from '../../tests/fixtures/native-network.mjs';
+import { FIXTURE_VERSION, HTML, INELIGIBLE_REDIRECT } from './native-network.mjs';
 
 export default function nativePage(req, res) {
   res.setHeader('Cache-Control', 'no-store');

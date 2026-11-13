@@ -1,0 +1,318 @@
+{
+  "commit": "ce59d9b1bed94151fcd5213c11cac405432ac4b6",
+  "tree": "8a524c4ef47d97182962ee70c609a0d31ea0cb18",
+  "files": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "sha": "639fc5a961a94df75a891fbc93798d1126086c65",
+      "size": 88
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "sha": "fe78c06ce5ee804400e77727d37aa1f6e592c8c1",
+      "size": 4558
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "sha": "5fb52b674e5a4d756d26a8fc3619651bb3b28798",
+      "size": 1072
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha": "030e982ec0526e1adb37700e3bbf5b96e0f7b4ef",
+      "size": 4259
+    },
+    {
+      "path": "api/audit.mjs",
+      "mode": "100644",
+      "sha": "f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2",
+      "size": 5308
+    },
+    {
+      "path": "api/check-fixtures/native-page.mjs",
+      "mode": "100644",
+      "sha": "46b40a1ec2b4049e8140bae1ec7236550e7e6869",
+      "size": 1958
+    },
+    {
+      "path": "docs/architecture.md",
+      "mode": "100644",
+      "sha": "55a8b816e140663c77c094e092d866fd08e505d9",
+      "size": 5032
+    },
+    {
+      "path": "docs/proposals/focused-checks.md",
+      "mode": "100644",
+      "sha": "a186c0ca7d0a07fa2a5238df48191a7bb6440fec",
+      "size": 7956
+    },
+    {
+      "path": "docs/proposals/hosted-browser-checks.md",
+      "mode": "100644",
+      "sha": "2687cf45942e2febead845c7a23abd8263d06c50",
+      "size": 9562
+    },
+    {
+      "path": "docs/proposals/hosted-browser.spec.mjs.example",
+      "mode": "100644",
+      "sha": "ed0dbf7ef6a3ca8787996707f4ae01885c3f5761",
+      "size": 30479
+    },
+    {
+      "path": "docs/proposals/hosted-browser.workflow.yml.example",
+      "mode": "100644",
+      "sha": "f788b849094b080234241214d745bbac8409596c",
+      "size": 1534
+    },
+    {
+      "path": "docs/proposals/native-network-checks.md",
+      "mode": "100644",
+      "sha": "a21c021c9615bea6164513698e47c2ff8226a9fc",
+      "size": 4456
+    },
+    {
+      "path": "docs/proposals/native-network.workflow.yml.example",
+      "mode": "100644",
+      "sha": "ee94b6cdce7002e4852b0eb84566920d4d90901e",
+      "size": 1848
+    },
+    {
+      "path": "docs/references/source-decisions.md",
+      "mode": "100644",
+      "sha": "3dbe603e44c9b6a33593ec53b698b07572d18f60",
+      "size": 1775
+    },
+    {
+      "path": "docs/results/2026/10-29/initial-delivery.json",
+      "mode": "100644",
+      "sha": "cd7753c325449aa620f0d5dad6dd75c5899589db",
+      "size": 7086
+    },
+    {
+      "path": "docs/results/2026/10-29/initial-delivery.md",
+      "mode": "100644",
+      "sha": "a61acb55df47e466a44d6453ef191792b41b3030",
+      "size": 4221
+    },
+    {
+      "path": "docs/results/2026/10-29/initial-source.json",
+      "mode": "100644",
+      "sha": "0834c5697449351ef85220aa49e0c9b1253bfd97",
+      "size": 14456
+    },
+    {
+      "path": "docs/results/2026/10-29/initial-source.md",
+      "mode": "100644",
+      "sha": "fa8002fdf9a8a8ccd5171254c59802546b94984a",
+      "size": 5454
+    },
+    {
+      "path": "docs/results/2026/11-04/local-node-checks.json",
+      "mode": "100644",
+      "sha": "1d6eab96e310b508e88f1a071268c64323c4e234",
+      "size": 78071
+    },
+    {
+      "path": "docs/results/2026/11-04/local-node-checks.md",
+      "mode": "100644",
+      "sha": "f7c15ff9ee2c4f6246ae32a6e0ad0220e312ef6d",
+      "size": 3207
+    },
+    {
+      "path": "docs/results/2026/11-04/publication-observation.json",
+      "mode": "100644",
+      "sha": "82e3c7f7ad922a1ac2d7ccb919136be47b9261d4",
+      "size": 1722
+    },
+    {
+      "path": "docs/results/2026/11-05/hosted-browser-checks.json",
+      "mode": "100644",
+      "sha": "eadee83a8b6b199d394303ce15ba9c01af0216f7",
+      "size": 175247
+    },
+    {
+      "path": "docs/results/2026/11-05/hosted-browser-checks.md",
+      "mode": "100644",
+      "sha": "1e04b716615b0aafb4ac8e832f2b9b0904ba3661",
+      "size": 4347
+    },
+    {
+      "path": "docs/results/2026/11-05/hosted-browser-publication.json",
+      "mode": "100644",
+      "sha": "6ce41c951fd9c4ebf82eec458f98c4785dd85af5",
+      "size": 4042
+    },
+    {
+      "path": "docs/spec.md",
+      "mode": "100644",
+      "sha": "eda69547fb3d22b1021adb9c7de3813adb61b063",
+      "size": 2863
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "sha": "e39f1d47b83ab3f929c0243a4f82f740aad2195a",
+      "size": 302
+    },
+    {
+      "path": "public/check-fixtures/authored-page.html",
+      "mode": "100644",
+      "sha": "babb48482ba7a3f2efa190591d5871086bab8ad6",
+      "size": 985
+    },
+    {
+      "path": "public/check-fixtures/header-noindex.html",
+      "mode": "100644",
+      "sha": "68526399907560cd61967640b2a3d1a8925aba2d",
+      "size": 650
+    },
+    {
+      "path": "public/icon.svg",
+      "mode": "100644",
+      "sha": "af08676cd5a3edc34900b8608f1c59070494b50a",
+      "size": 227
+    },
+    {
+      "path": "public/index.html",
+      "mode": "100644",
+      "sha": "6b6ee4bed8d6c42ad42625ee1c7c8868832563fd",
+      "size": 14433
+    },
+    {
+      "path": "public/src/app.mjs",
+      "mode": "100644",
+      "sha": "a54de16dd42e46d567cf1fc9ac8c47c8cd6b40c9",
+      "size": 32992
+    },
+    {
+      "path": "public/src/audit.mjs",
+      "mode": "100644",
+      "sha": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008",
+      "size": 14928
+    },
+    {
+      "path": "public/src/content.mjs",
+      "mode": "100644",
+      "sha": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db",
+      "size": 5727
+    },
+    {
+      "path": "public/src/observations.mjs",
+      "mode": "100644",
+      "sha": "7a77d69ff8ec22ba3f7e0a38241337542a6f25e1",
+      "size": 7243
+    },
+    {
+      "path": "public/src/ui.mjs",
+      "mode": "100644",
+      "sha": "42f3cc9af3a97a677d911d07b099e50d35b876c8",
+      "size": 1584
+    },
+    {
+      "path": "public/src/workspace.mjs",
+      "mode": "100644",
+      "sha": "0c92702583abd186d04c9179ee47ea29d09ad0cc",
+      "size": 3956
+    },
+    {
+      "path": "public/styles.css",
+      "mode": "100644",
+      "sha": "50b8676993ec12c0e65221e507314a3afafb6883",
+      "size": 21002
+    },
+    {
+      "path": "scripts/check.mjs",
+      "mode": "100644",
+      "sha": "816261bb073958fed58b8606cd7a1f84fe9011bb",
+      "size": 1682
+    },
+    {
+      "path": "scripts/run-hosted-browser.mjs",
+      "mode": "100644",
+      "sha": "5a996f13828a5e84f5c0ab205d7f46b3b3ec7865",
+      "size": 41243
+    },
+    {
+      "path": "src/fetch-page.mjs",
+      "mode": "100644",
+      "sha": "cf6523bc812275e191d8ab963584565c4a40ba8c",
+      "size": 14971
+    },
+    {
+      "path": "tests/README.md",
+      "mode": "100644",
+      "sha": "f3bc4c743ff0dde94a1f49ded50500126dd45010",
+      "size": 1838
+    },
+    {
+      "path": "tests/fixtures/native-network.mjs",
+      "mode": "100644",
+      "sha": "6b27f8b35cce03c18f04e22142b1fc0439afe761",
+      "size": 421
+    },
+    {
+      "path": "tests/helpers/native-network-observer.mjs",
+      "mode": "100644",
+      "sha": "b12861b0c21604bab9d617ef570a8cf63861cdcc",
+      "size": 5559
+    },
+    {
+      "path": "tests/integration/native-network.mjs",
+      "mode": "100644",
+      "sha": "d2fb8b7a297151046f19eda79b97cefdf4b639f6",
+      "size": 6828
+    },
+    {
+      "path": "tests/scripts/run-native-network.py",
+      "mode": "100644",
+      "sha": "359a6fa2dce493e6453967a544de37057712ca05",
+      "size": 11599
+    },
+    {
+      "path": "tests/unit/audit-api.test.mjs",
+      "mode": "100644",
+      "sha": "4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea",
+      "size": 8207
+    },
+    {
+      "path": "tests/unit/audit-facts.test.mjs",
+      "mode": "100644",
+      "sha": "846b2abb36eac1e4f54d8f7eee760a2a61f0f370",
+      "size": 5131
+    },
+    {
+      "path": "tests/unit/content.test.mjs",
+      "mode": "100644",
+      "sha": "9725e39eefaf692d82dba0f2a56f6faa27f59939",
+      "size": 6915
+    },
+    {
+      "path": "tests/unit/fetch-page.test.mjs",
+      "mode": "100644",
+      "sha": "8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4",
+      "size": 14790
+    },
+    {
+      "path": "tests/unit/observations.test.mjs",
+      "mode": "100644",
+      "sha": "a44e87c77b63e2360d1a0801c7bf5371c669174b",
+      "size": 7505
+    },
+    {
+      "path": "tests/unit/workspace.test.mjs",
+      "mode": "100644",
+      "sha": "4184581cf98118e690a0ae89a414819438f1de2e",
+      "size": 8211
+    },
+    {
+      "path": "vercel.json",
+      "mode": "100644",
+      "sha": "33feabd35467bf1c7e42fd73912b8f5b89f00897",
+      "size": 865
+    }
+  ]
+}
