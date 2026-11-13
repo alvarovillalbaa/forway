@@ -19,6 +19,11 @@ cohort separation, controlled races and narrow keyboard/overflow checks.
 Arbitrary-site safety, physical devices and full-product acceptance remain open.
 No account, analytics integration, AI provider or shared database is configured.
 
+The [new native transport packet](docs/proposals/native-network-checks.md) is
+prepared and unrun. It separately checks real DNS, pinned TLS and bounded
+responses against fixed authored own-host fixtures; it does not replace the
+earlier fixture/browser scopes or establish general Internet safety.
+
 ## Workflow
 
 - **Audit** a public page URL, or import/paste its HTML. Findings describe source

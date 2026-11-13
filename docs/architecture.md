@@ -31,6 +31,12 @@ abuse/operational validation; no durable/global rate enforcement is claimed.
 The dedicated threat boundary and check scope must be reviewed before claiming
 safe live behavior. The source API is not automatically proof of network isolation.
 
+The [native transport packet](proposals/native-network-checks.md) prepares seven
+new owned-host DNS/HTTP/TLS integration identities. The fixture route contains
+only authored constant data, no persistence or outbound request; new checks
+remain unrun. Actual peer/lookup/TLS observation is distinct from broader
+arbitrary-site and durable/global abuse-control acceptance.
+
 ## Inert page analysis and authored content
 
 Imported HTML is parsed in detached template content, never mounted into the

@@ -52,3 +52,16 @@ after terminal evidence. No account, provider/model, customer data, paid plan,
 shared database, arbitrary website or private-address probe is part of this
 scope. The previous 77 Node cases are closed and must not be rerun merely for
 this new browser packet. Shared persistence/full-product work remains open.
+
+## Native transport packet — 13 November 2026
+
+Standing owner all-work/checks/publication approval covers the exact seven new
+T2 identities and fixed owned public fixture route in
+`docs/proposals/native-network-checks.md`, with temporary public CI capped at
+20minutes per changed candidate. Native DNS/HTTP/TLS remain real; observation
+never substitutes responses. Fixed target, serial maximum8GETs, zero harness
+refusals, original outcomes, source/socket/process/scratch/proof guards and
+exact CI retirement are required. No private/foreign connection, account,
+provider, model, paid service or environment/Auth/protection change. Preserve
+the existing untracked9November source review. Old77/eight-browser scopes stay
+closed. New packet remains unrun until retained actual evidence.

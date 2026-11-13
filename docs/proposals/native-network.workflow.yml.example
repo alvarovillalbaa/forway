@@ -1,0 +1,45 @@
+name: Temporary Forway native network checks
+on:
+  create:
+permissions:
+  contents: read
+jobs:
+  native-network:
+    if: github.repository == 'alvarovillalbaa/forway' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/forway-native-network-20261113-1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      SOURCE_COMMIT: APPROVED_SOURCE_COMMIT
+      FORWAY_DEPLOYMENT_ID: APPROVED_DEPLOYMENT_ID
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Start owned deadline
+        run: echo "PROFILE_STARTED_EPOCH=$(date +%s)" >> "$GITHUB_ENV"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ env.SOURCE_COMMIT }}
+          fetch-depth: 2
+          persist-credentials: false
+          clean: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 26.13.0
+          package-manager-cache: false
+      - name: Seven actual native network identities
+        id: scope
+        run: python3 tests/scripts/run-native-network.py
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        id: proof
+        if: always()
+        with:
+          name: forway-native-network-${{ github.run_id }}
+          path: ${{ runner.temp }}/forway-native-network-${{ github.run_id }}.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Retire exact uploaded proof
+        if: always() && steps.proof.outcome == 'success' && steps.scope.outputs.report_sha != ''
+        env:
+          REPORT_SHA: ${{ steps.scope.outputs.report_sha }}
+          REPORT_DEV: ${{ steps.scope.outputs.report_dev }}
+          REPORT_INO: ${{ steps.scope.outputs.report_ino }}
+        run: python3 tests/scripts/run-native-network.py --retire
