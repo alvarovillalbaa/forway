@@ -4,7 +4,14 @@
   "private": true,
   "type": "module",
   "description": "Create, analyze and improve search content with page audits and supplied AI-answer evidence.",
-  "engines": { "node": ">=22" },
-  "scripts": { "check": "node scripts/check.mjs" },
-  "license": "MIT"
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "pg": "8.23.1"
+  }
 }

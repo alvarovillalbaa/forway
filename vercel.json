@@ -1,10 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "node --version",
+  "installCommand": "npm ci --ignore-scripts --no-audit --no-fund",
   "buildCommand": "node scripts/check.mjs",
   "outputDirectory": "public",
-  "functions": { "api/audit.mjs": { "maxDuration": 10 } },
+  "functions": {
+    "api/audit.mjs": { "maxDuration": 10 },
+    "api/workspaces.mjs": { "maxDuration": 10 },
+    "api/cloud-auth.mjs": { "maxDuration": 10 },
+    "api/cloud-config.mjs": { "maxDuration": 10 }
+  },
   "headers": [{ "source": "/(.*)", "headers": [
     { "key": "X-Content-Type-Options", "value": "nosniff" },
     { "key": "Referrer-Policy", "value": "no-referrer" },

@@ -1,5 +1,9 @@
 # Forway
 
+The private account-workspace server candidate is documented in
+[cloud workspaces](docs/cloud-workspaces.md). It adds pinned PostgreSQL access
+on this work branch; browser integration and live configuration remain open.
+
 Create, analyze and improve content for search and AI answers.
 
 [Open Forway](https://forway.vercel.app) · [Delivery evidence](docs/results/2026/10-29/initial-delivery.md)

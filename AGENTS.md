@@ -5,7 +5,9 @@
   that full scope and separate page heuristics from measured AI visibility.
 - No existing app was copied or migrated. The initial source uses native ES
   modules, a browser interface and a bounded public-page import endpoint.
-  No dependencies, model calls, accounts, analytics SDK or database are installed.
+  The published baseline has no dependencies, model calls, accounts, analytics
+  SDK or database. This separate workspace candidate adds only pinned `pg`;
+  its server/Auth/schema source is not live configuration or accepted proof.
 - Keep imported HTML inert. Never mount imported markup, execute scripts or
   place user content into HTML rendering sinks. Artifact export escapes data.
 - Remote page import must validate each redirect, resolve and pin only public
@@ -17,6 +19,13 @@
 - Working state stays in memory with explicit portable export/import. Shared
   PostgreSQL/Supabase persistence, account ownership and provider integrations
   remain separate decisions; file export is not a shared database.
+- The account-workspace candidate uses server-verified Supabase identity and
+  a private PostgreSQL role/schema. Never expose SQL credentials or privileged
+  keys, accept client owner IDs, run bootstrap from requests, weaken TLS/RLS,
+  or silently replace conflicting revisions. Operation receipts contain only
+  metadata; deletion clears content/title. Preserve ambiguous write outcomes
+  and retry the original operation ID/payload. New A01–A15/P01–P15 checks are
+  scoped in `docs/proposals/cloud-workspace-checks.md`; previous packets stay closed.
 - Use apply_patch; preserve other work. Syntax/import checks and diff checks
   are safe. Backend/domain tests, browsers, servers and CI need a concrete
   approved scope. The owner's repeated “approve everything / keep going / do
