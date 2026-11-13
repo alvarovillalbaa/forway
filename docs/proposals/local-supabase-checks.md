@@ -65,6 +65,16 @@ does not expose arbitrary TLS certificate settings in `db.settings`. These
 transport and cleanup corrections change the fixture; seven service identities
 remain unexecuted until a subsequent original outcome establishes otherwise.
 
+Attempt2 (`43493427358`, source `2d57e158`) observed R01-R05 passed against
+real services, then timed out in R06 before a browser save was sent. The
+fixture omitted the existing confirmation for entered source text. Its app,
+browser groups, relays, Docker resources and scratch were verified stopped or
+absent. The final source guard failed without its path diagnostic, so the
+whole profile remains unaccepted. Attempt3 adds that exact UI confirmation,
+finite browser-step diagnostics and source-status observations before/after
+the journeys. These changes address observed failures; no accepted older
+fixture packet is reopened and no successful full-service run is claimed yet.
+
 Preserve original exit/status/fingerprint observations and the CLI-generated
 SQL. Stop only this unique local project, then remove only captured task-owned
 containers, volumes, networks and scratch. Verify their absence. Do not prune

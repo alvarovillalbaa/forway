@@ -11,7 +11,7 @@ import { pgTlsRelay } from './pg-tls-relay.mjs';
 
 const fixture = JSON.parse(await readFile(process.argv[2], 'utf8'));
 const report = { kind: 'forway.real-local-services', rows: [], cleanup: {}, mockedResponses: 0 };
-let phase = 'setup', app, relay, databaseRelay, browser, browserServer;
+let phase = 'setup', step = 'setup', app, relay, databaseRelay, browser, browserServer;
 const processes = [];
 await writeFile(fixture.processManifest, '[]\n', { flag: 'wx', mode: 0o600 });
 async function recordProcess(child, kind) {
@@ -142,39 +142,41 @@ try {
     phase = index === 0 ? 'R06-real-desktop-journey' : 'R07-real-narrow-journey';
     const context = await browser.newContext({ viewport, isMobile: index === 1, hasTouch: index === 1 });
     const page = await context.newPage(); let pageErrors = 0; page.on('pageerror', () => pageErrors++);
-    await page.goto(fixture.appEnv.FORWAY_APP_ORIGIN, { waitUntil: 'networkidle' });
+    step = 'open-app'; await page.goto(fixture.appEnv.FORWAY_APP_ORIGIN, { waitUntil: 'networkidle' });
     await page.locator('#open-cloud').click();
     await page.locator('#cloud-email').fill(fixture.users[index].email);
     await page.locator('#cloud-password').fill(fixture.users[index].password);
-    await page.getByRole('button', { name: 'Sign in', exact: true }).click();
+    step = 'sign-in'; await page.getByRole('button', { name: 'Sign in', exact: true }).click();
     await page.locator('#cloud-name').waitFor();
     await page.locator('.source-details summary').click();
     await page.locator('#html-url').fill('https://example.test/browser-' + index);
     await page.locator('#html-source').fill('<!doctype html><title>Owned browser fixture</title><h1>Reopen this source</h1>');
-    await page.getByRole('button', { name: 'Analyze supplied HTML', exact: true }).click();
+    step = 'analyze-authored-source'; await page.getByRole('button', { name: 'Analyze supplied HTML', exact: true }).click();
+    // Entered intake text counts as local work and must be explicitly replaced.
+    await page.locator('#confirm-action').click();
     await page.locator('#audit-results').waitFor({ state: 'visible' });
     await page.locator('#cloud-name').fill('Owned browser workspace ' + index);
-    await page.getByRole('button', { name: 'Save', exact: true }).click();
+    step = 'save-workspace'; await page.getByRole('button', { name: 'Save', exact: true }).click();
     await page.locator('#cloud-status').filter({ hasText: 'Saved to your account' }).waitFor();
-    await page.reload({ waitUntil: 'networkidle' });
+    step = 'reload-session'; await page.reload({ waitUntil: 'networkidle' });
     await page.locator('#open-cloud').click();
     const row = page.locator('.cloud-list li').filter({ hasText: 'Owned browser workspace ' + index });
-    await row.getByRole('button', { name: 'Open', exact: true }).click();
+    step = 'reopen-source'; await row.getByRole('button', { name: 'Open', exact: true }).click();
     await page.locator('#audit-results').waitFor({ state: 'visible' });
     assert.equal(await page.locator('#cloud-name').inputValue(), 'Owned browser workspace ' + index);
     assert((await page.locator('#source-context').innerText()).includes('example.test/browser-' + index));
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
-    await row.getByRole('button', { name: 'Delete', exact: true }).click();
+    step = 'delete-saved-source'; await row.getByRole('button', { name: 'Delete', exact: true }).click();
     await page.locator('#confirm-action').click();
     await page.waitForFunction(() => !document.querySelector('.cloud-list'));
-    await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+    step = 'sign-out'; await page.getByRole('button', { name: 'Sign out', exact: true }).click();
     await page.locator('#cloud-email').waitFor();
     assert.equal(pageErrors, 0); await context.close();
     passed(index === 0 ? 'R06' : 'R07', { viewport, realUiSigninSaveReloadOpenDelete: true, pageErrors });
   }
   accepted = true;
 } catch (error) {
-  report.failure = { phase, type: error.name, code: typeof error.code === 'string' ? error.code : 'assertion_or_runtime_failure',
+  report.failure = { phase, step, type: error.name, code: typeof error.code === 'string' ? error.code : 'assertion_or_runtime_failure',
     ...(typeof error.actual === 'number' ? { actual: error.actual } : {}),
     ...(typeof error.expected === 'number' ? { expected: error.expected } : {}) };
 } finally {
