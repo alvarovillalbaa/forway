@@ -5,12 +5,22 @@ import { createServer } from 'node:https';
 import { request as upstreamRequest } from 'node:http';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
+import { pgTlsRelay } from './pg-tls-relay.mjs';
 
 const fixture = JSON.parse(await readFile(process.argv[2], 'utf8'));
 const report = { kind: 'forway.real-local-services', rows: [], cleanup: {}, mockedResponses: 0 };
-let phase = 'setup', app, relay, browser;
+let phase = 'setup', app, relay, databaseRelay, browser, browserServer;
+const processes = [];
+await writeFile(fixture.processManifest, '[]\n', { flag: 'wx', mode: 0o600 });
+async function recordProcess(child, kind) {
+  const line = await readFile('/proc/' + child.pid + '/stat', 'utf8');
+  const fields = line.slice(line.lastIndexOf(')') + 2).trim().split(/\s+/);
+  processes.push({ pid: child.pid, kind, startTime: fields[19], group: Number(fields[2]),
+    cmdSha256: createHash('sha256').update(await readFile('/proc/' + child.pid + '/cmdline')).digest('hex') });
+  await writeFile(fixture.processManifest, JSON.stringify(processes), { mode: 0o600 });
+}
 const output = await open(fixture.raw + '/app.stdout', 'ax', 0o600);
 const errors = await open(fixture.raw + '/app.stderr', 'ax', 0o600);
 const cert = await readFile(fixture.cert), key = await readFile(fixture.key);
@@ -33,6 +43,7 @@ async function start() {
   assert(!app);
   app = spawn(process.execPath, ['scripts/serve.mjs'], { cwd: fixture.service,
     env: appEnv, stdio: ['ignore', output.fd, errors.fd], detached: true });
+  await once(app, 'spawn'); await recordProcess(app, 'app');
   for (let i = 0; i < 60; i++) {
     assert(app.exitCode === null, 'app exited before ready');
     try { const value = await api('/api/cloud-config'); if (value.status === 200 && value.body.available) return; } catch { /* Bounded readiness. */ }
@@ -58,6 +69,7 @@ async function signin(user) {
 }
 let accepted = false;
 try {
+  databaseRelay = await pgTlsRelay({ cert, key, port: fixture.databasePort, upstreamPort: fixture.upstreamDatabasePort });
   // Terminate fixture TLS here and forward only to the CLI's fixed loopback gateway.
   relay = createServer({ cert, key, minVersion: 'TLSv1.2' }, async (req, res) => {
     try {
@@ -122,7 +134,10 @@ try {
   assert.equal((await api('/api/workspaces', { action: 'get', id }, a)).status, 404);
   passed('R05', { staleStatus: stale.status, saveStatus: saved.status, deleteStatus: removed.status });
   const { chromium } = await import(pathToFileURL(fixture.playwrightModule).href);
-  browser = await chromium.launch({ headless: true, args: ['--ignore-certificate-errors-spki-list=' + fixture.spki] });
+  browserServer = await chromium.launchServer({ headless: true, host: '127.0.0.1',
+    args: ['--ignore-certificate-errors-spki-list=' + fixture.spki] });
+  await recordProcess(browserServer.process(), 'chromium');
+  browser = await chromium.connect(browserServer.wsEndpoint());
   for (const [index, viewport] of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }].entries()) {
     phase = index === 0 ? 'R06-real-desktop-journey' : 'R07-real-narrow-journey';
     const context = await browser.newContext({ viewport, isMobile: index === 1, hasTouch: index === 1 });
@@ -159,13 +174,21 @@ try {
   }
   accepted = true;
 } catch (error) {
-  report.failure = { phase, type: error.name, code: typeof error.code === 'string' ? error.code : 'assertion_or_runtime_failure' };
+  report.failure = { phase, type: error.name, code: typeof error.code === 'string' ? error.code : 'assertion_or_runtime_failure',
+    ...(typeof error.actual === 'number' ? { actual: error.actual } : {}),
+    ...(typeof error.expected === 'number' ? { expected: error.expected } : {}) };
 } finally {
   try { if (browser) await browser.close(); report.cleanup.browserClosed = true; } catch { accepted = false; }
+  try { if (browserServer) await browserServer.close(); report.cleanup.browserServerClosed = true; } catch { accepted = false; }
   try { await stop(); report.cleanup.appProcessGroupAbsent = true; } catch { accepted = false; }
   if (relay) {
     relay.closeAllConnections();
     await new Promise(resolve => relay.close(resolve)); report.cleanup.authRelayClosed = true;
+  }
+  if (databaseRelay) {
+    report.databaseTlsSessions = databaseRelay.sessions;
+    report.cleanup.databaseRelayClosed = await databaseRelay.close();
+    if (!report.cleanup.databaseRelayClosed) accepted = false;
   }
   await output.close(); await errors.close();
   report.authTransportObservations = authObservations;

@@ -36,9 +36,13 @@ reopen across an actual Node process restart; second-account isolation;
 revision/deletion; desktop UI and narrow touch-emulated UI sign-in, authored
 source save, reload/reopen, deletion and sign-out. No route interception or
 synthetic service response is used. Existing 44 and earlier packets stay closed.
-The dedicated role gets a disposable local login only. Real PostgreSQL serves
-a task CA certificate; Node verifies it. A fixed local HTTPS relay passes Auth
-requests unchanged to the CLI's actual loopback HTTP gateway. Chromium trusts
+The dedicated role gets a disposable local login only. Fixed local TLS
+terminators pass Auth requests and PostgreSQL authentication/query bytes
+unchanged to the CLI's actual loopback services; Node verifies the task CA.
+The database terminator performs only standard SSLRequest negotiation;
+no database reply, row or authentication outcome is synthesized. This profile
+does not qualify native database TLS or remote/public certificate operation.
+Chromium trusts
 only the task leaf's SPKI; this is fixture trust, not public-certificate proof.
 Two confirmed disposable accounts are created through the local admin API;
 the app receives only the publishable key and its restricted database role.
@@ -47,6 +51,19 @@ with pinned Playwright 1.61.1 and the existing app lock in one 20-minute job.
 Artifacts contain finite status metadata, original non-secret outcomes and
 source fingerprints; private keys, passwords, tokens and raw service bodies
 stay in owned scratch and are removed only after owned processes stop.
+
+Integrated attempt1 (`43492107411`, source `51590575`) stopped before the app
+or browser ran. The first `ALTER SYSTEM` TLS command exited1; its private raw
+database error was not exported, so the exact server reason is not established.
+Docker teardown passed, but a broad same-UID `/proc` scan hit PermissionError;
+scratch removal/source-after-cleanup were not verified. Preserve this failure.
+Attempt2 does not retry that database command or assume a new privilege. It
+uses explicit fixture TLS termination and records only its own app/Chromium
+process identities, rather than inspecting protected runner processes.
+The Supabase CLI3.1.0 [database configuration schema](https://github.com/supabase/cli/blob/v3.1.0/packages/config/src/db.ts)
+does not expose arbitrary TLS certificate settings in `db.settings`. These
+transport and cleanup corrections change the fixture; seven service identities
+remain unexecuted until a subsequent original outcome establishes otherwise.
 
 Preserve original exit/status/fingerprint observations and the CLI-generated
 SQL. Stop only this unique local project, then remove only captured task-owned
