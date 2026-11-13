@@ -36,8 +36,9 @@ is an authored own-host integration packet, not scanning or a live-account test.
 [Run43428560903](https://github.com/alvarovillalbaa/forway/actions/runs/43428560903),
 attempt1/job131895971898, QA5db7175eabf720996f93ff84b378af7dd6adf90d,
 targeted READY production dpl_2qc7H2KRWGA8E3Cf6ubhRazMnPAg at exactly ce59d9b1.
-No browser, dependency installation, database, provider/model, account or paid
-plan was used. No old77/eight-browser application case executed.
+No browser, dependency installation, database, model call, account creation or
+paid-plan change occurred. The existing Vercel project served the fixtures.
+No old77/eight-browser application case executed.
 
 - [Original artifact ZIP](native-network-attempt-1.zip),10956bytes, SHA256
   `cbea85ab0097a42e3050f803a035bb80cc0b6d3b33f39b6616b59d7caed9f524`.
