@@ -77,6 +77,16 @@ database. The portfolio's local PostgreSQL/Supabase-hostable persistence
 direction remains open; no schema, account, access policy or capacity change is
 applied. Do not swap to another database provider to evade those owner gates.
 
+The separate `work/private-workspaces` candidate now implements private shared
+PostgreSQL access through a server-verified Supabase identity, explicit saves,
+revision conflicts and metadata-only retry receipts. Its tab-scoped browser
+account/save/reopen/delete integration is included. See the
+[contract](cloud-workspaces.md) and [44 focused identities](results/2026/11-13/cloud-workspaces.md).
+Real disposable SQL checks and authored-response browser checks have passed;
+no live provider, migration, environment or account delivery is established.
+Production remains the accepted memory/export workbench until that boundary
+is resolved. Never present candidate/READY metadata as a working cloud release.
+
 ## Verification boundaries
 
 Syntax/import/assets/document checks are safe without product execution.

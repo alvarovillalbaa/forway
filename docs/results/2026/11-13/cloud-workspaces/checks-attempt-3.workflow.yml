@@ -1,0 +1,99 @@
+name: Temporary Forway private workspace checks
+on: create
+permissions:
+  contents: read
+jobs:
+  workspaces:
+    if: github.repository == 'alvarovillalbaa/forway' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/forway-workspaces-20261113-3'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 53b999d12063e62046233b21b95a66165a146484
+          persist-credentials: false
+      - name: Qualified disposable PostgreSQL scope
+        shell: python
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          import hashlib,json,os,pathlib,shutil,subprocess,tempfile,traceback
+          P=pathlib.Path
+          root=P(tempfile.mkdtemp(prefix='forway-workspaces-',dir=os.environ['RUNNER_TEMP'])); identity=root.stat()
+          proof=P(os.environ['RUNNER_TEMP'])/('forway-workspaces-proof-'+os.environ['GITHUB_RUN_ID']); proof.mkdir()
+          name='forway-workspaces-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']
+          label='forway.owner='+os.environ['GITHUB_RUN_ID']
+          report={'runId':os.environ['GITHUB_RUN_ID'],'source':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'commands':[],'cleanup':{}}
+          def vector():
+              assert subprocess.check_output(['git','status','--porcelain'])==b''
+              rows={}
+              for entry in subprocess.check_output(['git','ls-tree','-rz','HEAD']).split(b'\0'):
+                  if not entry: continue
+                  meta,path=entry.split(b'\t',1); mode,kind,blob=meta.decode().split(); p=P(path.decode()); b=p.read_bytes()
+                  assert kind=='blob' and not p.is_symlink() and hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==blob
+                  rows[path.decode()]={'mode':mode,'blob':blob,'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)}
+              return rows
+          def run(key,argv,timeout=60,env=None,cwd=None,required=True):
+              p=subprocess.run(argv,stdin=subprocess.DEVNULL,capture_output=True,timeout=timeout,env=env,cwd=cwd)
+              for stream,b in [('stdout',p.stdout),('stderr',p.stderr)]:
+                  assert len(b)<262144; (proof/(key+'.'+stream)).write_bytes(b)
+              report['commands'].append({'name':key,'exitCode':p.returncode})
+              if required: assert p.returncode==0, key+' failed'
+              return p
+          status=1; started=False
+          try:
+              assert shutil.disk_usage(root).free>2*1024**3
+              before=vector(); report['sourceFiles']=before
+              selected=['package.json','package-lock.json','db/bootstrap.sql','public/src/workspace.mjs','public/src/content.mjs','public/src/observations.mjs','tests/unit/cloud-api.test.mjs','tests/integration/cloud-store.test.mjs']
+              selected+=sorted(str(p) for p in P('src/cloud').glob('*.mjs'))
+              for name_in in selected:
+                  dst=root/name_in; dst.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(name_in,dst)
+              env=dict(os.environ,NPM_CONFIG_CACHE=str(root/'cache'),FORWAY_DISPOSABLE_DATABASE='owned-networkless-container',FORWAY_TEST_SOCKET=str(root/'socket'))
+              run('npm-ci',['npm','ci','--ignore-scripts','--no-audit','--no-fund'],180,env,root)
+              run('runtime',['node','--version'],cwd=root)
+              report['lockSha256']=hashlib.sha256((root/'package-lock.json').read_bytes()).hexdigest()
+              run('image-pull',['docker','pull','postgres:17.12-bookworm'],180)
+              image=run('image-inspect',['docker','image','inspect','postgres:17.12-bookworm'])
+              report['image']=json.loads(image.stdout)[0]['RepoDigests']
+              socket=root/'socket'; socket.mkdir(); socket.chmod(0o777)
+              run('container-start',['docker','run','-d','--name',name,'--label',label,'--network','none','--tmpfs','/var/lib/postgresql/data:rw,nosuid,nodev,size=512m','--mount','type=bind,src='+str(socket)+',dst=/sock','-e','POSTGRES_HOST_AUTH_METHOD=trust','postgres:17.12-bookworm','postgres','-c',"listen_addresses=",'-c','unix_socket_directories=/var/run/postgresql,/sock'])
+              started=True
+              ready=run('database-ready',['docker','exec',name,'sh','-c','for i in $(seq 1 30); do if [ "$(cat /proc/1/comm)" = postgres ]; then pg_isready -h /sock -U postgres && exit 0; fi; sleep 1; done; exit 1'],40)
+              run('workspace-tests',['node','--test','--test-reporter=tap','tests/unit/cloud-api.test.mjs','tests/integration/cloud-store.test.mjs'],90,env,root)
+              assert vector()==before; report['sourceAfterChecks']=True; status=0
+          except BaseException: report['failure']=traceback.format_exc()
+          finally:
+              try:
+                  inspect=run('owned-container-inspect',['docker','inspect',name],required=False)
+                  if inspect.returncode==0:
+                      data=json.loads(inspect.stdout)[0]; assert data['Config']['Labels'].get('forway.owner')==os.environ['GITHUB_RUN_ID']
+                      run('owned-container-logs',['docker','logs',name],required=False)
+                      run('owned-container-remove',['docker','rm','-f','--volumes',name])
+                  missing=run('owned-container-absent',['docker','ps','-a','--filter','name=^/'+name+'$','--format','{{.ID}}'])
+                  assert missing.stdout==b''; report['cleanup']['containerAbsent']=True
+                  now=root.lstat(); assert not root.is_symlink() and (now.st_uid,now.st_ino,now.st_dev)==(os.getuid(),identity.st_ino,identity.st_dev)
+                  shutil.rmtree(root); report['cleanup']['scratchAbsent']=not root.exists()
+                  assert vector()==before; report['sourceAfterCleanup']=True
+              except BaseException: report['cleanup']['failure']=traceback.format_exc(); status=1
+              report['accepted']=status==0
+              report['files']={p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in proof.iterdir()}
+              (proof/'receipt.json').write_text(json.dumps(report,indent=2)+'\n'); print(json.dumps({'accepted':report['accepted'],'cleanup':report['cleanup']}))
+          raise SystemExit(status)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        id: upload
+        if: always()
+        with:
+          name: forway-workspaces-${{ github.run_id }}
+          path: ${{ runner.temp }}/forway-workspaces-proof-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: error
+      - name: Remove owned uploaded evidence
+        if: always() && steps.upload.outcome == 'success'
+        shell: python
+        run: |
+          import json,os,pathlib,shutil
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/('forway-workspaces-proof-'+os.environ['GITHUB_RUN_ID'])
+          assert p.is_dir() and not p.is_symlink() and p.stat().st_uid==os.getuid()
+          assert json.loads((p/'receipt.json').read_bytes())['runId']==os.environ['GITHUB_RUN_ID']
+          assert all(x.is_file() and not x.is_symlink() for x in p.iterdir())
+          shutil.rmtree(p); assert not p.exists(); print('Owned uploaded evidence removed')
