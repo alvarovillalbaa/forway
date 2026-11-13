@@ -39,12 +39,15 @@ connection must authenticate as the dedicated `forway_runtime` role; never
 give it the installer/admin password or a Supabase privileged key.
 
 Database installation is a separate explicit operator action against a
-reviewed empty namespace. The next qualification uses the official pinned
-Supabase CLI to generate the migration filename and apply its exact SQL to a
-fresh disposable local stack. `db/bootstrap.sql` is the existing source input;
-do not apply it twice or take over an existing role/schema. There is no runtime
-auto-migration. A generated file is published only after its original result
-and local schema/history have been inspected.
+reviewed empty namespace. The official pinned Supabase CLI generated
+`supabase/migrations/20261113191844_private_workspaces.sql`; its unchanged SQL
+was applied to a fresh local PostgreSQL 17.11 stack and the schema/history/RLS
+read back in run `43490714393`. Use the generated migration with the CLI, or
+the byte-identical `db/bootstrap.sql` in a reviewed manual installation; choose
+one route. Do not apply both or take over an existing role/schema. There is no
+runtime auto-migration. A running installation still needs a private login
+password for `forway_runtime`, an operator-supplied trusted TLS endpoint and
+the real Auth settings described in the workspace contract.
 
 Shutdown stops accepting connections and allows current requests to finish.
 After ten seconds it closes the server's own remaining sockets, including

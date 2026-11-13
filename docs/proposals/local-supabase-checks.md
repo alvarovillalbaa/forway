@@ -22,6 +22,32 @@ and PostgreSQL, including fresh identities, account isolation and persistent
 save/reopen. Do not substitute mocked HTTP responses or legacy keys for a
 failed new-key prerequisite, and do not relabel readiness as full acceptance.
 
+The prerequisite passed at `b59e1cbb` in run `43490714393`: real PostgreSQL
+17.11, modern local publishable key, exact generated migration
+`20261113191844_private_workspaces.sql`, forced RLS and no anonymous or
+authenticated schema usage. Its Docker resources and private scratch were
+verified absent. The temporary workflow is disabled and its SHA-checked ref
+deleted. The original receipt and SQL are retained separately from the next
+profile.
+
+The next changed source runs seven real-service identities R01-R07: confirmed
+fixture sign-in/fresh user verification; real PostgreSQL create/idempotency;
+reopen across an actual Node process restart; second-account isolation;
+revision/deletion; desktop UI and narrow touch-emulated UI sign-in, authored
+source save, reload/reopen, deletion and sign-out. No route interception or
+synthetic service response is used. Existing 44 and earlier packets stay closed.
+The dedicated role gets a disposable local login only. Real PostgreSQL serves
+a task CA certificate; Node verifies it. A fixed local HTTPS relay passes Auth
+requests unchanged to the CLI's actual loopback HTTP gateway. Chromium trusts
+only the task leaf's SPKI; this is fixture trust, not public-certificate proof.
+Two confirmed disposable accounts are created through the local admin API;
+the app receives only the publishable key and its restricted database role.
+No real email is sent. The seven identities run once per changed candidate,
+with pinned Playwright 1.61.1 and the existing app lock in one 20-minute job.
+Artifacts contain finite status metadata, original non-secret outcomes and
+source fingerprints; private keys, passwords, tokens and raw service bodies
+stay in owned scratch and are removed only after owned processes stop.
+
 Preserve original exit/status/fingerprint observations and the CLI-generated
 SQL. Stop only this unique local project, then remove only captured task-owned
 containers, volumes, networks and scratch. Verify their absence. Do not prune
