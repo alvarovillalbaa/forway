@@ -75,6 +75,15 @@ finite browser-step diagnostics and source-status observations before/after
 the journeys. These changes address observed failures; no accepted older
 fixture packet is reopened and no successful full-service run is claimed yet.
 
+Attempt3 (`43494538325`, source `252b0991`) stopped before service journeys:
+the new source diagnostic found only `?? supabase/.temp/` after child commands.
+The CLI had a checkout-relative cache while its config used `--workdir`.
+Its Docker resources and owned scratch were removed; the checkout cache was
+not retired by that cleanup, and source-after-cleanup remains false. No app or
+browser launched. Attempt4 sets every controller-owned child command's cwd to
+owned scratch. It retains exact `--workdir` targeting and the unchanged strict
+source check. No ignore rule or successful guard is invented for the failure.
+
 Preserve original exit/status/fingerprint observations and the CLI-generated
 SQL. Stop only this unique local project, then remove only captured task-owned
 containers, volumes, networks and scratch. Verify their absence. Do not prune
