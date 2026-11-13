@@ -1,0 +1,21 @@
+{
+  "runId": 43495299173,
+  "workflowId": 417674651,
+  "workflowState": "disabled_manually",
+  "qaHead": "9f8433f0ad0cccf4ab5ef4ee5239605fbe655292",
+  "ref": "qa/forway-real-services-20261113-4",
+  "matchingRefs": [],
+  "accepted": false,
+  "qualifiedRows": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "allSourceGuardStatusesEmpty": true,
+  "fullTrackedVectorAfterCleanupMatched": true,
+  "ownedAppBrowserRelaysDockerScratchRetired": true,
+  "unfinishedIdentity": "R07 observer waited for a hidden topbar detail"
+}

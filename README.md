@@ -9,6 +9,12 @@ and API handlers with explicit private configuration. Its real local Supabase
 qualification is separate from Vercel's READY preview and the earlier fixture
 checks; hosted environment access remains pending.
 
+[Seven real local-service identities](docs/results/2026/11-13/self-hosting.md)
+now qualify confirmed sign-in, private persistence across a server restart,
+account isolation, revisions/deletion and actual desktop/narrow save/reopen UI.
+They passed across two original runs with explicit fixture TLS; the preserved
+failures, source guards and cleanup limits remain part of that evidence.
+
 Create, analyze and improve content for search and AI answers.
 
 [Open Forway](https://forway.vercel.app) · [Delivery evidence](docs/results/2026/10-29/initial-delivery.md)

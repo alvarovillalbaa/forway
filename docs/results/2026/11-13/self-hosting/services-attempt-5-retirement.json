@@ -1,0 +1,15 @@
+{
+  "runId": 43496339332,
+  "workflowId": 417680580,
+  "workflowState": "disabled_manually",
+  "qaHead": "3f034236508efb85a0adb8cb81065fac1bc6fde0",
+  "ref": "qa/forway-real-services-20261113-5",
+  "matchingRefs": [],
+  "accepted": true,
+  "identityScope": [
+    "R07"
+  ],
+  "sourceAfterQualification": true,
+  "sourceAfterCleanup": true,
+  "ownedAppBrowserRelaysDockerScratchRetired": true
+}

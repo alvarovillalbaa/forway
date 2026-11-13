@@ -1,0 +1,157 @@
+name: Temporary Forway local Supabase prerequisite
+on: create
+permissions:
+  contents: read
+jobs:
+  local-stack:
+    if: github.repository == 'alvarovillalbaa/forway' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/forway-supabase-ready-20261113-1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: b59e1cbb3ae2d51835f1d41ee50aa4c26d4977d3
+          persist-credentials: false
+      - name: Generate and apply only the owned local migration
+        shell: python
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          import hashlib,json,os,pathlib,re,secrets,shutil,signal,stat,subprocess,tarfile,tempfile,time,tomllib,urllib.request
+          P=pathlib.Path
+          root=P(tempfile.mkdtemp(prefix='forway-supabase-',dir=os.environ['RUNNER_TEMP'])); identity=root.stat()
+          raw=root/'raw'; raw.mkdir(mode=0o700); app=root/'app'; app.mkdir(mode=0o700)
+          proof=P(os.environ['RUNNER_TEMP'])/('forway-supabase-proof-'+os.environ['GITHUB_RUN_ID']); proof.mkdir()
+          project='forway-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']+'-'+secrets.token_hex(4)
+          cli=root/'supabase'
+          report={'kind':'forway.local-supabase-prerequisite','runId':os.environ['GITHUB_RUN_ID'],'project':project,'source':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'commands':[],'cleanup':{},'appBrowserOrOldCasesExecuted':False,'rawSecretStreamsPublished':False}
+          environment={k:os.environ[k] for k in ['PATH','HOME','USER','LOGNAME','RUNNER_TEMP'] if k in os.environ}
+          environment.update(CI='true',PYTHONDONTWRITEBYTECODE='1')
+          def digest(b): return hashlib.sha256(b).hexdigest()
+          def vector():
+              assert subprocess.check_output(['git','status','--porcelain'])==b''
+              rows={}
+              for e in subprocess.check_output(['git','ls-tree','-rz','HEAD']).split(b'\0'):
+                  if not e: continue
+                  meta,name=e.split(b'\t',1); mode,kind,blob=meta.decode().split(); p=P(name.decode()); b=p.read_bytes()
+                  assert kind=='blob' and not p.is_symlink() and hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==blob
+                  rows[name.decode()]={'mode':mode,'blob':blob,'bytes':len(b),'sha256':digest(b)}
+              return rows
+          def run(label,argv,timeout=60,required=True):
+              index=len(report['commands'])+1; stdout=raw/(str(index)+'.stdout'); stderr=raw/(str(index)+'.stderr')
+              with stdout.open('xb') as out,stderr.open('xb') as err:
+                  p=subprocess.Popen(argv,stdin=subprocess.DEVNULL,stdout=out,stderr=err,env=environment,start_new_session=True)
+                  deadline=time.monotonic()+timeout; forced=False
+                  while p.poll() is None:
+                      if time.monotonic()>deadline or stdout.stat().st_size>8388608 or stderr.stat().st_size>8388608:
+                          forced=True; os.killpg(p.pid,signal.SIGKILL); break
+                      time.sleep(.1)
+                  p.wait(timeout=10)
+              try: os.killpg(p.pid,0); remaining=True
+              except ProcessLookupError: remaining=False
+              if remaining: os.killpg(p.pid,signal.SIGKILL)
+              out=stdout.read_bytes(); err=stderr.read_bytes()
+              row={'label':label,'exitCode':p.returncode,'reaped':True,'forced':forced,'groupAbsent':not remaining,'stdout':{'bytes':len(out),'sha256':digest(out)},'stderr':{'bytes':len(err),'sha256':digest(err)}}
+              report['commands'].append(row)
+              assert not forced and not remaining, label+' did not finish cleanly'
+              if required: assert p.returncode==0, label+' failed'
+              return p.returncode,out,err
+          def containers():
+              _,out,_=run('owned-container-inventory',['docker','ps','-a','--format','{{.ID}} {{.Names}}'])
+              return {line.split()[0]:line.split()[1] for line in out.decode().splitlines() if line.split()[1].startswith('supabase_') and line.split()[1].endswith('_'+project)}
+          def resources(kind):
+              _,out,_=run('owned-'+kind+'-inventory',['docker',kind,'ls','--format','{{.Name}}'])
+              return [n for n in out.decode().splitlines() if n.startswith('supabase_') and n.endswith('_'+project)]
+          status=1; before=None; start_attempted=False
+          try:
+              assert shutil.disk_usage(root).free>10*1024**3, 'External storage admission'
+              before=vector(); report['sourceFiles']=before
+              assert not containers() and not resources('volume') and not resources('network'), 'Unique project already exists'
+              archive=root/'cli.tar.gz'; url='https://github.com/supabase/cli/releases/download/v3.1.0/supabase_3.1.0_linux_amd64.tar.gz'
+              with urllib.request.urlopen(url,timeout=60) as response,archive.open('xb') as f:
+                  total=0
+                  while True:
+                      b=response.read(1048576)
+                      if not b: break
+                      total+=len(b); assert total<=70000000; f.write(b)
+              assert archive.stat().st_size==64171795 and digest(archive.read_bytes())=='dbe9fd66771337fc198727da86b9d3551302f87a7091cd8781be2a4cd0c8ac4d'
+              with tarfile.open(archive,'r:gz') as tar:
+                  members=[m for m in tar.getmembers() if m.name in ('supabase','./supabase')]
+                  assert len(members)==1 and members[0].isfile() and members[0].size<300000000
+                  with tar.extractfile(members[0]) as source,cli.open('xb') as out: shutil.copyfileobj(source,out)
+              cli.chmod(0o700); report['cli']={'archiveSha256':digest(archive.read_bytes()),'binarySha256':digest(cli.read_bytes())}
+              _,version,_=run('cli-version',[str(cli),'--version']); assert version.decode().strip()=='3.1.0'
+              run('cli-init',[str(cli),'init','--workdir',str(app)])
+              config=app/'supabase/config.toml'; original=config.read_text(); parsed=tomllib.loads(original)
+              assert 'db' in parsed and 'project_id' in parsed
+              text,count=re.subn(r'(?m)^project_id\s*=\s*"[^"]*"\s*$', 'project_id = '+json.dumps(project),original); assert count==1
+              text,count=re.subn(r'(?m)^major_version\s*=\s*\d+\s*$', 'major_version = 17',text); assert count==1
+              config.write_text(text); parsed=tomllib.loads(text); assert parsed['project_id']==project and parsed['db']['major_version']==17
+              report['config']={'projectId':project,'databaseMajor':17,'remoteConfigured':bool(parsed.get('remotes'))}
+              assert not report['config']['remoteConfigured'] and 'SUPABASE_ACCESS_TOKEN' not in environment
+              start_attempted=True
+              run('local-stack-start',[str(cli),'start','--workdir',str(app)],timeout=600)
+              owned=containers(); dbname='supabase_db_'+project; assert dbname in owned.values(), 'Owned database admission'
+              def sql(label,query):
+                  _,out,_=run(label,['docker','exec',dbname,'psql','-U','postgres','-d','postgres','-A','-t','-X','-c',query]); return out.decode().strip()
+              assert sql('empty-app-namespace',"SELECT count(*) FROM pg_namespace WHERE nspname='forway_private'")=='0'
+              assert sql('empty-app-role',"SELECT count(*) FROM pg_roles WHERE rolname='forway_runtime'")=='0'
+              run('generate-migration',[str(cli),'migration','new','private_workspaces','--workdir',str(app)])
+              files=list((app/'supabase/migrations').glob('*.sql')); assert len(files)==1 and re.fullmatch(r'\d{14}_private_workspaces.sql',files[0].name)
+              source=P('db/bootstrap.sql').read_bytes(); files[0].write_bytes(source); assert digest(files[0].read_bytes())==before['db/bootstrap.sql']['sha256']
+              run('apply-local-migration',[str(cli),'migration','up','--workdir',str(app)],timeout=120)
+              run('local-migration-list',[str(cli),'migration','list','--workdir',str(app)])
+              migration=files[0].name.split('_',1)[0]
+              assert sql('applied-migration-history',"SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version='"+migration+"'")=='1'
+              schema=json.loads(sql('private-schema-readback',"SELECT json_build_object('version',(SELECT version FROM forway_private.schema_version),'forcedRls',(SELECT bool_and(relrowsecurity AND relforcerowsecurity) FROM pg_class c JOIN pg_namespace n ON c.relnamespace=n.oid WHERE n.nspname='forway_private' AND c.relname IN ('workspaces','operations')),'anonymousUsage',has_schema_privilege('anon','forway_private','USAGE'),'authenticatedUsage',has_schema_privilege('authenticated','forway_private','USAGE'),'runtimeNoLogin',(SELECT NOT rolcanlogin AND NOT rolbypassrls AND NOT rolsuper FROM pg_roles WHERE rolname='forway_runtime'))"))
+              assert schema=={'version':1,'forcedRls':True,'anonymousUsage':False,'authenticatedUsage':False,'runtimeNoLogin':True}; report['schema']=schema
+              _,status_json,_=run('private-local-status',[str(cli),'status','--output','json','--workdir',str(app)])
+              values=json.loads(status_json); values=values.get('data',values)
+              report['statusShape']={k:type(v).__name__ for k,v in values.items()}
+              publishable=next((values[k] for k in ['PUBLISHABLE_KEY','publishable_key','publishableKey'] if isinstance(values.get(k),str)),None)
+              report['newPublishableKeyPresent']=isinstance(publishable,str) and publishable.startswith('sb_publishable_')
+              report['legacyAdminKeyPresent']=any(isinstance(values.get(k),str) and bool(values[k]) for k in ['SERVICE_ROLE_KEY','service_role_key','serviceRoleKey'])
+              assert report['newPublishableKeyPresent'], 'New-key status admission'
+              report['databaseVersion']=sql('database-version','SHOW server_version')
+              shutil.copyfile(files[0],proof/files[0].name); report['migration']={'name':files[0].name,'bytes':len(source),'sha256':digest(source),'appliedLocally':True}
+              assert vector()==before; report['sourceAfterQualification']=True; status=0
+          except BaseException as error:
+              report['failure']={'type':type(error).__name__,'message':str(error) if isinstance(error,AssertionError) else 'Prerequisite operation failed; private streams are not published'}
+          finally:
+              try:
+                  if start_attempted: run('stop-owned-local-stack',[str(cli),'stop','--no-backup','--workdir',str(app)],timeout=90,required=False)
+                  owned=containers()
+                  for id_ in owned: run('remove-owned-container',['docker','rm','-f','--volumes',id_])
+                  for kind in ['volume','network']:
+                      for name in resources(kind): run('remove-owned-'+kind,['docker',kind,'rm',name])
+                  assert not containers() and not resources('volume') and not resources('network')
+                  report['cleanup']['ownedDockerResourcesAbsent']=True
+                  now=root.lstat(); assert not root.is_symlink() and (now.st_uid,now.st_ino,now.st_dev)==(os.getuid(),identity.st_ino,identity.st_dev)
+                  report['cleanup']['rawFiles']=sum(1 for p in raw.iterdir() if p.is_file())
+                  shutil.rmtree(root); assert not root.exists(); report['cleanup']['scratchAbsent']=True
+                  if before is not None: assert vector()==before; report['sourceAfterCleanup']=True
+              except BaseException as error:
+                  status=1; report['cleanup']['failure']={'type':type(error).__name__,'message':'Owned cleanup was not fully verified'}
+              report['accepted']=status==0
+              body=json.dumps(report,indent=2)+'\n'; assert len(body.encode())<262144
+              (proof/'receipt.json').write_text(body)
+              print(json.dumps({'accepted':report['accepted'],'failure':report.get('failure'),'cleanup':report['cleanup']}))
+          raise SystemExit(status)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        id: upload
+        if: always()
+        with:
+          name: forway-supabase-prerequisite-${{ github.run_id }}
+          path: ${{ runner.temp }}/forway-supabase-proof-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: error
+      - name: Retire uploaded proof copy
+        if: always() && steps.upload.outcome == 'success'
+        shell: python
+        run: |
+          import json,os,pathlib,shutil
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/('forway-supabase-proof-'+os.environ['GITHUB_RUN_ID'])
+          assert p.is_dir() and not p.is_symlink() and p.stat().st_uid==os.getuid()
+          assert json.loads((p/'receipt.json').read_bytes())['runId']==os.environ['GITHUB_RUN_ID']
+          assert all(x.is_file() and not x.is_symlink() for x in p.iterdir())
+          shutil.rmtree(p); assert not p.exists(); print('Owned uploaded proof copy retired')

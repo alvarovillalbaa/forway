@@ -2,8 +2,10 @@
 
 This work branch adds the server foundation for private shared workspaces.
 The current production workbench remains the accepted memory/export release.
-The candidate includes browser integration; it still needs focused UI proof
-and live storage/Auth setup before a working shared release can be claimed.
+The candidate includes browser integration and its separately recorded
+[44 focused fixture checks](results/2026/11-13/cloud-workspaces.md). The
+[real local-service profile](proposals/local-supabase-checks.md) is separate;
+live storage/Auth setup remains open before a hosted shared release is claimed.
 
 `POST /api/workspaces` accepts only list, get, create, save, delete and operation
 lookup. Every request verifies its bearer with the fixed Supabase `/auth/v1/user`
@@ -16,9 +18,11 @@ DDL, bypass, superuser or inherited memberships. Forced RLS and explicit owner
 predicates use a transaction-local actor. Only the server holds its connection.
 The schema is not exposed through PostgREST; no browser SQL/RPC grants or
 security-definer functions are installed. `db/bootstrap.sql` deliberately
-refuses existing namespace/role collisions. It has not been applied live and
-is not yet a CLI-generated migration. Inspect the target and generate a proper
-migration with `supabase migration new private_workspaces` before provisioning.
+refuses existing namespace/role collisions. It has not been applied live.
+The CLI-generated `supabase/migrations/20261113191844_private_workspaces.sql`
+is byte-identical and passed actual local migration/history/RLS readback on
+PostgreSQL17.11. Inspect the intended target before provisioning and apply
+exactly one installation route; see [self-hosting](self-hosting.md).
 
 Saves/deletes require a revision. Concurrent edits return a conflict rather
 than overwriting another version. Each write requires an operation UUID;

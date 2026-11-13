@@ -1,0 +1,14 @@
+{
+  "runId": 43494538325,
+  "workflowId": 417670149,
+  "workflowState": "disabled_manually",
+  "qaHead": "fbb23e199dd68faca6462926fe5af91905ced4ca",
+  "ref": "qa/forway-real-services-20261113-3",
+  "matchingRefs": [],
+  "accepted": false,
+  "appAndBrowserLaunched": false,
+  "sourceStatus": "?? supabase/.temp/\n",
+  "ownedDockerAndScratchAbsent": true,
+  "checkoutCacheRetired": false,
+  "sourceAfterCleanupVerified": false
+}

@@ -96,6 +96,16 @@ confirmed disposable user and expected one erased workspace. R01-R06 now stay
 closed; no API/restart/desktop regression replay is required for this fixture
 observer correction. This does not change the app or its responsive styling.
 
+Attempt5 (`43496339332`, source `b2f2aa64`) passed R07 alone. The exact source
+vector/status and owned app/browser/relay/Docker/scratch cleanup passed; local
+SQL readback found one erased workspace and zero active rows. Combined with
+the qualified R01-R06 original, all seven distinct real-service identities
+are closed. Six new temporary workflows are disabled and their six refs are
+absent. See [results and original evidence](../results/2026/11-13/self-hosting.md).
+Do not replay this accepted profile without changed inputs or a concrete
+unresolved concern. Hosted configuration, native database TLS and real email
+remain separate gates.
+
 Preserve original exit/status/fingerprint observations and the CLI-generated
 SQL. Stop only this unique local project, then remove only captured task-owned
 containers, volumes, networks and scratch. Verify their absence. Do not prune

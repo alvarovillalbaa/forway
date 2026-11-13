@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-13",
+  "workflows": [
+    {
+      "id": 417647482,
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417655693,
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417663576,
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417670149,
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417674651,
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417680580,
+      "state": "disabled_manually"
+    }
+  ],
+  "ownedRefs": [
+    {
+      "ref": "qa/forway-supabase-ready-20261113-1",
+      "absent": true
+    },
+    {
+      "ref": "qa/forway-real-services-20261113-1",
+      "absent": true
+    },
+    {
+      "ref": "qa/forway-real-services-20261113-2",
+      "absent": true
+    },
+    {
+      "ref": "qa/forway-real-services-20261113-3",
+      "absent": true
+    },
+    {
+      "ref": "qa/forway-real-services-20261113-4",
+      "absent": true
+    },
+    {
+      "ref": "qa/forway-real-services-20261113-5",
+      "absent": true
+    }
+  ],
+  "otherObservedRefs": [
+    {
+      "ref": "refs/heads/qa/forway-hosted-20261105",
+      "sha": "a765f129e9273e5f875c9903c206690d06ce9bbf",
+      "preserved": true
+    }
+  ],
+  "historicalCleanupClaimsNotPromoted": true
+}

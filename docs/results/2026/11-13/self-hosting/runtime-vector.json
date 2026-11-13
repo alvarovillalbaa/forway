@@ -1,0 +1,174 @@
+{
+  "source": "b2f2aa6457dfafe30217249819cbd3205a534af9",
+  "sameProductFilesAtBothQualifiedSources": true,
+  "files": {
+    "api/audit.mjs": {
+      "mode": "100644",
+      "sha": "f20e7c6a56d41c39838fe4e1df6947e35b9eb2c2",
+      "bytes": 5308,
+      "sha256": "f1c22f4d5ca2e05e85265a4a57c6ba535928ae98f0029391deb1ffa94d831d45"
+    },
+    "package.json": {
+      "mode": "100644",
+      "sha": "039e3cd005a966471bcd283bbe951f7308889b82",
+      "bytes": 464,
+      "sha256": "d6f09b75165305ce349a60a695747f9f2591ae7869354de95287d41d346f4040"
+    },
+    "public/check-fixtures/authored-page.html": {
+      "mode": "100644",
+      "sha": "babb48482ba7a3f2efa190591d5871086bab8ad6",
+      "bytes": 985,
+      "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a"
+    },
+    "public/check-fixtures/header-noindex.html": {
+      "mode": "100644",
+      "sha": "68526399907560cd61967640b2a3d1a8925aba2d",
+      "bytes": 650,
+      "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49"
+    },
+    "public/icon.svg": {
+      "mode": "100644",
+      "sha": "af08676cd5a3edc34900b8608f1c59070494b50a",
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    "public/index.html": {
+      "mode": "100644",
+      "sha": "743174dd5a43d47eea4380a48d64d3724bdbb89f",
+      "bytes": 14816,
+      "sha256": "342ef9c314bac70d2ad59275ec77c20ca607b8c5b71c643f7942fa6cdeaf109b"
+    },
+    "public/src/app.mjs": {
+      "mode": "100644",
+      "sha": "5a74c3ec58463e36dd8e3fc4c6a231ebda1fafee",
+      "bytes": 33930,
+      "sha256": "4be2ed8969e56c80031c1f0a18b5e195925fe78717d50cd29c53f04a887f588d"
+    },
+    "public/src/audit.mjs": {
+      "mode": "100644",
+      "sha": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008",
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    "public/src/content.mjs": {
+      "mode": "100644",
+      "sha": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db",
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    "public/src/observations.mjs": {
+      "mode": "100644",
+      "sha": "7a77d69ff8ec22ba3f7e0a38241337542a6f25e1",
+      "bytes": 7243,
+      "sha256": "deeeb28f38f43ac23150f3825bba6d5ab3de2b884238009574adedf5c3bc3247"
+    },
+    "public/src/ui.mjs": {
+      "mode": "100644",
+      "sha": "42f3cc9af3a97a677d911d07b099e50d35b876c8",
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    "public/src/workspace.mjs": {
+      "mode": "100644",
+      "sha": "0c92702583abd186d04c9179ee47ea29d09ad0cc",
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    "public/styles.css": {
+      "mode": "100644",
+      "sha": "b8f9d502661bf938c596f59869b81b7ebc11bc91",
+      "bytes": 21941,
+      "sha256": "a3d1b00ce5703f3a068846ec39e530a6e68322ca74aeb81c05db49ff0b466129"
+    },
+    "scripts/check.mjs": {
+      "mode": "100644",
+      "sha": "816261bb073958fed58b8606cd7a1f84fe9011bb",
+      "bytes": 1682,
+      "sha256": "33761dc5b229808915392db88c20422132b09116bd83dfa76e5e32223096b49c"
+    },
+    "src/fetch-page.mjs": {
+      "mode": "100644",
+      "sha": "cf6523bc812275e191d8ab963584565c4a40ba8c",
+      "bytes": 14971,
+      "sha256": "4bf3e32e7c068e23a5478d11f4d0c695c65da3422bf4a1fcc34096397fde735b"
+    },
+    "vercel.json": {
+      "mode": "100644",
+      "sha": "6e9e83c7cdbea022a84d655a641af273f70890f3",
+      "bytes": 979,
+      "sha256": "c21e690ab103d9e83406f43a39cd3f9c2e9de8f8033eb98ff84768b91a79a3ca"
+    },
+    "package-lock.json": {
+      "mode": "100644",
+      "sha": "e3b128714bc52b014211f8db4be693772f9533db",
+      "bytes": 5697,
+      "sha256": "4b1aaf73f82ccca56a381c85893a9c0c581087f19152dc6231f57313411acbd2"
+    },
+    "api/cloud-config.mjs": {
+      "mode": "100644",
+      "sha": "2f7df9a932fbeaa6ea0a470c385c762bd8bf6068",
+      "bytes": 686,
+      "sha256": "6c61576592b5863bd4921ecd88061010149583f6874e5e436d34c31a814fe986"
+    },
+    "api/workspaces.mjs": {
+      "mode": "100644",
+      "sha": "93d652a3e5ea3b9e0cd6d4d8573d399a309ce8fb",
+      "bytes": 683,
+      "sha256": "2d8855287b3455741c213980eebdac49cd45274207ba8221bbb14acf746a09fa"
+    },
+    "api/cloud-auth.mjs": {
+      "mode": "100644",
+      "sha": "410ec5bed75b9ceb04d5838d38f545de17d6749c",
+      "bytes": 523,
+      "sha256": "6aca67c14b170fc67b32a8215c7b59f959a07719e003c4bf841ebc86cf1e48d8"
+    },
+    "src/cloud/commands.mjs": {
+      "mode": "100644",
+      "sha": "4ab5c636706b4604c02c5ddf4279dbd2ae645a38",
+      "bytes": 2345,
+      "sha256": "8b9e99fcdb53927fd0a27024e2f549f0f4fbd88cde89dfd88a85576e883d1b84"
+    },
+    "src/cloud/store.mjs": {
+      "mode": "100644",
+      "sha": "05769a9d8df5dc16b0ccfc5f146757a08b74b9f6",
+      "bytes": 7007,
+      "sha256": "ff57caac8df07504ef40dbc93892c7dfb058c1dd0d4c7d65ed922544735889cf"
+    },
+    "src/cloud/auth.mjs": {
+      "mode": "100644",
+      "sha": "41b9af14d96b87d9858e4ca6a6e58fd300a68e77",
+      "bytes": 5665,
+      "sha256": "5c7885d7886ef8a480cf4ab7eee0e4de44f3eec77349560f5a79dbdb00124d1d"
+    },
+    "src/cloud/config.mjs": {
+      "mode": "100644",
+      "sha": "1b98c2cfa8738e0e099acdf9f057edf57095030a",
+      "bytes": 2032,
+      "sha256": "eceb0e5288ce5e7d0cbb2b7f9a574fcc7f64c290f44c901265ba71eb3afa9f42"
+    },
+    "src/cloud/http.mjs": {
+      "mode": "100644",
+      "sha": "b337b0046c76ab0afc19a0993a7d6f6997c83b1b",
+      "bytes": 5407,
+      "sha256": "1c6cb3176d1d3ebfb3939f21ef3f4d8ed2f4ade7af4e98965756a005c4b32d73"
+    },
+    "public/src/cloud-panel.mjs": {
+      "mode": "100644",
+      "sha": "ef9fb74c36e905f27ea7ab0cc97b312ee6382c84",
+      "bytes": 14166,
+      "sha256": "9863485a0ac217c4f434a5b9c21b4b92b7ac0282a2d9951e084f640d5e9db6fe"
+    },
+    "public/src/cloud-client.mjs": {
+      "mode": "100644",
+      "sha": "01db949572370077a45eb3425dbbebbadfef14f3",
+      "bytes": 7579,
+      "sha256": "d28ab23875c73fafc9e29b5cef1e61a49070dcf27d90dc93f51d5b6d7069caa0"
+    },
+    "scripts/serve.mjs": {
+      "mode": "100644",
+      "sha": "9988bf58d005c9075ed9b0c7bb4832a0f3de1563",
+      "bytes": 5519,
+      "sha256": "d1b443192d3831eae69f95a68b8a2e33980e6f05b0856f331b892f97746051dd"
+    }
+  }
+}

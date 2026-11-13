@@ -1,9 +1,12 @@
 # Standalone HTTPS and PostgreSQL
 
 This candidate adds a standalone Node HTTPS entry point for the same workbench
-and API handlers used on Vercel. The private-workspace implementation has its
-recorded 44 focused checks; the new standalone/full-Supabase profile is being
-qualified separately. This page does not establish a live cloud release.
+and API handlers used on Vercel. Seven real local-service identities, including
+desktop and narrow UI save/reopen, passed across the original qualified runs;
+see [results and original failures](results/2026/11-13/self-hosting.md). The
+earlier 44 focused fixture checks stay separate. This does not establish a
+live cloud release, native database TLS or real email delivery. Qualification
+uses explicit local fixture TLS terminators and a task CA.
 
 Use Node 22 or newer and the existing exact dependency lock:
 

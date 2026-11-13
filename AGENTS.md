@@ -7,7 +7,8 @@
   modules, a browser interface and a bounded public-page import endpoint.
   The published baseline has no dependencies, model calls, accounts, analytics
   SDK or database. This separate workspace candidate adds only pinned `pg`;
-  its server/Auth/schema source is not live configuration or accepted proof.
+  its server/Auth/schema source and recorded fixture qualification remain
+  separate from live configuration and hosted acceptance.
 - Keep imported HTML inert. Never mount imported markup, execute scripts or
   place user content into HTML rendering sinks. Artifact export escapes data.
 - Remote page import must validate each redirect, resolve and pin only public
@@ -16,9 +17,10 @@
 - Page checks are observable heuristics, not ranking/AI-visibility guarantees.
   AI-answer observations are supplied evidence, with engine/prompt/time and
   explicit denominators. No synthetic metrics or inferred live provider data.
-- Working state stays in memory with explicit portable export/import. Shared
-  PostgreSQL/Supabase persistence, account ownership and provider integrations
-  remain separate decisions; file export is not a shared database.
+- Local working state stays in memory with explicit portable export/import.
+  The workspace branch adds explicit account save/reopen; live PostgreSQL/
+  Supabase and provider configuration remain separate from production's
+  memory/export deployment. File export is not a shared database.
 - The account-workspace candidate uses server-verified Supabase identity and
   a private PostgreSQL role/schema. Never expose SQL credentials or privileged
   keys, accept client owner IDs, run bootstrap from requests, weaken TLS/RLS,
@@ -79,3 +81,21 @@ original artifact; do not repeat this closed packet without changed inputs or
 a concrete concern. Its temporary fixture handler is retained under
 `tests/fixtures/`, outside the deployed API. Unread/cancelled bodies stay
 incomplete, and owned-host IPv4 proof is not general Internet safety.
+
+## Standalone and real local services
+
+`scripts/serve.mjs` runs the same static workbench and fixed API handlers with
+explicit HTTPS configuration. It never migrates, creates accounts or manages
+database lifecycle at startup. Keep private environment/TLS files untracked.
+The CLI-generated migration is byte-identical to `db/bootstrap.sql`; apply
+exactly one route after inspecting a fresh target. See `docs/self-hosting.md`.
+
+The new real-service scope is `docs/proposals/local-supabase-checks.md`.
+Its owned local Auth/PostgreSQL services and explicit fixture TLS termination
+are separate from native database TLS, real email, public certificates and
+hosted configuration. Preserve every original failure and its proof limits.
+Do not replay the accepted 44-case or older packets for this new profile.
+R01-R07 are now qualified across the preserved original real-service runs;
+see `docs/results/2026/11-13/self-hosting.md`. This profile is closed too.
+Hosted access/email and native database TLS remain unaccepted, not reasons to
+replay local fixtures or retry unchanged provider permission failures.

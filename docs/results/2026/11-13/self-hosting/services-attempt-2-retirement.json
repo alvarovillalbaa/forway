@@ -1,0 +1,19 @@
+{
+  "runId": 43493427358,
+  "workflowId": 417663576,
+  "workflowState": "disabled_manually",
+  "qaHead": "66119b0b974945bae23fc50974c82c3fdf00bb36",
+  "ref": "qa/forway-real-services-20261113-2",
+  "matchingRefs": [],
+  "accepted": false,
+  "observedPassed": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05"
+  ],
+  "failure": "R06 timeout; final source guard failed without path diagnostics",
+  "ownedAppBrowserRelaysDockerScratchRetired": true,
+  "sourceAfterCleanupVerified": false
+}

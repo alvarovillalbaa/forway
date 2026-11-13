@@ -1,0 +1,228 @@
+name: Temporary Forway real local services
+on: create
+permissions:
+  contents: read
+jobs:
+  local-stack:
+    if: github.repository == 'alvarovillalbaa/forway' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/forway-real-services-20261113-2'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 2d57e158318e4c82c61d9834b1719765b7a7d418
+          persist-credentials: false
+      - name: Qualify actual Auth PostgreSQL and standalone HTTPS
+        shell: python
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          import base64,hashlib,json,os,pathlib,re,secrets,shutil,signal,socket,stat,subprocess,tarfile,tempfile,time,tomllib,urllib.parse,urllib.request
+          P=pathlib.Path
+          root=P(tempfile.mkdtemp(prefix='forway-supabase-',dir=os.environ['RUNNER_TEMP'])); identity=root.stat()
+          raw=root/'raw'; raw.mkdir(mode=0o700); app=root/'app'; app.mkdir(mode=0o700)
+          proof=P(os.environ['RUNNER_TEMP'])/('forway-services-proof-'+os.environ['GITHUB_RUN_ID']); proof.mkdir()
+          project='forway-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']+'-'+secrets.token_hex(4)
+          cli=root/'supabase'
+          report={'kind':'forway.real-local-services-controller','runId':os.environ['GITHUB_RUN_ID'],'project':project,'source':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'commands':[],'cleanup':{},'oldCasesExecuted':False,'rawSecretStreamsPublished':False}
+          environment={k:os.environ[k] for k in ['PATH','HOME','USER','LOGNAME','RUNNER_TEMP'] if k in os.environ}
+          environment.update(CI='true',PYTHONDONTWRITEBYTECODE='1')
+          def digest(b): return hashlib.sha256(b).hexdigest()
+          def vector():
+              assert subprocess.check_output(['git','status','--porcelain'])==b''
+              rows={}
+              for e in subprocess.check_output(['git','ls-tree','-rz','HEAD']).split(b'\0'):
+                  if not e: continue
+                  meta,name=e.split(b'\t',1); mode,kind,blob=meta.decode().split(); p=P(name.decode()); b=p.read_bytes()
+                  assert kind=='blob' and not p.is_symlink() and hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==blob
+                  rows[name.decode()]={'mode':mode,'blob':blob,'bytes':len(b),'sha256':digest(b)}
+              return rows
+          def run(label,argv,timeout=60,required=True,env=None):
+              index=len(report['commands'])+1; stdout=raw/(str(index)+'.stdout'); stderr=raw/(str(index)+'.stderr')
+              with stdout.open('xb') as out,stderr.open('xb') as err:
+                  p=subprocess.Popen(argv,stdin=subprocess.DEVNULL,stdout=out,stderr=err,env=env or environment,start_new_session=True)
+                  deadline=time.monotonic()+timeout; forced=False
+                  while p.poll() is None:
+                      if time.monotonic()>deadline or stdout.stat().st_size>8388608 or stderr.stat().st_size>8388608:
+                          forced=True; os.killpg(p.pid,signal.SIGKILL); break
+                      time.sleep(.1)
+                  p.wait(timeout=10)
+              try: os.killpg(p.pid,0); remaining=True
+              except ProcessLookupError: remaining=False
+              if remaining: os.killpg(p.pid,signal.SIGKILL)
+              out=stdout.read_bytes(); err=stderr.read_bytes()
+              row={'label':label,'exitCode':p.returncode,'reaped':True,'forced':forced,'groupAbsent':not remaining,'stdout':{'bytes':len(out),'sha256':digest(out)},'stderr':{'bytes':len(err),'sha256':digest(err)}}
+              report['commands'].append(row)
+              assert not forced and not remaining, label+' did not finish cleanly'
+              if required: assert p.returncode==0, label+' failed'
+              return p.returncode,out,err
+          def containers():
+              _,out,_=run('owned-container-inventory',['docker','ps','-a','--format','{{.ID}} {{.Names}}'])
+              return {line.split()[0]:line.split()[1] for line in out.decode().splitlines() if line.split()[1].startswith('supabase_') and line.split()[1].endswith('_'+project)}
+          def resources(kind):
+              _,out,_=run('owned-'+kind+'-inventory',['docker',kind,'ls','--format','{{.Name}}'])
+              return [n for n in out.decode().splitlines() if n.startswith('supabase_') and n.endswith('_'+project)]
+          status=1; before=None; start_attempted=False
+          try:
+              assert shutil.disk_usage(root).free>10*1024**3, 'External storage admission'
+              before=vector(); report['sourceFiles']=before
+              assert not containers() and not resources('volume') and not resources('network'), 'Unique project already exists'
+              archive=root/'cli.tar.gz'; url='https://github.com/supabase/cli/releases/download/v3.1.0/supabase_3.1.0_linux_amd64.tar.gz'
+              with urllib.request.urlopen(url,timeout=60) as response,archive.open('xb') as f:
+                  total=0
+                  while True:
+                      b=response.read(1048576)
+                      if not b: break
+                      total+=len(b); assert total<=70000000; f.write(b)
+              assert archive.stat().st_size==64171795 and digest(archive.read_bytes())=='dbe9fd66771337fc198727da86b9d3551302f87a7091cd8781be2a4cd0c8ac4d'
+              with tarfile.open(archive,'r:gz') as tar:
+                  members=[m for m in tar.getmembers() if m.name in ('supabase','./supabase')]
+                  assert len(members)==1 and members[0].isfile() and members[0].size<300000000
+                  with tar.extractfile(members[0]) as source,cli.open('xb') as out: shutil.copyfileobj(source,out)
+              cli.chmod(0o700); report['cli']={'archiveSha256':digest(archive.read_bytes()),'binarySha256':digest(cli.read_bytes())}
+              _,version,_=run('cli-version',[str(cli),'--version']); assert version.decode().strip()=='3.1.0'
+              run('cli-init',[str(cli),'init','--workdir',str(app)])
+              config=app/'supabase/config.toml'; original=config.read_text(); parsed=tomllib.loads(original)
+              assert 'db' in parsed and 'project_id' in parsed
+              text,count=re.subn(r'(?m)^project_id\s*=\s*"[^"]*"\s*$', 'project_id = '+json.dumps(project),original); assert count==1
+              text,count=re.subn(r'(?m)^major_version\s*=\s*\d+\s*$', 'major_version = 17',text); assert count==1
+              config.write_text(text); parsed=tomllib.loads(text); assert parsed['project_id']==project and parsed['db']['major_version']==17
+              report['config']={'projectId':project,'databaseMajor':17,'remoteConfigured':bool(parsed.get('remotes'))}
+              assert not report['config']['remoteConfigured'] and 'SUPABASE_ACCESS_TOKEN' not in environment
+              start_attempted=True
+              run('local-stack-start',[str(cli),'start','--workdir',str(app)],timeout=600)
+              owned=containers(); dbname='supabase_db_'+project; assert dbname in owned.values(), 'Owned database admission'
+              def sql(label,query):
+                  _,out,_=run(label,['docker','exec',dbname,'psql','-U','postgres','-d','postgres','-A','-t','-X','-c',query]); return out.decode().strip()
+              assert sql('empty-app-namespace',"SELECT count(*) FROM pg_namespace WHERE nspname='forway_private'")=='0'
+              assert sql('empty-app-role',"SELECT count(*) FROM pg_roles WHERE rolname='forway_runtime'")=='0'
+              (app/'supabase/migrations').mkdir(exist_ok=True)
+              generated=P('supabase/migrations/20261113191844_private_workspaces.sql')
+              shutil.copyfile(generated,app/'supabase/migrations'/generated.name)
+              files=list((app/'supabase/migrations').glob('*.sql')); assert len(files)==1 and re.fullmatch(r'\d{14}_private_workspaces.sql',files[0].name)
+              source=P('db/bootstrap.sql').read_bytes(); assert files[0].read_bytes()==source and digest(source)==before['db/bootstrap.sql']['sha256']
+              run('apply-local-migration',[str(cli),'migration','up','--workdir',str(app)],timeout=120)
+              run('local-migration-list',[str(cli),'migration','list','--workdir',str(app)])
+              migration=files[0].name.split('_',1)[0]
+              assert sql('applied-migration-history',"SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version='"+migration+"'")=='1'
+              schema=json.loads(sql('private-schema-readback',"SELECT json_build_object('version',(SELECT version FROM forway_private.schema_version),'forcedRls',(SELECT bool_and(relrowsecurity AND relforcerowsecurity) FROM pg_class c JOIN pg_namespace n ON c.relnamespace=n.oid WHERE n.nspname='forway_private' AND c.relname IN ('workspaces','operations')),'anonymousUsage',has_schema_privilege('anon','forway_private','USAGE'),'authenticatedUsage',has_schema_privilege('authenticated','forway_private','USAGE'),'runtimeNoLogin',(SELECT NOT rolcanlogin AND NOT rolbypassrls AND NOT rolsuper FROM pg_roles WHERE rolname='forway_runtime'))"))
+              assert schema=={'version':1,'forcedRls':True,'anonymousUsage':False,'authenticatedUsage':False,'runtimeNoLogin':True}; report['schema']=schema
+              _,status_json,_=run('private-local-status',[str(cli),'status','--output','json','--workdir',str(app)])
+              values=json.loads(status_json); values=values.get('data',values)
+              report['statusShape']={k:type(v).__name__ for k,v in values.items()}
+              publishable=next((values[k] for k in ['PUBLISHABLE_KEY','publishable_key','publishableKey'] if isinstance(values.get(k),str)),None)
+              report['newPublishableKeyPresent']=isinstance(publishable,str) and publishable.startswith('sb_publishable_')
+              report['legacyAdminKeyPresent']=any(isinstance(values.get(k),str) and bool(values[k]) for k in ['SERVICE_ROLE_KEY','service_role_key','serviceRoleKey'])
+              assert report['newPublishableKeyPresent'], 'New-key status admission'
+              report['databaseVersion']=sql('database-version','SHOW server_version')
+              assert report['databaseVersion']=='17.11', 'Qualified database version'
+              shutil.copyfile(files[0],proof/files[0].name); report['migration']={'name':files[0].name,'bytes':len(source),'sha256':digest(source),'appliedLocally':True}
+              # Certificates and login belong only to this disposable local stack.
+              tls=root/'tls'; tls.mkdir(mode=0o700)
+              ca=tls/'ca.crt'; cakey=tls/'ca.key'; cert=tls/'server.crt'; key=tls/'server.key'; csr=tls/'server.csr'
+              run('fixture-ca',['openssl','req','-x509','-newkey','rsa:2048','-nodes','-keyout',str(cakey),'-out',str(ca),'-subj','/CN=Forway disposable qualification CA','-days','1'])
+              run('fixture-server-request',['openssl','req','-newkey','rsa:2048','-nodes','-keyout',str(key),'-out',str(csr),'-subj','/CN=localhost'])
+              ext=tls/'extensions'; ext.write_text('basicConstraints=CA:FALSE\nkeyUsage=digitalSignature,keyEncipherment\nextendedKeyUsage=serverAuth\nsubjectAltName=DNS:localhost,IP:127.0.0.1\n')
+              run('fixture-server-certificate',['openssl','x509','-req','-in',str(csr),'-CA',str(ca),'-CAkey',str(cakey),'-CAcreateserial','-out',str(cert),'-days','1','-extfile',str(ext)])
+              for p in [cakey,key]: p.chmod(0o600)
+              _,pub,_=run('fixture-public-key',['openssl','x509','-in',str(cert),'-pubkey','-noout']); (tls/'public.pem').write_bytes(pub)
+              run('fixture-public-key-der',['openssl','pkey','-pubin','-in',str(tls/'public.pem'),'-outform','DER','-out',str(tls/'public.der')])
+              spki=base64.b64encode(hashlib.sha256((tls/'public.der').read_bytes()).digest()).decode()
+              report['nativeDatabaseSslSetting']=sql('read-local-database-ssl','SHOW ssl')
+              password=secrets.token_urlsafe(32)
+              sql('owned-private-role-login',"ALTER ROLE forway_runtime LOGIN PASSWORD '"+password+"'")
+              gateway=urllib.parse.urlparse(values['API_URL']); database=urllib.parse.urlparse(values['DB_URL'])
+              assert gateway.scheme=='http' and gateway.hostname in ['127.0.0.1','localhost'] and gateway.port and gateway.path in ['','/']
+              assert database.hostname in ['127.0.0.1','localhost'] and database.port and database.path=='/postgres'
+              service=root/'service'; service.mkdir(mode=0o700)
+              for name in before:
+                  if name.startswith(('api/','src/','public/','scripts/')) or name in ['package.json','package-lock.json','vercel.json']:
+                      target=service/name; target.parent.mkdir(parents=True,exist_ok=True); target.write_bytes(P(name).read_bytes())
+              _,node_version,_=run('node-version',['node','--version']); report['nodeVersion']=node_version.decode().strip(); assert int(report['nodeVersion'].split('.')[0][1:])>=22
+              run('locked-app-dependencies',['npm','ci','--prefix',str(service),'--ignore-scripts','--no-audit','--no-fund'],timeout=120)
+              assert json.loads((service/'node_modules/pg/package.json').read_bytes())['version']=='8.23.1'
+              tools=root/'browser-tools'; tools.mkdir(mode=0o700)
+              (tools/'package.json').write_text(json.dumps({'name':'forway-real-service-tools','private':True,'type':'module','dependencies':{'@playwright/test':'1.61.1'}})+'\n')
+              (root/'tmp').mkdir(mode=0o700)
+              browserenv=dict(environment,PLAYWRIGHT_BROWSERS_PATH=str(root/'browsers'),NODE_EXTRA_CA_CERTS=str(ca),TMPDIR=str(root/'tmp'))
+              run('pinned-browser-tools',['npm','install','--prefix',str(tools),'--ignore-scripts','--no-audit','--no-fund'],timeout=120,env=browserenv)
+              for pkg in ['@playwright/test','playwright','playwright-core']: assert json.loads((tools/('node_modules/'+pkg+'/package.json')).read_bytes())['version']=='1.61.1'
+              run('owned-chromium',['node',str(tools/'node_modules/playwright/cli.js'),'install','chromium'],timeout=180,env=browserenv)
+              def port():
+                  with socket.socket() as s: s.bind(('127.0.0.1',0)); return s.getsockname()[1]
+              appport=port(); authport=port(); databaseport=port(); assert len({appport,authport,databaseport})==3
+              fixture={'service':str(service),'raw':str(raw),'cert':str(cert),'key':str(key),'gateway':gateway.geturl().rstrip('/'),'authPort':authport,'databasePort':databaseport,'upstreamDatabasePort':database.port,'spki':spki,'adminKey':values['SERVICE_ROLE_KEY'],'playwrightModule':str(tools/'node_modules/playwright/index.mjs'),'report':str(proof/'services.json'),'processManifest':str(root/'processes.json'),'users':[{'email':'owned-'+secrets.token_hex(6)+'@example.test','password':secrets.token_urlsafe(32)} for _ in range(2)],'appEnv':{'FORWAY_APP_ORIGIN':'https://127.0.0.1:'+str(appport),'FORWAY_BIND_HOST':'127.0.0.1','FORWAY_TLS_CERT_FILE':str(cert),'FORWAY_TLS_KEY_FILE':str(key),'FORWAY_SUPABASE_URL':'https://127.0.0.1:'+str(authport),'FORWAY_SUPABASE_PUBLISHABLE_KEY':publishable,'FORWAY_DATABASE_URL':'postgresql://forway_runtime:'+password+'@127.0.0.1:'+str(databaseport)+'/postgres','FORWAY_DATABASE_CA':ca.read_text(),'FORWAY_EMAIL_ENABLED':'false'}}
+              private=root/'fixture.json'; private.write_text(json.dumps(fixture)); private.chmod(0o600)
+              code,_,_=run('real-service-and-browser-journeys',['node',str(P('tests/self-host/real-services.mjs').resolve()),str(private)],timeout=260,required=False,env=browserenv)
+              results=json.loads((proof/'services.json').read_bytes()); report['serviceProfileAccepted']=code==0 and results['accepted']
+              assert report['serviceProfileAccepted'], 'Real-service profile failed; preserve original services.json'
+              assert [r['id'] for r in results['rows']]==['R01','R02','R03','R04','R05','R06','R07']
+              residue=json.loads(sql('owned-fixture-deletion-readback',"SELECT json_build_object('rows',count(*),'active',count(*) FILTER(WHERE deleted_at IS NULL),'erased',count(*) FILTER(WHERE deleted_at IS NOT NULL AND title='' AND document_text IS NULL AND content_hash IS NULL)) FROM forway_private.workspaces"))
+              assert residue=={'rows':3,'active':0,'erased':3}; report['deletionReadback']=residue
+              shutil.copyfile(tools/'package-lock.json',proof/'browser-tools.lock.json')
+              report['fixtureTls']={'appAndAuthLeafSha256':digest(cert.read_bytes()),'browserTrust':'only task-owned leaf SPKI allowlist','nodeTrust':'task-owned CA with certificate verification','authRelay':'fixed local HTTPS to actual CLI loopback HTTP gateway','databaseTls':'verified app-to-fixture TLS terminator; unchanged PostgreSQL bytes to actual local database; not native database TLS acceptance'}
+              assert vector()==before; report['sourceAfterQualification']=True; status=0
+          except BaseException as error:
+              report['failure']={'type':type(error).__name__,'message':str(error) if isinstance(error,AssertionError) else 'Prerequisite operation failed; private streams are not published'}
+          finally:
+              try:
+                  processes_ok=False
+                  try:
+                      process_manifest=root/'processes.json'
+                      captured=json.loads(process_manifest.read_bytes()) if process_manifest.exists() else []
+                      assert isinstance(captured,list) and len(captured)<=4
+                      for item in captured:
+                          pid=item['pid']; assert isinstance(pid,int) and pid>1 and pid not in [os.getpid(),os.getppid()] and item['group']==pid and item['kind'] in ['app','chromium']
+                          proc=P('/proc')/str(pid)
+                          if proc.exists():
+                              assert proc.stat().st_uid==os.getuid()
+                              fields=(proc/'stat').read_text().rsplit(')',1)[1].strip().split()
+                              assert fields[19]==item['startTime'] and int(fields[2])==pid and digest((proc/'cmdline').read_bytes())==item['cmdSha256']
+                              os.killpg(pid,signal.SIGTERM)
+                              until=time.monotonic()+10
+                              while proc.exists() and time.monotonic()<until: time.sleep(.1)
+                              assert not proc.exists(), 'Captured own process did not stop; retain scratch'
+                          try: os.killpg(pid,0)
+                          except ProcessLookupError: pass
+                          else: raise AssertionError('Captured own process group still present')
+                      report['cleanup']['capturedAppAndBrowserGroupsAbsent']=True
+                      report['cleanup']['capturedGroups']=len(captured); processes_ok=True
+                  except BaseException as error:
+                      report['cleanup']['processFailure']={'type':type(error).__name__,'message':'Captured own process cleanup not verified'}; status=1
+                  if start_attempted: run('stop-owned-local-stack',[str(cli),'stop','--no-backup','--workdir',str(app)],timeout=90,required=False)
+                  owned=containers()
+                  for id_ in owned: run('remove-owned-container',['docker','rm','-f','--volumes',id_])
+                  for kind in ['volume','network']:
+                      for name in resources(kind): run('remove-owned-'+kind,['docker',kind,'rm',name])
+                  assert not containers() and not resources('volume') and not resources('network')
+                  report['cleanup']['ownedDockerResourcesAbsent']=True
+                  assert processes_ok, 'Retain private scratch until own processes are absent'
+                  now=root.lstat(); assert not root.is_symlink() and (now.st_uid,now.st_ino,now.st_dev)==(os.getuid(),identity.st_ino,identity.st_dev)
+                  report['cleanup']['rawFiles']=sum(1 for p in raw.iterdir() if p.is_file())
+                  shutil.rmtree(root); assert not root.exists(); report['cleanup']['scratchAbsent']=True
+                  if before is not None: assert vector()==before; report['sourceAfterCleanup']=True
+              except BaseException as error:
+                  status=1; report['cleanup']['failure']={'type':type(error).__name__,'message':'Owned cleanup was not fully verified'}
+              report['accepted']=status==0
+              body=json.dumps(report,indent=2)+'\n'; assert len(body.encode())<262144
+              (proof/'receipt.json').write_text(body)
+              print(json.dumps({'accepted':report['accepted'],'failure':report.get('failure'),'cleanup':report['cleanup']}))
+          raise SystemExit(status)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        id: upload
+        if: always()
+        with:
+          name: forway-real-services-${{ github.run_id }}
+          path: ${{ runner.temp }}/forway-services-proof-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: error
+      - name: Retire uploaded proof copy
+        if: always() && steps.upload.outcome == 'success'
+        shell: python
+        run: |
+          import json,os,pathlib,shutil
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/('forway-services-proof-'+os.environ['GITHUB_RUN_ID'])
+          assert p.is_dir() and not p.is_symlink() and p.stat().st_uid==os.getuid()
+          assert json.loads((p/'receipt.json').read_bytes())['runId']==os.environ['GITHUB_RUN_ID']
+          assert all(x.is_file() and not x.is_symlink() for x in p.iterdir())
+          shutil.rmtree(p); assert not p.exists(); print('Owned uploaded proof copy retired')

@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-13",
+  "project": "Forway",
+  "vercelProject": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+  "environmentRead": {
+    "decrypt": false,
+    "status": 403,
+    "unchangedRetry": false
+  },
+  "cliInstalled": false,
+  "supabaseObserved": {
+    "organization": "Clous",
+    "projects": 7,
+    "active": 0
+  },
+  "providerMutation": false,
+  "configurationAcceptance": false
+}
