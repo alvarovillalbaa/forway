@@ -84,6 +84,18 @@ browser launched. Attempt4 sets every controller-owned child command's cwd to
 owned scratch. It retains exact `--workdir` targeting and the unchanged strict
 source check. No ignore rule or successful guard is invented for the failure.
 
+Attempt4 (`43495299173`, source `46477887`) qualified R01-R06, including the
+real desktop source-save/reload/reopen/delete/sign-out journey. All source
+status observations were empty; the full tracked vector matched after the
+journeys and cleanup. App/browser groups, relays, Docker resources and scratch
+were verified absent. R07 performed a save but waited for the desktop-only
+`#cloud-status` label to become visible; existing CSS hides topbar details at
+650px. The correct visible mobile feedback is the save notice. The overall
+run remains false. Attempt5 runs R07 only with that visible notice, one real
+confirmed disposable user and expected one erased workspace. R01-R06 now stay
+closed; no API/restart/desktop regression replay is required for this fixture
+observer correction. This does not change the app or its responsive styling.
+
 Preserve original exit/status/fingerprint observations and the CLI-generated
 SQL. Stop only this unique local project, then remove only captured task-owned
 containers, volumes, networks and scratch. Verify their absence. Do not prune

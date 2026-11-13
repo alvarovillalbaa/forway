@@ -91,13 +91,14 @@ try {
   });
   await new Promise((resolve, reject) => { relay.once('error', reject); relay.listen(fixture.authPort, '127.0.0.1', resolve); });
   phase = 'create-real-fixture-users';
-  for (const user of fixture.users) {
+  for (const user of fixture.onlyNarrow ? [fixture.users[1]] : fixture.users) {
     const value = await json(fixture.gateway + '/auth/v1/admin/users',
       { email: user.email, password: user.password, email_confirm: true }, null, true);
     assert([200, 201].includes(value.status), 'admin fixture creation');
     assert.equal(typeof value.body.id, 'string'); user.id = value.body.id;
   }
   await start();
+  if (!fixture.onlyNarrow) {
   phase = 'R01-real-signin-and-fresh-user';
   const a = await signin(fixture.users[0]);
   const fresh = await api('/api/cloud-auth', { action: 'session' }, a);
@@ -133,12 +134,14 @@ try {
   assert.equal(removed.status, 200); assert.equal(removed.body.receipt.deleted, true);
   assert.equal((await api('/api/workspaces', { action: 'get', id }, a)).status, 404);
   passed('R05', { staleStatus: stale.status, saveStatus: saved.status, deleteStatus: removed.status });
+  }
   const { chromium } = await import(pathToFileURL(fixture.playwrightModule).href);
   browserServer = await chromium.launchServer({ headless: true, host: '127.0.0.1',
     args: ['--ignore-certificate-errors-spki-list=' + fixture.spki] });
   await recordProcess(browserServer.process(), 'chromium');
   browser = await chromium.connect(browserServer.wsEndpoint());
   for (const [index, viewport] of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }].entries()) {
+    if (fixture.onlyNarrow && index !== 1) continue;
     phase = index === 0 ? 'R06-real-desktop-journey' : 'R07-real-narrow-journey';
     const context = await browser.newContext({ viewport, isMobile: index === 1, hasTouch: index === 1 });
     const page = await context.newPage(); let pageErrors = 0; page.on('pageerror', () => pageErrors++);
@@ -157,7 +160,7 @@ try {
     await page.locator('#audit-results').waitFor({ state: 'visible' });
     await page.locator('#cloud-name').fill('Owned browser workspace ' + index);
     step = 'save-workspace'; await page.getByRole('button', { name: 'Save', exact: true }).click();
-    await page.locator('#cloud-status').filter({ hasText: 'Saved to your account' }).waitFor();
+    await page.locator('#app-notice-text').filter({ hasText: 'Workspace saved to your account.' }).waitFor();
     step = 'reload-session'; await page.reload({ waitUntil: 'networkidle' });
     await page.locator('#open-cloud').click();
     const row = page.locator('.cloud-list li').filter({ hasText: 'Owned browser workspace ' + index });
