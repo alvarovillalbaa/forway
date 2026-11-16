@@ -1,0 +1,13 @@
+{
+  "jobs": [],
+  "assessment": {
+    "source": "15414d38b51630958daeae75c45c71d79e67bbf1",
+    "run": 43851159643,
+    "jobs": 0,
+    "seconds": 0,
+    "conclusion": "failure",
+    "reason": "runner context is unavailable in jobs.<job_id>.env; moved to step env according to official context availability"
+  },
+  "validationSource": "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability",
+  "diagnostic": "No check-runs were returned; context diagnosis is source/doc reasoning, not a captured annotation."
+}

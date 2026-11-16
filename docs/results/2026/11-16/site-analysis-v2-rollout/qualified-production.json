@@ -1,0 +1,10 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"result\": {\n    \"deployment\": {\n      \"id\": \"dpl_9VJ16953ogc44gs6vkhMBkuwUx1q\",\n      \"name\": \"forway\",\n      \"url\": \"forway-fhvo5rl1b-my-team-4f230354.vercel.app\",\n      \"type\": \"LAMBDAS\",\n      \"state\": \"READY\",\n      \"createdAt\": 1794825862166,\n      \"creator\": {\n        \"uid\": \"zsxQcbiAfBXuwfpA5YtTh7Nm\",\n        \"username\": \"alvipedev\"\n      },\n      \"project\": {\n        \"id\": \"prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa\",\n        \"name\": \"forway\",\n        \"framework\": null\n      },\n      \"meta\": {\n        \"githubCommitRef\": \"main\",\n        \"githubCommitSha\": \"baf2614001aa22f96323d1ba518ac8bf4067fa7c\",\n        \"githubCommitMessage\": \"feat: publish URL-first website analysis with reviewed provider comparisons\",\n        \"githubRepo\": \"forway\",\n        \"githubOrg\": \"alvarovillalbaa\"\n      },\n      \"alias\": [\n        \"forway.vercel.app\",\n        \"forway-my-team-4f230354.vercel.app\",\n        \"forway-git-main-my-team-4f230354.vercel.app\"\n      ],\n      \"target\": \"production\",\n      \"regions\": [\n        \"iad1\"\n      ],\n      \"buildingAt\": 1794825863332,\n      \"ready\": 1794825870193,\n      \"readyState\": \"READY\",\n      \"source\": \"git\",\n      \"aliasError\": null\n    }\n  }\n}"
+    }
+  ],
+  "structuredContent": null,
+  "isError": false
+}

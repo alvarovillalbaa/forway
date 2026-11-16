@@ -1,6 +1,6 @@
 # Forway
 
-Last updated: 2026-11-15
+Last updated: 2026-11-16
 
 Create, analyze and improve content for search and AI answers.
 
@@ -10,7 +10,7 @@ An editorial workbench for discovering allowed website pages, auditing source,
 editing content drafts and comparing explicitly reviewed API answer cohorts.
 Built from the [Forway brief](docs/spec.md) in Alvaro's personal Notion.
 
-**Site analysis V2 — isolated source:** the URL-first interface now discovers
+**Site analysis V2 — published:** the URL-first interface now discovers
 same-host pages through robots, links and strict XML sitemaps, retaining explicit
 batch limits, refusals and a resumable frontier. Reports show exact page
 denominators, source-only agent signals, priorities and copyable prompts.
@@ -20,8 +20,15 @@ uncertain calls from successful-answer denominators. Page/draft workspaces,
 crawls and API comparisons have separate exports. All69 new T2 controls and six
 native desktop/390px journeys passed together at `286a88d` with authored upstream
 responses; see [the receipt](docs/results/2026/11-15/site-analysis-v2/result.md).
-This source is inactive: main and the hosted edition below remain unchanged.
-No real provider/model call or arbitrary-site crawl was executed.
+The owner then approved the concrete rollout. Release baf26140 / READY
+dpl_9VJ16953ogc44gs6vkhMBkuwUx1q passes two actual public desktop/390px
+journeys: owned-host crawl, exact downloaded source, keyboard/clipboard and
+20served public assets/security headers before and after.85anonymous GETs and
+six own-fixture crawl POSTs were observed; zero provider calls. Browser,
+process/source/scratch guards pass and the new QA workflow/ref are retired.
+Total V2 CI is183/1200seconds including the pre-job workflow rejection and
+retirement. [Rollout originals and limits](docs/results/2026/11-16/site-analysis-v2-rollout/result.md).
+No real model call or third-party website scan was executed.
 
 **Initial workbench published and hosted.** Vercel reports READY and the served
 index matches the initial source. The [77 Node fixture checks](docs/results/2026/11-04/local-node-checks.md)
@@ -95,10 +102,12 @@ git diff --check
 The checker parses modules, resolves imports/assets and checks documents/JSON.
 It never imports product functions or runs tests, a server or browser. Live
 URL import additionally needs the deployed same-origin API; a static file
-server alone does not provide it. V2 rollout, live public/provider acceptance,
-hosted operational controls and shared PostgreSQL/Supabase persistence remain
-separate gates. The new answer route needs a compatible function duration;
-no hosted setting is changed by the isolated packet.
+server alone does not provide it. V2's bounded owned-host/public rollout is
+accepted. Broader public/provider acceptance, hosted operational controls and
+shared PostgreSQL/Supabase persistence remain separate gates. Deployed source
+sets audit/crawl10seconds and answer35seconds, preserving the provider25second
+and handler30second bounds. The independent work/private-workspaces branch
+remains intact; it was not merged or silently used as production evidence.
 
 The earlier Node status edition changed three documents among its 30 inputs,
 leaving 27 unchanged. The later browser packet adds isolated acceptance tooling

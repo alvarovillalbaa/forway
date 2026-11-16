@@ -1,0 +1,67 @@
+{
+  "main": "baf2614001aa22f96323d1ba518ac8bf4067fa7c",
+  "qaBefore": "6a84f6abf2cf3b741d1cf53065529385e2acb7ef",
+  "passed": true,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/git/ref/heads/main",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/git/ref/heads/qa/forway-rollout-v2-20261116",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml?ref=main",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml?ref=qa%2Fforway-rollout-v2-20261116",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/git/ref/heads/qa/forway-rollout-v2-20261116",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml?ref=qa%2Fforway-rollout-v2-20261116",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/git/ref/heads/qa/forway-rollout-v2-20261116",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/git/refs/heads/qa/forway-rollout-v2-20261116",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/git/ref/heads/qa/forway-rollout-v2-20261116",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/git/ref/heads/main",
+      "status": 200
+    }
+  ],
+  "retiredCommit": "fbd70708d8aa95f39e2255e554f52d6ec3a6e562",
+  "workflowAbsent": true,
+  "qaDeleted": true,
+  "mainUnchanged": true,
+  "deleteSemantics": "serialized exact owner reads; GitHub DELETE ref is not atomic CAS"
+}

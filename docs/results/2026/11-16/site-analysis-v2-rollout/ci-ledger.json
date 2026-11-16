@@ -1,0 +1,32 @@
+{
+  "priorSeconds": 100,
+  "capSeconds": 1200,
+  "jobs": [
+    {
+      "source": "2bf5e0caf08cbf5863b8800bc27962d3b96b4912",
+      "run": 43851397595,
+      "job": 133244570730,
+      "seconds": 72,
+      "conclusion": "success",
+      "purpose": "prepare pinned tools, observe release and run hosted H01/H02"
+    },
+    {
+      "source": "6a84f6abf2cf3b741d1cf53065529385e2acb7ef",
+      "run": 43851808255,
+      "job": 133245967014,
+      "seconds": 11,
+      "conclusion": "success",
+      "purpose": "owned rollout CI/ref retirement"
+    }
+  ],
+  "preJobFailure": {
+    "source": "15414d38b51630958daeae75c45c71d79e67bbf1",
+    "run": 43851159643,
+    "jobs": 0,
+    "seconds": 0,
+    "conclusion": "failure",
+    "reason": "runner context is unavailable in jobs.<job_id>.env; moved to step env according to official context availability"
+  },
+  "usedSeconds": 183,
+  "remainingSeconds": 1017
+}

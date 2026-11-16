@@ -1,0 +1,177 @@
+{
+  "passed": true,
+  "prepared": true,
+  "commands": [
+    {
+      "name": "node-version",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "pid": 2319,
+      "settled": true,
+      "groupAbsent": true,
+      "code": 0,
+      "seconds": 0.0038669680000040785,
+      "timedOut": false,
+      "stdoutBytes": 8,
+      "stdoutSha256": "10f97d604f75b2e9b8fa9058d93a897ff33a60dd6a694fb92e95359ef815d09d",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "source-check",
+      "argv": [
+        "node",
+        "scripts/check.mjs"
+      ],
+      "pid": 2320,
+      "settled": true,
+      "groupAbsent": true,
+      "code": 0,
+      "seconds": 0.8715702739999998,
+      "timedOut": false,
+      "stdoutBytes": 172,
+      "stdoutSha256": "6bd351cad71d3ecff228de285318d4f6fddac236d3c724b4fc9f787a90182f3a",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "browser-tool",
+      "argv": [
+        "npm",
+        "install",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--save-exact",
+        "@playwright/test@1.61.1"
+      ],
+      "pid": 2597,
+      "settled": true,
+      "groupAbsent": true,
+      "code": 0,
+      "seconds": 1.6624794600000001,
+      "timedOut": false,
+      "stdoutBytes": 24,
+      "stdoutSha256": "c59541a7d8bfc9987c0aa47adf2cdd2858be8b66de5abc0331d5a6484ae63ab6",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "browser-install",
+      "argv": [
+        "/tmp/forway-rollout-v2-_a_komjf/playwright/node_modules/.bin/playwright",
+        "install",
+        "chromium"
+      ],
+      "pid": 2610,
+      "settled": true,
+      "groupAbsent": true,
+      "code": 0,
+      "seconds": 8.801655860000004,
+      "timedOut": false,
+      "stdoutBytes": 6810,
+      "stdoutSha256": "876fc45212d0701aa48d909c243ea6ccfe98aa08483f9dd81aad9ef4cf4e3e6b",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "hosted-two-cases",
+      "argv": [
+        "node",
+        "tests/e2e/site-analysis-hosted-v2.mjs"
+      ],
+      "pid": 2680,
+      "settled": true,
+      "groupAbsent": true,
+      "code": 0,
+      "seconds": 5.125098084000001,
+      "timedOut": false,
+      "stdoutBytes": 13552,
+      "stdoutSha256": "75d58f4678a0aad1f3015d6e33491ed4aee7afa938e551627b7ae1c433d5d3a2",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cleanup": true,
+  "qualifiedAncestor": "286a88dc32a4d3aca2cd1fb7deb582718d9c54b1",
+  "oldCasesReplayed": 0,
+  "storage": {
+    "freeBytes": 93073551360,
+    "requiredBytes": 36507222016,
+    "reserveBytes": 32212254720,
+    "passed": true
+  },
+  "ownerProcessBaseline": [],
+  "releaseCommit": "baf2614001aa22f96323d1ba518ac8bf4067fa7c",
+  "publicFiles": 20,
+  "closedInputsCarried": 48,
+  "preparationCompletedAt": 1794825834.5424585,
+  "releaseProbes": [
+    {
+      "at": 1794825834.615938,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825839.8784125,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825844.9835794,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825850.1846058,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825855.4062877,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825860.48149,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825865.7231562,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825870.8243601,
+      "status": 200,
+      "bytes": 14433,
+      "sha256": "938f091d48f57fb1f12a6c4d4cd4d666355769d07d912d600d120c0b09d3bdfc"
+    },
+    {
+      "at": 1794825875.9038246,
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    }
+  ],
+  "hostedCasesPassed": 2,
+  "sourceUnchanged": true,
+  "copiedSourceUnchanged": true,
+  "ownedProcessesRemaining": [],
+  "ownedProcessesAbsent": true,
+  "reserveAfter": {
+    "freeBytes": 92325294080,
+    "requiredBytes": 32212254720,
+    "passed": true
+  }
+}

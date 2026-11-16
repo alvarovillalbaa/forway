@@ -1,0 +1,166 @@
+{
+  "files": [
+    {
+      "path": "attempt-1/H01-desktop-public-crawl-crawl.json",
+      "bytes": 2720,
+      "sha256": "ec6b14e6ce1b77604ddfd102ec3fdadc44f3019c7d9992f9cf7434bf98ef24f1",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/H01-desktop-public-crawl.png",
+      "bytes": 96177,
+      "sha256": "b9e06c3e52299dd50e6fcd6f686bda9a61f16166f17ebfd9dd313ebdd870844a",
+      "chunks": 8,
+      "kind": "file",
+      "published": false
+    },
+    {
+      "path": "attempt-1/H02-390-keyboard-public-crawl-crawl.json",
+      "bytes": 2720,
+      "sha256": "d783d25dbea98396dd9583003180a3a9eb50acd3dbaaac752cec048d07a8fc5b",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/H02-390-keyboard-public-crawl.png",
+      "bytes": 64657,
+      "sha256": "089fb9ebfe31b9dd43abdd58663b111c7abc790fd4a1e0795773cb10b9dacb9f",
+      "chunks": 6,
+      "kind": "file",
+      "published": false
+    },
+    {
+      "path": "attempt-1/browser-install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/browser-install.stdout.txt",
+      "bytes": 6810,
+      "sha256": "876fc45212d0701aa48d909c243ea6ccfe98aa08483f9dd81aad9ef4cf4e3e6b",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/browser-tool-lock.json",
+      "bytes": 2171,
+      "sha256": "edc2a71986389e98367e6f34b5464c074af038d2f1a4c3e98c9c274f82cdce10",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/browser-tool.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/browser-tool.stdout.txt",
+      "bytes": 24,
+      "sha256": "c59541a7d8bfc9987c0aa47adf2cdd2858be8b66de5abc0331d5a6484ae63ab6",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/copied-source-after.json",
+      "bytes": 9874,
+      "sha256": "0d1b32e8d45fba2cc5de9104022b665580458a0b028d4d6c3f86eb47632d8667",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/hosted-two-cases.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/hosted-two-cases.stdout.txt",
+      "bytes": 13552,
+      "sha256": "75d58f4678a0aad1f3015d6e33491ed4aee7afa938e551627b7ae1c433d5d3a2",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/native-result.json",
+      "bytes": 17883,
+      "sha256": "e564bc41c88e9481d4375b89eaedbcd98ee1304c8371b1f2e861e42fe55d44e7",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/node-version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/node-version.stdout.txt",
+      "bytes": 8,
+      "sha256": "10f97d604f75b2e9b8fa9058d93a897ff33a60dd6a694fb92e95359ef815d09d",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/receipt.json",
+      "bytes": 4979,
+      "sha256": "3419b198b1a45e3caad5d0620198271bbf48e2f7110f6b9012d94fdd14928a49",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/source-after.json",
+      "bytes": 9874,
+      "sha256": "0d1b32e8d45fba2cc5de9104022b665580458a0b028d4d6c3f86eb47632d8667",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/source-before.json",
+      "bytes": 9874,
+      "sha256": "0d1b32e8d45fba2cc5de9104022b665580458a0b028d4d6c3f86eb47632d8667",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/source-check.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    },
+    {
+      "path": "attempt-1/source-check.stdout.txt",
+      "bytes": 172,
+      "sha256": "6bd351cad71d3ecff228de285318d4f6fddac236d3c724b4fc9f787a90182f3a",
+      "chunks": 1,
+      "kind": "file",
+      "published": true
+    }
+  ],
+  "allCIStreamsRetained": true,
+  "oldFixtureCasesReplayed": 0
+}

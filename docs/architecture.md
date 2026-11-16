@@ -1,6 +1,6 @@
 # Boundaries and data flow
 
-Last updated: 2026-11-15
+Last updated: 2026-11-16
 
 29 October 2026 architecture; status updated 5 November. The separate
 [eight hosted browser workflows](results/2026/11-05/hosted-browser-checks.md)
@@ -17,7 +17,10 @@ The local GEN-3659 interface replaces the fixed sidebar with a compact tool
 header and central URL input. Existing source/HTML intake, content editor,
 supplied evidence and workspace version 1 retain their ownership. The approved
 [V2 source](proposals/site-analysis-v2.md) adds separately owned crawl/comparison
-controllers and handlers; main and hosting remain the prior edition.
+controllers and handlers. The later owner-authorized
+[V2 rollout](results/2026/11-16/site-analysis-v2-rollout/result.md) publishes them
+and accepts two bounded public/owned-host journeys. The private-workspaces
+branch stays independent; live model and shared persistence limits remain.
 
 `agent-source.mjs` uses another detached, never-mounted template to observe a
 main landmark, native links, control names and non-dialog form destinations.

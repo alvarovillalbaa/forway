@@ -15,8 +15,11 @@
   docs/results/2026/11-15/site-analysis-v2/result.md. This packet is closed;
   preserve its failure and successful source. No actual public DNS/socket/model,
   real key, consumer-product visibility or hosted V2 proof is supplied by it.
-  Legacy workspace1 and HTML-only audit contract remain available. Main/hosted
-  edition are unchanged. Do not relabel historical packets as current proof.
+  Legacy workspace1 and HTML-only audit contract remain available. The later
+  owner-approved rollout publishes V2 at baf26140 with two actual owned-host
+  public cases; see docs/results/2026/11-16/site-analysis-v2-rollout/result.md.
+  That new QA workflow/ref are retired;183/1200aggregate CI seconds used.
+  Keep these scopes closed and retain their exact source/evidence boundaries.
   Alvaro's “Autorizo todo” authorizes docs/proposals/site-analysis-v2.md:
   source/security changes plus task-owned temporary branch/commits and isolated
   CI capped at 20 aggregate minutes including failures/retirement, excluding

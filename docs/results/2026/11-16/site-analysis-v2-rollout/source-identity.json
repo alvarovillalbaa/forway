@@ -1,0 +1,469 @@
+{
+  "release": "baf2614001aa22f96323d1ba518ac8bf4067fa7c",
+  "closedInputs": [
+    {
+      "path": "api/answer.mjs",
+      "mode": "0o644",
+      "bytes": 4680,
+      "sha256": "b5edebe6e2ccc7fa3592eb21633d2d9e1c6b17446ff2b9ddb2196b7b3fcf0be8",
+      "gitBlob": "6e743f617131a6d277dca8dc8f4a16f22d3b4c1a"
+    },
+    {
+      "path": "api/audit.mjs",
+      "mode": "0o644",
+      "bytes": 5502,
+      "sha256": "691558b9687b0956c6579f37caee3349da46909c8667ca2fe0ad3a8c73a6f565",
+      "gitBlob": "b66b757d4d98f187072fcc5d7092f8f1496eb45a"
+    },
+    {
+      "path": "api/crawl.mjs",
+      "mode": "0o644",
+      "bytes": 457,
+      "sha256": "165ec1b5b57b113c8ca93949bca939178e8337d25b6ad27ced1392099d5b3a46",
+      "gitBlob": "270189cab03bb1506bbd92d09fe2a11fadb1ca03"
+    },
+    {
+      "path": "docs/spec.md",
+      "mode": "0o644",
+      "bytes": 2863,
+      "sha256": "957c8a4b415405c03a34260c03a0f92d201ae39ebf7681e60ad57f8655d1848e",
+      "gitBlob": "eda69547fb3d22b1021adb9c7de3813adb61b063"
+    },
+    {
+      "path": "package.json",
+      "mode": "0o644",
+      "bytes": 302,
+      "sha256": "6ad3adf8535a84218774357f8e6416907edc6a27b25512549554e9643abcd6e4",
+      "gitBlob": "e39f1d47b83ab3f929c0243a4f82f740aad2195a"
+    },
+    {
+      "path": "public/check-fixtures/authored-page.html",
+      "mode": "0o644",
+      "bytes": 985,
+      "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a",
+      "gitBlob": "babb48482ba7a3f2efa190591d5871086bab8ad6"
+    },
+    {
+      "path": "public/check-fixtures/header-noindex.html",
+      "mode": "0o644",
+      "bytes": 650,
+      "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49",
+      "gitBlob": "68526399907560cd61967640b2a3d1a8925aba2d"
+    },
+    {
+      "path": "public/icon.svg",
+      "mode": "0o644",
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36",
+      "gitBlob": "af08676cd5a3edc34900b8608f1c59070494b50a"
+    },
+    {
+      "path": "public/index.html",
+      "mode": "0o644",
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927",
+      "gitBlob": "08ed29421d3755dda0d1e849c4d292996d7ed777"
+    },
+    {
+      "path": "public/site-tools.css",
+      "mode": "0o644",
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14",
+      "gitBlob": "3036c4c8a9c84d87b5f4fb81be1525a09e6b0a48"
+    },
+    {
+      "path": "public/src/agent-source.mjs",
+      "mode": "0o644",
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534",
+      "gitBlob": "23d8798def80d0c7998ec9728df9835506edd349"
+    },
+    {
+      "path": "public/src/app.mjs",
+      "mode": "0o644",
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de",
+      "gitBlob": "b06e65bdcd2022c44416cbf33932695323b26f0b"
+    },
+    {
+      "path": "public/src/audit.mjs",
+      "mode": "0o644",
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80",
+      "gitBlob": "195e0b1dcfe6c7d927ed2776d0b8106c49fde008"
+    },
+    {
+      "path": "public/src/content.mjs",
+      "mode": "0o644",
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e",
+      "gitBlob": "8ccb47e6a7be0157f53cc44c0a86119f4ac072db"
+    },
+    {
+      "path": "public/src/crawl.mjs",
+      "mode": "0o644",
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431",
+      "gitBlob": "d3d7a3bde5cf0ae33f7feebfe728e26f948ba428"
+    },
+    {
+      "path": "public/src/observations.mjs",
+      "mode": "0o644",
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77",
+      "gitBlob": "3ed191f3478b037568b0da7a31e33d523011a6da"
+    },
+    {
+      "path": "public/src/provider-comparison.mjs",
+      "mode": "0o644",
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17",
+      "gitBlob": "cf2aa1a7c2cf0e1f5ac68b95ec44e9f24fcf5d87"
+    },
+    {
+      "path": "public/src/report-view.mjs",
+      "mode": "0o644",
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7",
+      "gitBlob": "623e3f262c8a5480e208dfb8c653894105455834"
+    },
+    {
+      "path": "public/src/robots.mjs",
+      "mode": "0o644",
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0",
+      "gitBlob": "c158b39f026645efb6246c2e78e237ac99c1eab8"
+    },
+    {
+      "path": "public/src/site-report.mjs",
+      "mode": "0o644",
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34",
+      "gitBlob": "2ec880c922ae6cc08a1ca3b01b1470e43c3e0447"
+    },
+    {
+      "path": "public/src/site-tools.mjs",
+      "mode": "0o644",
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112",
+      "gitBlob": "cc80556b54d2fe4b75a86b5ff26717b57a7f078f"
+    },
+    {
+      "path": "public/src/sitemap.mjs",
+      "mode": "0o644",
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5",
+      "gitBlob": "ea64373bd9d134ecef037de1e9fe789575d482f9"
+    },
+    {
+      "path": "public/src/ui.mjs",
+      "mode": "0o644",
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c",
+      "gitBlob": "42f3cc9af3a97a677d911d07b099e50d35b876c8"
+    },
+    {
+      "path": "public/src/workspace.mjs",
+      "mode": "0o644",
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0",
+      "gitBlob": "0c92702583abd186d04c9179ee47ea29d09ad0cc"
+    },
+    {
+      "path": "public/styles.css",
+      "mode": "0o644",
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934",
+      "gitBlob": "f70d96fd04a21285efbd5e9c6688afd7cbee7ff9"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "mode": "0o644",
+      "bytes": 2563,
+      "sha256": "7b404154dc46b28797f7919488837e1fedeb541fddd2383a9c320d02073140aa",
+      "gitBlob": "13483c920ee5be4522f2cc1b097fe40ea6b1fc88"
+    },
+    {
+      "path": "scripts/run-hosted-browser.mjs",
+      "mode": "0o644",
+      "bytes": 41243,
+      "sha256": "7302e5a9d2b5c6a6577a6cf27f4a454cc5074932ccf97698a45e45ce8295fac0",
+      "gitBlob": "5a996f13828a5e84f5c0ab205d7f46b3b3ec7865"
+    },
+    {
+      "path": "src/fetch-page.mjs",
+      "mode": "0o644",
+      "bytes": 17716,
+      "sha256": "247f1e82c58f0ed3b68b9dea5f2a118b5c3a80eedec5ce128e839559fee9a2fc",
+      "gitBlob": "a884961d8c1451adb774c2b108ef0dba7adabe46"
+    },
+    {
+      "path": "src/provider-answer.mjs",
+      "mode": "0o644",
+      "bytes": 9213,
+      "sha256": "85db9af8e3ea4eebbaa3c9e4336330022982f427bc46edec43556233cea0bbf1",
+      "gitBlob": "4d23cb122724daccef3a67f6cedcc9722fbd9413"
+    },
+    {
+      "path": "tests/e2e/site-analysis-server.mjs",
+      "mode": "0o644",
+      "bytes": 8115,
+      "sha256": "1731c3df2d4846e4d8ed947efed57eaf167b63134e8f3ccc0cc66a8a6a773448",
+      "gitBlob": "03686bf1df31fd7704910efb43564d0e0c52d4c1"
+    },
+    {
+      "path": "tests/e2e/site-analysis-v2.mjs",
+      "mode": "0o644",
+      "bytes": 14137,
+      "sha256": "adebdef121ddf7303d23334a8b8b47c2e5f210462947caf24922e2a1cd3fdc55",
+      "gitBlob": "61557ae41ec2409453cd7828a5ea1b60220e06aa"
+    },
+    {
+      "path": "tests/fixtures/native-network.mjs",
+      "mode": "0o644",
+      "bytes": 421,
+      "sha256": "955fa9293985e39e6f6603273e59a5d2230aa9a1bcf30427b12040951c0e239c",
+      "gitBlob": "6b27f8b35cce03c18f04e22142b1fc0439afe761"
+    },
+    {
+      "path": "tests/fixtures/native-page-handler.mjs",
+      "mode": "0o644",
+      "bytes": 1939,
+      "sha256": "71aa97e4f1083c1049f71958c40e2852c5963d288631a33d937bc3f9d0e96b97",
+      "gitBlob": "22af271565d43ffb9a7184c24471b0e7293a6c8a"
+    },
+    {
+      "path": "tests/helpers/native-network-observer.mjs",
+      "mode": "0o644",
+      "bytes": 5559,
+      "sha256": "a139cf3b180f0daef537d7d55cd4c5fe2c84ef4e2139492b28c2738f5a8be869",
+      "gitBlob": "b12861b0c21604bab9d617ef570a8cf63861cdcc"
+    },
+    {
+      "path": "tests/integration/native-network.mjs",
+      "mode": "0o644",
+      "bytes": 6828,
+      "sha256": "affbda7cdb0daa3bc9d1320816974a161697e9e2757b4a56cabbc56071b3a5cc",
+      "gitBlob": "d2fb8b7a297151046f19eda79b97cefdf4b639f6"
+    },
+    {
+      "path": "tests/scripts/qualify-site-analysis-v2.py",
+      "mode": "0o644",
+      "bytes": 9482,
+      "sha256": "8d837c76b9ff6dce966b87958a0c737da721a8173e7645ec8e56b5534b9d1ccc",
+      "gitBlob": "46704d72c3694aef9305ae4ce85978d3e50cb62f"
+    },
+    {
+      "path": "tests/scripts/retire-site-analysis-v2.py",
+      "mode": "0o644",
+      "bytes": 4454,
+      "sha256": "12ec2105da9bb424f01b1dc6b58aaa1b94b5ba2d59549f4a457eb1d425a0b9fc",
+      "gitBlob": "17a36ecdd0953c93b89bc97dde5e425c33c1dbcc"
+    },
+    {
+      "path": "tests/scripts/run-native-network.py",
+      "mode": "0o644",
+      "bytes": 11599,
+      "sha256": "3c73a956fe156bd2dd2aa52b5a533d2f408c80970bafef19b61b8e6ad29a0aa6",
+      "gitBlob": "359a6fa2dce493e6453967a544de37057712ca05"
+    },
+    {
+      "path": "tests/unit/audit-api.test.mjs",
+      "mode": "0o644",
+      "bytes": 8207,
+      "sha256": "2d894129af7ef5f17c368149b3069b87040918b3fa5680c219ab5e39be002cc1",
+      "gitBlob": "4a2dbca4abb01bc4903a3b2b9b2f78694c95c9ea"
+    },
+    {
+      "path": "tests/unit/audit-facts.test.mjs",
+      "mode": "0o644",
+      "bytes": 5131,
+      "sha256": "62e3878d806cb702c0e8740e13ef4b2e7dd42f667c1a92f444d6d54c39975b86",
+      "gitBlob": "846b2abb36eac1e4f54d8f7eee760a2a61f0f370"
+    },
+    {
+      "path": "tests/unit/content.test.mjs",
+      "mode": "0o644",
+      "bytes": 6915,
+      "sha256": "340c3195d9c09c302918be2fc3dff60af8ab3ba366c7836b8ce342f0728bc6a9",
+      "gitBlob": "9725e39eefaf692d82dba0f2a56f6faa27f59939"
+    },
+    {
+      "path": "tests/unit/fetch-page.test.mjs",
+      "mode": "0o644",
+      "bytes": 14790,
+      "sha256": "c95e7dc41d5887472fa0064aebbc04720d61edc7ca60fc886b407a8fd44b8ec4",
+      "gitBlob": "8fabf5431d7e934f89ebdbf3c120ec5f6a6167e4"
+    },
+    {
+      "path": "tests/unit/observations.test.mjs",
+      "mode": "0o644",
+      "bytes": 7505,
+      "sha256": "98181eb1cafdfad311dfe7672994061b6891e3fe2cf02148969d45d17623089d",
+      "gitBlob": "a44e87c77b63e2360d1a0801c7bf5371c669174b"
+    },
+    {
+      "path": "tests/unit/provider-answer-v2.test.mjs",
+      "mode": "0o644",
+      "bytes": 11764,
+      "sha256": "a4176c0dc2aeec983e2cb11d382b7f9004bc7045c36aa0ad9725b735335d6dcf",
+      "gitBlob": "a4be975e16634caf39cfa9443defafc3301cb377"
+    },
+    {
+      "path": "tests/unit/provider-comparison-v2.test.mjs",
+      "mode": "0o644",
+      "bytes": 9064,
+      "sha256": "5372dc5932b5139504f9398844df08f728880a7fb96375e9b7b6f0ed1dd38545",
+      "gitBlob": "6db9e90123fa5d6329c97494b3307c511a9a2cc5"
+    },
+    {
+      "path": "tests/unit/site-crawl-v2.test.mjs",
+      "mode": "0o644",
+      "bytes": 12915,
+      "sha256": "e2412e5e4c4fbb0cdb59d0897a9736c66a4c39b4e3813b71fdf42ce53ef26aa7",
+      "gitBlob": "5e144139bd6c68adf2430b79e5d4ea78b9dcc89f"
+    },
+    {
+      "path": "tests/unit/site-report.test.mjs",
+      "mode": "0o644",
+      "bytes": 8770,
+      "sha256": "9dc68e33356f171a4f1d55e2b5f36b04c2f856e2df0dfd724c10aee069bb6d95",
+      "gitBlob": "ae684f80a7bbf36eb3a295c44884f97a55d7ca71"
+    },
+    {
+      "path": "tests/unit/workspace.test.mjs",
+      "mode": "0o644",
+      "bytes": 8211,
+      "sha256": "20b22d8a77c5d40f98ddcd62006984ccaadee9ae5fe364b5270cf3c2e6d8cb91",
+      "gitBlob": "4184581cf98118e690a0ae89a414819438f1de2e"
+    }
+  ],
+  "productionConfig": {
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "framework": null,
+    "installCommand": "node --version",
+    "buildCommand": "node scripts/check.mjs",
+    "outputDirectory": "public",
+    "functions": {
+      "api/audit.mjs": {
+        "maxDuration": 10
+      },
+      "api/crawl.mjs": {
+        "maxDuration": 10
+      },
+      "api/answer.mjs": {
+        "maxDuration": 35
+      }
+    },
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "no-referrer"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
+          }
+        ]
+      },
+      {
+        "source": "/check-fixtures/header-noindex.html",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex"
+          }
+        ]
+      }
+    ]
+  },
+  "publicFiles": {
+    "/check-fixtures/authored-page.html": {
+      "bytes": 985,
+      "sha256": "00e4fb52a39396067d09c800ea65c1f9b1577d66698098be8d21e044f75a5b0a"
+    },
+    "/check-fixtures/header-noindex.html": {
+      "bytes": 650,
+      "sha256": "759d3b118110b81165e9033e31d2565a8f31b15b083c474391acb87ce26e6f49"
+    },
+    "/icon.svg": {
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    "/index.html": {
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    "/site-tools.css": {
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    "/src/agent-source.mjs": {
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    "/src/app.mjs": {
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    "/src/audit.mjs": {
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    "/src/content.mjs": {
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    "/src/crawl.mjs": {
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    "/src/observations.mjs": {
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    "/src/provider-comparison.mjs": {
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    "/src/report-view.mjs": {
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    "/src/robots.mjs": {
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    "/src/site-report.mjs": {
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    "/src/site-tools.mjs": {
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    "/src/sitemap.mjs": {
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    "/src/ui.mjs": {
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    "/src/workspace.mjs": {
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    "/styles.css": {
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    }
+  }
+}

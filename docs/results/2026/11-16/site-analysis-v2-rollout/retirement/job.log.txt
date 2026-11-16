@@ -1,0 +1,163 @@
+﻿2026-11-16T10:46:21.3526777Z Current runner version: '2.338.2'
+2026-11-16T10:46:21.3550683Z ##[group]Runner Image Provisioner
+2026-11-16T10:46:21.3551373Z Hosted Compute Agent
+2026-11-16T10:46:21.3551933Z Version: 20261103.629
+2026-11-16T10:46:21.3552455Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-16T10:46:21.3553086Z Build Date: 2026-11-03T17:26:59Z
+2026-11-16T10:46:21.3553701Z Worker ID: {25f8047c-66cd-48c6-850e-f27516e8f90a}
+2026-11-16T10:46:21.3554294Z Region: westus2
+2026-11-16T10:46:21.3554806Z Cloud: Azure
+2026-11-16T10:46:21.3555250Z ##[endgroup]
+2026-11-16T10:46:21.3556629Z ##[group]Operating System
+2026-11-16T10:46:21.3557191Z Ubuntu
+2026-11-16T10:46:21.3557625Z 26.04.1
+2026-11-16T10:46:21.3558093Z LTS
+2026-11-16T10:46:21.3558660Z ##[endgroup]
+2026-11-16T10:46:21.3559103Z ##[group]Runner Image
+2026-11-16T10:46:21.3559713Z Image: ubuntu-26.04
+2026-11-16T10:46:21.3560184Z Version: 20261111.196.1
+2026-11-16T10:46:21.3561236Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-16T10:46:21.3562875Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+2026-11-16T10:46:21.3563791Z ##[endgroup]
+2026-11-16T10:46:21.3564664Z ##[group]GITHUB_TOKEN Permissions
+2026-11-16T10:46:21.3566486Z Contents: write
+2026-11-16T10:46:21.3566979Z Metadata: read
+2026-11-16T10:46:21.3567542Z ##[endgroup]
+2026-11-16T10:46:21.3569670Z Secret source: Actions
+2026-11-16T10:46:21.3570538Z Cache mode: write
+2026-11-16T10:46:21.3571116Z Prepare workflow directory
+2026-11-16T10:46:21.3840471Z Prepare all required actions
+2026-11-16T10:46:21.3884471Z Getting action download info
+2026-11-16T10:46:21.7252062Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-16T10:46:21.8566815Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-16T10:46:22.0942416Z Complete job name: retire
+2026-11-16T10:46:22.1664664Z ##[group]Run actions/checkout@v4
+2026-11-16T10:46:22.1665358Z with:
+2026-11-16T10:46:22.1665728Z   persist-credentials: false
+2026-11-16T10:46:22.1666165Z   repository: alvarovillalbaa/forway
+2026-11-16T10:46:22.1669675Z   token: ***
+2026-11-16T10:46:22.1670045Z   ssh-strict: true
+2026-11-16T10:46:22.1670413Z   ssh-user: git
+2026-11-16T10:46:22.1670766Z   clean: true
+2026-11-16T10:46:22.1671139Z   sparse-checkout-cone-mode: true
+2026-11-16T10:46:22.1671574Z   fetch-depth: 1
+2026-11-16T10:46:22.1671928Z   fetch-tags: false
+2026-11-16T10:46:22.1672296Z   show-progress: true
+2026-11-16T10:46:22.1672664Z   lfs: false
+2026-11-16T10:46:22.1673012Z   submodules: false
+2026-11-16T10:46:22.1673383Z   set-safe-directory: true
+2026-11-16T10:46:22.1673795Z   allow-unsafe-pr-checkout: false
+2026-11-16T10:46:22.1674390Z ##[endgroup]
+2026-11-16T10:46:22.8507888Z Syncing repository: alvarovillalbaa/forway
+2026-11-16T10:46:22.8510767Z ##[group]Getting Git version info
+2026-11-16T10:46:22.8511859Z Working directory is '/home/runner/work/forway/forway'
+2026-11-16T10:46:22.8513350Z [command]/usr/bin/git version
+2026-11-16T10:46:22.8522278Z git version 2.56.1
+2026-11-16T10:46:22.8540271Z ##[endgroup]
+2026-11-16T10:46:22.8555013Z Temporarily overriding HOME='/home/runner/work/_temp/10f12d4e-3571-40e3-8598-d312d934cbcd' before making global git config changes
+2026-11-16T10:46:22.8557072Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T10:46:22.8559904Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/forway/forway
+2026-11-16T10:46:22.8623987Z Deleting the contents of '/home/runner/work/forway/forway'
+2026-11-16T10:46:22.8627508Z ##[group]Initializing the repository
+2026-11-16T10:46:22.8632979Z [command]/usr/bin/git init /home/runner/work/forway/forway
+2026-11-16T10:46:22.9769128Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-16T10:46:22.9770275Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-16T10:46:22.9771396Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-16T10:46:22.9772258Z hint: call:
+2026-11-16T10:46:22.9772632Z hint:
+2026-11-16T10:46:22.9773114Z hint: 	git config --global init.defaultBranch <name>
+2026-11-16T10:46:22.9773770Z hint:
+2026-11-16T10:46:22.9774352Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-16T10:46:22.9775594Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-16T10:46:22.9776590Z hint:
+2026-11-16T10:46:22.9777156Z hint: 	git branch -m <name>
+2026-11-16T10:46:22.9777842Z hint:
+2026-11-16T10:46:22.9778822Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-16T10:46:22.9779837Z Initialized empty Git repository in /home/runner/work/forway/forway/.git/
+2026-11-16T10:46:22.9788849Z [command]/usr/bin/git remote add origin https://github.com/alvarovillalbaa/forway
+2026-11-16T10:46:22.9838089Z ##[endgroup]
+2026-11-16T10:46:22.9839411Z ##[group]Disabling automatic garbage collection
+2026-11-16T10:46:22.9841270Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-16T10:46:22.9872877Z ##[endgroup]
+2026-11-16T10:46:22.9873867Z ##[group]Setting up auth
+2026-11-16T10:46:22.9878085Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T10:46:22.9908013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T10:46:23.0285425Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T10:46:23.0316891Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T10:46:23.0564214Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T10:46:23.0598079Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T10:46:23.0856110Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-16T10:46:23.0895487Z ##[endgroup]
+2026-11-16T10:46:23.0896549Z ##[group]Fetching the repository
+2026-11-16T10:46:23.0905791Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6a84f6abf2cf3b741d1cf53065529385e2acb7ef:refs/remotes/origin/qa/forway-rollout-v2-20261116
+2026-11-16T10:46:23.4227820Z From https://github.com/alvarovillalbaa/forway
+2026-11-16T10:46:23.4229464Z  * [new ref]         6a84f6abf2cf3b741d1cf53065529385e2acb7ef -> origin/qa/forway-rollout-v2-20261116
+2026-11-16T10:46:23.4242843Z ##[endgroup]
+2026-11-16T10:46:23.4243760Z ##[group]Determining the checkout info
+2026-11-16T10:46:23.4244797Z ##[endgroup]
+2026-11-16T10:46:23.4247043Z [command]/usr/bin/git sparse-checkout disable
+2026-11-16T10:46:23.4298650Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-16T10:46:23.4326767Z ##[group]Checking out the ref
+2026-11-16T10:46:23.4330786Z [command]/usr/bin/git checkout --progress --force -B qa/forway-rollout-v2-20261116 refs/remotes/origin/qa/forway-rollout-v2-20261116
+2026-11-16T10:46:23.4479430Z Switched to a new branch 'qa/forway-rollout-v2-20261116'
+2026-11-16T10:46:23.4487615Z branch 'qa/forway-rollout-v2-20261116' set up to track 'origin/qa/forway-rollout-v2-20261116'.
+2026-11-16T10:46:23.4492561Z ##[endgroup]
+2026-11-16T10:46:23.4538981Z [command]/usr/bin/git log -1 --format=%H
+2026-11-16T10:46:23.4564445Z 6a84f6abf2cf3b741d1cf53065529385e2acb7ef
+2026-11-16T10:46:23.4573424Z ##[group]Removing auth
+2026-11-16T10:46:23.4576853Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T10:46:23.4608785Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T10:46:23.4862910Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T10:46:23.4885757Z http.https://github.com/.extraheader
+2026-11-16T10:46:23.4893350Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-16T10:46:23.4928729Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T10:46:23.5175456Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T10:46:23.5204187Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T10:46:23.5446385Z ##[endgroup]
+2026-11-16T10:46:23.5709160Z ##[group]Run python3 tests/scripts/retire-site-analysis-v2-rollout.py
+2026-11-16T10:46:23.5711604Z [36;1mpython3 tests/scripts/retire-site-analysis-v2-rollout.py[0m
+2026-11-16T10:46:23.5763768Z shell: /usr/bin/bash -e {0}
+2026-11-16T10:46:23.5765016Z env:
+2026-11-16T10:46:23.5778066Z   FORWAY_RETIRE_TOKEN: ***
+2026-11-16T10:46:23.5779809Z   FORWAY_RETIRE_EXPECTED_MAIN: baf2614001aa22f96323d1ba518ac8bf4067fa7c
+2026-11-16T10:46:23.5782146Z   FORWAY_RETIRE_OUTPUT: /home/runner/work/_temp/forway-rollout-v2-retirement
+2026-11-16T10:46:23.5784038Z ##[endgroup]
+2026-11-16T10:46:27.5759583Z FORWAY_ROLLOUT_RETIREMENT {"main": "baf2614001aa22f96323d1ba518ac8bf4067fa7c", "qaBefore": "6a84f6abf2cf3b741d1cf53065529385e2acb7ef", "passed": true, "requests": [{"method": "GET", "path": "/git/ref/heads/main", "status": 200}, {"method": "GET", "path": "/git/ref/heads/qa/forway-rollout-v2-20261116", "status": 200}, {"method": "GET", "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml?ref=main", "status": 404}, {"method": "GET", "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml?ref=qa%2Fforway-rollout-v2-20261116", "status": 200}, {"method": "DELETE", "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml", "status": 200}, {"method": "GET", "path": "/git/ref/heads/qa/forway-rollout-v2-20261116", "status": 200}, {"method": "GET", "path": "/contents/.github/workflows/site-analysis-v2-rollout.yml?ref=qa%2Fforway-rollout-v2-20261116", "status": 404}, {"method": "GET", "path": "/git/ref/heads/qa/forway-rollout-v2-20261116", "status": 200}, {"method": "DELETE", "path": "/git/refs/heads/qa/forway-rollout-v2-20261116", "status": 204}, {"method": "GET", "path": "/git/ref/heads/qa/forway-rollout-v2-20261116", "status": 404}, {"method": "GET", "path": "/git/ref/heads/main", "status": 200}], "retiredCommit": "fbd70708d8aa95f39e2255e554f52d6ec3a6e562", "workflowAbsent": true, "qaDeleted": true, "mainUnchanged": true, "deleteSemantics": "serialized exact owner reads; GitHub DELETE ref is not atomic CAS"}
+2026-11-16T10:46:27.6081928Z ##[group]Run actions/upload-artifact@v4
+2026-11-16T10:46:27.6082217Z with:
+2026-11-16T10:46:27.6082539Z   name: forway-rollout-v2-retirement-6a84f6abf2cf3b741d1cf53065529385e2acb7ef
+2026-11-16T10:46:27.6082963Z   path: /home/runner/work/_temp/forway-rollout-v2-retirement
+2026-11-16T10:46:27.6083290Z   retention-days: 14
+2026-11-16T10:46:27.6083521Z   if-no-files-found: warn
+2026-11-16T10:46:27.6083757Z   compression-level: 6
+2026-11-16T10:46:27.6083974Z   overwrite: false
+2026-11-16T10:46:27.6084197Z   include-hidden-files: false
+2026-11-16T10:46:27.6084450Z ##[endgroup]
+2026-11-16T10:46:27.7580563Z (node:2287) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-16T10:46:27.7581587Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-16T10:46:27.7649626Z With the provided path, there will be 1 file uploaded
+2026-11-16T10:46:27.7650792Z Artifact name is valid!
+2026-11-16T10:46:27.7651240Z Root directory input is valid!
+2026-11-16T10:46:28.4722261Z Beginning upload of artifact content to blob storage
+2026-11-16T10:46:28.4864201Z (node:2287) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-16T10:46:28.7810176Z Uploaded bytes 578
+2026-11-16T10:46:28.8627470Z Finished uploading artifact content to blob storage!
+2026-11-16T10:46:28.8639575Z SHA256 digest of uploaded artifact zip is 09fc6586738360bdd25b33da60ffd840968ae4b4a3c5c9ffd79a22e62d7d8b02
+2026-11-16T10:46:28.8640039Z Finalizing artifact upload
+2026-11-16T10:46:29.2639995Z Artifact forway-rollout-v2-retirement-6a84f6abf2cf3b741d1cf53065529385e2acb7ef.zip successfully finalized. Artifact ID 14218385945
+2026-11-16T10:46:29.2641651Z Artifact forway-rollout-v2-retirement-6a84f6abf2cf3b741d1cf53065529385e2acb7ef has been successfully uploaded! Final size is 578 bytes. Artifact ID is 14218385945
+2026-11-16T10:46:29.2643031Z Artifact download URL: https://github.com/alvarovillalbaa/forway/actions/runs/43851808255/artifacts/14218385945
+2026-11-16T10:46:29.2835908Z Post job cleanup.
+2026-11-16T10:46:29.3570649Z [command]/usr/bin/git version
+2026-11-16T10:46:29.3611291Z git version 2.56.1
+2026-11-16T10:46:29.3646553Z Temporarily overriding HOME='/home/runner/work/_temp/c0493c48-3721-4000-a0c9-25e5942b7d9d' before making global git config changes
+2026-11-16T10:46:29.3647573Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T10:46:29.3651705Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/forway/forway
+2026-11-16T10:46:29.3694530Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T10:46:29.3730800Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T10:46:29.4003939Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T10:46:29.4046247Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T10:46:29.4308297Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T10:46:29.4336868Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T10:46:29.5048938Z Cleaning up orphan processes
+2026-11-16T10:46:29.5379894Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,27 @@
+name: Forway V2 owned rollout retirement
+on:
+  push:
+    branches: [qa/forway-rollout-v2-20261116]
+permissions:
+  contents: write
+jobs:
+  retire:
+    if: github.ref_name == 'qa/forway-rollout-v2-20261116'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Retire the exact rollout workflow and ref
+        env:
+          FORWAY_RETIRE_TOKEN: ${{ github.token }}
+          FORWAY_RETIRE_EXPECTED_MAIN: REPLACE_EXPECTED_MAIN
+          FORWAY_RETIRE_OUTPUT: ${{ runner.temp }}/forway-rollout-v2-retirement
+        run: python3 tests/scripts/retire-site-analysis-v2-rollout.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forway-rollout-v2-retirement-${{ github.sha }}
+          path: ${{ runner.temp }}/forway-rollout-v2-retirement
+          retention-days: 14

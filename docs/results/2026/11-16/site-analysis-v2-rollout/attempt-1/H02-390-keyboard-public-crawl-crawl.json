@@ -1,0 +1,61 @@
+{
+  "format": "forway-crawl-v1",
+  "seed": "https://forway.vercel.app/check-fixtures/authored-page.html",
+  "state": "frontier_exhausted",
+  "reason": "Discoverable frontier drained; this does not establish every page on the domain.",
+  "rows": [
+    {
+      "url": "https://forway.vercel.app/check-fixtures/authored-page.html",
+      "status": "done",
+      "reason": ""
+    }
+  ],
+  "frontier": [],
+  "pages": [
+    {
+      "url": "https://forway.vercel.app/check-fixtures/authored-page.html",
+      "html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"description\" content=\"An authored page for Forway workflow checks, with no customer or provider data.\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Forway authored workflow fixture</title>\n</head>\n<body>\n  <main>\n    <p>AUTHORED VALIDATION FIXTURE — this is not a customer website or search-performance result.</p>\n    <h1>A small guide to keeping an evidence notebook</h1>\n    <p>An evidence notebook records the question, observation and source so another person can review what happened.</p>\n    <h2>What belongs in an observation?</h2>\n    <p>Keep the original answer, its prompt, its engine and the time it was collected.</p>\n    <h2>Sources</h2>\n    <p>Review the <a href=\"https://developers.google.com/search/docs/fundamentals/creating-helpful-content\">primary guidance on useful content</a> separately from this authored fixture.</p>\n  </main>\n</body>\n</html>\n",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-16T10:44:40.217Z",
+      "sourceKind": "fetched"
+    }
+  ],
+  "expansions": [],
+  "documents": [
+    {
+      "kind": "robots",
+      "requestedURL": "https://forway.vercel.app/robots.txt",
+      "finalURL": "https://forway.vercel.app/robots.txt",
+      "status": 404,
+      "bytes": 0,
+      "requests": 1,
+      "fetchedAt": "2026-11-16T10:44:40.065Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://forway.vercel.app/check-fixtures/authored-page.html",
+      "finalURL": "https://forway.vercel.app/check-fixtures/authored-page.html",
+      "status": 200,
+      "bytes": 985,
+      "requests": 1,
+      "fetchedAt": "2026-11-16T10:44:40.217Z"
+    },
+    {
+      "kind": "sitemap",
+      "requestedURL": "https://forway.vercel.app/sitemap.xml",
+      "status": "failed",
+      "reason": "document_unavailable"
+    }
+  ],
+  "batch": {
+    "chargedRequests": 3,
+    "responseBytes": 985,
+    "chargedBytes": 1049561,
+    "startedAt": "2026-11-16T10:44:39.902Z",
+    "finishedAt": "2026-11-16T10:44:40.416Z"
+  },
+  "outsideScope": 1
+}

@@ -1,0 +1,37 @@
+name: Forway V2 owned hosted rollout
+on:
+  push:
+    branches: [qa/forway-rollout-v2-20261116]
+permissions:
+  contents: read
+jobs:
+  hosted:
+    if: github.ref_name == 'qa/forway-rollout-v2-20261116'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.8.2
+      - name: Prepare owned rollout tools and source
+        env:
+          FORWAY_ROLLOUT_OUTPUT: ${{ runner.temp }}/forway-rollout-v2-proof
+        run: python3 tests/scripts/rollout-site-analysis-v2.py prepare
+      - name: Await exact release and verify hosted cases
+        env:
+          FORWAY_ROLLOUT_OUTPUT: ${{ runner.temp }}/forway-rollout-v2-proof
+        run: python3 tests/scripts/rollout-site-analysis-v2.py run
+      - name: Close owned resources and retain originals
+        if: always()
+        env:
+          FORWAY_ROLLOUT_OUTPUT: ${{ runner.temp }}/forway-rollout-v2-proof
+        run: python3 tests/scripts/rollout-site-analysis-v2.py cleanup
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forway-rollout-v2-${{ github.sha }}
+          path: ${{ runner.temp }}/forway-rollout-v2-proof
+          retention-days: 14

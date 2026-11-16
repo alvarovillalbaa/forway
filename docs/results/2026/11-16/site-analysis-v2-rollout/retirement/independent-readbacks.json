@@ -1,0 +1,58 @@
+[
+  {
+    "scope": "qa ref",
+    "result": {
+      "error": "GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/git/refs#get-a-reference\",\"status\":\"404\"}",
+      "error_code": "NOT_FOUND",
+      "error_data": {
+        "message": "Not Found",
+        "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+        "status": "404"
+      }
+    }
+  },
+  {
+    "scope": "workflow on main",
+    "result": {
+      "error": "GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+      "error_code": "NOT_FOUND",
+      "error_data": {
+        "message": "Not Found",
+        "documentation_url": "https://docs.github.com/rest/repos/contents#get-repository-content",
+        "status": "404"
+      }
+    }
+  },
+  {
+    "scope": "main",
+    "result": {
+      "content": "{\"ref\":\"refs/heads/main\",\"node_id\":\"REF_kwDOVcBkdq9yZWZzL2hlYWRzL21haW4\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/refs/heads/main\",\"object\":{\"sha\":\"baf2614001aa22f96323d1ba518ac8bf4067fa7c\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/commits/baf2614001aa22f96323d1ba518ac8bf4067fa7c\"}}",
+      "title": "main",
+      "modified_date": null,
+      "url": "https://api.github.com/repos/alvarovillalbaa/forway/git/ref/heads/main",
+      "display_url": "https://api.github.com/repos/alvarovillalbaa/forway/git/ref/heads/main",
+      "display_title": "main",
+      "structuredContent": {
+        "title": "main",
+        "content": "{\"ref\":\"refs/heads/main\",\"node_id\":\"REF_kwDOVcBkdq9yZWZzL2hlYWRzL21haW4\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/refs/heads/main\",\"object\":{\"sha\":\"baf2614001aa22f96323d1ba518ac8bf4067fa7c\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/commits/baf2614001aa22f96323d1ba518ac8bf4067fa7c\"}}",
+        "display_url": "https://api.github.com/repos/alvarovillalbaa/forway/git/ref/heads/main"
+      }
+    }
+  },
+  {
+    "scope": "independent branch",
+    "result": {
+      "content": "{\"ref\":\"refs/heads/work/private-workspaces\",\"node_id\":\"REF_kwDOVcBkdtoAInJlZnMvaGVhZHMvd29yay9wcml2YXRlLXdvcmtzcGFjZXM\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/refs/heads/work/private-workspaces\",\"object\":{\"sha\":\"ae1057e6cd5c4463b1c5933b467ab42ac18dfd4a\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/commits/ae1057e6cd5c4463b1c5933b467ab42ac18dfd4a\"}}",
+      "title": "private-workspaces",
+      "modified_date": null,
+      "url": "https://api.github.com/repos/alvarovillalbaa/forway/git/ref/heads/work/private-workspaces",
+      "display_url": "https://api.github.com/repos/alvarovillalbaa/forway/git/ref/heads/work/private-workspaces",
+      "display_title": "private-workspaces",
+      "structuredContent": {
+        "title": "private-workspaces",
+        "content": "{\"ref\":\"refs/heads/work/private-workspaces\",\"node_id\":\"REF_kwDOVcBkdtoAInJlZnMvaGVhZHMvd29yay9wcml2YXRlLXdvcmtzcGFjZXM\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/refs/heads/work/private-workspaces\",\"object\":{\"sha\":\"ae1057e6cd5c4463b1c5933b467ab42ac18dfd4a\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/alvarovillalbaa/forway/git/commits/ae1057e6cd5c4463b1c5933b467ab42ac18dfd4a\"}}",
+        "display_url": "https://api.github.com/repos/alvarovillalbaa/forway/git/ref/heads/work/private-workspaces"
+      }
+    }
+  }
+]

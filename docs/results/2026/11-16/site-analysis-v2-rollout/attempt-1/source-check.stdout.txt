@@ -1,0 +1,1 @@
+38 modules parsed; 56 relative imports and HTML assets resolve; 86 literal app targets and HTML labels resolve. JSON/documents checked. No product module or test executed.
