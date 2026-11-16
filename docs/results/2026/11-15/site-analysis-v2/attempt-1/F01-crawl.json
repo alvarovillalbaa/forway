@@ -1,0 +1,180 @@
+{
+  "format": "forway-crawl-v1",
+  "seed": "https://owned.example.com/",
+  "state": "frontier_exhausted",
+  "reason": "Discoverable frontier drained; this does not establish every page on the domain.",
+  "rows": [
+    {
+      "url": "https://owned.example.com/",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://owned.example.com/about",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://owned.example.com/guide?topic=one",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://owned.example.com/alias",
+      "status": "redirected",
+      "reason": "redirect_observed",
+      "redirectTo": "https://owned.example.com/final"
+    },
+    {
+      "url": "https://owned.example.com/private",
+      "status": "refused",
+      "reason": "robots_disallow"
+    },
+    {
+      "url": "https://owned.example.com/final",
+      "status": "done",
+      "reason": ""
+    }
+  ],
+  "frontier": [],
+  "pages": [
+    {
+      "url": "https://owned.example.com/",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /</h1><p>Observable source with a deliberately missing description.</p><a href=\"/about#x\">About</a><a href=\"/guide?topic=one#x\">Guide</a><a href=\"/alias\">Alias</a><a href=\"/private\">Private</a><a href=\"https://foreign.example.com/\">Foreign</a><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.041Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://owned.example.com/about",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /about</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.057Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://owned.example.com/guide?topic=one",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /guide</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.062Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://owned.example.com/final",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /final</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.081Z",
+      "sourceKind": "fetched"
+    }
+  ],
+  "expansions": [],
+  "documents": [
+    {
+      "kind": "robots",
+      "requestedURL": "https://owned.example.com/robots.txt",
+      "finalURL": "https://owned.example.com/robots.txt",
+      "status": 200,
+      "bytes": 77,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.033Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://owned.example.com/",
+      "finalURL": "https://owned.example.com/",
+      "status": 200,
+      "bytes": 499,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.041Z"
+    },
+    {
+      "kind": "sitemap",
+      "requestedURL": "https://owned.example.com/index.xml",
+      "finalURL": "https://owned.example.com/index.xml",
+      "status": 200,
+      "bytes": 241,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.050Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://owned.example.com/about",
+      "finalURL": "https://owned.example.com/about",
+      "status": 200,
+      "bytes": 332,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.057Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://owned.example.com/guide?topic=one",
+      "finalURL": "https://owned.example.com/guide?topic=one",
+      "status": 200,
+      "bytes": 332,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.062Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://owned.example.com/alias",
+      "finalURL": "https://owned.example.com/alias",
+      "status": 302,
+      "bytes": 0,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.067Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://owned.example.com/private",
+      "status": "refused",
+      "reason": "robots_disallow"
+    },
+    {
+      "kind": "sitemap",
+      "requestedURL": "https://owned.example.com/a.xml",
+      "finalURL": "https://owned.example.com/a.xml",
+      "status": 200,
+      "bytes": 215,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.072Z"
+    },
+    {
+      "kind": "sitemap",
+      "requestedURL": "https://owned.example.com/b.xml",
+      "finalURL": "https://owned.example.com/b.xml",
+      "status": 200,
+      "bytes": 223,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.077Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://owned.example.com/final",
+      "finalURL": "https://owned.example.com/final",
+      "status": 200,
+      "bytes": 332,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.081Z"
+    }
+  ],
+  "batch": {
+    "chargedRequests": 9,
+    "responseBytes": 2251,
+    "chargedBytes": 2251,
+    "startedAt": "2026-11-15T23:17:05.022Z",
+    "finishedAt": "2026-11-15T23:17:05.083Z"
+  },
+  "outsideScope": 1
+}

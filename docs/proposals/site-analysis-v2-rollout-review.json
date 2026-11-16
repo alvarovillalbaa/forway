@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-11-16 09:36:41 UTC",
+  "previousGoalTurn": "progress: Umbral isolated acceptance and owned retirement completed",
+  "proposalInactive": true,
+  "authorizationPending": "new product/main/deployment and owned-host execution; excluded by previous V2 approval",
+  "repo": "alvarovillalbaa/forway",
+  "main": "f9ec9a35c6f05e579d95fc155f430f2a56debbf1",
+  "source": "dc65e134bc0185a9c6f587455621c9022c9bf8b3",
+  "sourceTree": "e96d76024555fb54cf4dcc0dcdebe3f85681e703",
+  "qualifiedSource": "286a88dc32a4d3aca2cd1fb7deb582718d9c54b1",
+  "project": "prj_y86aQbsCfHiDJvY5tFiTFV5cTnFa",
+  "team": "team_JpdIsOJgYNpX0ywVZ54Zdb7m",
+  "canonicalProduction": {
+    "deployment": "dpl_npEKBp5Cug6mKTBSYwqotwbbBHnW",
+    "alias": "forway.vercel.app",
+    "source": "f9ec9a35c6f05e579d95fc155f430f2a56debbf1",
+    "state": "READY",
+    "anonymousHEAD": 200
+  },
+  "independentBranch": {
+    "name": "work/private-workspaces",
+    "head": "ae1057e6cd5c4463b1c5933b467ab42ac18dfd4a",
+    "aheadOfMain": 10,
+    "preserved": true
+  },
+  "protectedInputs": 48,
+  "publicFiles": 20,
+  "proposedConfigChangesOnly": {
+    "api/crawl.mjs": {
+      "maxDuration": 10
+    },
+    "api/answer.mjs": {
+      "maxDuration": 35
+    }
+  },
+  "ciPreviouslyUsedSeconds": 100,
+  "newCIMaxSeconds": 1100,
+  "cumulativeCIMaxSeconds": 1200,
+  "macReserveGiB": 30,
+  "runnerReserveGiB": 30,
+  "estimatedNewRunnerNeedGiB": 2,
+  "priorPublicRunnerCapacity": {
+    "freeBytes": 93074325504,
+    "notCurrentPreflight": true
+  },
+  "preparedDriver": {
+    "ids": [
+      "H01-desktop-public-crawl",
+      "H02-390-keyboard-public-crawl"
+    ],
+    "maxAnonymousGETsIncludingReleaseProbes": 128,
+    "maxSameOriginCrawlPOSTs": 6,
+    "realProviderCalls": 0
+  },
+  "checks": {
+    "driverNodeSyntax": true,
+    "configJSON": true,
+    "configUnrelatedFieldsUnchanged": true,
+    "applicationTestsOrBrowserExecuted": false,
+    "workspaceGitDiffCheckUnavailable": "OS Operation not permitted; no local work overwritten"
+  }
+}

@@ -40,11 +40,16 @@ function timestamp(value) {
 }
 function freeze(value) { if (value && typeof value === 'object') { Object.values(value).forEach(freeze); Object.freeze(value); } return value; }
 
-export function normalizeObservation(value) {
-  const input = record(value, RAW_FIELDS);
+export function normalizeCohort(value) {
+  const input = record(value, ['brand', 'domain', 'competitors']);
   const brand = text(input.brand, 100), competitors = list(input.competitors, 20).map(value => text(value, 100));
   if ([brand, ...competitors].some(value => value !== value.trim()) || new Set([brand, ...competitors].map(folded)).size !== competitors.length + 1) invalid();
-  return freeze({ brand, domain: hostname(input.domain), competitors, engine: text(input.engine, 100),
+  return freeze({ brand, domain: hostname(input.domain), competitors });
+}
+export function normalizeObservation(value) {
+  const input = record(value, RAW_FIELDS);
+  const cohort = normalizeCohort({ brand: input.brand, domain: input.domain, competitors: input.competitors });
+  return freeze({ ...cohort, engine: text(input.engine, 100),
     prompt: text(input.prompt, 10000), answer: text(input.answer, 100000), observedAt: timestamp(input.observedAt) });
 }
 export function observationCohortKey(value) {

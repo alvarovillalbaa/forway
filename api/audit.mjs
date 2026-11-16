@@ -20,7 +20,7 @@ function race(promise, signal) {
     if (signal.aborted) aborted();
   });
 }
-async function readInput(req, signal) {
+async function readInput(req, signal, validateInput) {
   const type = req.headers?.['content-type'];
   if (typeof type !== 'string' || type.split(';', 1)[0].trim().toLowerCase() !== 'application/json') throw failure('unsupported_media_type');
   const length = req.headers?.['content-length'];
@@ -49,7 +49,7 @@ async function readInput(req, signal) {
       if (Buffer.byteLength(body) > MAX_BODY) throw failure('body_too_large');
       body = JSON.parse(body);
     }
-    const input = validatePageImportInput(body);
+    const input = validateInput(body);
     if (Buffer.byteLength(JSON.stringify(input)) > MAX_BODY) throw failure('body_too_large');
     return input;
   } catch (error) {
@@ -58,8 +58,9 @@ async function readInput(req, signal) {
   }
 }
 
-export function createAuditHandler({ fetchPage = fetchPublicPage, timeoutMs = 8000 } = {}) {
-  if (typeof fetchPage !== 'function' || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 8000) throw failure('invalid_request');
+export function createAuditHandler({ fetchPage = fetchPublicPage, validateInput = validatePageImportInput, responseField = 'page', timeoutMs = 8000 } = {}) {
+  if (typeof fetchPage !== 'function' || typeof validateInput !== 'function' || !['page', 'document'].includes(responseField)
+    || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 8000) throw failure('invalid_request');
   return async function audit(req, res) {
     res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -77,11 +78,11 @@ export function createAuditHandler({ fetchPage = fetchPublicPage, timeoutMs = 80
     };
     try {
       if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); throw failure('unsupported_method'); }
-      const input = await race(readInput(req, controller.signal), controller.signal);
+      const input = await race(readInput(req, controller.signal, validateInput), controller.signal);
       guard();
       const page = await race(Promise.resolve().then(() => { guard(); return fetchPage(input, { signal: controller.signal }); }), controller.signal);
       guard();
-      send(200, { page });
+      send(200, { [responseField]: page });
     } catch (error) {
       let code = 'fetch_failed', status = SAFE.fetch_failed[0], message = SAFE.fetch_failed[1];
       try {

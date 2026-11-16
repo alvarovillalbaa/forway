@@ -1,0 +1,69 @@
+{
+  "format": "forway-comparison-v1",
+  "plan": {
+    "cohort": {
+      "brand": "Cedar",
+      "domain": "owned.example.com",
+      "competitors": []
+    },
+    "queries": [
+      "Held exact query",
+      "Remaining exact query"
+    ],
+    "models": [
+      {
+        "provider": "openai",
+        "model": "authored-gpt",
+        "mode": "ungrounded"
+      }
+    ]
+  },
+  "cells": [
+    {
+      "provider": "openai",
+      "model": "authored-gpt",
+      "mode": "ungrounded",
+      "query": "Held exact query",
+      "status": "unknown",
+      "reason": "acceptance_or_response_uncertain",
+      "result": null,
+      "startedAt": "2026-11-15T23:19:27.214Z",
+      "finishedAt": "2026-11-15T23:19:27.296Z"
+    },
+    {
+      "provider": "openai",
+      "model": "authored-gpt",
+      "mode": "ungrounded",
+      "query": "Remaining exact query",
+      "status": "success",
+      "reason": null,
+      "result": {
+        "provider": "openai",
+        "model": "authored-gpt",
+        "mode": "ungrounded",
+        "query": "Remaining exact query",
+        "answer": "Cedar is an authored example. See https://owned.example.com/about",
+        "citations": [
+          {
+            "url": "https://owned.example.com/",
+            "title": "Authored source"
+          }
+        ],
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 7,
+          "total_tokens": 18
+        },
+        "reportedModel": "authored-gpt-snapshot",
+        "status": "success",
+        "reason": null,
+        "upstreamStatus": 200,
+        "capturedAt": "2026-11-15T23:19:27.418Z"
+      },
+      "startedAt": "2026-11-15T23:19:27.413Z",
+      "finishedAt": "2026-11-15T23:19:27.429Z"
+    }
+  ],
+  "source": "direct_provider_api",
+  "grounding": "no_web_tool_requested"
+}

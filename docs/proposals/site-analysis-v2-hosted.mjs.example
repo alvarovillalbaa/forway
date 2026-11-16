@@ -1,0 +1,153 @@
+// Inactive proposal. H01/H02 require the separately approved production scope.
+import assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+
+const { chromium } = createRequire(process.env.FORWAY_PLAYWRIGHT_PACKAGE)('@playwright/test');
+const origin = 'https://forway.vercel.app';
+const output = process.env.FORWAY_HOSTED_OUTPUT;
+const source = process.env.FORWAY_HOSTED_SOURCE;
+assert(output && source);
+const fixture = '/check-fixtures/authored-page.html';
+const allowedTargets = new Map([['/robots.txt', 'robots'], ['/sitemap.xml', 'sitemap'], [fixture, 'page']]);
+const releaseReads = Number(process.env.FORWAY_HOSTED_RELEASE_READS ?? 0);
+assert(Number.isSafeInteger(releaseReads) && releaseReads >= 0 && releaseReads <= 20);
+const result = { passed: false, browserClosed: false, reads: releaseReads, posts: 0, bytes: 0,
+  cases: [], responses: [], unexpected: [], pageErrors: [] };
+const expected = new Map();
+const pending = [];
+let browser;
+const digest = value => createHash('sha256').update(value).digest('hex');
+
+async function inventory(dir, prefix = '') {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const relative = prefix + entry.name;
+    if (entry.isDirectory()) await inventory(path.join(dir, entry.name), relative + '/');
+    else {
+      assert(entry.isFile(), 'Only regular source files');
+      const data = await readFile(path.join(dir, entry.name));
+      assert(data.length <= 1024 * 1024);
+      expected.set('/' + relative, { bytes: data.length, sha256: digest(data) });
+    }
+  }
+}
+function readBudget() { assert(++result.reads <= 128, 'Anonymous GET cap'); }
+function bodyBudget(data) { result.bytes += data.length; assert(result.bytes <= 12 * 1024 * 1024, 'Read byte cap'); }
+function headers(value) {
+  assert.equal(value['x-content-type-options'], 'nosniff');
+  assert.equal(value['referrer-policy'], 'no-referrer');
+  assert(value['content-security-policy']?.includes("connect-src 'self'"));
+  assert(value['content-security-policy']?.includes("object-src 'none'"));
+}
+async function asset(phase, pathname) {
+  readBudget();
+  const response = await fetch(origin + pathname, { redirect: 'error', cache: 'no-store', signal: AbortSignal.timeout(10000) });
+  assert.equal(response.status, 200);
+  const reader = response.body.getReader(), chunks = [];
+  let count = 0;
+  try {
+    for (;;) {
+      const row = await reader.read(); if (row.done) break;
+      count += row.value.length; assert(count <= 1024 * 1024); chunks.push(row.value);
+    }
+  } finally { await reader.cancel(); reader.releaseLock(); }
+  const data = Buffer.concat(chunks); bodyBudget(data);
+  headers(Object.fromEntries(response.headers));
+  const wanted = expected.get(pathname === '/' ? '/index.html' : pathname);
+  assert.equal(data.length, wanted.bytes); assert.equal(digest(data), wanted.sha256);
+  result.responses.push({ phase, path: pathname, status: response.status, bytes: data.length, sha256: digest(data) });
+}
+async function waitFor(check, label) {
+  const until = Date.now() + 25000;
+  while (Date.now() < until) { if (await check()) return; await new Promise(resolve => setTimeout(resolve, 50)); }
+  throw Error('Timed out: ' + label);
+}
+async function nativeCase(id, width) {
+  const row = { id, width, passed: false, contextClosed: false };
+  result.cases.push(row);
+  const context = await browser.newContext({ viewport: { width, height: 1000 },
+    permissions: ['clipboard-read', 'clipboard-write'], acceptDownloads: true });
+  const before = result.posts;
+  const firstResponse = pending.length;
+  try {
+    await context.route('**/*', async route => {
+      const request = route.request(), url = new URL(request.url());
+      try {
+        assert.equal(url.origin, origin); assert.equal(url.search, '');
+        if (request.method() === 'GET') { assert(expected.has(url.pathname === '/' ? '/index.html' : url.pathname)); readBudget(); }
+        else {
+          assert.equal(request.method(), 'POST'); assert.equal(url.pathname, '/api/crawl');
+          const body = request.postDataJSON(); assert.deepEqual(Object.keys(body).sort(), ['kind', 'url']);
+          const target = new URL(body.url); assert.equal(target.origin, origin); assert.equal(target.search, '');
+          assert.equal(allowedTargets.get(target.pathname), body.kind); assert(allowedTargets.has(target.pathname));
+          assert(++result.posts <= 6, 'Owned crawl POST cap');
+        }
+      } catch (error) { result.unexpected.push({ method: request.method(), url: url.href, error: error.message }); await route.abort(); return; }
+      await route.continue(); // Never substitutes a network response.
+    });
+    const page = await context.newPage();
+    page.on('pageerror', error => result.pageErrors.push({ id, message: error.message }));
+    page.on('response', response => { const task = (async () => {
+      const url = new URL(response.url()), data = await response.body(); bodyBudget(data);
+      const record = { phase: id, path: url.pathname, status: response.status(), bytes: data.length, sha256: digest(data) };
+      if (response.request().method() === 'GET') {
+        const wanted = expected.get(url.pathname === '/' ? '/index.html' : url.pathname);
+        assert(wanted); assert.equal(response.status(), 200); headers(response.headers());
+        assert.equal(data.length, wanted.bytes); assert.equal(record.sha256, wanted.sha256);
+      }
+      result.responses.push(record);
+    })(); task.catch(() => {}); pending.push(task); });
+    await page.goto(origin, { waitUntil: 'networkidle' });
+    assert.equal(await page.locator('#analysis-scope').inputValue(), 'site');
+    await page.locator('#page-url').fill(origin + fixture);
+    if (width === 390) await page.locator('#page-url').press('Enter');
+    else await page.locator('#url-form button').click();
+    await waitFor(async () => /1 analyzed \/ 1 discovered page URLs.*0 pending.*Discoverable frontier drained/.test(await page.locator('#crawl-status').innerText()), 'owned public crawl');
+    const download = page.waitForEvent('download'); await page.locator('#crawl-save').click();
+    const file = path.join(output, id + '-crawl.json'); await (await download).saveAs(file);
+    const crawl = JSON.parse(await readFile(file, 'utf8'));
+    assert.equal(crawl.pages.length, 1); assert.equal(crawl.rows.length, 1); assert.equal(crawl.frontier.length, 0);
+    assert.equal(crawl.pages[0].url, origin + fixture); assert.equal(crawl.pages[0].sourceKind, 'fetched');
+    assert(Number.isFinite(Date.parse(crawl.pages[0].fetchedAt)));
+    const wanted = expected.get(fixture), raw = Buffer.from(crawl.pages[0].html);
+    assert.equal(raw.length, wanted.bytes); assert.equal(digest(raw), wanted.sha256);
+    assert.equal(result.posts - before, 3); assert.equal(crawl.outsideScope, 1);
+    const button = page.locator('#crawl-report').getByRole('button', { name: 'Copy prompt', exact: true }).first();
+    await button.focus(); await page.keyboard.press('Enter');
+    await waitFor(async () => (await page.evaluate(() => navigator.clipboard.readText())).includes(origin + fixture), 'native prompt copy');
+    const copied = await page.evaluate(() => navigator.clipboard.readText());
+    row.prompt = { bytes: Buffer.byteLength(copied), sha256: digest(copied) };
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
+    await page.screenshot({ path: path.join(output, id + '.png') });
+    await page.locator('[data-view="evidence"]').click();
+    assert(await page.locator('#comparison-brand').isVisible());
+    for (const provider of ['openai', 'anthropic', 'google']) {
+      assert.equal(await page.locator('#' + provider + '-key').inputValue(), '');
+      assert.equal(await page.locator('[data-provider="' + provider + '"] [data-field="selected"]').isChecked(), false);
+    }
+    assert.match(await page.locator('#provider-status').innerText(), /No provider has been queried/);
+    await Promise.all(pending.slice(firstResponse));
+    row.publicPages = 1; row.crawlPosts = 3; row.providerCalls = 0; row.passed = true;
+  } catch (error) { row.error = error.stack; throw error; }
+  finally { await context.close(); row.contextClosed = true; }
+}
+try {
+  await inventory(path.join(source, 'public')); assert.equal(expected.size, 20);
+  for (const pathname of expected.keys()) await asset('before', pathname === '/index.html' ? '/' : pathname);
+  browser = await chromium.launch({ headless: true }); result.chromium = browser.version();
+  await nativeCase('H01-desktop-public-crawl', 1280);
+  await nativeCase('H02-390-keyboard-public-crawl', 390);
+  await Promise.all(pending);
+  for (const pathname of expected.keys()) await asset('after', pathname === '/index.html' ? '/' : pathname);
+  assert.equal(result.unexpected.length, 0); assert.equal(result.pageErrors.length, 0); assert.equal(result.posts, 6);
+  result.passed = true;
+} catch (error) { result.error = error.stack; }
+finally {
+  if (browser) { await browser.close(); result.browserClosed = true; }
+  await Promise.allSettled(pending);
+  await writeFile(path.join(output, 'native-result.json'), JSON.stringify(result, null, 2));
+  console.log('FORWAY_HOSTED_V2 ' + JSON.stringify(result));
+}
+if (!result.passed) process.exitCode = 1;

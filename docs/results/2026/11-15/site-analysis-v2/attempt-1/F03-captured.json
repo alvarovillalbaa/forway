@@ -1,0 +1,73 @@
+{
+  "format": "forway-crawl-v1",
+  "seed": "https://slow.example.com/",
+  "state": "frontier_exhausted",
+  "reason": "Discoverable frontier drained; this does not establish every page on the domain.",
+  "rows": [
+    {
+      "url": "https://slow.example.com/",
+      "status": "done",
+      "reason": ""
+    }
+  ],
+  "frontier": [],
+  "pages": [
+    {
+      "url": "https://slow.example.com/",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:06.153Z",
+      "sourceKind": "fetched"
+    }
+  ],
+  "expansions": [],
+  "documents": [
+    {
+      "kind": "robots",
+      "requestedURL": "https://slow.example.com/robots.txt",
+      "finalURL": "https://slow.example.com/robots.txt",
+      "status": 404,
+      "bytes": 0,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.975Z"
+    },
+    {
+      "kind": "robots",
+      "requestedURL": "https://slow.example.com/robots.txt",
+      "finalURL": "https://slow.example.com/robots.txt",
+      "status": 404,
+      "bytes": 0,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:06.139Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://slow.example.com/",
+      "finalURL": "https://slow.example.com/",
+      "status": 200,
+      "bytes": 327,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:06.153Z"
+    },
+    {
+      "kind": "sitemap",
+      "requestedURL": "https://slow.example.com/sitemap.xml",
+      "finalURL": "https://slow.example.com/sitemap.xml",
+      "status": 200,
+      "bytes": 107,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:06.160Z"
+    }
+  ],
+  "batch": {
+    "chargedRequests": 3,
+    "responseBytes": 434,
+    "chargedBytes": 434,
+    "startedAt": "2026-11-15T23:17:06.135Z",
+    "finishedAt": "2026-11-15T23:17:06.162Z"
+  },
+  "outsideScope": 0
+}

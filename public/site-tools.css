@@ -1,0 +1,28 @@
+.crawl-tools,.provider-comparison{padding:clamp(20px,3vw,34px);margin:24px 0;min-width:0}
+.crawl-tools .section-heading{align-items:flex-start;gap:18px;flex-wrap:wrap}
+.crawl-tools h2,.provider-comparison h2{margin:0 0 16px}
+.crawl-tools details{margin-top:18px}
+.crawl-tools pre,.provider-comparison pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%;overflow:auto;font-size:12px;line-height:1.7;padding:16px;background:#f5f5ee;border:1px solid var(--line,#d4d8cc);border-radius:6px}
+.crawl-tools pre{max-height:460px}
+.provider-comparison .muted{max-width:850px;line-height:1.8}
+.provider-models,.provider-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0}
+.provider-models fieldset{min-width:0;margin:0;padding:18px;border:1px solid #d4d8cc;border-radius:8px;background:#fbfbf7}
+.provider-models legend{max-width:100%;font-weight:650;font-size:13px;padding:0 6px}
+.provider-models legend label{display:flex;align-items:center;gap:8px;margin:0;line-height:1.6}
+.provider-models input[type=checkbox],#provider-confirm{width:18px;height:18px;min-width:18px;padding:0;margin:0;accent-color:var(--green);vertical-align:middle}
+#provider-confirm{margin-right:8px}
+.provider-models label{overflow-wrap:anywhere}
+.provider-comparison .button-row{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+#provider-review{margin-top:28px;padding-top:24px;border-top:1px solid #d4d8cc}
+#provider-review>label{line-height:1.8}
+.provider-summary article{padding:18px;border:1px solid #d4d8cc;border-radius:7px;min-width:0}
+.provider-summary h3{font-size:21px;overflow-wrap:anywhere;margin-bottom:13px}
+.provider-summary p{font-size:12px;line-height:1.8}
+.provider-summary small{font-size:11px;color:var(--muted,#5b655a)}
+.api-answer{padding:18px 0;border-top:1px solid #d4d8cc;overflow-wrap:anywhere}
+.api-answer>summary{cursor:pointer;font-weight:600;min-height:44px;padding:9px 0}
+.api-answer blockquote{white-space:pre-wrap;overflow-wrap:anywhere;margin:18px 0;border-left:3px solid var(--green);padding-left:18px;line-height:1.9}
+.api-answer h4{font-size:13px;margin:18px 0 8px}
+#provider-status,#crawl-status{line-height:1.9;overflow-wrap:anywhere}
+@media(max-width:900px){.provider-models,.provider-summary{grid-template-columns:minmax(0,1fr)}.crawl-tools,.provider-comparison{padding:22px}}
+@media(max-width:520px){.crawl-tools,.provider-comparison{padding:20px 16px}.provider-models fieldset{padding:15px}.provider-comparison .button-row{align-items:stretch}.provider-comparison .button-row button{flex:1 1 100%;min-height:44px}.crawl-tools .button-row{flex-wrap:wrap}.crawl-tools .button-row button{min-height:44px;white-space:normal}.api-answer blockquote{font-size:13px}}

@@ -1,0 +1,77 @@
+{"type":"document","url":"https://owned.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://owned.example.com/","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/index.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/about","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/guide?topic=one","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/alias","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/a.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/b.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/final","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://many.example.com/","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/sitemap.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://many.example.com/p0","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p1","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p2","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p3","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p4","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p5","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p6","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p7","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p8","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p9","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p10","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p11","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p12","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p13","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p14","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p15","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p16","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p17","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p18","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p19","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p20","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p21","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://many.example.com/p22","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p23","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p24","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p25","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p26","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p27","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p28","kind":"page","pinned":true}
+{"type":"document","url":"https://many.example.com/p29","kind":"page","pinned":true}
+{"type":"document","url":"https://slow.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://slow.example.com/","kind":"page","pinned":true}
+{"type":"held-document-released","url":"https://slow.example.com/"}
+{"type":"document","url":"https://slow.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://slow.example.com/","kind":"page","pinned":true}
+{"type":"held-document-released","url":"https://slow.example.com/"}
+{"type":"document","url":"https://slow.example.com/sitemap.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://owned.example.com/","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/index.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/about","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/guide?topic=one","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/alias","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/a.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/b.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/final","kind":"page","pinned":true}
+{"type":"provider","provider":"openai","target":"https://api.openai.com/v1/responses","model":"authored-gpt","query":"First exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"provider","provider":"anthropic","target":"https://api.anthropic.com/v1/messages","model":"authored-claude","query":"First exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"provider","provider":"google","target":"https://generativelanguage.googleapis.com/v1beta/models/authored-gemini:generateContent","model":"authored-gemini","query":"First exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"provider","provider":"openai","target":"https://api.openai.com/v1/responses","model":"authored-gpt","query":"Second exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"provider","provider":"anthropic","target":"https://api.anthropic.com/v1/messages","model":"authored-claude","query":"Second exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"provider","provider":"google","target":"https://generativelanguage.googleapis.com/v1beta/models/authored-gemini:generateContent","model":"authored-gemini","query":"Second exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"provider","provider":"openai","target":"https://api.openai.com/v1/responses","model":"authored-gpt","query":"Held exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"held-provider-released"}
+{"type":"provider","provider":"openai","target":"https://api.openai.com/v1/responses","model":"authored-gpt","query":"Remaining exact query","keyMatches":true,"redirect":"error","workspaceMatches":true}
+{"type":"document","url":"https://owned.example.com/robots.txt","kind":"robots","pinned":true}
+{"type":"document","url":"https://owned.example.com/","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/index.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/about","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/guide?topic=one","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/alias","kind":"page","pinned":true}
+{"type":"document","url":"https://owned.example.com/a.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/b.xml","kind":"sitemap","pinned":true}
+{"type":"document","url":"https://owned.example.com/final","kind":"page","pinned":true}

@@ -2,6 +2,7 @@ import { lookup } from 'node:dns/promises';
 import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
 import { isIP } from 'node:net';
+import { parseSitemap } from '../public/src/sitemap.mjs';
 
 export const PAGE_LIMITS = Object.freeze({ urlCharacters: 2048, bodyBytes: 1024 * 1024,
   headerBytes: 16 * 1024, headerCount: 100, redirects: 4, timeoutMs: 8000 });
@@ -18,6 +19,8 @@ const ERRORS = Object.freeze({
   unsupported_content: [422, 'The URL did not return a successful HTML page.'],
   unsupported_encoding: [422, 'The page must return uncompressed UTF-8 HTML.'],
   invalid_utf8: [422, 'The page did not contain valid UTF-8 HTML.'],
+  outside_site: [422, 'The document redirected outside the requested hostname.'],
+  invalid_sitemap: [422, 'The sitemap XML is malformed or outside the supported URL-set/index profile.'],
 });
 export class PageImportError extends Error {
   constructor(code) {
@@ -116,7 +119,7 @@ function abortRace(promise, signal) {
 
 async function resolveAll(hostname) { return lookup(hostname, { all: true, verbatim: true }); }
 
-function requestPinned(url, { address, family, signal }) {
+function requestPinned(url, { address, family, signal, documentKind }) {
   return new Promise((resolve, reject) => {
     let response, request;
     const close = () => {
@@ -129,8 +132,8 @@ function requestPinned(url, { address, family, signal }) {
       request = transport(url, {
         method: 'GET', agent: false, family, autoSelectFamily: false,
         lookup: createPinnedLookup(address, family), maxHeaderSize: PAGE_LIMITS.headerBytes,
-        headers: { Accept: 'text/html, application/xhtml+xml;q=0.9', 'Accept-Encoding': 'identity',
-          'User-Agent': 'Forway/0.1 public-page-import' },
+        headers: { Accept: documentKind === 'robots' ? 'text/plain' : documentKind === 'sitemap' ? 'application/xml, text/xml' : 'text/html, application/xhtml+xml;q=0.9', 'Accept-Encoding': 'identity',
+          'User-Agent': documentKind ? 'Forway/0.2 bounded-site-analysis' : 'Forway/0.1 public-page-import' },
       }, incoming => {
         response = incoming;
         if (signal.aborted) { close(); return; }
@@ -172,8 +175,27 @@ function safeFailure(error, fallback) {
 }
 
 export async function fetchPublicPage(input, adapters = {}) {
+  return fetchDocument(input, adapters, null);
+}
+
+export function validateDocumentInput(input) {
+  if (!input || typeof input !== 'object' || ![Object.prototype, null].includes(Object.getPrototypeOf(input))
+    || Reflect.ownKeys(input).length !== 2 || !Object.hasOwn(input, 'url') || !Object.hasOwn(input, 'kind')) fail('invalid_request');
+  for (const key of ['url', 'kind']) { const field = Object.getOwnPropertyDescriptor(input, key); if (!field?.enumerable || !Object.hasOwn(field, 'value') || typeof field.value !== 'string') fail('invalid_request'); }
+  if (!['page', 'robots', 'sitemap'].includes(input.kind)) fail('invalid_request');
+  return { url: input.url, kind: input.kind };
+}
+
+/** Page/sitemap redirects are observations; discovery must check target robots first. */
+export async function fetchPublicDocument(input, adapters = {}) {
+  const value = validateDocumentInput(input);
+  return fetchDocument({ url: value.url }, adapters, value.kind);
+}
+
+async function fetchDocument(input, adapters, documentKind) {
   const supplied = validatePageImportInput(input);
   let url = validatePublicPageURL(supplied.url);
+  const initialHost = url.hostname;
   const { resolve = resolveAll, request = requestPinned, now = () => new Date(), signal: external,
     timeoutMs = PAGE_LIMITS.timeoutMs } = adapters;
   if (typeof resolve !== 'function' || typeof request !== 'function' || typeof now !== 'function'
@@ -191,7 +213,7 @@ export async function fetchPublicPage(input, adapters = {}) {
     const value = await abortRace(Promise.resolve().then(() => { guard(); return operation(); }), signal);
     guard(); return value;
   };
-  const visited = new Set(); let redirects = 0;
+  const visited = new Set(); let redirects = 0, requests = 0;
   try {
     while (true) {
       guard();
@@ -209,21 +231,29 @@ export async function fetchPublicPage(input, adapters = {}) {
         if (response && !responseClosed) { responseClosed = true; closeResponse(response); }
       };
       try {
-        const pending = Promise.resolve().then(() => { guard(); return request(url, { address, family, signal }); });
+        const pending = Promise.resolve().then(() => { guard(); requests++; return request(url, { address, family, signal, ...(documentKind ? { documentKind } : {}) }); });
         pending.then(value => { response = value; if (signal.aborted) closeOwned(); }, () => {});
         response = await within(() => pending);
         if (!response || !Number.isInteger(response.status)) fail('fetch_failed');
         const headers = readHeaders(response.headers);
         if ([301, 302, 303, 307, 308].includes(response.status)) {
-          if (redirects >= PAGE_LIMITS.redirects || !headers.get('location')) fail('redirect_limit');
+          if (redirects >= (documentKind === 'robots' ? 5 : PAGE_LIMITS.redirects) || !headers.get('location')) fail('redirect_limit');
           let target;
           try { target = new URL(headers.get('location'), url); } catch { fail('invalid_url'); }
-          url = validatePublicPageURL(target.href); redirects += 1;
+          const approved = validatePublicPageURL(target.href);
+          if (documentKind && approved.hostname !== initialHost) fail('outside_site');
+          if (documentKind && documentKind !== 'robots') return { kind: documentKind, url: url.href, status: response.status,
+            redirectTo: approved.href, text: '', bytes: 0, requests, fetchedAt: now().toISOString() };
+          url = approved; redirects += 1;
           continue;
+        }
+        if (documentKind === 'robots' && (response.status >= 400 && response.status <= 599 || response.status === 204)) {
+          return { kind: documentKind, url: url.href, status: response.status, text: '', bytes: 0, requests, fetchedAt: now().toISOString() };
         }
         if (response.status < 200 || response.status >= 300) fail('unsupported_content');
         const contentType = headers.get('content-type') ?? '';
-        if (!['text/html', 'application/xhtml+xml'].includes(contentType.split(';', 1)[0].trim().toLowerCase())) fail('unsupported_content');
+        const acceptedTypes = documentKind === 'robots' ? ['text/plain'] : documentKind === 'sitemap' ? ['application/xml', 'text/xml'] : ['text/html', 'application/xhtml+xml'];
+        if (!acceptedTypes.includes(contentType.split(';', 1)[0].trim().toLowerCase())) fail('unsupported_content');
         const charsets = [...contentType.matchAll(/;\s*charset\s*=\s*(?:"([^"]+)"|([^;\s]+))/gi)].map(match => (match[1] ?? match[2]).toLowerCase());
         if (charsets.length > 1 || charsets.some(charset => !['utf-8', 'utf8', 'us-ascii'].includes(charset))
           || headers.has('content-encoding') && headers.get('content-encoding').toLowerCase() !== 'identity') fail('unsupported_encoding');
@@ -259,6 +289,9 @@ export async function fetchPublicPage(input, adapters = {}) {
         const timestamp = now();
         if (!(timestamp instanceof Date) || !Number.isFinite(timestamp.getTime())) fail('fetch_failed');
         guard();
+        if (documentKind === 'sitemap') { try { parseSitemap(html); } catch { fail('invalid_sitemap'); } }
+        if (documentKind) return { kind: documentKind, url: url.href, text: html, bytes, status: response.status, requests,
+          headers: { 'content-type': contentType, 'x-robots-tag': headers.get('x-robots-tag') ?? null }, fetchedAt: timestamp.toISOString(), redirects };
         return { url: url.href, html, status: response.status,
           headers: { 'content-type': contentType, 'x-robots-tag': headers.get('x-robots-tag') ?? null },
           fetchedAt: timestamp.toISOString(), redirects };

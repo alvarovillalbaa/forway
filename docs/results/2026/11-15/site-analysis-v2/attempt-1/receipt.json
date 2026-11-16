@@ -1,0 +1,130 @@
+{
+  "passed": false,
+  "commands": [
+    {
+      "name": "node-version",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "code": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.004211005999991357,
+      "stdoutBytes": 8,
+      "stdoutSha256": "10f97d604f75b2e9b8fa9058d93a897ff33a60dd6a694fb92e95359ef815d09d",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "source-check",
+      "argv": [
+        "node",
+        "scripts/check.mjs"
+      ],
+      "code": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.9260292280000044,
+      "stdoutBytes": 172,
+      "stdoutSha256": "cd74955a394168294896d3784efeb183a4bbc4c2aedf51b087a53bd71676a8ca",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "focused-controls",
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/unit/site-crawl-v2.test.mjs",
+        "tests/unit/provider-answer-v2.test.mjs",
+        "tests/unit/provider-comparison-v2.test.mjs",
+        "tests/unit/site-report.test.mjs"
+      ],
+      "code": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.28532909799997697,
+      "stdoutBytes": 16684,
+      "stdoutSha256": "4700987bc9d2808a194ac981a026fc2984c99beddf9b8643d55f30d52f8f31fc",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "browser-tool",
+      "argv": [
+        "npm",
+        "install",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--save-exact",
+        "@playwright/test@1.61.1"
+      ],
+      "code": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 1.7248942869999837,
+      "stdoutBytes": 24,
+      "stdoutSha256": "c59541a7d8bfc9987c0aa47adf2cdd2858be8b66de5abc0331d5a6484ae63ab6",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "browser-install",
+      "argv": [
+        "/tmp/forway-site-analysis-v2-ley0zx93/playwright/node_modules/.bin/playwright",
+        "install",
+        "chromium"
+      ],
+      "code": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 10.302853378000009,
+      "stdoutBytes": 6828,
+      "stdoutSha256": "e4f7ffa04751cd8aa93e6fa0ac179f348eada441b97d956aab3b5d2ff2f88202",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "six-native-cases",
+      "argv": [
+        "node",
+        "tests/e2e/site-analysis-v2.mjs"
+      ],
+      "code": 1,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 35.641876379999985,
+      "stdoutBytes": 33275,
+      "stdoutSha256": "3655f9eac4805928c0b2b4c309c2f43ff4e1ad3752fb5baa844bbcdc761a1d67",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cleanup": true,
+  "serverClosed": true,
+  "storage": {
+    "freeBytes": 93074341888,
+    "requiredBytes": 36507222016,
+    "passed": true
+  },
+  "ownerProcessBaseline": [],
+  "error": "six-native-cases did not close successfully",
+  "server": {
+    "code": 0,
+    "groupAbsent": true,
+    "closedMarker": true
+  },
+  "sourceUnchanged": true,
+  "copiedSourceUnchanged": true,
+  "ownedProcessesRemaining": [],
+  "ownedProcessesAbsent": true
+}

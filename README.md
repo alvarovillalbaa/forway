@@ -1,12 +1,27 @@
 # Forway
 
+Last updated: 2026-11-15
+
 Create, analyze and improve content for search and AI answers.
 
 [Open Forway](https://forway.vercel.app) · [Delivery evidence](docs/results/2026/10-29/initial-delivery.md)
 
-An editorial workbench for auditing a real page, editing a content draft,
-exporting reviewed HTML/metadata and analyzing supplied answer evidence.
+An editorial workbench for discovering allowed website pages, auditing source,
+editing content drafts and comparing explicitly reviewed API answer cohorts.
 Built from the [Forway brief](docs/spec.md) in Alvaro's personal Notion.
+
+**Site analysis V2 — isolated source:** the URL-first interface now discovers
+same-host pages through robots, links and strict XML sitemaps, retaining explicit
+batch limits, refusals and a resumable frontier. Reports show exact page
+denominators, source-only agent signals, priorities and copyable prompts.
+Reviewed OpenAI/Anthropic/Google API comparisons use each caller's own key and
+exact model/query, retain native answers/usage/citations and separate failed or
+uncertain calls from successful-answer denominators. Page/draft workspaces,
+crawls and API comparisons have separate exports. All69 new T2 controls and six
+native desktop/390px journeys passed together at `286a88d` with authored upstream
+responses; see [the receipt](docs/results/2026/11-15/site-analysis-v2/result.md).
+This source is inactive: main and the hosted edition below remain unchanged.
+No real provider/model call or arbitrary-site crawl was executed.
 
 **Initial workbench published and hosted.** Vercel reports READY and the served
 index matches the initial source. The [77 Node fixture checks](docs/results/2026/11-04/local-node-checks.md)
@@ -31,6 +46,14 @@ Internet safety and shared persistence are still open.
 - **Audit** a public page URL, or import/paste its HTML. Findings describe source
   metadata, structure and answer/source signals. They do not measure indexing,
   rendered performance, rankings or answer-engine visibility.
+- **Discover website pages** on one exact hostname. Robots uncertainty stops
+  discovery; batch limits retain pending URLs. Export captured HTML/frontier and
+  reopen without network access; Resume checks policies again. An exhausted
+  discoverable frontier does not establish every page on a domain.
+- **Act on the report**: inspect SEO/answer/agent source check counts, review
+  intent-dependent findings and copy a concrete implementation prompt. Tasks
+  keep affected URLs and observations. A Markdown report can be downloaded;
+  untrusted supplied answers are inside literal fenced blocks.
 - **Create and improve** a content draft with metadata, a direct answer,
   body text, Q&A and citations. Export escaped HTML or a head snippet; compare
   the generated page against the source audit. Changes never write to a site.
@@ -38,6 +61,10 @@ Internet safety and shared persistence are still open.
   time and original answer alongside observed mentions and cited URLs. Counts
   use the supplied answer denominator for the selected brand/domain/competitor
   cohort; separate cohorts are never blended into a visibility metric.
+- **Compare API answers** only after reviewing up to5 queries ×3 chosen models.
+  Keys stay out of URLs/storage/exports; no server key is consumed. Unknown
+  acceptance is never automatically retried. API answers with no web tool are
+  distinct from consumer ChatGPT/Claude/Gemini or Google AI Overview visibility.
 - **Keep your work** through explicit workspace export/import, including
   incomplete drafts. Working state is in memory; no shared persistence or
   background synchronization is implied.
@@ -46,7 +73,11 @@ Internet safety and shared persistence are still open.
 
 - `public/`: dependency-free browser application and pure content/evidence logic.
 - `api/audit.mjs`: public-page import request boundary for a Node Vercel function.
-- `src/fetch-page.mjs`: validated, pinned, bounded public HTTP(S) page retrieval.
+- `api/crawl.mjs`: fixed page/robots/sitemap document profiles sharing the public
+  validated/pinned fetcher. `public/src/crawl.mjs` owns serial discovery/state.
+- `api/answer.mjs` and `src/provider-answer.mjs`: bounded same-origin JSON input,
+  fixed official provider targets and exact answer/usage/citation projection.
+- `src/fetch-page.mjs`: validated, pinned, bounded public HTTP(S) retrieval.
 - `tests/unit/`: 77 passing authored fixture cases under the
   [six-file and browser scope](docs/proposals/focused-checks.md). The
   [JSON receipt](docs/results/2026/11-04/local-node-checks.json) preserves raw TAP,
@@ -64,8 +95,10 @@ git diff --check
 The checker parses modules, resolves imports/assets and checks documents/JSON.
 It never imports product functions or runs tests, a server or browser. Live
 URL import additionally needs the deployed same-origin API; a static file
-server alone does not provide it. Shared PostgreSQL/Supabase persistence and
-chosen provider integrations remain part of the open full-product direction.
+server alone does not provide it. V2 rollout, live public/provider acceptance,
+hosted operational controls and shared PostgreSQL/Supabase persistence remain
+separate gates. The new answer route needs a compatible function duration;
+no hosted setting is changed by the isolated packet.
 
 The earlier Node status edition changed three documents among its 30 inputs,
 leaving 27 unchanged. The later browser packet adds isolated acceptance tooling

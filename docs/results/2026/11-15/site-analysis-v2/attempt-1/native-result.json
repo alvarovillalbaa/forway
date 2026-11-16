@@ -1,0 +1,1321 @@
+{
+  "passed": false,
+  "browserClosed": true,
+  "cases": [
+    {
+      "id": "F01-discovery",
+      "width": 1280,
+      "passed": true,
+      "contextClosed": true,
+      "requests": 9,
+      "denominator": {
+        "audited": 4,
+        "discovered": 6,
+        "refused": 1,
+        "redirected": 1
+      }
+    },
+    {
+      "id": "F02-batch-resume",
+      "width": 1280,
+      "passed": true,
+      "contextClosed": true,
+      "pages": 31,
+      "firstBatch": {
+        "requests": 25,
+        "done": 23,
+        "pending": 8
+      }
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "width": 1280,
+      "passed": true,
+      "contextClosed": true,
+      "lateFileReadFenced": true,
+      "restoredWithoutNetwork": true
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "width": 1280,
+      "passed": true,
+      "contextClosed": true,
+      "providerCalls": 6,
+      "success": 3,
+      "failed": 1,
+      "unknown": 2
+    },
+    {
+      "id": "F05-provider-cancel",
+      "width": 1280,
+      "passed": true,
+      "contextClosed": true,
+      "calls": 2,
+      "uncertainNotRetried": true
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "width": 390,
+      "passed": false,
+      "contextClosed": true,
+      "clipboard": {
+        "bytes": 1353,
+        "sha256": "86c9cf53b1726e2e0b1605eebd34a3070f24c10c1ddf7602803f0d045c158546"
+      },
+      "horizontalOverflow": false,
+      "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#site-report') to be visible\n    64 × locator resolved to hidden <section hidden=\"\" tabindex=\"-1\" id=\"site-report\" class=\"site-report\" aria-label=\"Single-page findings, evidence and prioritized improvements\"></section>\n\n    at /tmp/forway-site-analysis-v2-ley0zx93/source/tests/e2e/site-analysis-v2.mjs:73:144\n    at async nativeCase (/tmp/forway-site-analysis-v2-ley0zx93/source/tests/e2e/site-analysis-v2.mjs:33:90)\n    at async file:///tmp/forway-site-analysis-v2-ley0zx93/source/tests/e2e/site-analysis-v2.mjs:70:3"
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "responses": [
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200,
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/site-tools.css",
+      "status": 200,
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/icon.svg",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/app.mjs",
+      "status": 200,
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/content.mjs",
+      "status": 200,
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/workspace.mjs",
+      "status": 200,
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/audit.mjs",
+      "status": 200,
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/observations.mjs",
+      "status": 200,
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/report-view.mjs",
+      "status": 200,
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/agent-source.mjs",
+      "status": 200,
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/ui.mjs",
+      "status": 200,
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/site-tools.mjs",
+      "status": 200,
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/site-report.mjs",
+      "status": 200,
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/crawl.mjs",
+      "status": 200,
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/provider-comparison.mjs",
+      "status": 200,
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/robots.mjs",
+      "status": 200,
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/src/sitemap.mjs",
+      "status": 200,
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 314,
+      "sha256": "51bf47173dfdf90f49917827678a8c26e41af188397734ada68647f74b7942c7"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 736,
+      "sha256": "8262adbfe05b3cf3f03cc17b13f73ed48016e26e7cfeacc93468839cb25eaa7e"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 488,
+      "sha256": "f5eb0b0279aa1d31d984b003c079125eb62e6e84168def865ba7d636a565306f"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 564,
+      "sha256": "6bc11a602e5a4b7cdbe984a4c4aaa5a527366e6c1af5f543959d562ef975c513"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 574,
+      "sha256": "ba262ab43e5f039d0a3263fce54b85a949f97befc7c9439f565a91f8732360b8"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 200,
+      "sha256": "168111c5ee4a929c1efe34fa569d498d5cb70186e662e173b6644b04303f61a2"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 458,
+      "sha256": "6844c1195dbd448c88c0ad2ef1e0310e0bcdb70db2b508e3ca605b5e658da36a"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 466,
+      "sha256": "5f5c3976e696ffdb5eb78189d346c3ea7fdc4160bb8e9edfa0b812bfa1e2c166"
+    },
+    {
+      "id": "F01-discovery",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 564,
+      "sha256": "ffca7297b706fa5db382836200f8139d0cbdffade28a44dfb7add0f816a3f9e1"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/site-tools.css",
+      "status": 200,
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200,
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/icon.svg",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/app.mjs",
+      "status": 200,
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/audit.mjs",
+      "status": 200,
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/content.mjs",
+      "status": 200,
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/observations.mjs",
+      "status": 200,
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/ui.mjs",
+      "status": 200,
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/workspace.mjs",
+      "status": 200,
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/agent-source.mjs",
+      "status": 200,
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/report-view.mjs",
+      "status": 200,
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/site-tools.mjs",
+      "status": 200,
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/site-report.mjs",
+      "status": 200,
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/crawl.mjs",
+      "status": 200,
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/provider-comparison.mjs",
+      "status": 200,
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/robots.mjs",
+      "status": 200,
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/src/sitemap.mjs",
+      "status": 200,
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 159,
+      "sha256": "6ee2f2ff178384cb5688855b447bd04886896837e4c445017f13596227949ca9"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 553,
+      "sha256": "aef46a6b1d350357bc18522c5beca74d1063a225a7d139e1830b95057fdfb6b0"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 1846,
+      "sha256": "df5d0b01c5e5e6536e4cc8a61e4c10a994db2088e4fd39b441181cf47325dfe9"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "81e09399b42da08f04fc0a2eabe08fe300dd64a4e1dce65865a666208dda0fc2"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "94569139bfd12b4036389e2408a9afd411af49516feb305a404a7eb8edba732e"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "fa26245f778441b9985ec11b481cad37d4b46987e89f5f9e4de52bf57fcb6d3e"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "adfe317699df42e17ff998c8f701e4a2bcc64ed2c0a879f0e19f4ed40135603a"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "549753bc21859335402cafd9a99806d3202c0cb476c543f9ee7c255d48007409"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "90492485269c70eeb4ef6051f3d1c8fba74c6978a6939ffa8d7d1a211c74287b"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "9f8577e3069fed5a769105b197411a8ea4c91a56fe7a8f8cef996a36b0366059"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "4ff9ca627083465f641828898d2535263bd9a00f10a947c9ca6ed49e3662c21d"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 557,
+      "sha256": "dcf038702b2246970b24625de0c7feac3415ebe6ca27c33749a9d55dcf4f3105"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "c1bfb33f6989e5d8080dd70848f80d8acb1fd51d2cebdf3e72be98b1b12a9ee9"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "4bedbc99dfdd0fa8533a3bc378808e5305fda8ab908bf3a2693a3503babd93e4"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "ef46fe04cefb5992f62fe485024d9e235206775005da70561e020b27e02f0310"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "29d6d75a7806a617e35046694dca0245cb78d413370fab65b38c6291e5d9f12f"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "874bd539e95b1959f8a1d47fa5ce9e33d14f5bafdd705dc1808e116d20f1cbeb"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "cc8b92a868b51275f9ae9dd6e117e9852feaf2328ee802323267ae26933b2e26"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "22de25912b56b1dedbce69959d0c24b0665ae5c100b7fe2203d5da67660aa7ce"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "fdecb6ad8d14041b494bc71da724baa3c401dd30f48b153500f6621ab592ed94"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "c8707fa5151085ba6687f4eeeee8a7e4aef7a9c653ef2ca8066691b75c8258b0"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "f4a815865301d6c3e996236e8d92e6bb8d9116f146283551460dc8822277ca4c"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "ffe95c3db51632e00d5f7f01f9b09f474a75bc295917f8963623ce86e6bef129"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "59fd00aefb1ba029c02ab0785fb6a91e3047e08f5beeb3b2dbe61ecf30093d18"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 159,
+      "sha256": "2ce233eddd95ed5ae6221b34a4d936afaa765712045adf265fdafe2edb9cb7e4"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "f6e74c3cc3210d946b9232383ddae03e8ef6a8917e8664e33d18a9cd80cb5f64"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "040aefe185791b1e69f09f34b4f69ecd6895d5924a44958ec85ad5332ac55f81"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "e7e5548aeb049207559b19b44cab9446ce5bfc36bd8a264cb07bf69727ec2b40"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "9821f4216144fa1acaebfd9f3ab75e3562e6bd8ae5531e089bc18d75ad08836f"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "cdb43857c41dd8fd6a50a43ce747881597eb7127d5e88565f90da57d4cae15cc"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "670af06706ffaecbd50cf798e52714b5e7caccbc00f3e5c7f3f943ad2e3c08d1"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "37fa6ff700150a305c3bf72b0e73498f7e5865945fca5608cd52ff72df4abc3e"
+    },
+    {
+      "id": "F02-batch-resume",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "faa29415ac77a10d74ca7bf79144b823ba4978e402ee9f8377bcbfeb34dca4e6"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200,
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/site-tools.css",
+      "status": 200,
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/icon.svg",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/app.mjs",
+      "status": 200,
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/audit.mjs",
+      "status": 200,
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/content.mjs",
+      "status": 200,
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/workspace.mjs",
+      "status": 200,
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/ui.mjs",
+      "status": 200,
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/observations.mjs",
+      "status": 200,
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/site-report.mjs",
+      "status": 200,
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/agent-source.mjs",
+      "status": 200,
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/report-view.mjs",
+      "status": 200,
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/site-tools.mjs",
+      "status": 200,
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/crawl.mjs",
+      "status": 200,
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/provider-comparison.mjs",
+      "status": 200,
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/robots.mjs",
+      "status": 200,
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/src/sitemap.mjs",
+      "status": 200,
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 159,
+      "sha256": "b186f208473010476621763eaabf8e963b83f055ff49d655a6714e1df899156b"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 159,
+      "sha256": "539d71ae26ce55c1256a055ca1cc4741e402af8cd66f5c8949090eb363f3dc2c"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 553,
+      "sha256": "56c73149d5bb6f21e90aff40ba717ba2c9f4d2d163162db8f9abcd2cc4710940"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 355,
+      "sha256": "3cce3db1653d34eb03af59db4ca0f526a2b38ca9a0900dfbeba61255e1869439"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 314,
+      "sha256": "57712f738cc397bda2c4ff942644a109300ee62288c81abf5e21581b95c89ec0"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 736,
+      "sha256": "2bf8552c3c25af60e231149d442b8f41ddc41ec8178203aa3f8bdd511cdc6e23"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 488,
+      "sha256": "507ac1f037eee52086ec0c494213ad93bc58c2040c30f7f6ee3b315c8601de12"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 564,
+      "sha256": "09f5943995219e58d0b4965dba044100653f1ff53fdf96d647217047111cf91f"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 574,
+      "sha256": "d120860502dd2e28e358858ada65d67ed0e2d09c54f45f73b9c018df9d2dfd6a"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 200,
+      "sha256": "9c405412b3fffc9bdedbad1a4d2ff9de290b70eb42322a1fda9db724427120f0"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 458,
+      "sha256": "0ff2a7ecf20ac17a865abc97b4472385e1d52c3c45b18eb799285988dbe69424"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 466,
+      "sha256": "c7e72bc2c39e1d1ad1be23a82aa24a36590b6a2b59555a2c07855106511b797b"
+    },
+    {
+      "id": "F03-cancel-file-intent",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 564,
+      "sha256": "06f28a53dd6d3f23f6eecb1a98b26c32b2f0a174dd8be8b1a2ded7ebeaca16ec"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/site-tools.css",
+      "status": 200,
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200,
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/icon.svg",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/app.mjs",
+      "status": 200,
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/audit.mjs",
+      "status": 200,
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/content.mjs",
+      "status": 200,
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/observations.mjs",
+      "status": 200,
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/workspace.mjs",
+      "status": 200,
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/ui.mjs",
+      "status": 200,
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/agent-source.mjs",
+      "status": 200,
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/site-report.mjs",
+      "status": 200,
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/report-view.mjs",
+      "status": 200,
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/site-tools.mjs",
+      "status": 200,
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/crawl.mjs",
+      "status": 200,
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/provider-comparison.mjs",
+      "status": 200,
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/robots.mjs",
+      "status": 200,
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/src/sitemap.mjs",
+      "status": 200,
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 455,
+      "sha256": "5f848e8977212a159a903d8a32e694f9e9777ad4a73f5019df99d24cefb917ac"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 446,
+      "sha256": "ba5254e35fa5a5d1e5b80e4922c44e2875fd3d8cd51876d7fc0889e8aa0f7bbd"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 462,
+      "sha256": "a336a6e2af532ae0141608f60f2e4ce0648f06e23c29db459f5eef5032435949"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 482,
+      "sha256": "80ca34a55d590686281909aa4fa67c11e4383c55af59a14991a567a71b189355"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 293,
+      "sha256": "8ed0dc51116c0a89a6f071db8238bc4cf1676da39b2d5eba9ee362682c28d819"
+    },
+    {
+      "id": "F04-provider-cohorts",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 289,
+      "sha256": "1e2bdd084e6dd633fff9e3a5ec593ba6a0c5f5f7ac1e64f2daf693be0aefdcca"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200,
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/site-tools.css",
+      "status": 200,
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/icon.svg",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/app.mjs",
+      "status": 200,
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/content.mjs",
+      "status": 200,
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/audit.mjs",
+      "status": 200,
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/observations.mjs",
+      "status": 200,
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/ui.mjs",
+      "status": 200,
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/workspace.mjs",
+      "status": 200,
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/agent-source.mjs",
+      "status": 200,
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/site-report.mjs",
+      "status": 200,
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/report-view.mjs",
+      "status": 200,
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/site-tools.mjs",
+      "status": 200,
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/crawl.mjs",
+      "status": 200,
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/provider-comparison.mjs",
+      "status": 200,
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/sitemap.mjs",
+      "status": 200,
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/src/robots.mjs",
+      "status": 200,
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    {
+      "id": "F05-provider-cancel",
+      "url": "http://127.0.0.1:4173/api/answer",
+      "status": 200,
+      "bytes": 459,
+      "sha256": "e8db3abeb996a54f7c86c5e531f5b122e81fae392e345435f2b8c1c48dd55b95"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200,
+      "bytes": 28881,
+      "sha256": "cea7ff0e8b2821a6ae8eaf162019a52b092c6a94572613116ada308534a89934"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/site-tools.css",
+      "status": 200,
+      "bytes": 2742,
+      "sha256": "f477bda784179055401059947187e9f434043bda2e762649c83bdcaa3d55ea14"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/icon.svg",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "eeb8b03593da3e77614783e3f409cded6128baa842b493013e3daa4fffcb7b36"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "bytes": 20876,
+      "sha256": "738353717a7e515fbd8e9a183c566f14c83e83f642a81e60b8b8ce98ad1a0927"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/app.mjs",
+      "status": 200,
+      "bytes": 35959,
+      "sha256": "b51b3bea3ce0f8c55d201d8416adc58cf5f1a9617f3dc4e48e18c4e21cea94de"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/audit.mjs",
+      "status": 200,
+      "bytes": 14928,
+      "sha256": "246320fbcf60f3fa14ddcae40e24f6490699a37f56019dcf2b932b88ac58ec80"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/content.mjs",
+      "status": 200,
+      "bytes": 5727,
+      "sha256": "3ce6b54a80ffa33e8a561026dddf04b67e7d6be1d378ee5ab3865094c9df4a5e"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/ui.mjs",
+      "status": 200,
+      "bytes": 1584,
+      "sha256": "eeec2f6953ac697066d7801ae3227d59c921d554da1916b8f1eb35c3a9c44c2c"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/observations.mjs",
+      "status": 200,
+      "bytes": 7497,
+      "sha256": "f3b9987e1dce2d572f3938a5b39b28d10fccdbaf5c725e7f1ef2ae60b9c21b77"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/workspace.mjs",
+      "status": 200,
+      "bytes": 3956,
+      "sha256": "aedb087a3d7de3a557ba4c6c5b5f5124bc5f69b6e356f5837af6b9b6823ec7d0"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/agent-source.mjs",
+      "status": 200,
+      "bytes": 6128,
+      "sha256": "cb84facbcd05109b7d427b6ab8d75d4d841086b19a79066126bf4d28fced2534"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/site-report.mjs",
+      "status": 200,
+      "bytes": 8600,
+      "sha256": "fb6280da4e664a488b7e82ca4670e7db57d86eea2d290cbf32b1b37a1b37cf34"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/report-view.mjs",
+      "status": 200,
+      "bytes": 7793,
+      "sha256": "f04201bd4718a906cdd856dfe11e64f4b59bf7c53717f1c14a9923796d9300c7"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/site-tools.mjs",
+      "status": 200,
+      "bytes": 19144,
+      "sha256": "87b87a9ab7ed3ae73416d8338b092cca35553d15a41eb9fcf65d5271ac739112"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/crawl.mjs",
+      "status": 200,
+      "bytes": 19185,
+      "sha256": "5d5b79438c7213d218c18dc6d4821b97c137e0f57a7282d2657985eff410f431"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/provider-comparison.mjs",
+      "status": 200,
+      "bytes": 8043,
+      "sha256": "0940c04382ecfa49ea491ad1329476b0136b9395a73345f56c7ef858912f7f17"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/robots.mjs",
+      "status": 200,
+      "bytes": 3442,
+      "sha256": "fd9fa3d651c45f54991b96139a0abbd0b7fb10179e949bd335d92b58267497a0"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/src/sitemap.mjs",
+      "status": 200,
+      "bytes": 5678,
+      "sha256": "e3925cf769c6fc0952e528f19a5f0c0d8872c6354dd0babb6633f3587225d5b5"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 314,
+      "sha256": "1fbfa8c3333a4e1748801c8471552ab1a769a75319e2bff0d6b12324ffa16032"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 488,
+      "sha256": "e40f53e8293163ed826987b7c2ec9f0c1928fdb81fb7f65289f9d784a18b1ca4"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 564,
+      "sha256": "6190dc5c1efa1a447943ecdc8ba069b281e347b4eea1a7ad5e6bece3a83815a4"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 574,
+      "sha256": "863d31e74ce31853776ce8513bb99356212416a8d1d17a337712329dfd6fc00f"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 200,
+      "sha256": "0eafe56c0c2de1730b497ec29e9796b2f5949197e6770fde280d5760b717a190"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 458,
+      "sha256": "4458176401faf6ea64d173dfe2019507ce9ab76f7cb0ee213ee98dbf6fb4fc5e"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 466,
+      "sha256": "5abfa6bcf5bd1887262e229814046b35d39c36cbb5ed810666111d5ae01fa2c3"
+    },
+    {
+      "id": "F06-390-keyboard-clipboard",
+      "url": "http://127.0.0.1:4173/api/crawl",
+      "status": 200,
+      "bytes": 564,
+      "sha256": "ad72482ce16beee518194060faa39ab30670cdc6a2cca57d62045a8d9ae5bbe0"
+    }
+  ],
+  "chromium": "149.0.7827.55",
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#site-report') to be visible\n    64 × locator resolved to hidden <section hidden=\"\" tabindex=\"-1\" id=\"site-report\" class=\"site-report\" aria-label=\"Single-page findings, evidence and prioritized improvements\"></section>\n\n    at /tmp/forway-site-analysis-v2-ley0zx93/source/tests/e2e/site-analysis-v2.mjs:73:144\n    at async nativeCase (/tmp/forway-site-analysis-v2-ley0zx93/source/tests/e2e/site-analysis-v2.mjs:33:90)\n    at async file:///tmp/forway-site-analysis-v2-ley0zx93/source/tests/e2e/site-analysis-v2.mjs:70:3"
+}

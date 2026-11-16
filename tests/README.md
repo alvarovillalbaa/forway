@@ -1,5 +1,22 @@
 # Forway test scopes
 
+Last updated: 2026-11-15
+
+The isolated [V2 packet](../docs/results/2026/11-15/site-analysis-v2/result.md)
+passed69 new controls and six native journeys together at286a88d. D01–D21 cover
+robots/XML/pinned-document profiles/crawler state; P01–P21 cover fixed provider
+adapters and the answer API; M01–M15 cover reviewed plans, exact denominators,
+credential isolation and uncertain acceptance. The69 count also includes
+`unit/site-report.test.mjs`'s twelve T2 identities V2-R01–R12 for source-report
+denominators, grouped priorities, partial/failed/refused coverage, domain/query/
+engine/cohort isolation, immutable evidence, retained supplied-source URLs and
+literal Markdown export. The six native cases use actual DOM, loopback HTTP,
+downloads, file chooser, keyboard and clipboard with authored upstream
+DNS/HTTP/provider responses. They do not establish real public sockets,
+provider/model/key behavior or hosted V2 acceptance. The first F06 driver failure
+remains failed and retained; the changed driver accepted the real confirmation.
+No earlier closed packet was rerun for the new report source.
+
 The earlier77 Node fixture identities and eight hosted browser journeys are
 closed at their recorded sources. Do not replay them for new transport checks.
 

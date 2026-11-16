@@ -1,0 +1,214 @@
+{
+  "format": "forway-comparison-v1",
+  "plan": {
+    "cohort": {
+      "brand": "Cedar",
+      "domain": "owned.example.com",
+      "competitors": []
+    },
+    "queries": [
+      "First exact query",
+      "Second exact query"
+    ],
+    "models": [
+      {
+        "provider": "openai",
+        "model": "authored-gpt",
+        "mode": "ungrounded"
+      },
+      {
+        "provider": "anthropic",
+        "model": "authored-claude",
+        "mode": "ungrounded"
+      },
+      {
+        "provider": "google",
+        "model": "authored-gemini",
+        "mode": "ungrounded"
+      }
+    ]
+  },
+  "cells": [
+    {
+      "provider": "openai",
+      "model": "authored-gpt",
+      "mode": "ungrounded",
+      "query": "First exact query",
+      "status": "success",
+      "reason": null,
+      "result": {
+        "provider": "openai",
+        "model": "authored-gpt",
+        "mode": "ungrounded",
+        "query": "First exact query",
+        "answer": "Cedar is an authored example. See https://owned.example.com/about",
+        "citations": [
+          {
+            "url": "https://owned.example.com/",
+            "title": "Authored source"
+          }
+        ],
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 7,
+          "total_tokens": 18
+        },
+        "reportedModel": "authored-gpt-snapshot",
+        "status": "success",
+        "reason": null,
+        "upstreamStatus": 200,
+        "capturedAt": "2026-11-15T23:17:07.231Z"
+      },
+      "startedAt": "2026-11-15T23:17:07.219Z",
+      "finishedAt": "2026-11-15T23:17:07.235Z"
+    },
+    {
+      "provider": "anthropic",
+      "model": "authored-claude",
+      "mode": "ungrounded",
+      "query": "First exact query",
+      "status": "success",
+      "reason": null,
+      "result": {
+        "provider": "anthropic",
+        "model": "authored-claude",
+        "mode": "ungrounded",
+        "query": "First exact query",
+        "answer": "Cedar is an authored example. See https://owned.example.com/about",
+        "citations": [
+          {
+            "url": "https://owned.example.com/",
+            "title": "Authored source"
+          }
+        ],
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 7
+        },
+        "reportedModel": "authored-claude-snapshot",
+        "status": "success",
+        "reason": null,
+        "upstreamStatus": 200,
+        "capturedAt": "2026-11-15T23:17:07.249Z"
+      },
+      "startedAt": "2026-11-15T23:17:07.244Z",
+      "finishedAt": "2026-11-15T23:17:07.252Z"
+    },
+    {
+      "provider": "google",
+      "model": "authored-gemini",
+      "mode": "ungrounded",
+      "query": "First exact query",
+      "status": "success",
+      "reason": null,
+      "result": {
+        "provider": "google",
+        "model": "authored-gemini",
+        "mode": "ungrounded",
+        "query": "First exact query",
+        "answer": "Cedar is an authored example. See https://owned.example.com/about",
+        "citations": [
+          {
+            "url": "https://owned.example.com/",
+            "title": null
+          }
+        ],
+        "usage": {
+          "promptTokenCount": 11,
+          "candidatesTokenCount": 7,
+          "totalTokenCount": 18
+        },
+        "reportedModel": "authored-gemini-snapshot",
+        "status": "success",
+        "reason": null,
+        "upstreamStatus": 200,
+        "capturedAt": "2026-11-15T23:17:07.257Z"
+      },
+      "startedAt": "2026-11-15T23:17:07.253Z",
+      "finishedAt": "2026-11-15T23:17:07.259Z"
+    },
+    {
+      "provider": "openai",
+      "model": "authored-gpt",
+      "mode": "ungrounded",
+      "query": "Second exact query",
+      "status": "unknown",
+      "reason": "provider_response_incomplete",
+      "result": {
+        "provider": "openai",
+        "model": "authored-gpt",
+        "mode": "ungrounded",
+        "query": "Second exact query",
+        "answer": "Cedar is an authored example. See https://owned.example.com/about",
+        "citations": [
+          {
+            "url": "https://owned.example.com/",
+            "title": "Authored source"
+          }
+        ],
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 7,
+          "total_tokens": 18
+        },
+        "reportedModel": "authored-gpt-snapshot",
+        "status": "unknown",
+        "reason": "provider_response_incomplete",
+        "upstreamStatus": 200,
+        "capturedAt": "2026-11-15T23:17:07.263Z"
+      },
+      "startedAt": "2026-11-15T23:17:07.260Z",
+      "finishedAt": "2026-11-15T23:17:07.265Z"
+    },
+    {
+      "provider": "anthropic",
+      "model": "authored-claude",
+      "mode": "ungrounded",
+      "query": "Second exact query",
+      "status": "unknown",
+      "reason": "provider_request_not_completed",
+      "result": {
+        "provider": "anthropic",
+        "model": "authored-claude",
+        "mode": "ungrounded",
+        "query": "Second exact query",
+        "status": "unknown",
+        "reason": "provider_request_not_completed",
+        "capturedAt": "2026-11-15T23:17:07.269Z",
+        "upstreamStatus": 503,
+        "answer": "",
+        "citations": [],
+        "usage": null,
+        "reportedModel": null
+      },
+      "startedAt": "2026-11-15T23:17:07.266Z",
+      "finishedAt": "2026-11-15T23:17:07.272Z"
+    },
+    {
+      "provider": "google",
+      "model": "authored-gemini",
+      "mode": "ungrounded",
+      "query": "Second exact query",
+      "status": "failed",
+      "reason": "provider_request_not_completed",
+      "result": {
+        "provider": "google",
+        "model": "authored-gemini",
+        "mode": "ungrounded",
+        "query": "Second exact query",
+        "status": "failed",
+        "reason": "provider_request_not_completed",
+        "capturedAt": "2026-11-15T23:17:07.276Z",
+        "upstreamStatus": 403,
+        "answer": "",
+        "citations": [],
+        "usage": null,
+        "reportedModel": null
+      },
+      "startedAt": "2026-11-15T23:17:07.273Z",
+      "finishedAt": "2026-11-15T23:17:07.277Z"
+    }
+  ],
+  "source": "direct_provider_api",
+  "grounding": "no_web_tool_requested"
+}

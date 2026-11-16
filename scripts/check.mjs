@@ -25,4 +25,12 @@ for (const path of ['README.md', 'AGENTS.md', 'docs/spec.md', 'docs/architecture
 }
 const html = await readFile(new URL('public/index.html', root), 'utf8');
 for (const match of html.matchAll(/(?:src|href)="(\/[^"#]+)"/g)) await access(new URL(`public${match[1]}`, root));
-console.log(`${modules} modules parsed; ${imports} relative imports and HTML assets resolve. JSON/documents checked. No product module or test executed.`);
+const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+if (new Set(ids).size !== ids.length) throw new Error('Duplicate HTML ID');
+const uiModules = await Promise.all(['public/src/app.mjs', 'public/src/site-tools.mjs'].map(path => readFile(new URL(path, root), 'utf8')));
+const references = uiModules.flatMap(source => [...source.matchAll(/\$\('([^']+)'\)/g)].map(match => match[1]));
+const created = uiModules.flatMap(source => [...source.matchAll(/\bid:\s*'([^']+)'/g)].map(match => match[1]));
+const declared = new Set([...ids, ...created]);
+for (const id of references) if (!declared.has(id)) throw new Error(`Missing literal app target: ${id}`);
+for (const match of html.matchAll(/\bfor="([^"]+)"/g)) if (!ids.includes(match[1])) throw new Error(`Missing label target: ${match[1]}`);
+console.log(`${modules} modules parsed; ${imports} relative imports and HTML assets resolve; ${new Set(references).size} literal app targets and HTML labels resolve. JSON/documents checked. No product module or test executed.`);

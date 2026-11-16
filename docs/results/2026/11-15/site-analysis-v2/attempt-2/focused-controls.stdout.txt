@@ -1,0 +1,424 @@
+TAP version 13
+# Subtest: P01 one OpenAI request uses fixed HTTPS, Bearer and reviewed query without site/brand injection
+ok 1 - P01 one OpenAI request uses fixed HTTPS, Bearer and reviewed query without site/brand injection
+  ---
+  duration_ms: 50.01595
+  type: 'test'
+  ...
+# Subtest: P02 Anthropic is separate, version-pinned and can receive only its reviewed workspace ID
+ok 2 - P02 Anthropic is separate, version-pinned and can receive only its reviewed workspace ID
+  ---
+  duration_ms: 1.262726
+  type: 'test'
+  ...
+# Subtest: P03 Google uses its own header, fixed generateContent path and no URL key
+ok 3 - P03 Google uses its own header, fixed generateContent path and no URL key
+  ---
+  duration_ms: 1.157077
+  type: 'test'
+  ...
+# Subtest: P04 all projections retain exact query, native usage, citations, capture and requested/reported models
+ok 4 - P04 all projections retain exact query, native usage, citations, capture and requested/reported models
+  ---
+  duration_ms: 3.786357
+  type: 'test'
+  ...
+# Subtest: P05 incomplete responses keep available answer and unknown denominators
+ok 5 - P05 incomplete responses keep available answer and unknown denominators
+  ---
+  duration_ms: 1.595432
+  type: 'test'
+  ...
+# Subtest: P06 refused, empty and malformed response shapes never become success or zero visibility
+ok 6 - P06 refused, empty and malformed response shapes never become success or zero visibility
+  ---
+  duration_ms: 2.842449
+  type: 'test'
+  ...
+# Subtest: P07 4xx is failed, 5xx unknown, neither retries or leaks upstream error text
+ok 7 - P07 4xx is failed, 5xx unknown, neither retries or leaks upstream error text
+  ---
+  duration_ms: 1.531101
+  type: 'test'
+  ...
+# Subtest: P08 lost transport acceptance stays unknown without resending a credential
+ok 8 - P08 lost transport acceptance stays unknown without resending a credential
+  ---
+  duration_ms: 0.401917
+  type: 'test'
+  ...
+# Subtest: P09 malformed UTF-8, invalid JSON and oversized provider bodies fail closed
+ok 9 - P09 malformed UTF-8, invalid JSON and oversized provider bodies fail closed
+  ---
+  duration_ms: 1.860421
+  type: 'test'
+  ...
+# Subtest: P10 credential echoes in answers, usage or metadata are refused and never returned
+ok 10 - P10 credential echoes in answers, usage or metadata are refused and never returned
+  ---
+  duration_ms: 1.222952
+  type: 'test'
+  ...
+# Subtest: P11 unsupported providers, model path injection, grounding and credential whitespace never dispatch
+ok 11 - P11 unsupported providers, model path injection, grounding and credential whitespace never dispatch
+  ---
+  duration_ms: 0.720165
+  type: 'test'
+  ...
+# Subtest: P12 getters and extra credential/provider fields cannot be serialized or forwarded
+ok 12 - P12 getters and extra credential/provider fields cannot be serialized or forwarded
+  ---
+  duration_ms: 0.27677
+  type: 'test'
+  ...
+# Subtest: P13 explicit cancellation before acceptance makes zero transport requests
+ok 13 - P13 explicit cancellation before acceptance makes zero transport requests
+  ---
+  duration_ms: 0.558641
+  type: 'test'
+  ...
+# Subtest: P14 a stalled body cancels at the bounded deadline and does not retry
+ok 14 - P14 a stalled body cancels at the bounded deadline and does not retry
+  ---
+  duration_ms: 13.294368
+  type: 'test'
+  ...
+# Subtest: P15 unexpected tools/grounding are not counted as an ordinary ungrounded completion
+ok 15 - P15 unexpected tools/grounding are not counted as an ordinary ungrounded completion
+  ---
+  duration_ms: 1.069703
+  type: 'test'
+  ...
+# Subtest: P16 same-origin handler passes one validated own-key payload; response has no credentials
+ok 16 - P16 same-origin handler passes one validated own-key payload; response has no credentials
+  ---
+  duration_ms: 1.353156
+  type: 'test'
+  ...
+# Subtest: P17 foreign, missing and cross-site origins are refused before a provider request
+ok 17 - P17 foreign, missing and cross-site origins are refused before a provider request
+  ---
+  duration_ms: 0.484141
+  type: 'test'
+  ...
+# Subtest: P18 unsupported method, malformed/oversized body and server-key substitution are refused
+ok 18 - P18 unsupported method, malformed/oversized body and server-key substitution are refused
+  ---
+  duration_ms: 1.31261
+  type: 'test'
+  ...
+# Subtest: P19 a stream exceeding body bytes is stopped before invocation
+ok 19 - P19 a stream exceeding body bytes is stopped before invocation
+  ---
+  duration_ms: 0.556758
+  type: 'test'
+  ...
+# Subtest: P20 an error after dispatch stays uncertain and hides upstream details
+ok 20 - P20 an error after dispatch stays uncertain and hides upstream details
+  ---
+  duration_ms: 0.465025
+  type: 'test'
+  ...
+# Subtest: P21 malformed scalar queries are rejected before dispatch and malformed scalar answers remain unknown
+ok 21 - P21 malformed scalar queries are rejected before dispatch and malformed scalar answers remain unknown
+  ---
+  duration_ms: 0.599308
+  type: 'test'
+  ...
+# Subtest: M01 review builds a maximum5×3 exact matrix and makes no provider request
+ok 22 - M01 review builds a maximum5×3 exact matrix and makes no provider request
+  ---
+  duration_ms: 6.560014
+  type: 'test'
+  ...
+# Subtest: M02 oversized/duplicate queries, repeated providers, extra fields and grounding are rejected
+ok 23 - M02 oversized/duplicate queries, repeated providers, extra fields and grounding are rejected
+  ---
+  duration_ms: 0.737959
+  type: 'test'
+  ...
+# Subtest: M03 each reviewed cell dispatches once, with only that provider credential and exact query
+ok 24 - M03 each reviewed cell dispatches once, with only that provider credential and exact query
+  ---
+  duration_ms: 9.56503
+  type: 'test'
+  ...
+# Subtest: M04 keys and workspace routing never enter review, cells or exports
+ok 25 - M04 keys and workspace routing never enter review, cells or exports
+  ---
+  duration_ms: 2.371974
+  type: 'test'
+  ...
+# Subtest: M05 uncertain acceptance is not retried by another Run invocation
+ok 26 - M05 uncertain acceptance is not retried by another Run invocation
+  ---
+  duration_ms: 0.562789
+  type: 'test'
+  ...
+# Subtest: M06 cancellation retains unknown active and pending unstarted cells; explicit resume sends only pending
+ok 27 - M06 cancellation retains unknown active and pending unstarted cells; explicit resume sends only pending
+  ---
+  duration_ms: 0.976277
+  type: 'test'
+  ...
+# Subtest: M07 disposal fences late answers and no post-disposal rendering is requested
+ok 28 - M07 disposal fences late answers and no post-disposal rendering is requested
+  ---
+  duration_ms: 0.83443
+  type: 'test'
+  ...
+# Subtest: M08 wrong provider/model/query/mode replies cannot enter another cohort
+ok 29 - M08 wrong provider/model/query/mode replies cannot enter another cohort
+  ---
+  duration_ms: 1.784268
+  type: 'test'
+  ...
+# Subtest: M09 incomplete partial answers stay available while excluded from success rates
+ok 30 - M09 incomplete partial answers stay available while excluded from success rates
+  ---
+  duration_ms: 0.689408
+  type: 'test'
+  ...
+# Subtest: M10 mentions, literal answer URLs and native citation URLs use distinct successful-answer denominators
+ok 31 - M10 mentions, literal answer URLs and native citation URLs use distinct successful-answer denominators
+  ---
+  duration_ms: 2.828593
+  type: 'test'
+  ...
+# Subtest: M11 absent, failed and unknown answers have no manufactured zero-percentage visibility
+ok 32 - M11 absent, failed and unknown answers have no manufactured zero-percentage visibility
+  ---
+  duration_ms: 0.558852
+  type: 'test'
+  ...
+# Subtest: M12 model aliases and inert original answer text are preserved in exports
+ok 33 - M12 model aliases and inert original answer text are preserved in exports
+  ---
+  duration_ms: 0.845912
+  type: 'test'
+  ...
+# Subtest: M13 missing credentials dispatch nothing; malformed scalar answers and echoed keys remain unknown
+ok 34 - M13 missing credentials dispatch nothing; malformed scalar answers and echoed keys remain unknown
+  ---
+  duration_ms: 1.229674
+  type: 'test'
+  ...
+# Subtest: M14 mutated caller inputs or exported snapshots cannot rewrite internal reviewed cells
+ok 35 - M14 mutated caller inputs or exported snapshots cannot rewrite internal reviewed cells
+  ---
+  duration_ms: 0.793273
+  type: 'test'
+  ...
+# Subtest: M15 a validated same-origin rejection before a provider call is failed, not an uncertain provider outcome
+ok 36 - M15 a validated same-origin rejection before a provider call is failed, not an uncertain provider outcome
+  ---
+  duration_ms: 0.601823
+  type: 'test'
+  ...
+# Subtest: D01 matching case-insensitive groups merge; exact Forway groups override wildcard
+ok 37 - D01 matching case-insensitive groups merge; exact Forway groups override wildcard
+  ---
+  duration_ms: 3.270775
+  type: 'test'
+  ...
+# Subtest: D02 longest octet rule and equivalent allow win, with query and exact-end semantics
+ok 38 - D02 longest octet rule and equivalent allow win, with query and exact-end semantics
+  ---
+  duration_ms: 2.213455
+  type: 'test'
+  ...
+# Subtest: D03 UTF-8 and unreserved escaping normalize; reserved escaped slashes stay distinct
+ok 39 - D03 UTF-8 and unreserved escaping normalize; reserved escaped slashes stay distinct
+  ---
+  duration_ms: 0.510391
+  type: 'test'
+  ...
+# Subtest: D04 malformed lines do not erase parseable policy, empty groups allow, robots is implicit
+ok 40 - D04 malformed lines do not erase parseable policy, empty groups allow, robots is implicit
+  ---
+  duration_ms: 0.361951
+  type: 'test'
+  ...
+# Subtest: D05 parser handles more than500KiB and refuses beyond the oneMiB boundary
+ok 41 - D05 parser handles more than500KiB and refuses beyond the oneMiB boundary
+  ---
+  duration_ms: 36.019732
+  type: 'test'
+  ...
+# Subtest: D06 XML URL sets and indexes retain entity-escaped queries and all locations
+ok 42 - D06 XML URL sets and indexes retain entity-escaped queries and all locations
+  ---
+  duration_ms: 3.982894
+  type: 'test'
+  ...
+# Subtest: D07 malformed XML, DTD/entities, duplicate loc, unsafe URLs and unsupported extensions fail
+ok 43 - D07 malformed XML, DTD/entities, duplicate loc, unsafe URLs and unsupported extensions fail
+  ---
+  duration_ms: 1.460478
+  type: 'test'
+  ...
+# Subtest: D08 prefixed namespaces and comments are parsed without any resource expansion
+ok 44 - D08 prefixed namespaces and comments are parsed without any resource expansion
+  ---
+  duration_ms: 0.408459
+  type: 'test'
+  ...
+# Subtest: D09 document profiles reuse pinned policy and preserve the HTML-only legacy result
+ok 45 - D09 document profiles reuse pinned policy and preserve the HTML-only legacy result
+  ---
+  duration_ms: 15.50649
+  type: 'test'
+  ...
+# Subtest: D10 page redirect is observed without fetching it or a foreign host
+ok 46 - D10 page redirect is observed without fetching it or a foreign host
+  ---
+  duration_ms: 1.903582
+  type: 'test'
+  ...
+# Subtest: D11 robots follows five same-host redirects with original public pinning
+ok 47 - D11 robots follows five same-host redirects with original public pinning
+  ---
+  duration_ms: 1.173559
+  type: 'test'
+  ...
+# Subtest: D12 sitemap DTD, malformed body, duplicate critical headers and nonpublic DNS are rejected
+ok 48 - D12 sitemap DTD, malformed body, duplicate critical headers and nonpublic DNS are rejected
+  ---
+  duration_ms: 1.53021
+  type: 'test'
+  ...
+# Subtest: D13 URL normalization preserves queries, removes fragments and refuses credentials/ports
+ok 49 - D13 URL normalization preserves queries, removes fragments and refuses credentials/ports
+  ---
+  duration_ms: 0.313049
+  type: 'test'
+  ...
+# Subtest: D14 serial discovery deduplicates, honors robots and drains all retained sitemap/HTML URLs
+ok 50 - D14 serial discovery deduplicates, honors robots and drains all retained sitemap/HTML URLs
+  ---
+  duration_ms: 3.902214
+  type: 'test'
+  ...
+# Subtest: D15 robots outage preserves a resumable frontier without a page request or anonymous permission
+ok 51 - D15 robots outage preserves a resumable frontier without a page request or anonymous permission
+  ---
+  duration_ms: 0.496204
+  type: 'test'
+  ...
+# Subtest: D16 explicit request budgets pause, preserve remaining URLs and resume with fresh policies
+ok 52 - D16 explicit request budgets pause, preserve remaining URLs and resume with fresh policies
+  ---
+  duration_ms: 3.825809
+  type: 'test'
+  ...
+# Subtest: D17 frontier backpressure retains expansion cursors instead of taking a hidden page sample
+ok 53 - D17 frontier backpressure retains expansion cursors instead of taking a hidden page sample
+  ---
+  duration_ms: 1.580003
+  type: 'test'
+  ...
+# Subtest: D18 cancellation fences a late page result and permits an explicit retry
+ok 54 - D18 cancellation fences a late page result and permits an explicit retry
+  ---
+  duration_ms: 1.242448
+  type: 'test'
+  ...
+# Subtest: D19 restored source cannot supply cached robot authority or silently skip frontier entries
+ok 55 - D19 restored source cannot supply cached robot authority or silently skip frontier entries
+  ---
+  duration_ms: 0.427294
+  type: 'test'
+  ...
+# Subtest: D20 crawl handler admits only URL/kind and exposes no caller transport or headers
+ok 56 - D20 crawl handler admits only URL/kind and exposes no caller transport or headers
+  ---
+  duration_ms: 1.010331
+  type: 'test'
+  ...
+# Subtest: D21 XML declarations and close tags must be syntactically well formed
+ok 57 - D21 XML declarations and close tags must be syntactically well formed
+  ---
+  duration_ms: 0.457401
+  type: 'test'
+  ...
+# Subtest: V2-R01 single-page counts keep AI visibility unmeasured and optional agent interfaces absent
+ok 58 - V2-R01 single-page counts keep AI visibility unmeasured and optional agent interfaces absent
+  ---
+  duration_ms: 3.62994
+  type: 'test'
+  ...
+# Subtest: V2-R02 grouped tasks preserve exact affected URLs and prioritize failures before optional patterns
+ok 59 - V2-R02 grouped tasks preserve exact affected URLs and prioritize failures before optional patterns
+  ---
+  duration_ms: 1.417407
+  type: 'test'
+  ...
+# Subtest: V2-R03 cancelled/failed/refused URL counts do not become analyzed pages or complete coverage
+ok 60 - V2-R03 cancelled/failed/refused URL counts do not become analyzed pages or complete coverage
+  ---
+  duration_ms: 0.885557
+  type: 'test'
+  ...
+# Subtest: V2-R04 impossible coverage, duplicate pages and foreign-host mixing fail without a partial report
+ok 61 - V2-R04 impossible coverage, duplicate pages and foreign-host mixing fail without a partial report
+  ---
+  duration_ms: 1.443576
+  type: 'test'
+  ...
+# Subtest: V2-R05 exact prompts, engines and competitor cohorts stay separate in answer denominators
+ok 62 - V2-R05 exact prompts, engines and competitor cohorts stay separate in answer denominators
+  ---
+  duration_ms: 6.220976
+  type: 'test'
+  ...
+# Subtest: V2-R06 unrelated and lookalike domains are excluded rather than improving this site’s visibility
+ok 63 - V2-R06 unrelated and lookalike domains are excluded rather than improving this site’s visibility
+  ---
+  duration_ms: 0.427605
+  type: 'test'
+  ...
+# Subtest: V2-R07 brand mentions and explicit owned URL denominators remain distinct
+ok 64 - V2-R07 brand mentions and explicit owned URL denominators remain distinct
+  ---
+  duration_ms: 0.80219
+  type: 'test'
+  ...
+# Subtest: V2-R08 source facts and counts are detached without freezing or changing caller evidence
+ok 65 - V2-R08 source facts and counts are detached without freezing or changing caller evidence
+  ---
+  duration_ms: 0.842395
+  type: 'test'
+  ...
+# Subtest: V2-R09 imported HTML keeps its source kind and nonstandard source URL port without claiming a fetch
+ok 66 - V2-R09 imported HTML keeps its source kind and nonstandard source URL port without claiming a fetch
+  ---
+  duration_ms: 0.525469
+  type: 'test'
+  ...
+# Subtest: V2-R10 Markdown fences preserve malicious-looking original answers as literal source
+ok 67 - V2-R10 Markdown fences preserve malicious-looking original answers as literal source
+  ---
+  duration_ms: 0.763286
+  type: 'test'
+  ...
+# Subtest: V2-R11 wrong or spoofed facts and credentialed report links are refused
+ok 68 - V2-R11 wrong or spoofed facts and credentialed report links are refused
+  ---
+  duration_ms: 0.517905
+  type: 'test'
+  ...
+# Subtest: V2-R12 agent source gaps request rendered validation without requiring unoffered form/control interfaces
+ok 69 - V2-R12 agent source gaps request rendered validation without requiring unoffered form/control interfaces
+  ---
+  duration_ms: 0.287732
+  type: 'test'
+  ...
+1..69
+# tests 69
+# suites 0
+# pass 69
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 228.83397

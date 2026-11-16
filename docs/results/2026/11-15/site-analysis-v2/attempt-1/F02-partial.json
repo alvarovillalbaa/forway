@@ -1,0 +1,665 @@
+{
+  "format": "forway-crawl-v1",
+  "seed": "https://many.example.com/",
+  "state": "paused",
+  "reason": "request_limit",
+  "rows": [
+    {
+      "url": "https://many.example.com/",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p0",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p1",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p2",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p3",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p4",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p5",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p6",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p7",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p8",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p9",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p10",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p11",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p12",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p13",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p14",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p15",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p16",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p17",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p18",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p19",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p20",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p21",
+      "status": "done",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p22",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p23",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p24",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p25",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p26",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p27",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p28",
+      "status": "pending",
+      "reason": ""
+    },
+    {
+      "url": "https://many.example.com/p29",
+      "status": "pending",
+      "reason": ""
+    }
+  ],
+  "frontier": [
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p22"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p23"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p24"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p25"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p26"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p27"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p28"
+    },
+    {
+      "kind": "page",
+      "url": "https://many.example.com/p29"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://many.example.com/",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.421Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p0",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p0</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.438Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p1",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p1</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.443Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p2",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p2</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.447Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p3",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p3</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.453Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p4",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p4</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.458Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p5",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p5</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.462Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p6",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p6</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.466Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p7",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p7</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.472Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p8",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p8</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.476Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p9",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p9</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.481Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p10",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p10</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.487Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p11",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p11</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.491Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p12",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p12</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.496Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p13",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p13</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.500Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p14",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p14</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.504Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p15",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p15</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.509Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p16",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p16</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.513Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p17",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p17</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.518Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p18",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p18</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.522Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p19",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p19</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.525Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p20",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p20</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.529Z",
+      "sourceKind": "fetched"
+    },
+    {
+      "url": "https://many.example.com/p21",
+      "html": "<!doctype html><html lang=\"en\"><head><title>Authored Forway fixture</title><script>window.IMPORTED_EXECUTED=true;fetch('https://foreign.example.com/executed')</script></head><body><h1>Authored /p21</h1><p>Observable source with a deliberately missing description.</p><img src=\"https://foreign.example.com/inert.png\"></body></html>",
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": null
+      },
+      "fetchedAt": "2026-11-15T23:17:05.533Z",
+      "sourceKind": "fetched"
+    }
+  ],
+  "expansions": [],
+  "documents": [
+    {
+      "kind": "robots",
+      "requestedURL": "https://many.example.com/robots.txt",
+      "finalURL": "https://many.example.com/robots.txt",
+      "status": 404,
+      "bytes": 0,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.409Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/",
+      "finalURL": "https://many.example.com/",
+      "status": 200,
+      "bytes": 327,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.421Z"
+    },
+    {
+      "kind": "sitemap",
+      "requestedURL": "https://many.example.com/sitemap.xml",
+      "finalURL": "https://many.example.com/sitemap.xml",
+      "status": 200,
+      "bytes": 1597,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.430Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p0",
+      "finalURL": "https://many.example.com/p0",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.438Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p1",
+      "finalURL": "https://many.example.com/p1",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.443Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p2",
+      "finalURL": "https://many.example.com/p2",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.447Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p3",
+      "finalURL": "https://many.example.com/p3",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.453Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p4",
+      "finalURL": "https://many.example.com/p4",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.458Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p5",
+      "finalURL": "https://many.example.com/p5",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.462Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p6",
+      "finalURL": "https://many.example.com/p6",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.466Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p7",
+      "finalURL": "https://many.example.com/p7",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.472Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p8",
+      "finalURL": "https://many.example.com/p8",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.476Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p9",
+      "finalURL": "https://many.example.com/p9",
+      "status": 200,
+      "bytes": 329,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.481Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p10",
+      "finalURL": "https://many.example.com/p10",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.487Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p11",
+      "finalURL": "https://many.example.com/p11",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.491Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p12",
+      "finalURL": "https://many.example.com/p12",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.496Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p13",
+      "finalURL": "https://many.example.com/p13",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.500Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p14",
+      "finalURL": "https://many.example.com/p14",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.504Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p15",
+      "finalURL": "https://many.example.com/p15",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.509Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p16",
+      "finalURL": "https://many.example.com/p16",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.513Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p17",
+      "finalURL": "https://many.example.com/p17",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.518Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p18",
+      "finalURL": "https://many.example.com/p18",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.522Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p19",
+      "finalURL": "https://many.example.com/p19",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.525Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p20",
+      "finalURL": "https://many.example.com/p20",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.529Z"
+    },
+    {
+      "kind": "page",
+      "requestedURL": "https://many.example.com/p21",
+      "finalURL": "https://many.example.com/p21",
+      "status": 200,
+      "bytes": 330,
+      "requests": 1,
+      "fetchedAt": "2026-11-15T23:17:05.533Z"
+    }
+  ],
+  "batch": {
+    "chargedRequests": 25,
+    "responseBytes": 9174,
+    "chargedBytes": 9174,
+    "startedAt": "2026-11-15T23:17:05.404Z",
+    "finishedAt": "2026-11-15T23:17:05.536Z"
+  },
+  "outsideScope": 0
+}

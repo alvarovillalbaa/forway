@@ -1,0 +1,23 @@
+name: Forway site analysis V2 owned retirement
+on:
+  push:
+    branches: [qa/forway-site-analysis-v2-20261115]
+permissions:
+  contents: write
+jobs:
+  retire:
+    if: github.ref_name == 'qa/forway-site-analysis-v2-20261115'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retire exact owned workflow and ref
+        env:
+          FORWAY_RETIRE_TOKEN: ${{ github.token }}
+        run: FORWAY_RETIRE_OUTPUT="$RUNNER_TEMP/forway-v2-retirement" python3 tests/scripts/retire-site-analysis-v2.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forway-site-analysis-v2-retirement-${{ github.sha }}
+          path: ${{ runner.temp }}/forway-v2-retirement
+          retention-days: 14

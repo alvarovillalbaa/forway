@@ -1,5 +1,27 @@
 # Forway
 
+- On16November the owner explicitly approved the concrete production packet
+  docs/proposals/site-analysis-v2-rollout.md and asked to execute it. Its
+  product/main/deployment and owned-host H01/H02 gate is resolved; do not ask
+  again. Preserve1100new/1200cumulative CI seconds including retirement,
+ 30GiB runner/Mac reserve, exact source/main leases, the independent
+  work/private-workspaces branch and all dirty local work. No real model calls
+  or private-workspace/Auth/environment mutation belongs to this rollout.
+
+- GEN-3659 source now includes the V2 one-host crawler, explicit provider API
+  comparison, source-only agent signals and grouped tasks/prompts. All69 new T2
+  controls and six native desktop/390px authored-response journeys passed at
+  286a88dc32a4d3aca2cd1fb7deb582718d9c54b1. See
+  docs/results/2026/11-15/site-analysis-v2/result.md. This packet is closed;
+  preserve its failure and successful source. No actual public DNS/socket/model,
+  real key, consumer-product visibility or hosted V2 proof is supplied by it.
+  Legacy workspace1 and HTML-only audit contract remain available. Main/hosted
+  edition are unchanged. Do not relabel historical packets as current proof.
+  Alvaro's “Autorizo todo” authorizes docs/proposals/site-analysis-v2.md:
+  source/security changes plus task-owned temporary branch/commits and isolated
+  CI capped at 20 aggregate minutes including failures/retirement, excluding
+  real model calls/project changes. Do not repeat the same approval question.
+
 - Product intent is the short Forway Notion brief linked in `docs/spec.md`:
   create, analyze and improve SEO/GEO; consider Omnia and Amplitude. Preserve
   that full scope and separate page heuristics from measured AI visibility.

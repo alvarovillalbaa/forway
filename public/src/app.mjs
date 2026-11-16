@@ -3,6 +3,10 @@ import { normalizeDraft, createHtml, createMetadata } from './content.mjs';
 import { normalizeObservation, analyzeObservation, summarizeObservations, observationCohortKey } from './observations.mjs';
 import { parseWorkspace, serializeWorkspace } from './workspace.mjs';
 import { el, replace, action, formatDate, downloadText } from './ui.mjs';
+import { analyzeAgentSource } from './agent-source.mjs';
+import { buildSiteReport } from './site-report.mjs';
+import { renderSiteReport } from './report-view.mjs';
+import { createSiteTools } from './site-tools.mjs';
 
 const $ = id => document.getElementById(id);
 const MAX_HTML_BYTES = 1024 * 1024;
@@ -13,8 +17,10 @@ let workspace = { version: 1, source: null, draft: null, observations: [] };
 let report = null, comparison = null, sourceReceipt = null;
 let revision = 0, exportedRevision = 0, pendingRead = null, confirmation = null, disposed = false;
 let intakeChanged = false, evidenceChanged = false, cohort = '', auditFilter = 'all';
+let agentFacts = null, siteReport = null;
+let siteTools = null;
 const titles = {
-  audit: ['01 / Inspect', ['A good page starts', 'with a clear picture.'], 'Check the source. Find the gaps. Give your next edit a purpose.'],
+  audit: ['SEO · Answers · Agents', ['How easy are you', 'to find?'], 'Check a URL. Inspect the evidence. Take the next improvement with you.'],
   content: ['02 / Create & improve', ['A useful answer.', 'In your own words.'], 'Turn findings into a page you can review, improve and take with you.'],
   evidence: ['03 / Observe', ['The answer is', 'in the evidence.'], 'Keep supplied AI answers, their context and their actual citations together.'],
 };
@@ -28,7 +34,14 @@ function showNotice(message, error = false) {
 }
 
 function updateMemoryLabel() {
-  $('workspace-state').textContent = revision === exportedRevision ? 'Export to keep your next changes' : 'Changes stay in this tab';
+  $('workspace-state').textContent = revision === exportedRevision && !siteTools?.hasUnsaved() ? 'Export to keep your next changes' : 'Changes stay in this tab';
+}
+
+function touchTools() {
+  const pageWasSaved = revision === exportedRevision;
+  revision++; cancelRead('Import canceled because the current work changed. Your existing work was kept.');
+  if (pageWasSaved) exportedRevision = revision;
+  updateMemoryLabel();
 }
 
 function endRead(operation) {
@@ -65,7 +78,7 @@ function hasDraft() {
 }
 
 function hasWork() {
-  return Boolean(workspace.source || hasDraft() || workspace.observations.length || intakeChanged || evidenceChanged);
+  return Boolean(workspace.source || hasDraft() || workspace.observations.length || intakeChanged || evidenceChanged || siteTools?.hasWork());
 }
 
 function confirmReplace(title, description, label = 'Replace') {
@@ -89,6 +102,7 @@ $('confirm-dialog').addEventListener('close', () => {
 
 function navigate(view, focus = true) {
   if (!Object.hasOwn(titles, view)) return;
+  document.body.dataset.view = view;
   for (const key of Object.keys(titles)) $('view-' + key).hidden = key !== view;
   for (const button of document.querySelectorAll('[data-view]')) {
     if (button.dataset.view === view) button.setAttribute('aria-current', 'page');
@@ -191,20 +205,23 @@ async function readApiResponse(response, signal) {
 
 function sourceCandidate(source, receipt = null) {
   const analyzed = analyzeHtml(source);
+  const agents = analyzeAgentSource(source);
   const candidate = { ...workspace, source, draft: analyzed.draft };
   serializeWorkspace(candidate);
-  return { candidate, analyzed, receipt };
+  return { candidate, analyzed, agents, receipt };
 }
 
-function applySource({ candidate, analyzed, receipt }) {
+function applySource({ candidate, analyzed, agents, receipt }) {
   workspace = copy(candidate); report = analyzed; comparison = null; sourceReceipt = receipt; auditFilter = 'all';
+  agentFacts = agents.facts;
   $('page-url').value = workspace.source.url;
   $('html-url').value = workspace.source.url;
   $('html-source').value = workspace.source.html;
   intakeChanged = false;
+  $('analysis-scope').value = 'page';
   renderAll();
-  navigate('audit');
-  showNotice('Page source analyzed. The studio contains a bounded text extraction for review, not a lossless site copy. Raw HTML and existing AI evidence were kept.');
+  navigate('audit', false); $('site-report').focus();
+  showNotice('Report ready: source findings, prioritized reviews and implementation prompts. Raw HTML and supplied AI answers were kept; the content editor contains a bounded text extraction.');
 }
 
 const sourceReplacement = {
@@ -215,6 +232,7 @@ const sourceReplacement = {
 $('url-form').addEventListener('submit', event => {
   event.preventDefault();
   const url = $('page-url').value.trim();
+  if ($('analysis-scope').value === 'site') { cancelRead(); void siteTools.start(url); return; }
   void importOperation({ label: 'Importing public page source…', replacement: sourceReplacement, commit: applySource,
     load: async signal => {
       const response = await fetch('/api/audit', { method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -253,20 +271,32 @@ $('html-file').addEventListener('change', event => {
       return sourceCandidate({ url, html: await readFile(file, MAX_HTML_BYTES, 'invalid_html_file'), headers: {} });
     } });
 });
-for (const id of ['page-url', 'html-url', 'html-source']) $(id).addEventListener('input', () => { intakeChanged = true; touch(); });
+for (const id of ['page-url', 'html-url', 'html-source']) $(id).addEventListener('input', () => {
+  siteTools?.cancelCrawl();
+  if (id === 'page-url' && $('analysis-scope').value === 'site') { touchTools(); return; }
+  intakeChanged = true; touch();
+});
 $('cancel-import').addEventListener('click', () => cancelRead('Import canceled. Your current workspace was kept.'));
 
 function renderAudit() {
   $('audit-empty').hidden = Boolean(report);
   $('audit-results').hidden = !report;
   $('source-context').hidden = !workspace.source;
+  $('site-report').hidden = !report;
+  siteReport = null;
   if (workspace.source) {
     replace($('source-context'), el('p', { className: 'eyebrow' }, 'Analyzed source'), el('h3', {}, report?.title || 'Untitled page'),
       el('a', { href: workspace.source.url, target: '_blank', rel: 'noopener noreferrer' }, workspace.source.url),
       el('small', {}, sourceReceipt ? `Public source fetched ${formatDate(sourceReceipt.fetchedAt)} · HTTP ${sourceReceipt.status} · ${sourceReceipt.redirects} redirects`
         : 'Supplied/imported source. Fetch time and HTTP status are not asserted.'));
   }
-  if (!report) { replace($('audit-results')); return; }
+  if (!report) { replace($('audit-results')); replace($('site-report')); return; }
+  siteReport = buildSiteReport({ pages: [{ url: report.url, facts: report.facts, agentFacts,
+    sourceKind: sourceReceipt ? 'fetched' : 'supplied', fetchedAt: sourceReceipt?.fetchedAt ?? null }],
+  observations: workspace.observations, coverage: { scope: 'page', state: 'single_page', discovered: 1, remaining: 0, refused: 0, failed: 0 } });
+  const currentReport = siteReport;
+  renderSiteReport($('site-report'), currentReport, { notice: showNotice, edit: () => navigate('content'),
+    evidence: () => navigate('evidence'), current: () => !disposed && siteReport === currentReport });
   const filters = [['all', 'All findings'], ['seo', 'SEO'], ['geo', 'GEO']].map(([value, label]) => {
     const button = action(label, () => {
       auditFilter = value; renderAudit();
@@ -420,7 +450,7 @@ $('evidence-form').addEventListener('submit', event => {
     serializeWorkspace(candidate);
     workspace = copy(candidate); cohort = observationCohortKey(raw); touch(); evidenceChanged = false;
     $('evidence-prompt').value = ''; $('evidence-answer').value = ''; $('evidence-time').value = '';
-    renderEvidence();
+    renderEvidence(); renderAudit();
     showNotice('Supplied answer added. Mentions and explicit citations come only from the text you supplied.');
     $('evidence-prompt').focus();
   } catch {
@@ -467,7 +497,7 @@ function renderEvidence() {
         const captured = revision;
         if (!await confirmReplace('Remove this supplied answer?', 'This removes the stored prompt, answer and its contribution to this evidence summary.', 'Remove answer')) return;
         if (disposed || captured !== revision) { showNotice('The workspace changed. No evidence was removed.'); return; }
-        workspace.observations.splice(index, 1); touch(); renderEvidence(); $('evidence-summary').querySelector('select')?.focus();
+        workspace.observations.splice(index, 1); touch(); renderEvidence(); renderAudit(); $('evidence-summary').querySelector('select')?.focus();
         showNotice('Supplied answer removed from this workspace.');
       })),
     el('p', { className: 'evidence-prompt' }, evidence.prompt),
@@ -480,6 +510,7 @@ function renderEvidence() {
 
 function renderAll() {
   renderAudit(); renderDraft(); renderComparison(); renderEvidence();
+  applyAnalysisMode();
   $('artifact-review').hidden = true;
 }
 
@@ -488,14 +519,18 @@ $('workspace-file').addEventListener('change', event => {
   const file = event.currentTarget.files?.[0]; event.currentTarget.value = '';
   if (!file) return;
   void importOperation({ label: 'Opening workspace file…', replacement: { title: 'Replace the entire workspace?', label: 'Import workspace',
-    detail: 'This replaces the analyzed source, content draft and all added evidence. Unsubmitted source and evidence inputs are cleared.' },
+    detail: 'This replaces the page, draft, supplied evidence, website crawl and API comparison in this tab. Export each run first if needed. Key fields and unsubmitted inputs are cleared.' },
   load: async () => {
     const value = parseWorkspace(await readFile(file, MAX_WORKSPACE_BYTES, 'invalid_workspace'));
-    return { value, analyzed: value.source ? analyzeHtml(value.source) : null };
-  }, commit: ({ value, analyzed }) => {
+    return { value, analyzed: value.source ? analyzeHtml(value.source) : null,
+      agents: value.source ? analyzeAgentSource(value.source) : null };
+  }, commit: ({ value, analyzed, agents }) => {
+    siteTools.reset();
     workspace = copy(value); report = analyzed; sourceReceipt = null; comparison = null; auditFilter = 'all'; cohort = '';
+    agentFacts = agents?.facts ?? null;
     $('page-url').value = value.source?.url ?? ''; $('html-url').value = value.source?.url ?? ''; $('html-source').value = value.source?.html ?? '';
     $('evidence-form').reset(); intakeChanged = false; evidenceChanged = false;
+    $('analysis-scope').value = 'page';
     renderAll(); navigate(value.source ? 'audit' : value.observations.length ? 'evidence' : 'content');
     showNotice('Workspace imported. Drafts and supplied evidence are in this tab; no site or engine was contacted.');
   } });
@@ -510,7 +545,7 @@ $('export-workspace').addEventListener('click', async () => {
     const value = serializeWorkspace(workspace);
     downloadText('forway-workspace.json', value, 'application/json');
     exportedRevision = revision; updateMemoryLabel();
-    showNotice('Workspace JSON prepared for download. Keep the file to resume your work; Forway does not save automatically.');
+    showNotice('Page/draft/supplied-evidence JSON prepared. Website crawls and API comparisons use their separate Save buttons. No API keys are exported.');
   } catch {
     showNotice('Workspace export could not be prepared. Check for invalid partial URLs or an oversized workspace. Your current source, edits and evidence remain in this tab.', true);
   }
@@ -518,10 +553,11 @@ $('export-workspace').addEventListener('click', async () => {
 
 $('new-workspace').addEventListener('click', async () => {
   const captured = revision;
-  if (hasWork() && !await confirmReplace('Start a new workspace?', 'This clears the source, draft, all supplied evidence and unsubmitted forms in this tab.', 'Start new workspace')) return;
+  if (hasWork() && !await confirmReplace('Start a new workspace?', 'This clears the page, draft, supplied evidence, website crawl, API comparison and key fields in this tab. Export each run first if needed.', 'Start new workspace')) return;
   if (disposed || captured !== revision) { showNotice('The workspace changed. Your work was kept.'); return; }
   cancelRead(); workspace = { version: 1, source: null, draft: null, observations: [] };
-  report = null; comparison = null; sourceReceipt = null; cohort = ''; auditFilter = 'all';
+  siteTools.reset();
+  report = null; comparison = null; sourceReceipt = null; cohort = ''; auditFilter = 'all'; agentFacts = null; siteReport = null;
   $('url-form').reset(); $('html-form').reset(); $('evidence-form').reset(); intakeChanged = false; evidenceChanged = false;
   revision++; exportedRevision = revision; renderAll(); updateMemoryLabel(); navigate('audit'); $('page-url').focus();
   showNotice('New workspace ready. No page, content or evidence has been added.');
@@ -532,12 +568,24 @@ $('dismiss-notice').addEventListener('click', () => { $('app-notice').hidden = t
 $('open-about').addEventListener('click', event => { event.preventDefault(); $('about-dialog').showModal(); });
 window.addEventListener('hashchange', () => { const view = location.hash.slice(1); if (Object.hasOwn(titles, view)) navigate(view); });
 window.addEventListener('beforeunload', event => {
-  if (revision !== exportedRevision && hasWork()) { event.preventDefault(); event.returnValue = ''; }
+  if (revision !== exportedRevision && hasWork() || siteTools?.hasUnsaved()) { event.preventDefault(); event.returnValue = ''; }
 });
 window.addEventListener('pagehide', event => {
   cancelRead();
+  siteTools?.hide();
   if (!event.persisted) { disposed = true; confirmation?.(false); confirmation = null; }
 });
 
+function applyAnalysisMode() {
+  const site = $('analysis-scope').value === 'site';
+  $('page-audit-workbench').hidden = site; $('crawl-tools').hidden = !site;
+  $('crawl-report').hidden = !site || !siteTools?.hasCrawl(); $('site-report').hidden = site || !report;
+}
+$('analysis-scope').addEventListener('change', applyAnalysisMode);
+siteTools = createSiteTools({ notice: showNotice, confirm: confirmReplace, changed: touchTools,
+  observations: () => workspace.observations, openEvidence: () => navigate('evidence'),
+  editCapturedPage: page => { void importOperation({ label: 'Opening captured HTML in the editor…', replacement: sourceReplacement,
+    load: async () => sourceCandidate({ url: page.url, html: page.html, headers: page.headers }), commit: applySource }); },
+});
 renderAll();
 navigate(Object.hasOwn(titles, location.hash.slice(1)) ? location.hash.slice(1) : 'audit', false);

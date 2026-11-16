@@ -1,0 +1,95 @@
+{
+  "receipt": {
+    "main": "f9ec9a35c6f05e579d95fc155f430f2a56debbf1",
+    "qaBefore": "08e0d4fa490d33e5e0955b294f39a6f9f6b9ac3b",
+    "passed": true,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/git/ref/heads/main",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/git/ref/heads/qa/forway-site-analysis-v2-20261115",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/contents/.github/workflows/site-analysis-v2.yml?ref=main",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/contents/.github/workflows/site-analysis-v2.yml?ref=qa%2Fforway-site-analysis-v2-20261115",
+        "status": 200
+      },
+      {
+        "method": "DELETE",
+        "path": "/contents/.github/workflows/site-analysis-v2.yml",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/git/ref/heads/qa/forway-site-analysis-v2-20261115",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/contents/.github/workflows/site-analysis-v2.yml?ref=qa%2Fforway-site-analysis-v2-20261115",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/git/ref/heads/qa/forway-site-analysis-v2-20261115",
+        "status": 200
+      },
+      {
+        "method": "DELETE",
+        "path": "/git/refs/heads/qa/forway-site-analysis-v2-20261115",
+        "status": 204
+      },
+      {
+        "method": "GET",
+        "path": "/git/ref/heads/qa/forway-site-analysis-v2-20261115",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/git/ref/heads/main",
+        "status": 200
+      }
+    ],
+    "retiredCommit": "192fe610a00487c6cdf2827d3431d1330dbf3129",
+    "workflowAbsent": true,
+    "qaDeleted": true,
+    "mainUnchanged": true,
+    "deleteSemantics": "serialized exact owner reads; GitHub DELETE ref is not atomic CAS"
+  },
+  "ledger": [
+    {
+      "source": "e21f9fcd25a719a88cd13e703d1cc1a75008a7b1",
+      "run": 43773936198,
+      "job": 132995773693,
+      "seconds": 59,
+      "conclusion": "failure"
+    },
+    {
+      "source": "286a88dc32a4d3aca2cd1fb7deb582718d9c54b1",
+      "run": 43774141591,
+      "job": 132996429182,
+      "seconds": 30,
+      "conclusion": "success"
+    },
+    {
+      "source": "08e0d4fa490d33e5e0955b294f39a6f9f6b9ac3b",
+      "run": 43774290799,
+      "job": 132996914055,
+      "seconds": 11,
+      "conclusion": "success",
+      "purpose": "retirement"
+    }
+  ],
+  "seconds": 100,
+  "cap": 1200
+}
