@@ -1,5 +1,9 @@
 # Forway
 
+<!-- project-family:start -->
+> **Project family:** [Web & Creative Apps](https://github.com/alvarovillalbaa#web-and-creative-apps) · **Area:** Content analysis
+<!-- project-family:end -->
+
 Last updated: 2026-11-16
 
 Create, analyze and improve content for search and AI answers.
